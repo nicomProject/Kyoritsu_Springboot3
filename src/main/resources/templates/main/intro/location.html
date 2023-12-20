@@ -1,0 +1,151 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="~{components/_include::include_main}"></th:block>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+
+    <!-- ========================= header start ========================= -->
+    <th:block th:replace="~{components/_header::header_main}"></th:block>
+    <!-- ========================= header end ========================= -->
+
+    <input type="hidden" id="location_contentId" class="param contentId" name="key"/>
+
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumbs-content">
+                        <ul class="breadcrumb-nav">
+                            <li><a href="../">Home</a></li>
+                            <li><a href="">회사소개</a></li>
+                            <li>오시는길</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumbs-content title">
+                        <h1 class="page-title">회사소개</h1>
+                        <p>Business plan draws on a wide range of knowledge from different business disciplines. Business draws on a wide range of different business .</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumbs-content center">
+                        <button type="button" onclick="location.href='/intro/overview'">기업개요</button>
+                        <button type="button" onclick="location.href='/intro/vision'">경영이념/비전</button>
+                        <button type="button" onclick="location.href='/intro/history'">연혁</button>
+                        <button type="button" onclick="location.href='/intro/organization'">조직도</button>
+                        <button type="button" onclick="location.href='/intro/location'">오시는길</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+	<!-- Start Features Area -->
+
+    <main>
+        <section id="location-section" class="location section">
+            <div class="editor-content container">
+                <div class="location-container">
+                    <div id="map"></div>
+                    <div class="map-info">
+                        <div class="top">
+                            <h3>교리츠 <span>본사</span></h3>
+                            <ul>
+                                <li><h4>경기도 안양시 동안구 시민대로 109번길 11</h4></li>
+                                <li></li>
+                                <li><a href=""><p>길찾기</p><img src="images/contact/contact_arrow.png" alt=""></a></li>
+                            </ul>
+                        </div>
+                        <div class="bottom">
+                            <ul>
+                                <li><img src="images/contact/contact_icon1.png" alt=""></li>
+                                <li>전화</li>
+                                <li><span>031-429-0050</span></li>
+                            </ul>
+                            <ul>
+                                <li><img src="images/contact/contact_icon2.png" alt=""></li>
+                                <li>팩스</li>
+                                <li>031-429-0030</li>
+                            </ul>
+                            <ul>
+                                <li><img src="images/contact/contact_icon3.png" alt=""></li>
+                                <li>E-Mail</li>
+                                <li>nicomsales@enicom.co.kr</li>
+                            </ul>
+                            <ul>
+                                <li><img src="images/contact/contact_icon4.png" alt=""></li>
+                                <li>제품 및 기타 문의</li>
+                                <li>070-8660-6529</li>
+                            </ul>
+                            <ul>
+                                <li><img src="images/contact/contact_icon5.png" alt=""></li>
+                                <li>A/S콜센터</li>
+                                <li>1544-6502~3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- /End Newsletter Area -->
+
+    <!-- Start Footer Area -->
+    <th:block th:replace="~{components/_footer::footer_main}"></th:block>
+    <!--/ End Footer Area -->
+
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+      <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="/static/js/main/template/bootstrap.min.js"></script>
+    <script src="/static/js/main/template/count-up.min.js"></script>
+    <script src="/static/js/main/template/wow.min.js"></script>
+    <script src="/static/js/main/template/tiny-slider.js"></script>
+    <script src="/static/js/main/template/glightbox.min.js"></script>
+    <script src="/static/js/main/template/imagesloaded.min.js"></script>
+    <script src="/static/js/main/template/isotope.min.js"></script>
+    <script src="/static/js/main/template/main.js"></script>
+
+    <!-- kakao map api-->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c9e8bdd8cc8839729e4a9e3515d5f3a7"></script>
+
+    <script type="text/javascript">
+
+        var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+        var options = { //지도를 생성할 때 필요한 기본 옵션
+            center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+            level: 3 //지도의 레벨(확대, 축소 정도)
+        };
+
+        var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+    </script>
+
+    <script type="text/javascript" src="/static/js/main/page/intro/location.js"></script>
+  </body>
+</html>

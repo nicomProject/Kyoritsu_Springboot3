@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: "Noto Sans KR", serif;
+}
+
+.error-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.btn-error {
+    padding: 10px 15px;
+    background: #4770e7;
+    border-radius: 1rem;
+    border-color: #4770e7;
+    color: white;
+}
+.btn-error:hover {
+    background: #315ddd;
+    border-color: #315ddd;
+    color:white;
+    outline: none;
+}
+.btn-error:focus {
+    box-shadow: 0 0 0 0.2rem rgb(255 255 255 / 25%);
+}

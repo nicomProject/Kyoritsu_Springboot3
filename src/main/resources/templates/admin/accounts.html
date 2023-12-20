@@ -1,0 +1,42 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{components/_include::include_manager}"></th:block>
+<body class="g-sidenav-show">
+<th:block th:replace="~{components/_side::side_manager}"></th:block>
+<main class="main-content position-relative h-100 border-radius-lg">
+    <th:block th:replace="~{components/_header::header_manager}"></th:block>
+    <div class="container-fluid page-container">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">계정 관리</h4>
+                <p class="card-category ellipsis">
+                    <i class="fas fa-arrow-right"></i>
+                    <span class="icon-title">관리자 계정을 관리하는 메뉴입니다. 관리자 계정 등록/수정/삭제/초기화 등의 관리 기능을 이용하실 수 있습니다.</span>
+                </p>
+            </div>
+            <div class="card-header card-header-action text-right">
+                <button class="btn btn-round btn-primary bg-gradient-primary btn-pulse me-1" role="action" data-action="add">
+                    <i class="fas fa-plus"></i><span class="icon-title">등록</span>
+                </button>
+                <button class="btn btn-round btn-danger bg-gradient-danger btn-reset me-1" role="action" data-action="reset">
+                    <svg class="svg-icon" viewBox="0 0 12.7 12.7">
+                        <g stroke="#fff" stroke-linecap="round">
+                            <path class="lockBody" fill="#fff" fill-rule="evenodd" stroke-width="1.84823437" stroke-linejoin="round" d="M2.926 6.366h7.129v4.218H2.926z"></path>
+                            <path class="lockHead" d="M3.622 5.339c0-3.424 1.69-3.421 2.801-3.424 1.868 0 3.113 0 3.113 5.292" fill="none" stroke-width="1.4117639999999998"></path>
+                        </g>
+                    </svg>
+                    <span class="icon-title">초기화</span>
+                </button>
+                <button class="btn btn-round btn-secondary btn-turn-circle me-1" role="action" data-action="setInitPwd">
+                    <i class="fas fa-cog"></i><span class="icon-title">초기 비밀번호 설정</span>
+                </button>
+            </div>
+            <div class="card-body">
+                <div id="table"></div>
+            </div>
+        </div>
+    </div>
+</main>
+<!--<th:block th:replace="~{components/_footer::footer_manager}"></th:block>-->
+<!--<th:block th:replace="~{components/_modals::modal('account')}"></th:block>-->
+<script type="text/javascript" src="/static/js/admin/page/accounts.js"></script>
+</body>

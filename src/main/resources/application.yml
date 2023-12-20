@@ -1,0 +1,51 @@
+spring:
+  # 정적 리소스 위치 설정
+  mvc:
+    static-path-pattern: /static/**
+  # thymeleaf 설정
+  thymeleaf:
+    cache: false
+    enabeld: true
+    prefix: classpath:/templates/
+    suffix: .html
+  # profile 설정
+  profiles:
+    active:
+      # application-postgresql.yml
+      - postgresql
+  # datasource 설정
+  datasource:
+    # DB 연결 관리자 설정
+    hikari:
+      # max connection = 1
+      maximum-pool-size: 1
+      auto-commit: true
+  # devtools 설정
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+
+  # TODO 추후 삭제하기
+  # Spring security 설정
+  security:
+    user:
+      name: cho
+      password: $2a$10$mTVVI.Ox6v/Nwfb9dG58S.aWKJ1KoxrU/2Mxa/DTlHTIzTDyQvX7u # 1234
+
+# Server configuration
+server:
+  port: 9000
+
+# Logging configuration
+logging:
+  level:
+    root: INFO
+    # root: DEBUG
+
+# Application information
+system:
+  name: Kyoritsu
+  version: 1.0.0
+  initPwd: nicom123.

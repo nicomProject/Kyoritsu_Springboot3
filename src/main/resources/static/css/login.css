@@ -1,0 +1,77 @@
+h1, h2, h3, h4, h5, h6 {
+    display: block !important;
+}
+
+.auth-wrapper {
+    min-height: 100%;
+}
+
+.auth-wrapper .auth-box {
+    box-shadow: 0px 5px 15px 5px #cfd7dd;
+    max-width: 800px;
+    width: 800px;
+    margin: 5% 0;
+    position: relative;
+}
+
+.auth-wrapper .auth-box .modal-bg-img {
+    background-size: cover;
+    background-position: center center;
+    min-height: 300px;
+}
+
+.auth-wrapper #recoverform {
+    display: none;
+}
+
+.logo-text {
+    font-weight: 600;
+    color: #1454ff;
+}
+
+p {
+    color: #a1a1a1;
+}
+div[role=loading] p {
+    color: #5ac5f8;
+    animation: fadeIn 3s infinite cubic-bezier(0, 1.06, 1, 1);
+}
+
+.form-group label {
+    margin-bottom: 7px;
+    color: #243243;
+}
+.form-group .form-control {
+    border-color: #e4e4e4;
+}
+.form-group .form-control:focus {
+    color: #4b7bff;
+    border-color: #84a5ff;
+    box-shadow: 0 0 0 0.2rem rgb(20 84 255 / 25%);
+}
+
+.form-group.active label {
+    color: #4b7bff !important;
+}
+
+.company-logo {
+    filter: brightness(100) invert(0);
+    height: 25px;
+    margin: 10px;
+    width: auto;
+    position: fixed;
+    cursor: pointer;
+}
+
+.auth-form {
+    height: 480px;
+}
+@media (max-width: 600px) {
+    .auth-wrapper .auth-box {
+        margin: 0;
+        height: 100%;
+    }
+    .auth-form {
+        height: auto;
+    }
+}

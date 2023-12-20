@@ -1,0 +1,24 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{components/_include::include_manager}"></th:block>
+<body class="g-sidenav-show">
+<th:block th:replace="~{components/_side::side_manager}"></th:block>
+<main class="main-content position-relative h-100 border-radius-lg">
+    <th:block th:replace="~{components/_header::header_manager}"></th:block>
+    <div class="container-fluid page-container">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">API 테스트</h4>
+                <p class="card-category ellipsis">
+                    <i class="fas fa-arrow-right"></i>
+                    <span class="icon-title">시스템 연계를 위한 API 테스트 페이지 입니다.</span>
+                </p>
+            </div>
+            <div class="card-body">
+                <div id="methods"></div>
+            </div>
+        </div>
+    </div>
+</main>
+<link rel="stylesheet" href="/static/css/admin/api.css">
+<script type="text/javascript" src="/static/js/admin/page/api.js"></script>
+</body>

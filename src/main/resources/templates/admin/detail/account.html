@@ -1,0 +1,154 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{components/_include::include_manager}"></th:block>
+<body class="g-sidenav-show">
+<th:block th:replace="~{components/_side::side_manager}"></th:block>
+<main class="main-content position-relative h-100 border-radius-lg">
+    <th:block th:replace="~{components/_header::header_manager}"></th:block>
+
+    <input class="param" name="key" th:value="${key}" type="hidden"/>
+
+    <div class="container-fluid page-container">
+        <div class="card">
+            <div class="card-header card-header-primary" th:if="${key != null}">
+                <h4 class="card-title">관리자 수정</h4>
+                <p class="card-category ellipsis">
+                    <i class="fas fa-arrow-right"></i>
+                    <span class="icon-title">수정할 관리자를 작성해주세요</span>
+                </p>
+            </div>
+            <div class="card-header card-header-primary" th:if="${key == null}">
+                <h4 class="card-title">관리자 추가</h4>
+                <p class="card-category ellipsis">
+                    <i class="fas fa-arrow-right"></i>
+                    <span class="icon-title">추가할 관리자를 작성해주세요.</span>
+                </p>
+            </div>
+            <div class="card-body">
+                    <div class="card-body-separation-one">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span class="icon-title modal-ext-desc"> 이용 안내<br>
+                            - 관리자 생성 후에는 아이디를 수정할 수 없습니다.<br>
+                            - 비밀번호는 초기 비밀번호로 생성됩니다.
+                        </span>
+
+                        <table class="pageSubTable">
+                            <colgroup>
+                                <col width="10%"/>
+                                <col width="90%"/>
+                            </colgroup>
+                            <tr class="pageSub">
+                                <td><label for="manager_id">아이디</label></td>
+                                <td><input class="form-control" id="manager_id" name="manager_id" type="text"></td>
+                            </tr>
+                            <tr class="pageSub">
+                                <td><label for="manager_name">이름</label></td>
+                                <td><input class="form-control" id="manager_name" name="manager_name" type="text"></td>
+                            </tr>
+                            <tr class="pageSub">
+                                <td><label for="manager_role">권한</label></td>
+                                <td>
+                                    <select class="form-select" id="manager_role" name="manager_role">
+                                        <option value="USER">일반 사용자</option>
+                                        <option value="ADMIN">관리자</option>
+                                        <option value="SYSTEM">시스템 관리자</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="pageSub">
+                                <td><label for="manager_enable">활성여부</label></td>
+                                <td>
+                                    <select class="form-select" id="manager_enable" name="manager_enable">
+                                        <option value="1">활성</option>
+                                        <option value="2">비활성</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr class="pageSub">
+                                <td><label for="management">관리</label></td>
+                                <td>
+                                    <div id="management" name="management" type="text">
+                                        <button class="btn btn-round btn-success bg-gradient-success" data-action="list"
+                                                role="action" th:if="${key == null}">
+                                            <i class="fas fa-plus"></i><span class="icon-title">목록</span>
+                                        </button>
+                                        <button class="btn btn-round btn-primary bg-gradient-primary" data-action="add"
+                                                role="action" th:if="${key == null}">
+                                            <i class="fas fa-plus"></i><span class="icon-title">저장</span>
+                                        </button>
+                                        <button class="btn btn-round btn-primary bg-gradient-primary" data-action="add"
+                                                role="action" th:if="${key != null}">
+                                            <i class="fas fa-plus"></i><span class="icon-title">수정</span>
+                                        </button>
+                                        <button class="btn btn-round btn-danger bg-gradient-danger" data-action="delete"
+                                                role="action" th:if="${key != null}">
+                                            <i class="fas fa-plus"></i><span class="icon-title">삭제</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card-body-separation-two" th:if="${key != null}">
+                        <br><i class="fas fa-exclamation-circle"></i>
+                        <span class="icon-title modal-ext-desc"> 이용 안내<br>
+                        - 비밀번호는 영문자, 숫자, 특수문자 포함 8자 이상 20자이내로 사용 가능합니다.
+                    </span>
+
+                        <table class="pageSubTable">
+                            <colgroup>
+                                <col width="10%"/>
+                                <col width="90%"/>
+                            </colgroup>
+                            <tr class="pageSub">
+                                <td><label for="modify_password">기존 비밀번호</label></td>
+                                <td style="position: relative;"><input aria-describedby="invalid_modify_password" autocomplete="modify_password"
+                                           class="form-control param" id="modify_password"
+                                           name="password" type="password">
+                                    <i style="position: absolute; right: 5px; top: 50%; transform: translateY(-50%); display: none"></i>
+                                </td>
+                            </tr>
+                            <tr class="pageSub">
+                                <td><label for="new_password">새 비밀번호</label></td>
+                                <td style="position: relative;"><input autocomplete="new-password" class="form-control param" id="new_password"
+                                           name="new_password"
+                                           type="password">
+                                    <i style="position: absolute; right: 5px; top: 50%; transform: translateY(-50%); display: none"></i>
+                                </td>
+                            </tr>
+                            <tr class="pageSub">
+                                <td><label for="new_password_confirm">새 비밀번호 확인</label></td>
+                                <td style="position: relative;"><input autocomplete="new-new_password_confirm" class="form-control param" id="new_password_confirm"
+                                           name="new_password_confirm"
+                                           type="password">
+                                    <i style="position: absolute; right: 5px; top: 50%; transform: translateY(-50%); display: none"></i>
+                                </td>
+                            </tr>
+                            <tr class="pageSub">
+                                <td><label for="management">관리</label></td>
+                                <td>
+                                    <div id="management" name="management" type="text">
+                                        <button class="btn btn-round btn-primary bg-gradient-primary" data-action="passwordmodify"
+                                                role="action">
+                                            <i class="fas fa-plus"></i><span class="icon-title">수정</span>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-round btn-success bg-gradient-success" data-action="list"
+                                            role="action" id="listButton" th:if="${key != null}">
+                                        <i class="fas fa-plus"></i><span class="icon-title">목록</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+<script type="text/javascript" src="/static/js/admin/page/detail/account.js" ></script>
+</body>

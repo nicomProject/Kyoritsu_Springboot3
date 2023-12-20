@@ -1,0 +1,59 @@
+<html lang="en">
+<th:block th:replace="~{components/_include::include_manager}"></th:block>
+<body>
+<div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative h-100">
+    <div class="auth-box row">
+        <div class="col-lg-7 col-md-5 modal-bg-img"
+             style="background-image: url(/static/images/banner/banner.png);"></div>
+        <div class="col-lg-5 col-md-7 bg-white auth-form">
+            <div class="p-3 h-100">
+                <div class="mt-5 text-center">
+                    <img src="/static/images/favicon/logo.png" alt="logo" height="60px">
+                </div>
+                <p class="text-center mt-4">관리자페이지에 접속하시려면<br>먼저 로그인해주시기 바랍니다.</p>
+                <form class="mt-4" method="post" id="loginForm">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label class="text-dark" for="manager_id">
+                                    <i class="fas fa-user"></i>
+                                    <span class="icon-title">아이디</span>
+                                </label>
+                                <input type="text" class="form-control" id="manager_id" name="manager_id"
+                                       placeholder="아이디" autocomplete="username" autofocus="autofocus">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label class="text-dark" for="manager_pw">
+                                    <i class="fas fa-key"></i>
+                                    <span class="icon-title">비밀번호</span>
+                                </label>
+                                <input type="password" class="form-control" id="manager_pw" name="manager_pw"
+                                       placeholder="비밀번호" autocomplete="current-password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <button class="btn btn-block btn-primary w-100" id="submitButton">로그인</button>
+                        </div>
+                        <div class="col-lg-12 text-center mt-3"></div>
+                    </div>
+                </form>
+
+                <div role="loading" class="d-flex flex-column justify-content-center mt-5 mb-5 hide">
+                    <div class="mt-5 mb-4"></div>
+                    <div class="dot-spin dot-spin-skyblue" style="align-self: center;"></div>
+                    <p class="text-center mt-3 py-3">로그인 중입니다.<br>잠시만 기다려주세요.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="/static/css/login.css">
+<script type="text/javascript" src="/static/js/admin/login.js"></script>
+</body>
+</html>

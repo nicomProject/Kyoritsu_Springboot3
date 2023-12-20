@@ -1,0 +1,67 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{components/_include::include_manager}"></th:block>
+<body class="g-sidenav-show">
+<th:block th:replace="~{components/_side::side_manager}"></th:block>
+<main class="main-content position-relative h-100 border-radius-lg">
+    <th:block th:replace="~{components/_header::header_manager}"></th:block>
+    <input type="hidden" class="param" name="key" th:value="${key}"/>
+
+
+    <div class="container-fluid page-container">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">채용문의 상세페이지</h4>
+                <p class="card-category ellipsis">
+                    <i class="fas fa-arrow-right"></i>
+                    <span class="icon-title"></span>
+                </p>
+            </div>
+            <div class="card-body">
+                <table class="pageSubTable">
+                    <tr class="pageSub">
+                        <td><label for="title">제목</label></td>
+                        <td><input type="text" id="title" name="title"></td>
+                        <td><label for="create_data">작성일</label></td>
+                        <td><input type="text" id="create_data" name="create_data"></td>
+                        <td><label for="create_user">작성자</label></td>
+                        <td><input type="text" id="create_user" name="create_user"></td>
+                    </tr>
+                    <tr class="pageSub">
+                        <td><label for="">본문</label></td>
+                        <td colspan="5">
+                            <textarea class="form-control" name="contents" id="" rows="10" cols="100" ></textarea>
+                        </td>
+                    </tr>
+                    <tr class="pageSub">
+                        <td><label for="">답변</label></td>
+                        <td colspan="5">
+                            <textarea class="form-control" name="contents" id="" rows="10" cols="100" ></textarea>
+                        </td>
+                    </tr>
+                    <tr class="pageSub">
+                        <td><label for="management">관리</label></td>
+                        <td colspan="5"><div type="text" id="management" name="management">
+                            <button class="btn btn-round btn-success bg-gradient-success" role="action" data-action="list">
+                                <i class="fas fa-plus"></i><span class="icon-title">목록</span>
+                            </button>
+                            <button class="btn btn-round btn-primary bg-gradient-primary" role="action" data-action="add" th:if="${key == null}">
+                                <i class="fas fa-plus"></i><span class="icon-title">저장</span>
+                            </button>
+                            <button class="btn btn-round btn-primary bg-gradient-primary" role="action" data-action="add" th:if="${key != null}">
+                                <i class="fas fa-plus"></i><span class="icon-title">수정</span>
+                            </button>
+                            <button class="btn btn-round btn-danger bg-gradient-danger" role="action" data-action="delete">
+                                <i class="fas fa-plus"></i><span class="icon-title">삭제</span>
+                            </button>
+                        </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+<th:block th:replace="~{components/_footer::footer_manager}"></th:block>
+<script type="text/javascript" src="/static/js/smartEditor/js/HuskyEZCreator.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/js/admin/page/detail/inquiry.js"></script>
+</body>

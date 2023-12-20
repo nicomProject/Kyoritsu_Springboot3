@@ -1,0 +1,82 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="~{components/_include::include_main}"></th:block>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+
+    <!-- ========================= header start ========================= -->
+    <th:block th:replace="~{components/_header::header_main}"></th:block>
+    <!-- ========================= header end ========================= -->
+
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumbs-content">
+                        <ul class="breadcrumb-nav">
+                            <li><a href="../">Home</a></li>
+                            <li><a href="">공지사항</a></li>
+                            <li>공지사항</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumbs-content title">
+                        <h1 class="page-title">공지사항</h1>
+                        <p>Business plan draws on a wide range of knowledge from different business disciplines. Business draws on a wide range of different business .</p>
+                    </div>
+                    <div class="blank">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+	<!-- Start Features Area -->
+    <main>
+        <section class="notice section">
+            <div class="container">
+                <div id="table"></div>
+            </div>
+        </section>
+    </main>
+    <!-- /End Newsletter Area -->
+
+    <!-- Start Footer Area -->
+    <th:block th:replace="~{components/_footer::footer_main}"></th:block>
+    <!--/ End Footer Area -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+      <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="/static/js/main/template/bootstrap.min.js"></script>
+    <script src="/static/js/main/template/count-up.min.js"></script>
+    <script src="/static/js/main/template/wow.min.js"></script>
+    <script src="/static/js/main/template/tiny-slider.js"></script>
+    <script src="/static/js/main/template/glightbox.min.js"></script>
+    <script src="/static/js/main/template/imagesloaded.min.js"></script>
+    <script src="/static/js/main/template/isotope.min.js"></script>
+    <script src="/static/js/main/template/main.js"></script>
+
+    <script type="text/javascript" src="/static/js/main/page/notice/notice.js"></script>
+  </body>
+</html>

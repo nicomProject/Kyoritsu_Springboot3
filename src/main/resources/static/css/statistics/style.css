@@ -1,0 +1,152 @@
+/*통계 페이지의 css*/
+/*selectgroup 버튼 그룹 */
+
+.selectgroup-button {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+/*버튼 클릭시 실행 되는 이벤트*/
+.selectgroup-input:checked + .selectgroup-button {
+    background-color: rgba(255, 255, 255, 0.63); /*배경색*/
+    color: #6f7efd; /*글씨 색 */
+    border-color: #a9b3ff; /*테두리 음영 */
+    box-shadow: 0 0 0 0.2rem rgb(89 108 255 / 25%);
+}
+
+.selectgroup-pills {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.selectgroup {
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+.selectgroup-pills .selectgroup-item {
+    margin-right: .3rem;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+}
+
+.selectgroup-pills.selectgroup-button {
+    border-radius: 50px !important;
+}
+
+.selectgroup-button-icon {
+    padding-left: .5rem;
+    padding-right: .5rem;
+    font-size: 1rem;
+}
+
+.selectgroup-button {
+    display: block;
+    border: 1px solid rgba(0, 40, 100, .12);
+    text-align: center;
+    padding: .55rem 1rem;
+    font-size: 0.8rem;
+    position: relative;
+    cursor: pointer;
+    border-radius: 3px;
+    color: #9aa0ac;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    line-height: 1.3rem;
+    min-width: 2.375rem;
+}
+
+.selectgroup.selectgroup-secondary .selectgroup-input:checked + .selectgroup-button {
+    border-color: #f56e13;
+    color: #f56e13;
+    background: rgb(245 110 19/ 10%);
+}
+
+.selectgroup-input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+/*stats-table*/
+.stats-table-container {
+    height: 400px; /* 원하는 높이값을 지정합니다. */
+    overflow-y: auto; /* 세로 방향의 스크롤을 활성화합니다. */
+}
+
+
+/* 기간 . 자료실 선택 박스의 스타일 */
+.card-padding {
+    padding: 10px;
+}
+
+.card-text.graytext {
+    color: #9aa0ac;
+}
+
+.gray-line {
+    background-color: #9aa0ac;
+    height: 1px;
+    margin-top: 2px;
+}
+
+.eee-line {
+    background-color: #eee;
+    height: 1px;
+    margin-top: 2px;
+}
+
+
+/* Calendar size */
+
+/* Chart */
+/*.chart-div {*/
+/*    text-align:center;*/
+/*    display:table;*/
+/*   !* border:1px solid #cecece;*!*/
+/*   !* width:600px;*!*/
+/* !*   height:800px;*!*/
+/*}*/
+
+/*.chart-middle-div {*/
+/*    display:table-cell;*/
+/*    vertical-align:middle;*/
+/*}*/
+
+/*.char-img {*/
+/*   !*!* max-width:500px;*!*/
+/*    max-height:600px;*!*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+
+/*}*/
+
+/*테이블 css */
+.tabulator-col-content {
+    background: #e9ebff;
+    color: #5d6dff;
+    border-color: #7c8afd;
+    box-shadow: none;
+}
+
+
+.tabulator .tabulator-header .tabulator-col .tabulator-col-title {
+    color: #5d6dff;
+}
+
+.form-select:focus {
+    background-color: rgba(255, 255, 255, 0.63);
+    /* color: #6f7efd;*/
+    border-color: #a9b3ff;
+    box-shadow: 0 0 0 0.2rem rgb(89 108 255 / 25%);
+}

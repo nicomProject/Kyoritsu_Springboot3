@@ -1,0 +1,159 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="~{components/_include::include_main}"></th:block>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+
+    <!-- ========================= header start ========================= -->
+    <th:block th:replace="~{components/_header::header_main}"></th:block>
+    <!-- ========================= header end ========================= -->
+
+    <input type="hidden" id="resort_contentId" class="param contentId" name="key"/>
+
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumbs-content">
+                        <ul class="breadcrumb-nav">
+                            <li><a href="../">Home</a></li>
+                            <li><a href="">사업영역</a></li>
+                            <li>리조트</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumbs-content title">
+                        <h1 class="page-title">사업영역</h1>
+                        <p>Business plan draws on a wide range of knowledge from different business disciplines. Business draws on a wide range of different business .</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumbs-content center">
+                        <button type="button" onclick="location.href='/business/dormitory'">기숙사</button>
+                        <button type="button" onclick="location.href='/business/dormyinn'">도미인</button>
+                        <button type="button" onclick="location.href='/business/resort'">리조트</button>
+                        <button type="button" onclick="location.href='/business/seniorlife'">노인주택</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+	<!-- Start Features Area -->
+    <main>
+        <section id="business-section" class="business section">
+            <div class="editor-content container">
+                <div class="flex-box">
+                    <div class="box-1 inview animated fadeInUp">
+                        <h2 class="sec-title">
+                            <p class="en">리조트</p>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="editor-content container">
+                <div class="flex-box">
+                    <div class="box-2 inview animated fadeInUp">
+                        <div class="profile profile-1">
+                            <div class="profile-link-1">
+                                Resort business <br><br>
+                                （Resort hotel・Iyashi no yuyado）
+                            </div>
+                            <div class="profile-link-2">
+                                <br>
+                                <a>A relaxation resort for healing your mind and body</a>
+                            </div>
+                            <div class="profile-link-3">
+                                <a>Our resort hotels are high quality but provide friendly services. These resort </a>
+                                <a>hotels/healing hot spring accommodations are available throughout Japan. </a>
+                            </div>
+                        </div>
+                        <div class="profile profile-2">
+                            <img src="/static/images/main/resort.jpg" alt="Images">
+                        </div>
+                    </div>
+                    <div class="box-3 inview animated fadeInUp-2">
+                        <div>
+                            <img src="/static/images/main/logo_resort.png" alt="Images">
+                        </div>
+                    </div>
+                    <div class="box-4 inview animated fadeInUp-2">
+                        <div class="profile-content-1">
+                            Business <br>
+                            Features
+                        </div>
+                        <div class="profile-content-2">
+                            ・Our “La Vista” series resort hotels offer the enjoyment of magnificent
+                            <br>&nbsp;&nbsp;&nbsp; views. You can stay with your pets at our “Le Chien” series hotels. Our
+                            <br>&nbsp;&nbsp;&nbsp; “Yawaragi No Yu” hotels have unique special qualities. We have a wide
+                            <br>&nbsp;&nbsp;&nbsp; range of accommodation options that meet your needs
+                            <br>
+                            ・Fully equipped with free chartered baths to enjoy private bathing
+                            <br>&nbsp;&nbsp;&nbsp;(*excludes some facilities)
+                            <br>
+                            ・Seasonal vegetables in season and carefully selected food materials for
+                            <br>&nbsp;&nbsp;&nbsp;&nbsp;local production and consumption are used to prepare meals<br>
+                        </div>
+                    </div>
+                    <div class="box-5 inview animated fadeInUp-2">
+                        <div>
+                            Kyoritsu resort hotels are “high-class resort hotels for a broad public” that combines high-quality space and simple hospitality.
+                            <br>
+                            While we take care to create luxurious and extraordinary sense in the hotel space,
+                            we avoid over-service so that we can provide casual and friendly hospitality.
+                            Our hotels are high-quality, but you can fully relax there. We aim to evolve the traditional “boarding house” concept to
+                            create a healing resort (a hot spring inn) unique to Kyoritsu Resort.
+                            We will continue to make these “Japanese resorts” in various areas of Japan with scenic beauty and hot springs,
+                            so you can experience great views unique to the land, hot springs, food, and kindness that will heal you.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+    <!-- /End Newsletter Area -->
+
+    <!-- Start Footer Area -->
+    <th:block th:replace="~{components/_footer::footer_main}"></th:block>
+    <!--/ End Footer Area -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+      <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="/static/js/main/template/bootstrap.min.js"></script>
+    <script src="/static/js/main/template/count-up.min.js"></script>
+    <script src="/static/js/main/template/wow.min.js"></script>
+    <script src="/static/js/main/template/tiny-slider.js"></script>
+    <script src="/static/js/main/template/glightbox.min.js"></script>
+    <script src="/static/js/main/template/imagesloaded.min.js"></script>
+    <script src="/static/js/main/template/isotope.min.js"></script>
+    <script src="/static/js/main/template/main.js"></script>
+
+    <script type="text/javascript" src="/static/js/main/page/business/resort.js"></script>
+  </body>
+</html>

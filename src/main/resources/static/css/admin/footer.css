@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+.footer {
+    flex-direction: column;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    display: flex;
+}
+
+.footer .footer-item {
+    font-size: 1.3rem;
+    padding: 0.75rem 0.8rem;
+    margin: 5px 0;
+    background: rgb(163 170 176 / 60%);
+    color: white;
+    border-radius: 30px;
+    box-shadow: 1px 1px 3px #bababa;
+    text-align: center;
+    transition: opacity 1s cubic-bezier(0, 0.66, 1, 1);
+    cursor: pointer;
+}
+
+.footer .footer-item:hover {
+    background: rgb(56 147 255 / 80%);
+    box-shadow: 1px 1px 3px #a0cbff;
+}
+
+.footer .footer-item-desc {
+    display: none;
+}
+
+.footer .footer-item:hover > .footer-item-desc {
+    display: inline;
+    position: fixed;
+    color: #3061ff;
+    right: 67px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    z-index: 10;
+    background: #b9d9ff;
+    padding: 0.25rem 0.8rem;
+    border-radius: 15px;
+    border: solid 2px #b9d9ff;
+    box-shadow: 0px 0px 5px #d5d5d5;
+}
+
+.footer .footer-item:hover > .footer-item-desc::after {
+    position: absolute;
+    right: -10px;
+    content: " ";
+    z-index: 11;
+    border-bottom: 15px solid;
+    border-left: 7px solid rgba(0, 0, 0, 0);
+    border-right: 7px solid rgba(0, 0, 0, 0);
+    color: #b9d9ff;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+
+@media ( max-width: 991px) {
+    .content {
+        padding: 5px;
+        min-height: calc(100% - 90px);
+        height: calc(100% - 90px);
+        margin-top: 45px;
+    }
+
+    .content .container-fluid.full-card {
+        height: calc(100% - 50px);
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer .footer-item {
+        font-size: 1rem;
+        padding: 0.3rem 0.4rem;
+        margin: 4px 2px;
+        background: #c3c3c3;
+    }
+
+    .footer .footer-item:hover > .footer-item-desc {
+        right: 55px;
+        font-size: 0.8rem;
+    }
+}

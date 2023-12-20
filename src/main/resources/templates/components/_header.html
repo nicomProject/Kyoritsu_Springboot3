@@ -1,0 +1,78 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<nav th:fragment="header_manager" class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl header" id="navbarBlur">
+    <div class="container-fluid py-3 px-3">
+        <div>
+            <ul class="navbar-nav">
+                <li class="nav-item d-xl-none navbar-open me-4">
+                    <i class="fas fa-bars"></i>
+                </li>
+            </ul>
+        </div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                <li class="breadcrumb-item text-sm">
+                    <a class="opacity-5 text-dark" th:text="${menu_group}"></a>
+                </li>
+                <li class="breadcrumb-item text-sm text-dark active" aria-current="page" th:text="${menu_name} ? ${menu_name} : ${menu_detail_name}" ></li>
+                <li class="breadcrumb-item text-sm text-dark active" id="changeModel" aria-current="page" th:if="${menu_detail_name != null}">상세페이지</li>
+            </ol>
+<!--            <h6 class="font-weight-bolder mb-0" th:text="${menu_name}"></h6>-->
+        </nav>
+        <div class="collapse navbar-collapse justify-content-end" id="navbar">
+            <ul class="navbar-nav justify-content-end">
+                <li class="nav-item">
+                    <i class="fas fa-user"></i> 안녕하세요, <span th:text="${member_name}" class="font-weight-bold"></span>님
+                </li>
+                <li class="nav-item">
+<!--                    <span role="action" data-action="shield">-->
+<!--                        <i class="fas fa-shield-alt"></i>-->
+<!--                    </span>-->
+                    <span role="action" data-action="logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <th:block th:replace="~{components/_modals::modal('password')}"></th:block>
+    <script>
+        $(".changeModel").val($(".card-title").text())
+        console.log($(".card-title").text())
+        console.log($("#changeModel").val())
+    </script>
+</nav>
+
+<header class="header navbar-area" th:fragment="header_main">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="nav-inner">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="/">
+                            <img src="/static/images/favicon/logo.png" alt="Logo">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                        </button>
+                        <!-- 메인 메뉴 리스트 -->
+                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                            <ul id="nav" class="navbar-nav ms-auto">
+                            </ul>
+                        </div> <!-- navbar collapse -->
+                        <div class="button">
+                            <a href="javascript:void(0)" class="btn white-bg mouse-dir">Contact <span class="dir-part"></span></a>
+                        </div>
+                    </nav> <!-- navbar -->
+                </div>
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+
+    <script type="text/javascript" src="/static/js/main/components/header.js"></script>
+</header>

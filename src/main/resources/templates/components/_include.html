@@ -1,0 +1,100 @@
+<!-- 
+    index.html에서 사용되는 js,css,font를 가져오는 곳.
+    (include_manager, include_main)
+ -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<!-- include_manager 정의 -->
+<head th:fragment="include_manager">
+    <title>Kyoritsu 관리자</title>
+
+    <!-- 하단에 작성한 include 추가 -->
+    <th:block th:replace="~{components/_include::include}"></th:block>
+
+    <!-- js -->
+    <script type="text/javascript" src="/static/js/lib/bootstrap/5.2.0/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/admin/template/soft-ui-dashboard.js"></script>
+    <script type="text/javascript" src="/static/js/lib/sheetjs/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="/static/js/admin/components/modal.js"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="/static/css/lib/bootstrap/5.1.3/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/admin/template/soft-ui-dashboard.min.css">
+    <link rel="stylesheet" href="/static/css/common/style.css">
+    <link rel="stylesheet" href="/static/css/admin/style.css">
+</head>
+
+<!-- include_main 정의 -->
+<head th:fragment="include_main">
+    <title>Kyoritsu 홈페이지</title>
+    <meta name="description" content="" />
+
+    <!-- 하단에 작성한 include 추가 -->
+    <th:block th:replace="~{components/_include::include}"></th:block>
+
+    <!-- font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"/>
+
+    <!-- css -->
+    <link rel="stylesheet" href="/static/css/main/template/animate.css" />
+    <link rel="stylesheet" href="/static/css/main/template/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/css/main/template/glightbox.min.css" />
+    <link rel="stylesheet" href="/static/css/main/template/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/static/css/main/template/main.css" />
+    <link rel="stylesheet" href="/static/css/main/template/reset.css" />
+    <link rel="stylesheet" href="/static/css/main/template/responsive.css" />
+    <link rel="stylesheet" href="/static/css/main/template/tiny-slider.css" />
+    <link rel="stylesheet" href="/static/css/main/style.css">
+
+</head>
+
+<!-- include 정의 -->
+<head th:fragment="include">
+    <title>Kyoritsu</title>
+    <meta charset="UTF-8">
+
+    <!-- Internet Explorer 호환 설정 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 모바일 레이아웃 설정 --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- csrf -->
+    <meta id="_csrf" name="_csrf" th:content="${_csrf.token}"/>
+    <meta id="_csrf_header" name="_csrf_header" th:content="${_csrf.headerName}"/>
+
+    <!-- icon -->
+    <link rel="apple-touch-icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/png">
+
+    <!-- css -->
+    <link rel="stylesheet" href="/static/css/lib/animate/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="/static/css/lib/tabulator/5.4/tabulator_semanticui.css">
+    <link rel="stylesheet" href="/static/css/lib/three-dots/_variable.css">
+    <link rel="stylesheet" href="/static/css/lib/three-dots/three-dots.min.css">
+    <link rel="stylesheet" href="/static/fonts/notokr/notokr.css">
+
+    <!-- js -->
+    <script type="text/javascript" src="/static/js/lib/Chart.min.2.4.0/Chart.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/popper/2.10.2/popper.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/sweetalert/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/tabulator/5.4/tabulator.min.js"></script>
+    <script type="text/javascript" src="/static/js/lib/tippy/6.2.6/tippy-bundle.umd.js"></script>
+    <script type="text/javascript" src="/static/js/lib/webfont/webfont.min.js"></script>
+    <script type="text/javascript" src="/static/js/common.js"></script>
+    <script type="text/javascript" src="/static/js/common/utils.js"></script>
+
+    <!-- font -->
+    <script>
+        WebFont.load({
+            google: {
+                "families": ["Lato:300,400,700,900"]
+            },
+            custom: {
+                "families": ["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"],
+                urls: ['/static/css/lib/webfont/fonts.min.css']
+            },
+        });
+    </script>
+</head>

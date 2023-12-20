@@ -1,0 +1,52 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{components/_include::include_manager}"></th:block>
+<body class="g-sidenav-show">
+<th:block th:replace="~{components/_side::side_manager}"></th:block>
+<main class="main-content position-relative h-100 border-radius-lg">
+    <th:block th:replace="~{components/_header::header_manager}"></th:block>
+    <div class="container-fluid page-container">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">공지사항 관리</h4>
+                <p class="card-category ellipsis">
+                    <i class="fas fa-arrow-right"></i>
+                    <span class="icon-title">공지사항을 관리하는 메뉴입니다. 공지사항 등록/수정/삭제 등의 관리 기능을 이용하실 수 있습니다.</span>
+                </p>
+            </div>
+            <div class="card-header card-header-action text-right">
+                <button class="btn btn-round btn-primary bg-gradient-primary btn-pulse me-1" role="action" data-action="add">
+                    <i class="fas fa-plus"></i><span class="icon-title">등록</span>
+                </button>
+                <div class="btn-group me-1" role="group">
+                    <button class="btn btn-round btn-danger bg-gradient-danger btn-trash dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="trash">
+                                <span></span><i></i>
+                            </span>
+                        <span class="icon-title">삭제</span>
+                    </button>
+                    <ul class="dropdown-menu bg-gradient-danger">
+                        <li><a class="dropdown-item text-white" href="#" role="action" data-action="del" data-range="list">선택 삭제</a></li>
+                        <li><a class="dropdown-item text-white" href="#" role="action" data-action="del" data-range="all">전체 삭제</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-round btn-success bg-gradient-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-file-alt"></i>
+                        <span class="icon-title">엑셀</span>
+                    </button>
+                    <ul class="dropdown-menu bg-gradient-success">
+                        <!--                        <li><a class="dropdown-item text-white" href="#" role="action" data-action="file" data-range="upload"><i class="fas fa-file-upload"></i> 업로드</a></li>-->
+                        <li><a class="dropdown-item text-white" href="#" role="action" data-action="file" data-range="download"><i class="fas fa-file-download"></i> 다운로드</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body">
+                <div id="table"></div>
+            </div>
+        </div>
+    </div>
+</main>
+<th:block th:replace="~{components/_footer::footer_manager}"></th:block>
+
+<script type="text/javascript" src="/static/js/admin/page/notices.js"></script>
+</body>

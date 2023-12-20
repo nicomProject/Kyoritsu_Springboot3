@@ -1,0 +1,191 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="~{components/_include::include_main}"></th:block>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- /End Preloader -->
+
+    <!-- ========================= header start ========================= -->
+    <th:block th:replace="~{components/_header::header_main}"></th:block>
+    <!-- ========================= header end ========================= -->
+
+    <input type="hidden" id="overview_contentId" class="param contentId" name="key"/>
+
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumbs-content">
+                        <ul class="breadcrumb-nav">
+                            <li><a href="../">Home</a></li>
+                            <li><a href="">회사소개</a></li>
+                            <li>기업개요</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumbs-content title">
+                        <h1 class="page-title">회사소개</h1>
+                        <p>Business plan draws on a wide range of knowledge from different business disciplines. Business draws on a wide range of different business .</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumbs-content center">
+                        <button type="button" onclick="location.href='/intro/overview'">기업개요</button>
+                        <button type="button" onclick="location.href='/intro/vision'">경영이념/비전</button>
+                        <button type="button" onclick="location.href='/intro/history'">연혁</button>
+                        <button type="button" onclick="location.href='/intro/organization'">조직도</button>
+                        <button type="button" onclick="location.href='/intro/location'">오시는길</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+	<!-- Start Features Area -->
+
+    <main>
+        <section id="overview-section" class="overview section">
+            <div class="editor-content container">
+                <div class="flex-box">
+                    <div class="box-1 inview animated fadeInUp">
+                        <h2 class="sec-title">
+                            <p class="en">기업개요</p>
+                        </h2>
+                    </div>
+                    <div class="box-2 inview animated fadeInUp">
+                        <div class="profile profile-1">
+                            <div class="profile-key">Company name</div>
+                            <div class="profile-value">Kyoritsu Maintenance Co., Ltd.</div>
+                        </div>
+                        <div class="profile profile-2">
+                            <div class="profile-key">Established</div>
+                            <div class="profile-value">September 27, 1979</div>
+                        </div>
+                        <div class="profile profile-3">
+                            <div class="profile-key">Number of employees</div>
+                            <div class="profile-value">5,682 (consolidated)<span class="small">＊As of March 2023</span></div>
+                        </div>
+                        <div class="profile profile-4">
+                            <div class="profile-key">Capital</div>
+                            <div class="profile-value">7,964,986,119 yen<span class="small">＊As of March 2023</span></div>
+                        </div>
+                        <div class="profile profile-5">
+                            <div class="profile-key">Headquarters</div>
+                            <div class="profile-value">
+                                2-18-8 Sotokanda, Chiyoda-ku, Tokyo 101-8621 <br>
+                                Telephone: 03-5295-7777
+                            </div>
+                        </div>
+                        <div class="profile profile-6">
+                            <div class="profile-key">Main banks</div>
+                            <div class="profile-value">
+                                Sumitomo Mitsui Banking Corporation<br>
+                                Mizuho Bank, Ltd.<br>
+                                Development Bank of Japan Inc.<br>
+                                The Bank of Mitsubishi UFJ, Ltd.
+                            </div>
+                        </div>
+                        <div class="profile profile-7">
+                            <div class="profile-key">Directors</div>
+                            <div class="profile-value">
+                                <p><span class="position">Chairman</span><span class="name">Haruhisa Ishizuka</span></p>
+                                <p><span class="position">President</span><span class="name">Koji Nakamura</span></p>
+                                <p><span class="position">Executive Director responsible for Hotel Group</span><span class="name">Yukihiro Sagara</span></p>
+                                <p><span class="position">Executive Director responsible for Dormitory Group</span><span class="name">Yasuo Ohara</span></p>
+                                <p><span class="position">Managing Director in charge of Planning and Development Group, General Manager of Corporate Planning Division and General Manager of General Sales Division</span><span class="name">Manabu Takaku</span></p>
+                                <p><span class="position">Director, General Manager of Resorts Business Department</span><span class="name">Masaki Suzuki</span></p>
+                                <p><span class="position">Director, General Manager of Senior Development Division</span><span class="name">Yoshio Kimizuka</span></p>
+                                <p><span class="position">Director, General Manager of Development Division</span><span class="name">Hiroshi Yokoyama</span></p>
+                                <p><span class="position">Director, General Manager of Food Division</span><span class="name">Rie Momose</span></p>
+                                <p><span class="position">Director, in charge of Administration Group and General Manager, Personnel &amp; General Affairs</span><span class="name">Takayuki Musha</span></p>
+                                <p><span class="position">Outside Director</span><span class="name">Shigeto Kubo</span></p>
+                                <p><span class="position">Outside Director</span><span class="name">Yasunobu Hirata</span></p>
+                                <p><span class="position">Outside Director</span><span class="name">Takayuki Hayakawa</span></p>
+                                <p><span class="position">Outside Director</span><span class="name">Keiko Oda</span></p>
+                                <p><span class="position">Director(Audit and Supervisory Committee Members)</span><span class="name">Takumi Ueda</span></p>
+                                <p><span class="position">Outside Director(Audit and Supervisory Committee Members)</span><span class="name">Toshiaki Miyagi</span></p>
+                                <p><span class="position">Outside Director(Audit and Supervisory Committee Members)</span><span class="name">Tokio Kawashima</span></p>
+                            </div>
+                        </div>
+
+                        <div class="profile profile-8">
+                            <div class="profile-key">Description of businesses</div>
+                            <div class="profile-value">
+                                ●Dormitory business (management and operation of student dormitories, corporate dormitories, Dormir facilities (studio type condominium), outsourced dormitories)<br>
+                                ●Hotel business (Dormy Inns, resort hotels)<br>
+                                ●Senior Life business (management of senior citizen housing)
+                            </div>
+                        </div>
+                        <div class="profile profile-9" id="branch-office-list">
+                            <div class="profile-key">Business offices</div>
+                            <div class="profile-value">
+                                Sapporo office<br>
+                                <span class="small">Katagiri 1-3 Building 1F, 3-11-9 Minami-ichijo-higashi, Chuo-ku, Sapporo, Hokkaido 060-0051</span><br>
+                                <span class="small">Tel: 011-233-1234</span><br>
+                                Tohoku office <br>
+                                <span class="small">Kashimakogyo Building 6F, 2-2-3 Honcho, Aoba-ku, Sendai, Miyagi 980-0014</span><br>
+                                <span class="small">Tel: 022-223-2655</span><br>
+                                Nagoya office <br>
+                                <span class="small">Kearny Place Nagoya Fushimi 2F, 1-20-8 Nishiki, Naka-ku, Nagoya, Aichi 460-0003</span><br>
+                                <span class="small">Tel: 052-204-6101</span><br>
+                                Kyoto office<br>
+                                <span class="small">Kyoto Oike Daiichi Seimei Building 8F, 435 Oike-dori Higashinotouin Nishiiru Sasayacho, Kyoto 604-8187</span><br>
+                                <span class="small">Tel: 075-221-3656</span><br>
+                                Kansai office<br>
+                                <span class="small">Sumitomo Building No.2 7F, 4-7-28 Kitahama, Chuo-ku, Osaka 541-0041</span><br>
+                                <span class="small">Tel: 06-6233-3600</span><br>
+                                Kyushu office<br>
+                                <span class="small">ds, Hakata-ku, Fukuoka 812-0011</span><br>
+                                <span class="small">Tel: 092-474-0771<br>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Features Area -->
+    </main>
+    <!-- Start Footer Area -->
+    <th:block th:replace="~{components/_footer::footer_main}"></th:block>
+    <!--/ End Footer Area -->
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+      <i class="lni lni-chevron-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="/static/js/main/template/bootstrap.min.js"></script>
+    <script src="/static/js/main/template/count-up.min.js"></script>
+    <script src="/static/js/main/template/wow.min.js"></script>
+    <script src="/static/js/main/template/tiny-slider.js"></script>
+    <script src="/static/js/main/template/glightbox.min.js"></script>
+    <script src="/static/js/main/template/imagesloaded.min.js"></script>
+    <script src="/static/js/main/template/isotope.min.js"></script>
+    <script src="/static/js/main/template/main.js"></script>
+
+    <script type="text/javascript" src="/static/js/main/page/intro/overview.js"></script>
+  </body>
+</html>

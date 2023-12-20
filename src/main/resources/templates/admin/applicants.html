@@ -1,0 +1,41 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{components/_include::include_manager}"></th:block>
+<body class="g-sidenav-show">
+<th:block th:replace="~{components/_side::side_manager}"></th:block>
+<main class="main-content position-relative h-100 border-radius-lg">
+    <th:block th:replace="~{components/_header::header_manager}"></th:block>
+
+    <input type="hidden" class="param" name="key" th:value="${key}"/>
+
+    <div class="container-fluid page-container">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">지원자 조회</h4>
+                <p class="card-category ellipsis">
+                    <i class="fas fa-arrow-right"></i>
+                    <span class="icon-title">지원자를 조회하는 메뉴입니다. 채용공고 등록/수정/삭제 등의 관리 기능을 이용하실 수 있습니다.</span>
+                </p>
+            </div>
+            <div class="card-header card-header-action text-right">
+                <select id="category" name="category" class="form-select">
+                    <option value="total">전체보기</option>
+                </select>
+                <i class="bi bi-caret-right-fill"></i>
+                <input type="text" class="form-control" id="searchText" placeholder="검색어 입력">
+                <button class="btn btn-round btn-primary bg-gradient-primary btn-pulse me-1" role="action" data-action="search">
+                    <i class="fas fa-plus"></i><span class="icon-title">검색</span>
+                </button>
+            </div>
+            <div class="card-body">
+                <div id="table"></div>
+            </div>
+            <div class="card-body">
+                <div id="tableDetail"></div>
+            </div>
+        </div>
+    </div>
+</main>
+<th:block th:replace="~{components/_footer::footer_manager}"></th:block>
+<script type="text/javascript" src="/static/js/admin/page/applicants.js"></script>
+
+</body>
