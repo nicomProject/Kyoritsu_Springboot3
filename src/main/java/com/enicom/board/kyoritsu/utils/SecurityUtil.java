@@ -2,6 +2,7 @@ package com.enicom.board.kyoritsu.utils;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,9 +14,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.enicom.board.kyoritsu.auth.MemberDetail;
+import com.enicom.board.kyoritsu.dao.entity.AdminMenu;
 import com.enicom.board.kyoritsu.dao.entity.Code;
 import com.enicom.board.kyoritsu.dao.repository.AdminMenuRepository;
 import com.enicom.board.kyoritsu.dao.repository.CodeRepository;
+import com.enicom.board.kyoritsu.dao.type.AdminMenuType;
 import com.enicom.board.kyoritsu.dao.type.CodeGroupType;
 import com.enicom.board.kyoritsu.dao.type.RoleType;
 
@@ -105,6 +108,16 @@ public class SecurityUtil {
         }
         // 반환
         return roles;
+    }
+
+    public Optional<AdminMenu> getMenu(String code) {
+        code = code.toUpperCase();
+        return adminMenuRepository.findByCode(AdminMenuType.valueOf(code));
+    }
+
+    public Optional<AdminMenu> getDetailMenu(String code) {
+        code = code.toUpperCase();
+        return adminMenuRepository.findByCodeDetail(code);
     }
 
 }
