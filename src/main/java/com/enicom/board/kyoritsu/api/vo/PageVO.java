@@ -35,6 +35,10 @@ public class PageVO<T> {
     public static <T> PageVOBuilder<T> builder() {
         return new PageVOBuilder<>();
     }
+    public static <T> PageVOBuilder<T> builder(T item) {
+        List<T> items = List.of(item);
+        return PageVO.<T>builder().items(items).pageSize(items.size()).count(items.size());
+    }
     public static <T> PageVOBuilder<T> builder(List<T> items) {
         return PageVO.<T>builder().items(items).pageSize(items.size()).count(items.size());
     }
