@@ -209,10 +209,12 @@ $(function () {
                         location.href = '/admin/accounts'
                     }
                     else if(action === "delete"){
+                        var manager_id = $("#manager_id").val();
                         AjaxUtil.requestBody({
                             url: '/api/manager/delete',
                             data: {
                                 type: 'one',
+                                id: manager_id,
                                 key: paramValue
                             },
                             success: function (data) {
