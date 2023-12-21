@@ -9,6 +9,10 @@ import com.enicom.board.kyoritsu.api.type.ResponseHandler;
 
 import lombok.RequiredArgsConstructor;
 
+/**
+ *  소개글에 대한 내용 요청을 받고 처리함
+**/
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping(path = "/api")
