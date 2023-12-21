@@ -66,6 +66,8 @@ public class ResponseDataValue<T> {
             msg = "처리중 오류가 발생하였습니다. (올바른 JSON 형식인지 확인해주세요.)";
         } else if (code == 402) {
             msg = "처리중 오류가 발생하였습니다. (올바른 파일 형식인지 확인해주세요.)";
+        } else if (code == 409) {
+            msg = "해당 아이디를 가진 관리자가 존재합니다. (다른 아이디를 사용해 주세요.)";
         } else if (code == 410) {
             msg = "필수 파라미터 값이 누락되었습니다.";
         } else if (code == 420) {
