@@ -3,6 +3,7 @@ package com.enicom.board.kyoritsu.api.controller;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import java.io.IOException;
 import java.util.stream.Collectors;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -44,6 +45,27 @@ public class HomeController {
         return String.format("main/%s/%s", menu, view);
     }
 
+    // [url] : /{category}/{page}/detail/{key}
+    @GetMapping("/{category}/{page}/detail/{key}")
+    public String mainDetail(Model model, @PathVariable String category, @PathVariable String page, @PathVariable long key) {
+        model.addAttribute("key", key);
+        return String.format("main/detail/%s", page);
+    }
+
+    // [url] : /recruit/inquire/{action}/{key}
+    // inquire에서 자신이 작성한 페이지 접근할 때 사용
+    @GetMapping("/recruit/inquire/{action}/{key}")
+    public String recruitAction(Model model, @PathVariable String action, @PathVariable long key) throws IOException {
+        model.addAttribute("key", key);
+        return String.format("main/recruit/inquire/%s", action);
+    }
+
+    // [url] : /recruit/inquire/{action}
+    @GetMapping("/recruit/inquire/{action}")
+    public String recruitAction(@PathVariable String action) {
+        return String.format("main/recruit/inquire/%s", action);
+    }
+
     // [url] : /admin
     @GetMapping(path = {"/admin"})
     public String admin(Model model) {
@@ -71,6 +93,63 @@ public class HomeController {
         new SecurityContextLogoutHandler().logout(request, response,
                 SecurityContextHolder.getContext().getAuthentication());
         response.sendRedirect("/admin");
+    }
+
+    // [url] : /admin/{page}
+    @GetMapping("/admin/{page}")
+    public String admin(Model model, HttpServletResponse response, @PathVariable String page) throws IOException {
+        MemberDetail member = getCurrentUser(model);
+        if (member == null || page.equalsIgnoreCase("login")) {
+            response.sendRedirect("/");
+        }
+        else {
+            securityUtil.getMenu(page).ifPresent(menu -> {
+                model.addAttribute("menu_group", menu.getGroup().getName());
+                model.addAttribute("menu_name", menu.getName());
+            });
+        }
+
+        String view = page;
+        if (page.equalsIgnoreCase("dashboard")) {
+            view = "index";
+        }
+
+        return String.format("admin/%s", view);
+    }
+
+    // [url] : /admin/{page}/detail
+    @GetMapping("/admin/{page}/detail")
+    public String adminDetail(Model model, HttpServletResponse response, @PathVariable String page) throws IOException {
+        MemberDetail member = getCurrentUser(model);
+        if (member == null || page.equalsIgnoreCase("login")) {
+            response.sendRedirect("/admin");
+        }
+        else {
+            securityUtil.getDetailMenu(page).ifPresent(menu -> {
+                model.addAttribute("menu_group", menu.getGroup().getName());
+                model.addAttribute("menu_detail_name", menu.getName());
+            });
+        }
+
+        return String.format("admin/detail/%s", page);
+    }
+
+    // [url] : /admin/{page}/detail/{key}
+    @GetMapping("/admin/{page}/detail/{key}")
+    public String adminDetail(Model model, HttpServletResponse response, @PathVariable String page, @PathVariable String key) throws IOException {
+        MemberDetail member = getCurrentUser(model);
+        if (member == null || page.equalsIgnoreCase("login")) {
+            response.sendRedirect("/admin");
+        }
+        else {
+            securityUtil.getDetailMenu(page).ifPresent(menu -> {
+                model.addAttribute("menu_group", menu.getGroup().getName());
+                model.addAttribute("menu_detail_name", menu.getName());
+            });
+        }
+
+        model.addAttribute("key", key);
+        return String.format("admin/detail/%s", page);
     }
 
     // [url] : /favicon | /favicon.ico
