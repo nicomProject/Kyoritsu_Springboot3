@@ -9,4 +9,6 @@ public interface AdminSettingService {
     PageVO<AdminMenu> getAdminMenuList();
     // 최하위 RoleType부터 현재 관리자의 RoleType까지 모두 저장하여 반환
     PageVO<RoleVO> getRoleList();
+    // 최하위 RoleType부터 최상위 RoleType까지 모두 저장하여 반환
+    PageVO<RoleVO> getAllRoleList();
 }

@@ -1,6 +1,7 @@
 package com.enicom.board.kyoritsu.api.service.adminSetting;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,4 +42,17 @@ public class AdminSettingServiceImpl implements AdminSettingService {
             ).collect(Collectors.toList())).build();
     }
     
+    // 최하위 RoleType부터 최상위 RoleType까지 모두 저장하여 반환
+    @Override
+    public PageVO<RoleVO> getAllRoleList() {
+        List<RoleType> roles = Arrays.stream(RoleType.values()).sorted(Comparator.comparingInt(RoleType::getRank)).collect(Collectors.toList());
+        return PageVO.builder(Arrays.stream(RoleType.values())
+            .filter(roles::contains)
+            .map(role -> RoleVO.builder()
+                .key(role.name())
+                .rank(role.getRank())
+                .value(role.getAlias())
+                .build()
+            ).collect(Collectors.toList())).build();
+    }
 }

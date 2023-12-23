@@ -31,4 +31,10 @@ public class AdminSettingController {
     public ResponseHandler<?> getRoleList() {
         return new ResponseHandler<>(adminSettingService.getRoleList());
     }
+
+    @RequestMapping(path = "/allRoles", method = {RequestMethod.GET, RequestMethod.POST})
+    @ApiMapping(order = 70, desc = "모든 관리자 역할 조회")
+    public ResponseHandler<?> getAllRoleList() {
+        return new ResponseHandler<>(adminSettingService.getAllRoleList());
+    }
 }
