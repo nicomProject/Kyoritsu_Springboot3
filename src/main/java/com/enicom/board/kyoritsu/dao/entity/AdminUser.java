@@ -117,6 +117,9 @@ public class AdminUser {
         if (enable != null) {
             member.setEnable(enable);
         }
+        if (failureCnt != null) {
+            member.setFailureCnt(failureCnt);
+        }
         return member;
     }
 
