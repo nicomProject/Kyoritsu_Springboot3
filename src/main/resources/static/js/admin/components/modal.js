@@ -1,6 +1,8 @@
 const Data = {
     roles: {},
     roleHash: {},
+    allRoles: {},
+    allRoleHash: {},
     MenuHash: {},
     menus: [],
     subMenuHash: {},
@@ -13,8 +15,12 @@ const Data = {
      */
     load: function (config) {
         const roleUse = config.role && true;
+        const allRoleUse = config.allRole && true;
         const menuUse = config.menu && true;
 
+        if (allRoleUse) {
+            this.getAllRoles();
+        }
         if (roleUse) {
             this.getRoles();
         }
@@ -24,7 +30,23 @@ const Data = {
 
     },
     /**
-     * 관리자 역할 조회
+     * 모든 관리자 역할 조회
+     */
+    getAllRoles: function () {
+        const that = this;
+        AjaxUtil.request({
+            url: '/api/adm/setting/allRoles',
+            success: function (data) {
+                const items = data.result && data.result.items || [];
+                items.forEach(item => {
+                    that.allRoles[item.key] = item;
+                    that.allRoleHash[item.key] = item.value;
+                });
+            }
+        })
+    },
+    /**
+     * 현재 관리자 역할 조회
      */
     getRoles: function () {
         const that = this;
