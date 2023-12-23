@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -33,8 +32,9 @@ public class MemberDetailService implements UserDetailsService {
 
     // 사용자 UserDetails 반환. 일치하는 사용자가 없다면 Error 발생시키기
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<AdminUser> adminUserOptional = adminUserRepository.findByUserId(username);
+    public MemberDetail loadUserByUsername(String userId) throws UsernameNotFoundException {
+        System.out.println("loadUserByUsername called.");
+        Optional<AdminUser> adminUserOptional = adminUserRepository.findByUserId(userId);
         if(!adminUserOptional.isPresent()) {
             throw new UsernameNotFoundException("이용자를 찾을 수 없습니다.");
         }
@@ -45,6 +45,10 @@ public class MemberDetailService implements UserDetailsService {
     public void updateFailureCount(String username) {
         adminUserRepository.findByUserId(username).ifPresent(adminUser -> {
             adminUser.setFailureCnt(adminUser.getFailureCnt()+1);
+            // 만약, 실패 횟수가 5회 초과라면, 계정 비활성화 처리
+            if(adminUser.getFailureCnt() > 5) {
+                adminUser.setEnable(2); // 1: 활성화, 2: 비활성화
+            }
             adminUserRepository.save(adminUser);
         });
     }
