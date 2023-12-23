@@ -125,7 +125,9 @@ $(function() {
                     }
                     else if(data.code === 221){
                         sessionStorage.flag = true;
-                        location.reload();
+                        Alert.warning({text: data.desc}, function() {
+                            location.reload();
+                        });
                     }
                     else if (data.code === 480) {
                         form.removeClass('hide');
