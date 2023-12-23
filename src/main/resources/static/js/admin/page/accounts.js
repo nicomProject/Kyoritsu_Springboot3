@@ -4,7 +4,7 @@ $(function () {
         load: function (params) {
             this.params = params;
 
-            Data.load({role: true});
+            Data.load({allRole: true});
             this.event();
         },
         event: function () {
@@ -121,7 +121,7 @@ $(function () {
         draw: function (target) {
             const that = this;
 
-            const roleHash = Data.roleHash || {};
+            const roleHash = Data.allRoleHash || {};
             const table = new Tabulator(target, {
                 locale: 'ko-kr',
                 langs: TableUtil.setDefaults(),
