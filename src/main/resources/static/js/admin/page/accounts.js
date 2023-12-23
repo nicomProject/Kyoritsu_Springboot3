@@ -198,9 +198,12 @@ $(function () {
                             return '관리자 로그인 가능여부를 나타냅니다.<br>로그인 시도횟수 5회 초과시 로그인이 정지됩니다';
                         },
                         formatter: function (cell) {
-                            const data = cell.getRow().getData();
+                            const enableData = cell.getValue();
+                            const failureCntData = cell.getRow().getData();
+                            console.log(enableData);
+                            console.log(failureCntData);
                             let element = IconUtil.enable
-                            if (cell.getValue() === 0 || data.failureCnt && data.failureCnt > 5) {
+                            if (enableData === 2 || failureCntData.failureCnt && failureCntData.failureCnt > 5) {
                                 element = IconUtil.disable;
                             }
                             return element
