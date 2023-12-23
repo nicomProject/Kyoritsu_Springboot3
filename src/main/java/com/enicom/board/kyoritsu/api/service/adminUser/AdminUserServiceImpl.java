@@ -76,6 +76,8 @@ public class AdminUserServiceImpl implements AdminUserService {
             adminUser.setRole(param.getRole());
             adminUser.setEnable(param.getEnable());
             adminUser.setEditDate(LocalDateTime.now());
+            // enable을 활성화로 변경할 경우, failureCnt도 0으로 초기화
+            if(param.getEnable() != 2) adminUser.setFailureCnt(0);
 
             adminUserRepository.save(adminUser);
         }
