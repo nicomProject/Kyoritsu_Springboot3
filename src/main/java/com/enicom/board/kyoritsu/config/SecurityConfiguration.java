@@ -86,7 +86,7 @@ public class SecurityConfiguration {
             .authenticationManager(authManager(http))
             .authorizeHttpRequests(authorizeHttpRequestsConfig -> 
                 authorizeHttpRequestsConfig
-                    .requestMatchers("/admin/**").hasRole(RoleType.USER.name())
+                    .requestMatchers("/admin/**").hasRole(RoleType.ADMIN.name())
                     .requestMatchers("/api/**","/static/**","/**")
                     .permitAll()
             )
