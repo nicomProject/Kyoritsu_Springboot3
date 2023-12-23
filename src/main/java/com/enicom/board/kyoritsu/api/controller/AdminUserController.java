@@ -52,7 +52,7 @@ public class AdminUserController {
         return new ResponseHandler<>(adminUserService.modify(param));
     }
 
-    // [url] : /api/manager/update
+    // [url] : /api/manager/delete
     @ApiMapping(order = 54, desc = "[관리자] 특정 관리자 삭제", param = AdminUserInfoParam.class)
     @RequestMapping(value = "/manager/delete", method = RequestMethod.POST)
     public ResponseHandler<?> delete(@RequestBody @Valid MultipleParam param) throws Exception {
