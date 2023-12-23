@@ -38,7 +38,7 @@
                             </colgroup>
                             <tr class="pageSub">
                                 <td><label for="manager_id">아이디</label></td>
-                                <td><input class="form-control" id="manager_id" name="manager_id" type="text" disabled></td>
+                                <td><input class="form-control" id="manager_id" name="manager_id" type="text" th:disabled="${key != null}"></td>
                             </tr>
                             <tr class="pageSub">
                                 <td><label for="manager_name">이름</label></td>
