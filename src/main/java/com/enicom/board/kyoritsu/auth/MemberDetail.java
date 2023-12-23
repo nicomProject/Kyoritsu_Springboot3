@@ -72,7 +72,7 @@ public class MemberDetail implements UserDetails {
 
     @Override
     public boolean isAccountNonLocked() {
-        return failureCnt <= 5;
+        return failureCnt < 5;
     }
 
     @Override
