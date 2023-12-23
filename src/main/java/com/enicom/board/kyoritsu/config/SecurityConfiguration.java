@@ -1,5 +1,6 @@
 package com.enicom.board.kyoritsu.config;
 
+import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +13,7 @@ import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.session.HttpSessionEventPublisher;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.enicom.board.kyoritsu.auth.CustomAuthenticationProvider;
@@ -60,6 +62,11 @@ public class SecurityConfiguration {
         authenticationManagerBuilder.authenticationProvider(authenticationProvider());
         return authenticationManagerBuilder.build();
     }
+    // ServletListenerRegistrationBean을 bean으로 등록 (로그아웃 후 로그인 정상처리를 위함)
+    @Bean
+    public ServletListenerRegistrationBean<HttpSessionEventPublisher> httpSessionEventPublisher() {
+        return new ServletListenerRegistrationBean<>(new HttpSessionEventPublisher());
+    }
     // filterChain을 bean으로 등록
     // The method headers() from the type HttpSecurity has been deprecated since version 6.1 문제로 인해 lambda식으로 재작성
     @Bean
@@ -102,6 +109,8 @@ public class SecurityConfiguration {
                     .logoutRequestMatcher(new AntPathRequestMatcher("/admin/logout"))
                     .logoutSuccessUrl("/admin")
                     .invalidateHttpSession(true)
+                    .clearAuthentication(true)
+                    .deleteCookies("JSESSIONID")
             )
             .exceptionHandling(exceptionHandlingConfig -> 
                 exceptionHandlingConfig.accessDeniedPage("/error")
@@ -109,11 +118,14 @@ public class SecurityConfiguration {
             .sessionManagement(sessionManagementConfig -> 
                 sessionManagementConfig
                     .maximumSessions(1)
-                    .maxSessionsPreventsLogin(true)
+                    .maxSessionsPreventsLogin(false) // 기존 사용자 만료시키기. 이후 사용자 로그인 허용
                     .sessionRegistry(sessionRegistry())
                     .expiredSessionStrategy(event -> {
+                        event.getResponse().setContentType("text/plain; charset=UTF-8");
+                        event.getResponse().getWriter().write("다른 장치에서 로그인하여 기존 세션이 만료되었습니다.\n새로고침을 통해 로그인 페이지로 이동해 주세요."); // 사용자에게 메시지 전달 
                         event.getSessionInformation().expireNow();
                     })
+                    .expiredUrl("/admin")
             );
 
         return http.build();
