@@ -16,7 +16,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
@@ -58,8 +57,7 @@ public class Content {
     @Column(name = "subcategory", length = 20)
     private String subcategory;
 
-    @Lob // 대용량 데이터를 저장하기 위함
-    @Column(name = "content")
+    @Column(name = "content", columnDefinition = "TEXT")
     private String content;
 
     @Column(name = "hit")
