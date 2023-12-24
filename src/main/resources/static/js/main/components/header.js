@@ -20,9 +20,8 @@ const Menu = {
 
                     const input = $('.param.contentId');
 
-                    if(path == pathName){
-                        // const contentKey = menu.content.recKey;
-                        const contentKey = menu.recKey; // fix : menu.content가 없음. 바로 recKey를 가져와야 함. (PageVO의 field인 item의 type 변경으로 인함)
+                    if(path == pathName && menu.content !== null){
+                        const contentKey = menu.content.recKey;
                         input.val(contentKey);
                     }
                 })
