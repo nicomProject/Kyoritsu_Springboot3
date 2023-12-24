@@ -26,9 +26,7 @@ public class MainSettingController {
     @RequestMapping(path = "/menus", method = {RequestMethod.GET, RequestMethod.POST})
     @ApiMapping(order = 60, desc = "메인 메뉴 목록 조회")
     public ResponseHandler<?> getMainMenuList() {
-        return new ResponseHandler<>(
-                mainSettingService.getMainMenuList()
-        );
+        return new ResponseHandler<>( mainSettingService.getMainMenuList());
     }
 
     // [url] : /api/main/setting/category
