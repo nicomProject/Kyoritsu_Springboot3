@@ -31,7 +31,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String username = authentication.getName();
-        String password = passwordEncoder.encode(authentication.getCredentials().toString());
+        String password = authentication.getCredentials().toString();
 
         log.info("접속 아이디: {}", username);
 
@@ -47,6 +47,10 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
             throw new BadCredentialsException("일치하는 사용자 아이디가 없습니다.");
         }
 
+        System.out.println(member.getPassword());
+        System.out.println(password);
+        System.out.println(passwordEncoder.matches(password, member.getPassword()));
+
         // 사용자의 상태에 따라 인증 실패 처리 (비활성화 계정, 계정 잠김, 비밀번호 불일치)
         if(!member.isEnabled()) { // 비밀번호 불일치 5회 초과 시 계정 잠김
             System.out.println("사용이 중지된 계정입니다.\r\n관리자에게 문의하시기 바랍니다.");
@@ -54,7 +58,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         } else if (!member.isAccountNonLocked()) {
             System.out.println("로그인 시도 가능 횟수를 초과했습니다.\r\n관리자에게 문의하시기 바랍니다.");
             throw new LockedException("로그인 시도 가능 횟수를 초과했습니다.\r\n관리자에게 문의하시기 바랍니다.");
-        } else if (!this.passwordEncoder.matches(member.getPassword(), password)) {
+        } else if (!this.passwordEncoder.matches(password, member.getPassword())) {
             System.out.println("비밀번호가 일치하지 않습니다. 로그인 실패 5회 초과 시 계정이 비활성화됩니다. (현재 "+(member.getFailureCnt()+1)+" 회)");
             throw new BadCredentialsException("비밀번호가 일치하지 않습니다. 로그인 실패 5회 초과 시 계정이 비활성화됩니다. (현재 "+(member.getFailureCnt()+1)+" 회)");
         }
