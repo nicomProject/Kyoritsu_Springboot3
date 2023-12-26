@@ -112,7 +112,8 @@ $(function () {
             const that = this;
             const subMenuCheckHash = Data.subMenuCheckHash || {};
             const subMenuHash = Data.subMenuHash || {};
-            const MenuHash = Data.MenuHash || {};
+            const allMenuHash = Data.MenuHash || {};
+            const menuHash = Object.fromEntries(Object.entries(allMenuHash).slice(0,2));
             const table = new Tabulator(target, {
                 locale: 'ko-kr',
                 langs: TableUtil.setDefaults(),
@@ -164,9 +165,9 @@ $(function () {
                     },
                     {title: '카테고리', field: "category", headerHozAlign: "center", tooltip: true, headerTooltip: true, headerFilter: 'select',
                         headerFilterParams: {
-                            values: MenuHash,
+                            values: menuHash,
                         }, formatter: function(cell){
-                            return MenuHash[cell.getValue()] || cell.getValue();
+                            return menuHash[cell.getValue()] || cell.getValue();
                         }
                     },
                     {title: '서브 카테고리', field: "subcategory", headerHozAlign: "center", tooltip: true, headerTooltip: true, headerFilter: 'select', headerFilterParams: {
