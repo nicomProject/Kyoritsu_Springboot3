@@ -27,13 +27,6 @@ spring:
     restart:
       enabled: true
 
-  # TODO 추후 삭제하기
-  # Spring security 설정
-  security:
-    user:
-      name: cho
-      password: $2a$10$mTVVI.Ox6v/Nwfb9dG58S.aWKJ1KoxrU/2Mxa/DTlHTIzTDyQvX7u # 1234
-
 # Server configuration
 server:
   port: 9000
