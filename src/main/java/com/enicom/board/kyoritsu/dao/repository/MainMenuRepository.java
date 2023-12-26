@@ -15,8 +15,8 @@ import com.enicom.board.kyoritsu.dao.type.MainMenuType;
 public interface MainMenuRepository extends CrudRepository<MainMenu, Long>{
     // 모든 MainMenu entity를 recKey 기준 오름차순으로 반환
     List<MainMenu> findAllByOrderByRecKey();
-    // MainMenu entity에서 type이 일치하는 MainMenu entity 모두 반환
-    List<MainMenu> findAllByType(MainMenuType type);
+    // MainMenu entity에서 type이 일치하는 MainMenu entity를 recKey 기준 오름차순으로 모두 반환
+    List<MainMenu> findAllByTypeOrderByRecKey(MainMenuType type);
     // MainMenu entity에서 recKey가 일치하는 MainMenu entity 반환
     Optional<MainMenu> findByRecKey(Long recKey);
 }

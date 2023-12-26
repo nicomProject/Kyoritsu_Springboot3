@@ -12,7 +12,7 @@ import lombok.RequiredArgsConstructor;
 
 /**
  *  HomePage의 mainMenu 세팅에 대한 resources를 요청받고 처리함.
-**/    
+**/
 
 @Service
 @RequiredArgsConstructor
@@ -28,6 +28,6 @@ public class MainSettingServiceImpl implements MainSettingService {
     @Transactional // 하나의 트랜잭션으로 관리
     @Override
     public PageVO<MainMenu> getMainMenuList_INTRO() {
-        return PageVO.builder(mainMenuRepository.findAllByType(MainMenuType.INTRO)).build();
+        return PageVO.builder(mainMenuRepository.findAllByTypeOrderByRecKey(MainMenuType.INTRO)).build();
     }
 }
