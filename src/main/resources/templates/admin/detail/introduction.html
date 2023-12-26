@@ -35,11 +35,11 @@
                     <tr class="pageSub">
                         <td><label for="category">카테고리</label></td>
                         <td>
-                            <select id="category" name="category" class="form-select">
+                            <select id="category" name="category" class="form-select" th:disabled="${key != null}">
                             </select>
                         <td><label for="sub_category">서브카테고리</label></td>
                         <td>
-                            <select id="sub_category" name="subcategory" class="form-select">
+                            <select id="sub_category" name="subcategory" class="form-select" th:disabled="${key != null}">
                         </select>
                         </td>
                     </tr>
