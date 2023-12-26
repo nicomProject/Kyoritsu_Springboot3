@@ -278,66 +278,101 @@ section .sub-title{
     margin-top: 5px;
 }
 
-/* business-overview */
+/* business-overview (dormitory, dormyinn, resort, seniorlife) */
 
-.business.section .editor-content .box-1{
+.dormitory.section .editor-content .box-1,
+.dormyinn.section .editor-content .box-1,
+.resort.section .editor-content .box-1,
+.seniorlife.section .editor-content .box-1{
     height: 6rem;
     text-align: center;
 }
 
-.business.section .editor-content .box-2{
+.dormitory.section .editor-content .box-2,
+.dormyinn.section .editor-content .box-2,
+.resort.section .editor-content .box-2,
+.seniorlife.section .editor-content .box-2{
     display: flex;
     justify-content: space-between; /* 요소들을 좌우로 분산 정렬합니다. */
     align-items: center; /* 요소들을 수직 중앙 정렬합니다. */
 }
 
-.business.section .editor-content .box-2 .profile.profile-1 {
+.dormitory.section .editor-content .box-2 .profile.profile-1,
+.dormyinn.section .editor-content .box-2 .profile.profile-1,
+.resort.section .editor-content .box-2 .profile.profile-1,
+.seniorlife.section .editor-content .box-2 .profile.profile-1{
     flex: 1;
     padding: 0 10px; /* 텍스트와 이미지 간격을 조절합니다. */
 }
 
-
-.business.section .editor-content .box-2 .profile.profile-1 .profile-link-1{
+.dormitory.section .editor-content .box-2 .profile.profile-1 .profile-link-1,
+.dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-1,
+.resort.section .editor-content .box-2 .profile.profile-1 .profile-link-1,
+.seniorlife.section .editor-content .box-2 .profile.profile-1 .profile-link-1{
     margin-bottom: 20px; /* 각 링크 사이에 간격을 조절합니다. */
     font-size: 32px;
     color: blue;
 }
 
-.business.section .editor-content .box-2 .profile.profile-1 .profile-link-2{
+.dormitory.section .editor-content .box-2 .profile.profile-1 .profile-link-2,
+.dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-2,
+.resort.section .editor-content .box-2 .profile.profile-1 .profile-link-2,
+.seniorlife.section .editor-content .box-2 .profile.profile-1 .profile-link-2{
     margin-bottom: 20px; /* 각 링크 사이에 간격을 조절합니다. */
     font-size: 24px;
     font-weight: bold;
 }
 
-.business.section .editor-content .box-2 .profile.profile-1 .profile-link-2 a{
+.dormitory.section .editor-content .box-2 .profile.profile-1 .profile-link-2 a,
+.dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-2 a,
+.resort.section .editor-content .box-2 .profile.profile-1 .profile-link-2 a,
+.seniorlife.section .editor-content .box-2 .profile.profile-1 .profile-link-2 a{
     margin-bottom: 10px; /* 원하는 만큼의 간격을 설정합니다. */
 }
 
-.business.section .editor-content .box-2 .profile.profile-1 .profile-link-3{
+.dormitory.section .editor-content .box-2 .profile.profile-1 .profile-link-3,
+.dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-3,
+.resort.section .editor-content .box-2 .profile.profile-1 .profile-link-3,
+.seniorlife.section .editor-content .box-2 .profile.profile-1 .profile-link-3{
     margin-bottom: 20px; /* 각 링크 사이에 간격을 조절합니다. */
     font-size: 24px;
 }
 
-.business.section .editor-content .box-2 .profile.profile-1 .profile-link-3 a{
+.dormitory.section .editor-content .box-2 .profile.profile-1 .profile-link-3 a,
+.dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-3 a,
+.resort.section .editor-content .box-2 .profile.profile-1 .profile-link-3 a,
+.seniorlife.section .editor-content .box-2 .profile.profile-1 .profile-link-3 a{
     margin-bottom: 10px; /* 원하는 만큼의 간격을 설정합니다. */
 }
 
-.business.section .editor-content .box-2 .profile.profile-2 {
+.dormitory.section .editor-content .box-2 .profile.profile-2,
+.dormyinn.section .editor-content .box-2 .profile.profile-2,
+.resort.section .editor-content .box-2 .profile.profile-2,
+.seniorlife.section .editor-content .box-2 .profile.profile-2{
     flex: 1;
     padding: 0 10px; /* 텍스트와 이미지 간격을 조절합니다. */
 }
 
-.business.section .editor-content .box-2 .profile.profile-2 img {
+.dormitory.section .editor-content .box-2 .profile.profile-2 img,
+.dormyinn.section .editor-content .box-2 .profile.profile-2 img,
+.resort.section .editor-content .box-2 .profile.profile-2 img,
+.seniorlife.section .editor-content .box-2 .profile.profile-2 img{
     max-width: 100%;
     height: auto; /* 이미지의 가로를 최대로 유지하면서 비율을 유지합니다. */
 }
 
-.business.section .editor-content .box-3{
+.dormitory.section .editor-content .box-3,
+.dormyinn.section .editor-content .box-3,
+.resort.section .editor-content .box-3,
+.seniorlife.section .editor-content .box-3{
     margin-top: 150px;
     margin-bottom: 100px;
 }
 
-.business.section .editor-content .box-3 img{
+.dormitory.section .editor-content .box-3 img,
+.dormyinn.section .editor-content .box-3 img,
+.resort.section .editor-content .box-3 img,
+.seniorlife.section .editor-content .box-3 img{
     max-width: 25%;
     height: auto; /* 이미지의 가로를 최대로 유지하면서 비율을 유지합니다. */
     display: block; /* 이미지를 블록 레벨로 설정하여 가운데 정렬합니다. */
@@ -345,7 +380,10 @@ section .sub-title{
     margin-right: auto; /* 오른쪽 여백을 자동으로 설정하여 가운데 정렬합니다. */
 }
 
-.business.section .editor-content .box-4{
+.dormitory.section .editor-content .box-4,
+.dormyinn.section .editor-content .box-4,
+.resort.section .editor-content .box-4,
+.seniorlife.section .editor-content .box-4{
     padding: 30px 40px;
     display: flex;
     justify-content: space-between;
@@ -356,7 +394,10 @@ section .sub-title{
     background: rgba(130, 193, 209, 0.2)
 }
 
-.business.section .editor-content .box-4 .profile-content-1{
+.dormitory.section .editor-content .box-4 .profile-content-1,
+.dormyinn.section .editor-content .box-4 .profile-content-1,
+.resort.section .editor-content .box-4 .profile-content-1,
+.seniorlife.section .editor-content .box-4 .profile-content-1{
     flex: 1.5; /* 1.5:8.5 비율로 나누기 */
     color: #0067bb;
     font-size: 2rem;
@@ -365,7 +406,10 @@ section .sub-title{
     line-height: 1.5;
 }
 
-.business.section .editor-content .box-4 .profile-content-2{
+.dormitory.section .editor-content .box-4 .profile-content-2,
+.dormyinn.section .editor-content .box-4 .profile-content-2,
+.resort.section .editor-content .box-4 .profile-content-2,
+.seniorlife.section .editor-content .box-4 .profile-content-2{
     flex: 8.5;
     padding-left: 20px; /* 좌측 여백 추가 (선택 사항) */
     display: block; /* 링크를 블록 레벨로 설정하여 줄 바꿈이 제대로 동작하도록 합니다. */
@@ -378,7 +422,10 @@ section .sub-title{
     text-align: left;
 }
 
-.business.section .editor-content .box-5{
+.dormitory.section .editor-content .box-5,
+.dormyinn.section .editor-content .box-5,
+.resort.section .editor-content .box-5,
+.seniorlife.section .editor-content .box-5{
     display: flex;
     justify-content: space-between;
     align-items: center;
