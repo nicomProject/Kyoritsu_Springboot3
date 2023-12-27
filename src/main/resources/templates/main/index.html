@@ -1,14 +1,9 @@
-<!-- 
-    메인 홈페이지
- -->
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<!-- include_main 추가 -->
 <th:block th:replace="~{components/_include::include_main}"></th:block>
 
 <body>
     <!-- Preloader -->
-    <!-- 물결 파동 제작 -->
     <div class="preloader">
         <div class="preloader-inner">
             <div class="preloader-icon">
@@ -21,7 +16,7 @@
 
     <!-- ========================= header start ========================= -->
     <th:block th:replace="~{components/_header::header_main}"></th:block>
-    <!-- ========================= header end =========================== -->
+    <!-- ========================= header end ========================= -->
 
     <!-- Start Hero Area -->
     <main>
@@ -31,7 +26,8 @@
                 <div class="container">
                     <div class="row ">
                         <div class="col-lg-6 co-12">
-                            <div class="home-slider">
+<!--                            한국어-->
+                            <div class="home-slider" th:if="${language == 'kr'}">
                                 <div class="hero-text">
                                     <span class="small-title wow fadeInUp" data-wow-delay=".3s">Business Solution</span>
                                     <h1><span>당신의 내일을 위해</span><br> 쉬는 날을 올바르게 시작하세요.</h1>
@@ -56,11 +52,78 @@
                                 </div>
                                 <div class="hero-text">
                                     <span class="small-title">Business Solution</span>
+                                    <h1><span>당신의</span><br> 쉬는 날을 올바르게 시작하세요.</h1>
+                                    <p>우리의 사명은 음식과 주거를 통해 깊은 휴식과 편안함을 제공하여<br>
+                                        모든 사람들이 만족스러운 '활기찬 삶'을 누릴 수 있도록 함으로써<br>
+                                        사람들에게 '좋은 아침'을 가져다 주는 것입니다.</p>
+                                    <div class="button">
+                                        <a href="/intro/overview" class="btn mouse-dir">더 알아보기 <span
+                                                class="dir-part"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+<!--                            영어-->
+                            <div class="home-slider" th:if="${language == 'eng'}">
+                                <div class="hero-text">
+                                    <span class="small-title">Business Solution</span>
                                     <h1><span>We Provide Quality</span><br> Consulting Services</h1>
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting <br> industry. Lorem
                                         Ipsum has been the industry's standard <br>dummy text ever since.</p>
                                     <div class="button">
-                                        <a href="/intro/overview" class="btn mouse-dir">더 알아보기 <span
+                                        <a href="/intro/overview" class="btn mouse-dir">Learn More <span
+                                                class="dir-part"></span></a>
+                                    </div>
+                                </div>
+                                <div class="hero-text">
+                                    <span class="small-title">Business Solution</span>
+                                    <h1><span>We Provide Quality</span><br> Consulting Services</h1>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting <br> industry. Lorem
+                                        Ipsum has been the industry's standard <br>dummy text ever since.</p>
+                                    <div class="button">
+                                        <a href="/intro/overview" class="btn mouse-dir">Learn More <span
+                                                class="dir-part"></span></a>
+                                    </div>
+                                </div>
+                                <div class="hero-text">
+                                    <span class="small-title">Business Solution</span>
+                                    <h1><span>We Provide Quality</span><br> Consulting Services</h1>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting <br> industry. Lorem
+                                        Ipsum has been the industry's standard <br>dummy text ever since.</p>
+                                    <div class="button">
+                                        <a href="/intro/overview" class="btn mouse-dir">Learn More <span
+                                                class="dir-part"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+<!--                            일어-->
+                            <div class="home-slider" th:if="${language == 'jp'}">
+                                <div class="hero-text">
+                                    <span class="small-title">ビジネスソリューション</span>
+                                    <h1><span>品質を提供します</span><br> コンサルティングサービス</h1>
+                                    <p>Lorem Ipsumは、印刷およびタイプセット業界のダミーテキストです。<br>
+                                        Lorem Ipsumは業界の標準のダミーテキストとなっています。</p>
+                                    <div class="button">
+                                        <a href="/intro/overview" class="btn mouse-dir">詳細を見る <span
+                                                class="dir-part"></span></a>
+                                    </div>
+                                </div>
+                                <div class="hero-text">
+                                    <span class="small-title">ビジネスソリューション</span>
+                                    <h1><span>品質を提供します</span><br> コンサルティングサービス</h1>
+                                    <p>Lorem Ipsumは、印刷およびタイプセット業界のダミーテキストです。<br>
+                                        Lorem Ipsumは業界の標準のダミーテキストとなっています。</p>
+                                    <div class="button">
+                                        <a href="/intro/overview" class="btn mouse-dir">詳細を見る <span
+                                                class="dir-part"></span></a>
+                                    </div>
+                                </div>
+                                <div class="hero-text">
+                                    <span class="small-title">ビジネスソリューション</span>
+                                    <h1><span>品質を提供します</span><br> コンサルティングサービス</h1>
+                                    <p>Lorem Ipsumは、印刷およびタイプセット業界のダミーテキストです。<br>
+                                        Lorem Ipsumは業界の標準のダミーテキストとなっています。</p>
+                                    <div class="button">
+                                        <a href="/intro/overview" class="btn mouse-dir">詳細を見る <span
                                                 class="dir-part"></span></a>
                                     </div>
                                 </div>
@@ -74,7 +137,7 @@
         <!--/ End Hero Area -->
 
         <!-- Start Features Area -->
-        <section class="Features section">
+        <section class="Features section" th:if="${language == 'kr'}">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-12">
@@ -104,38 +167,6 @@
                                         적응 등으로 확대되어 일본 전역에 500개 이상의 기숙사가 있습니다.</p>
                                 </div>
                             </div>
-                            <!--<div class="feature-item wow fadeInUp" data-wow-delay=".6s">
-                                <div class="feature-thumb">
-                                    <i class="lni lni-checkmark-circle"></i>
-                                </div>
-                                <div class="banner-content">
-                                    <h2 class="title">도미인</h2>
-                                    <p>저희 비즈니스 호텔 체인은 기숙사 비즈니스의 노하우를 계승하여 "집과 같은 편안한 분위기"와 편안함을 제공합니다.
-                                        스탠다드 비즈니스 호텔과 “온야도 노노” 등 일본식 프리미엄 브랜드 호텔을 운영하고 있습니다.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item wow fadeInUp" data-wow-delay=".7s">
-                                <div class="feature-thumb">
-                                    <i class="lni lni-support"></i>
-                                </div>
-                                <div class="banner-content">
-                                    <h2 class="title">리조트</h2>
-                                    <p>저희 리조트 호텔은 높은 품질과 친절한 서비스를 제공합니다.
-                                        일본 전역에 있는 리조트 호텔/힐링 온천 숙소입니다.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item wow fadeInUp" data-wow-delay=".8s">
-                                <div class="feature-thumb">
-                                    <i class="lni lni-support"></i>
-                                </div>
-                                <div class="banner-content">
-                                    <h2 class="title">노인주택</h2>
-                                    <p>“개호가 있는 유료 노인 주택”, “유료 노인 주택(주거용)”,
-                                        “서비스가 있는 노인 주택”을 관리 운영하고 있습니다.
-                                        입주민이 안전하고 자유롭게 생활할 수 있도록,
-                                        입주민 개개인의 신체조건에 맞는 지원구조를 갖추고 있습니다.</p>
-                                </div>
-                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -210,9 +241,213 @@
             </div>
         </section>
         <!-- End Features Area -->
+        <section class="Features section" th:if="${language == 'eng'}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="feature-right wow fadeInUp" data-wow-delay=".3s">
+                            <div class="watch-inner">
+                                <div class="video-head wow zoomIn" data-wow-delay="0.4s">
+                                    <a href="https://youtu.be/t0zB-fOuzEk" class="glightbox video"><i
+                                            class="lni lni-play"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="feature-content">
+                            <div class="title">
+                                <span class="wow fadeInRight" data-wow-delay=".3s">Introduction</span>
+                                <h3 class="wow fadeInRight" data-wow-delay=".5s">Business Areas</h3>
+                            </div>
+                            <div class="feature-item wow fadeInUp" data-wow-delay=".5s">
+                                <div class="feature-thumb">
+                                    <i class="lni lni-bar-chart"></i>
+                                </div>
+                                <div class="banner-content">
+                                    <h2 class="title">Dormitories</h2>
+                                    <p>Since its founding, Public Maintenance Corporation has been operating student dormitory/employee dormitory businesses. Currently, the range of dormitories has expanded to include international exchange dormitories, various themed dormitories, and various styles of adaptive dormitories, with over 500 dormitories nationwide in Japan.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <ul class="building">
+                        <li class="wow fadeInUp">
+                            <figure>
+                                <img src="/static/images/bizfinity/img_building-01.svg">
+                            </figure>
+                            <div class="caption">
+                                <p class="category">
+                            <span>
+                                Dormitories
+                            </span>
+                                </p>
+                                <p class="count">
+                                    520
+                                    <span>buildings</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="wow fadeInUp">
+                            <figure>
+                                <img src="/static/images/bizfinity/img_building-02.svg">
+                            </figure>
+                            <div class="caption">
+                                <p class="category">
+                            <span>
+                                Dormitories
+                            </span>
+                                </p>
+                                <p class="count">
+                                    520
+                                    <span>buildings</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="wow fadeInUp">
+                            <figure>
+                                <img src="/static/images/bizfinity/img_building-03.svg">
+                            </figure>
+                            <div class="caption">
+                                <p class="category">
+                            <span>
+                                Resorts
+                            </span>
+                                </p>
+                                <p class="count">
+                                    520
+                                    <span>buildings</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="wow fadeInUp">
+                            <figure>
+                                <img src="/static/images/bizfinity/img_building-04.svg">
+                            </figure>
+                            <div class="caption">
+                                <p class="category">
+                            <span>
+                                Elderly Housing
+                            </span>
+                                </p>
+                                <p class="count">
+                                    520
+                                    <span>buildings</span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="Features section" th:if="${language == 'jp'}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="feature-right wow fadeInUp" data-wow-delay=".3s">
+                            <div class="watch-inner">
+                                <div class="video-head wow zoomIn" data-wow-delay="0.4s">
+                                    <a href="https://youtu.be/t0zB-fOuzEk" class="glightbox video"><i
+                                            class="lni lni-play"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="feature-content">
+                            <div class="title">
+                                <span class="wow fadeInRight" data-wow-delay=".3s">イントロダクション</span>
+                                <h3 class="wow fadeInRight" data-wow-delay=".5s">事業領域</h3>
+                            </div>
+                            <div class="feature-item wow fadeInUp" data-wow-delay=".5s">
+                                <div class="feature-thumb">
+                                    <i class="lni lni-bar-chart"></i>
+                                </div>
+                                <div class="banner-content">
+                                    <h2 class="title">寮</h2>
+                                    <p>公立整備株式会社は創立以来、学生寮/社員寮事業を運営しています。現在、寮の範囲は国際交流寮、さまざまなテーマの寮、さまざまなスタイルの適応などに拡大し、日本全国に500以上の寮があります。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <ul class="building">
+                        <li class="wow fadeInUp">
+                            <figure>
+                                <img src="/static/images/bizfinity/img_building-01.svg">
+                            </figure>
+                            <div class="caption">
+                                <p class="category">
+                            <span>
+                                寮
+                            </span>
+                                </p>
+                                <p class="count">
+                                    520
+                                    <span>棟</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="wow fadeInUp">
+                            <figure>
+                                <img src="/static/images/bizfinity/img_building-02.svg">
+                            </figure>
+                            <div class="caption">
+                                <p class="category">
+                            <span>
+                                ドミトリー
+                            </span>
+                                </p>
+                                <p class="count">
+                                    520
+                                    <span>棟</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="wow fadeInUp">
+                            <figure>
+                                <img src="/static/images/bizfinity/img_building-03.svg">
+                            </figure>
+                            <div class="caption">
+                                <p class="category">
+                            <span>
+                                リゾート
+                            </span>
+                                </p>
+                                <p class="count">
+                                    520
+                                    <span>棟</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="wow fadeInUp">
+                            <figure>
+                                <img src="/static/images/bizfinity/img_building-04.svg">
+                            </figure>
+                            <div class="caption">
+                                <p class="category">
+                            <span>
+                                老人住宅
+                            </span>
+                                </p>
+                                <p class="count">
+                                    520
+                                    <span>棟</span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
 
         <!-- Start Service Area -->
-        <section class="services section">
+        <section class="services section" th:if="${language == 'kr'}">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2 col-12">
@@ -297,6 +532,174 @@
         </section>
         <!-- /End Services Area -->
 
+        <section class="services section" th:if="${language == 'eng'}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 col-12">
+                        <div class="section-title">
+                            <span class="wow fadeInDown" data-wow-delay=".2s">About Us</span>
+                            <h2 class="wow fadeInUp" data-wow-delay=".4s">Corporate Activities</h2>
+                            <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".2s">
+                            <div class="serial">
+                                <span><i class="lni lni-code"></i></span>
+                            </div>
+                            <h3><a href="service-single.html">Corporate IR</a></h3>
+                            <p>Need A Project Completed By An Expert? Let’s Go! Access A Human Resources Consultant To Answer Questions</p>
+                            <div class="circles-wrap">
+                                <div class="circles">
+                                    <span class="circle circle-1"></span>
+                                    <span class="circle circle-2"></span>
+                                    <span class="circle circle-3"></span>
+                                    <span class="circle circle-4"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".3s">
+                            <div class="serial">
+                                <span><i class="lni lni-vector"></i></span>
+                            </div>
+                            <h3><a href="service-single.html">Group Companies</a></h3>
+                            <p>Need A Project Completed By An Expert? Let’s Go! Access A Human Resources Consultant To Answer Questions</p>
+                            <div class="circles-wrap">
+                                <div class="circles">
+                                    <span class="circle circle-1"></span>
+                                    <span class="circle circle-2"></span>
+                                    <span class="circle circle-3"></span>
+                                    <span class="circle circle-4"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".5s">
+                            <div class="serial">
+                                <span><i class="lni lni-keyword-research"></i></span>
+                            </div>
+                            <h3><a href="service-single.html">Corporate Growth</a></h3>
+                            <p>Need A Project Completed By An Expert? Let’s Go! Access A Human Resources Consultant To Answer Questions</p>
+                            <div class="circles-wrap">
+                                <div class="circles">
+                                    <span class="circle circle-1"></span>
+                                    <span class="circle circle-2"></span>
+                                    <span class="circle circle-3"></span>
+                                    <span class="circle circle-4"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".6s">
+                            <div class="serial">
+                                <span><i class="lni lni-seo"></i></span>
+                            </div>
+                            <h3><a href="service-single.html">Recruitment</a></h3>
+                            <p>Need A Project Completed By An Expert? Let’s Go! Access A Human Resources Consultant To Answer Questions</p>
+                            <div class="circles-wrap">
+                                <div class="circles">
+                                    <span class="circle circle-1"></span>
+                                    <span class="circle circle-2"></span>
+                                    <span class="circle circle-3"></span>
+                                    <span class="circle circle-4"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services section" th:if="${language == 'jp'}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2 col-12">
+                        <div class="section-title">
+                            <span class="wow fadeInDown" data-wow-delay=".2s">私たちについて</span>
+                            <h2 class="wow fadeInUp" data-wow-delay=".4s">企業活動</h2>
+                            <p class="wow fadeInUp" data-wow-delay=".6s">Lorem Ipsumには多くの変種がありますが、そのほとんどは何らかの形で変更されています。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".2s">
+                            <div class="serial">
+                                <span><i class="lni lni-code"></i></span>
+                            </div>
+                            <h3><a href="service-single.html">企業IR</a></h3>
+                            <p>専門家によって完了されたプロジェクトが必要ですか？行くぞ！質問に答えるために人事コンサルタントにアクセス</p>
+                            <div class="circles-wrap">
+                                <div class="circles">
+                                    <span class="circle circle-1"></span>
+                                    <span class="circle circle-2"></span>
+                                    <span class="circle circle-3"></span>
+                                    <span class="circle circle-4"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".3s">
+                            <div class="serial">
+                                <span><i class="lni lni-vector"></i></span>
+                            </div>
+                            <h3><a href="service-single.html">グループ企業</a></h3>
+                            <p>専門家によって完了されたプロジェクトが必要ですか？行くぞ！質問に答えるために人事コンサルタントにアクセス</p>
+                            <div class="circles-wrap">
+                                <div class="circles">
+                                    <span class="circle circle-1"></span>
+                                    <span class="circle circle-2"></span>
+                                    <span class="circle circle-3"></span>
+                                    <span class="circle circle-4"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".5s">
+                            <div class="serial">
+                                <span><i class="lni lni-keyword-research"></i></span>
+                            </div>
+                            <h3><a href="service-single.html">企業の成長</a></h3>
+                            <p>専門家によって完了されたプロジェクトが必要ですか？行くぞ！質問に答えるために人事コンサルタントにアクセス</p>
+                            <div class="circles-wrap">
+                                <div class="circles">
+                                    <span class="circle circle-1"></span>
+                                    <span class="circle circle-2"></span>
+                                    <span class="circle circle-3"></span>
+                                    <span class="circle circle-4"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="single-service wow fadeInUp" data-wow-delay=".6s">
+                            <div class="serial">
+                                <span><i class="lni lni-seo"></i></span>
+                            </div>
+                            <h3><a href="service-single.html">採用</a></h3>
+                            <p>専門家によって完了されたプロジェクトが必要ですか？行くぞ！質問に答えるために人事コンサルタントにアクセス</p>
+                            <div class="circles-wrap">
+                                <div class="circles">
+                                    <span class="circle circle-1"></span>
+                                    <span class="circle circle-2"></span>
+                                    <span class="circle circle-3"></span>
+                                    <span class="circle circle-4"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="section free-version-banner">
             <div class="container">
                 <div class="row align-items-center">
@@ -368,7 +771,7 @@
     <!-- ========================= JS here ========================= -->
     <script src="/static/js/main/template/bootstrap.min.js"></script>
     <script src="/static/js/main/template/count-up.min.js"></script>
-<script src="/static/js/main/template/wow.min.js"></script>
+    <script src="/static/js/main/template/wow.min.js"></script>
     <script src="/static/js/main/template/tiny-slider.js"></script>
     <script src="/static/js/main/template/glightbox.min.js"></script>
     <script src="/static/js/main/template/imagesloaded.min.js"></script>

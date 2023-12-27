@@ -11,7 +11,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import com.enicom.board.kyoritsu.dao.entity.MainMenu;
-import com.enicom.board.kyoritsu.dao.repository.MainMenuRepository;
+import com.enicom.board.kyoritsu.dao.repository.mainMenu.MainMenuRepository;
 import com.enicom.board.kyoritsu.dao.type.MainMenuType;
 
 import lombok.extern.slf4j.Slf4j;
@@ -49,10 +49,10 @@ public class MainDataInitRunner implements ApplicationRunner {
         });
 
         // 기본 mainMenu (MainMenuType.GROUP) 정의
-        MainMenu company = MainMenu.builder().order(1).name("회사소개").type(MainMenuType.GROUP).build();
-        MainMenu product = MainMenu.builder().order(2).name("사업영역").type(MainMenuType.GROUP).build();
-        MainMenu notice = MainMenu.builder().order(3).name("뉴스").type(MainMenuType.GROUP).build();
-        MainMenu recruit = MainMenu.builder().order(4).name("채용정보").type(MainMenuType.GROUP).build();
+        MainMenu company = MainMenu.builder().order(1).name("회사소개").nameEnglish("About Us").nameJapanese("会社紹介").type(MainMenuType.GROUP).build();
+        MainMenu product = MainMenu.builder().order(2).name("사업영역").nameEnglish("Business area").nameJapanese("事業領域").type(MainMenuType.GROUP).build();
+        MainMenu notice = MainMenu.builder().order(3).name("뉴스").nameEnglish("announcement").nameJapanese("お知らせ").type(MainMenuType.GROUP).build();
+        MainMenu recruit = MainMenu.builder().order(4).name("채용정보").nameEnglish("Recruitment information").nameJapanese("採用情報").type(MainMenuType.GROUP).build();
 
         // 기존 mainMenu 그룹에 추가되어 있지 않은 mainMenu라면, mainMenuGroupList에 추가
         List<MainMenu> mainMenuGroupList = new ArrayList<>();
@@ -78,26 +78,26 @@ public class MainDataInitRunner implements ApplicationRunner {
         List<MainMenu> mainMenuList = new ArrayList<>();
         
         // '회사소개' 하위 메뉴
-        if(!mainMenuStoredList.containsKey("기업개요")) mainMenuList.add(MainMenu.builder().order(1).menu(company).url("/intro/overview").name("기업개요").type(MainMenuType.INTRO).build());
-        if(!mainMenuStoredList.containsKey("경영이념/비전")) mainMenuList.add(MainMenu.builder().order(2).menu(company).url("/intro/vision").name("경영이념/비전").type(MainMenuType.INTRO).build());
-        if(!mainMenuStoredList.containsKey("연혁")) mainMenuList.add(MainMenu.builder().order(3).menu(company).url("/intro/history").name("연혁").type(MainMenuType.INTRO).build());
-        if(!mainMenuStoredList.containsKey("조직도")) mainMenuList.add(MainMenu.builder().order(4).menu(company).url("/intro/organization").name("조직도").type(MainMenuType.INTRO).build());
-        if(!mainMenuStoredList.containsKey("오시는길")) mainMenuList.add(MainMenu.builder().order(5).menu(company).url("/intro/location").name("오시는길").type(MainMenuType.INTRO).build());
+        if(!mainMenuStoredList.containsKey("기업개요")) mainMenuList.add(MainMenu.builder().order(1).menu(company).url("/intro/overview").name("기업개요").nameEnglish("Company Overview").nameJapanese("企業概要").type(MainMenuType.INTRO).build());
+        if(!mainMenuStoredList.containsKey("경영이념/비전")) mainMenuList.add(MainMenu.builder().order(2).menu(company).url("/intro/vision").name("경영이념/비전").nameEnglish("Management philosophy/vision").nameJapanese("経営理念/ビジョン").type(MainMenuType.INTRO).build());
+        if(!mainMenuStoredList.containsKey("연혁")) mainMenuList.add(MainMenu.builder().order(3).menu(company).url("/intro/history").name("연혁").nameEnglish("history").nameJapanese("歴史").type(MainMenuType.INTRO).build());
+        if(!mainMenuStoredList.containsKey("조직도")) mainMenuList.add(MainMenu.builder().order(4).menu(company).url("/intro/organization").name("조직도").nameEnglish("organization").nameJapanese("組織図").type(MainMenuType.INTRO).build());
+        if(!mainMenuStoredList.containsKey("오시는길")) mainMenuList.add(MainMenu.builder().order(5).menu(company).url("/intro/location").name("오시는길").nameEnglish("way to come").nameJapanese("アクセス").type(MainMenuType.INTRO).build());
         
         // '사업영역' 하위 메뉴
-        if(!mainMenuStoredList.containsKey("기숙사")) mainMenuList.add(MainMenu.builder().order(1).menu(product).url("/business/dormitory").name("기숙사").type(MainMenuType.INTRO).build());
-        if(!mainMenuStoredList.containsKey("도미인")) mainMenuList.add(MainMenu.builder().order(2).menu(product).url("/business/dormyinn").name("도미인").type(MainMenuType.INTRO).build());
-        if(!mainMenuStoredList.containsKey("리조트")) mainMenuList.add(MainMenu.builder().order(3).menu(product).url("/business/resort").name("리조트").type(MainMenuType.INTRO).build());
-        if(!mainMenuStoredList.containsKey("노인주택")) mainMenuList.add(MainMenu.builder().order(4).menu(product).url("/business/seniorlife").name("노인주택").type(MainMenuType.INTRO).build());
+        if(!mainMenuStoredList.containsKey("기숙사")) mainMenuList.add(MainMenu.builder().order(1).menu(product).url("/business/dormitory").name("기숙사").nameEnglish("dormitory").nameJapanese("寮").type(MainMenuType.INTRO).build());
+        if(!mainMenuStoredList.containsKey("도미인")) mainMenuList.add(MainMenu.builder().order(2).menu(product).url("/business/dormyinn").name("도미인").nameEnglish("Dormy Inn").nameJapanese("ドーミー").type(MainMenuType.INTRO).build());
+        if(!mainMenuStoredList.containsKey("리조트")) mainMenuList.add(MainMenu.builder().order(3).menu(product).url("/business/resort").name("리조트").nameEnglish("resort").nameJapanese("リゾート").type(MainMenuType.INTRO).build());
+        if(!mainMenuStoredList.containsKey("노인주택")) mainMenuList.add(MainMenu.builder().order(4).menu(product).url("/business/seniorlife").name("노인주택").nameEnglish("Senior housing").nameJapanese("高齢住宅").type(MainMenuType.INTRO).build());
 
         // '채용정보' 하위 메뉴
-        if(!mainMenuStoredList.containsKey("채용안내")) mainMenuList.add(MainMenu.builder().order(1).menu(recruit).url("/recruit/info").name("채용안내").type(MainMenuType.GENERAL).build());
-        if(!mainMenuStoredList.containsKey("채용공고")) mainMenuList.add(MainMenu.builder().order(2).menu(recruit).url("/recruit/notice").name("채용공고").type(MainMenuType.GENERAL).build());
-        if(!mainMenuStoredList.containsKey("채용지원")) mainMenuList.add(MainMenu.builder().order(3).menu(recruit).url("/recruit/apply").name("채용지원").type(MainMenuType.GENERAL).build());
-        if(!mainMenuStoredList.containsKey("채용문의")) mainMenuList.add(MainMenu.builder().order(4).menu(recruit).url("/recruit/inquire").name("채용문의").type(MainMenuType.GENERAL).build());
+        if(!mainMenuStoredList.containsKey("채용안내")) mainMenuList.add(MainMenu.builder().order(1).menu(recruit).url("/recruit/info").name("채용안내").nameEnglish("Recruitment information").nameJapanese("採用案内").type(MainMenuType.GENERAL).build());
+        if(!mainMenuStoredList.containsKey("채용공고")) mainMenuList.add(MainMenu.builder().order(2).menu(recruit).url("/recruit/notice").name("채용공고").nameEnglish("Recruitment notice").nameJapanese("採用発表").type(MainMenuType.GENERAL).build());
+        if(!mainMenuStoredList.containsKey("채용지원")) mainMenuList.add(MainMenu.builder().order(3).menu(recruit).url("/recruit/apply").name("채용지원").nameEnglish("Recruitment support").nameJapanese("採用支援").type(MainMenuType.GENERAL).build());
+        if(!mainMenuStoredList.containsKey("채용문의")) mainMenuList.add(MainMenu.builder().order(4).menu(recruit).url("/recruit/inquire").name("채용문의").nameEnglish("Recruitment Inquiry").nameJapanese("採用お問い合わせ").type(MainMenuType.GENERAL).build());
 
         // '뉴스' 하위 메뉴
-        if(!mainMenuStoredList.containsKey(("공지사항"))) mainMenuList.add(MainMenu.builder().order(1).menu(notice).url("/notice/notice").name("공지사항").type(MainMenuType.GENERAL).build());
+        if(!mainMenuStoredList.containsKey(("공지사항"))) mainMenuList.add(MainMenu.builder().order(1).menu(notice).url("/notice/notice").name("공지사항").nameEnglish("announcement").nameJapanese("お知らせ").type(MainMenuType.GENERAL).build());
 
         // mainMenu 업데이트
         log.info("누락된 하위 메뉴 {}건 추가됨", mainMenuList.size());

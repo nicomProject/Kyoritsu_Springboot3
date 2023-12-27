@@ -1,15 +1,32 @@
 const Menu = {
     menus: [],
     subMenus: [],
-    load: function () {
+    load: function (value) {
+        let languageValue = value;
         const that = this;
         AjaxUtil.request({
             url: '/api/main/setting/menus',
             async: false,
+            data: {
+                languageValue: languageValue || "origin",
+            },
             success: function (data) {
                 const items = data.result.items;
+
                 that.menus = items.filter(item => item.type === "group");
                 that.subMenus = items.filter(item => item.type !== "group");
+
+                console.log(that.subMenus)
+
+                if(items[0].name){
+                    languageValue = "kr"
+                }else if(items[0].nameEnglish){
+                    languageValue = "eng"
+                }else{
+                    languageValue = "jp"
+                }
+
+                $('#language-button').val(languageValue);
 
                 /* 각 메뉴별 content 불러오기 */
                 const submenu = Menu.subMenus;
@@ -26,48 +43,50 @@ const Menu = {
                     }
                 })
 
-                that.draw();
+                that.draw(languageValue);
             },
         });
     },
-    draw: function () {
+    draw: function (languageValue) {
         const that = this;
         const container = $('#navbarSupportedContent .navbar-nav');
         container.html('');
 
         this.menus.forEach(menu => {
-            const menuGroup = that.createMenuGroup(menu);
+            const menuGroup = that.createMenuGroup(menu, languageValue);
             container.append(menuGroup);
 
             const subMenuContainer = menuGroup.find('.sub-menu');
-            const subMenuItems = that.subMenus.filter(subMenu => subMenu.menu.recKey === menu.recKey);
+            const subMenuItems = that.subMenus.filter(subMenu =>
+                subMenu.menu.recKey === menu.recKey);
 
             subMenuItems.forEach(subMenu => {
-                subMenuContainer.append(that.createSubMenuItem(subMenu));
+                subMenuContainer.append(that.createSubMenuItem(subMenu, languageValue));
             });
         });
     },
-    createMenuGroup: function (menu) {
-
+    createMenuGroup: function (menu, languageValue) {
+        const displayName = (languageValue === 'kr') ? menu.name : (languageValue === 'eng') ? menu.nameEnglish : menu.nameJapanese;
         return $(`<li class="nav-item col-12 col-md-3 mx-2">
                     <a class="nav-link" href="javascript:void(0)"
                         data-bs-toggle="collapse" data-bs-target="#submenu-${menu.recKey}-1"
                         aria-controls="navbarSupportedContent" aria-expanded="false"
-                        aria-label="Toggle navigation"> ${menu.name}
+                        aria-label="Toggle navigation"> ${displayName}
                     </a>
                     <ul class="sub-menu collapse" id="submenu-${menu.recKey}-1">
                     </ul>
                 </li>`);
     },
-    createSubMenuItem: function (subMenu) {
+    createSubMenuItem: function (subMenu, languageValue) {
+        const displayName = (languageValue === 'kr') ? subMenu.name : (languageValue === 'eng') ? subMenu.nameEnglish : subMenu.nameJapanese;
         const path = subMenu.url || '/';
         let activated = location.pathname ===  path ? 'active' : '';
 
-        return $(`<li class="nav-item col-12 mx-2 ${activated}"><a href="${path}">${subMenu.name}</a></li>`);
+        return $(`<li class="nav-item col-12 mx-2 ${activated}"><a href="${path}">${displayName}</a></li>`);
     },
 };
 
-// 메인 메뉴를 구성
+
 $(function () {
     const Content = {
         load: function () {
@@ -75,6 +94,14 @@ $(function () {
             this.event();
         },
         event: function () {
+
+            const languageButton = $('#language-button');
+
+            // select 요소의 변경 이벤트 리스너 추가
+            languageButton.on('change', function () {
+                Menu.load($(this).val());
+                window.location.reload();
+            });
 
             const $body = $('body');
             const navbar = $('.navbar');

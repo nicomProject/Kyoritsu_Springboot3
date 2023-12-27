@@ -2,6 +2,7 @@ package com.enicom.board.kyoritsu.api.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.util.stream.Collectors;
@@ -33,7 +34,10 @@ public class HomeController {
 
     // [url] : /
     @GetMapping(path = {"/"})
-    public String home(Model model) {
+    public String home(Model model, HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        String language = (String) session.getAttribute("languageValue");
+        model.addAttribute("language", language);
         return "main/index";
     }
 

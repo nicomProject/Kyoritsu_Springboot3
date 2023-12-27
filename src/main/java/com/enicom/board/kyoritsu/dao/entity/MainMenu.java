@@ -51,8 +51,14 @@ public class MainMenu {
     // ------------------------------------------
 
     // Column -----------------------------------
-    @Column(name = "name", length = 20)
+    @Column(name = "name", length = 100)
     private String name;
+
+    @Column(name = "name_english", length = 100)
+    private String nameEnglish;
+
+    @Column(name = "name_japanese", length = 100)
+    private String nameJapanese;
 
     @Column(name = "url", length = 100)
     private String url;

@@ -13,7 +13,7 @@ import com.enicom.board.kyoritsu.api.vo.PageVO;
 import com.enicom.board.kyoritsu.auth.MemberDetail;
 import com.enicom.board.kyoritsu.dao.entity.Content;
 import com.enicom.board.kyoritsu.dao.entity.MainMenu;
-import com.enicom.board.kyoritsu.dao.repository.MainMenuRepository;
+import com.enicom.board.kyoritsu.dao.repository.mainMenu.MainMenuRepository;
 import com.enicom.board.kyoritsu.dao.repository.introductions.IntroductionsRepository;
 import com.enicom.board.kyoritsu.utils.SecurityUtil;
 
