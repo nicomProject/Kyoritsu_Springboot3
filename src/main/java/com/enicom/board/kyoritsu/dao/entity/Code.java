@@ -27,7 +27,7 @@ import lombok.Builder.Default;
 /**
  *  Code entity 정의.
  *  initPwd 같은 데이터에 대한 정보를 가짐.
- *  그냥 특정 데이터를 value1,2,3에 저장하기 위한 엔티티인가..?
+ *  특정 데이터를 value1,2,3에 저장하기 위한 엔티티.
  *  Table name : tb_code
 **/
 

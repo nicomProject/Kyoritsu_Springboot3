@@ -41,8 +41,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-// SELECT sequence_name FROM information_schema.sequences; 로 seq_mainmenu 가 있는지 확인
-// CREATE SEQUENCE SEQ_MAINMENU START 1; 로 seq_mainmenu 생성
 @SequenceGenerator(name = "SEQ_MAINMENU_GENERATOR", sequenceName = "SEQ_MAINMENU", initialValue = 1, allocationSize = 1)
 public class MainMenu {
     // Id ---------------------------------------

@@ -25,6 +25,7 @@ import lombok.Setter;
 
 /**
  *  Inquiry entity 정의.
+ *  채용 문의에 대한 내용을 담고 있음.
  *  Table name : tb_inquiry
 **/
 

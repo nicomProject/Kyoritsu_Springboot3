@@ -26,6 +26,7 @@ import lombok.Setter;
 
 /**
  *  Content entity 정의.
+ *  홈페이지 소개글에 대한 내용을 담고 있음.
  *  Table name : tb_content
 **/
 
