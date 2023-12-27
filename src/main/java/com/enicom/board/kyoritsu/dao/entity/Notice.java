@@ -21,9 +21,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  *  Notice entity 정의.
+ *  뉴스-공지사항에 대한 내용을 담고 있음.
  *  Table name : tb_notice
 **/
 
@@ -32,6 +34,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor(force = true)
 @Getter
+@Setter
 @SequenceGenerator(name = "SEQ_NOTICE_GENERATOR", sequenceName = "SEQ_NOTICE", initialValue = 1, allocationSize = 1)
 public class Notice {
     // Id ---------------------------------------
