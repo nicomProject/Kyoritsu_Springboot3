@@ -17,12 +17,10 @@ $(function () {
                 const selected = table.getSelectedData().map(e => e.recKey);
 
                 if(action === 'add'){
-                    console.log("add")
                     window.location.href = '/admin/notice/detail'
                 }
-
                 else if (action === 'del') {
-                    if(selected.length === 0){
+                    if(selected.length === 0 && range !== 'all'){
                         Alert.warning({text: '공지사항을 먼저 선택해주세요!'});
                         return;
                     } else if(range === 'list' && selected.length > 0){
@@ -32,13 +30,22 @@ $(function () {
                                 type: 'list',
                                 idListLong: selected
                             },
+                            success: function (data) {
+                                console.log(data)
+                                if(data.code === 200){
+                                    Alert.success({text: data.desc});
+                                }
+                                else{
+                                    Alert.error({text: data.desc});
+                                }
+                            },
                             table: 'table',
                             successMessage: '성공적으로 삭제되었습니다',
                             failMessage: '삭제중 오류가 발생하였습니다.',
                         })
                     }else{
                         AjaxUtil.requestBody({
-                            url: '/api/introductions/delete',
+                            url: '/api/notice/delete',
                             data: {
                                 type: 'specific',
                             },
@@ -48,7 +55,7 @@ $(function () {
                         })
 
                     }
-                    // ... (기존의 삭제 로직을 이곳에 삽입)
+                    // ... (기존의 삭제 로직을 이곳에 삽입) (완료)
                 }
                 else if (action === 'file') {
                     const range = this.dataset.range;
