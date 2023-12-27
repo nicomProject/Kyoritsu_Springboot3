@@ -61,11 +61,15 @@ const Data = {
             }
         })
     },
-    getMenus: function(){
+    getMenus: function(value){
+        let languageValue = value;
         const that = this;
         AjaxUtil.request({
             url: '/api/main/setting/menus',
             async: false,
+            data: {
+                languageValue: languageValue || "kr",
+            },
             success: function (data) {
                 const items = data.result.items;
 
