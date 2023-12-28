@@ -16,7 +16,7 @@ $(function () {
                     $("input[name='password']").val(data.result.items[0].inquiryPwd);
                     $("input[name='secret']").prop("checked", data.result.items[0].inquirySecret);
                     $("input[name='title']").val(data.result.items[0].inquiryTitle);
-                    $(".inquire-input").val((data.result.items[0].inquiryContent));
+                    $(".inquire-input").val(data.result.items[0].inquiryContent);
 
                     if (data.code == 200) {
                     } else {
@@ -30,6 +30,21 @@ $(function () {
             this.event();
         },
         event: function () {
+            formData = {'name' : '이름', 'phone' : '연락처', 'title' : '제목', 'textarea' : '문의내용', 'password' : '비밀번호'};
+
+            function validateField(formData) {
+                console.log(formData);
+                for (const field in formData) {
+                    const value = document.getElementById(field).value;
+                    console.log(value);
+                    if(!value) {
+                        Alert.warning({text: `${formData[field]}은(는) 필수 입력 항목입니다.`});
+                        return false;
+                    }
+                }
+                return true;
+            }
+
             const paramValue = this.params.key
             const card = $('.container');
             card.find('*[role="action"]').click(function(e){
@@ -40,9 +55,9 @@ $(function () {
                 var passwordValue = $("input[name='password']").val();
                 var textareaValue = $(".inquire-input").val();
                 var titleValue = $("input[name='title']").val();
-                var secretValue = $("input[name='secret']").prop("checked");
+                // var secretValue = $("input[name='secret']").prop("checked");
 
-                if(action === 'update'){
+                if(action === 'update' && validateField(formData)){
                     AjaxUtil.requestBody({
                         url: '/api/inquiry/update',
                         data: {
@@ -51,7 +66,8 @@ $(function () {
                             inquiryPwd: passwordValue,
                             inquiryContent: textareaValue,
                             inquiryTitle: titleValue,
-                            inquirySecret: secretValue,
+                            // inquirySecret: secretValue,
+                            inquirySecret: false, // 비활성화 고정
                             key: paramValue
                         },
                         success: function (data) {
@@ -92,4 +108,11 @@ $(function () {
     Content.load({
         key: $('.param[name="key"]').val() || ''
     });
+    
+    // '답변완료'의 경우, 수정하지 못하도록 변경하고 답변이 보이도록 함
+    var answerYnValue = data.result.items[0].answerYn;
+    if(answerYnValue === '답변완료') {
+        $('.buttons').hide();
+    }
+    
 });
