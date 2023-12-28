@@ -129,7 +129,7 @@ $(function () {
                         download: false,
                         headerSort: false
                     },
-                    {title: '카테고리', field: "category", tooltip: true, headerTooltip: true, headerFilter: 'select', headerFilterParams: {
+                    {title: '카테고리', field: "category", headerHozAlign: "center", tooltip: true, headerTooltip: true, headerFilter: 'select', headerFilterParams: {
                             values: {"news" : "뉴스"}, // 가능한 필드 값
                         },
                         formatter: function(cell) {
@@ -141,10 +141,10 @@ $(function () {
                             }
                         }
                     },
-                    {title: '제목', field: "title", tooltip: true, headerTooltip: true, headerFilter: 'input'},
-                    {title: '조회수', field: "hit", tooltip: true, headerTooltip: true},
-                    {title: '작성자', field: "createUser", tooltip: true, headerTooltip: true},
-                    {title: '작성일', field: "createDate", tooltip: true, headerTooltip: true},
+                    {title: '제목', field: "title", headerHozAlign: "center", tooltip: true, headerTooltip: true, headerFilter: 'input'},
+                    {title: '조회수', field: "hit", headerHozAlign: "center", tooltip: true, headerTooltip: true},
+                    {title: '작성자', field: "createUser", headerHozAlign: "center", tooltip: true, headerTooltip: true},
+                    {title: '작성일', field: "createDate", headerHozAlign: "center", tooltip: true, headerTooltip: true},
 
 
                 ],

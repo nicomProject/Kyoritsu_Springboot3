@@ -186,6 +186,7 @@ $(function () {
                     },
                     {
                         title: '상태',
+                        headerHozAlign: "center", 
                         headerFilterParams: {
                             values: subMenuHash,
                         }, formatter: function(cell){
