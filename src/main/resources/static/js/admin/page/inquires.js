@@ -75,7 +75,7 @@ $(function () {
                 locale: 'ko-kr',
                 langs: TableUtil.setDefaults(),
                 layout: 'fitColumns',
-                placeholder: TableUtil.getPlaceholder('조건에 맞는 공지사항이 없습니다.'),
+                placeholder: TableUtil.getPlaceholder('조건에 맞는 채용문의가 없습니다.'),
                 pagination: false,
                 paginationSize: paginationConfig.size,
                 paginationSizeSelector: paginationConfig.selector,
@@ -91,7 +91,7 @@ $(function () {
                         return [];
                     }
                     response = response.result;
-                    return response.items;
+                    return response.items || [];
                 },
                 ajaxError: TableUtil.ajaxError,
                 columnHeaderVertAlign: "middle",
@@ -120,10 +120,13 @@ $(function () {
                         download: false,
                         headerSort: false
                     },
-                    {title: '제목', field: "title", tooltip: true, headerTooltip: true, headerFilter: 'input'},
-                    {title: '등록일시', field: "createDate", tooltip: true, headerTooltip: true},
-
-
+                    {title: '제목', field: "inquiryTitle", tooltip: true, headerTooltip: true, headerFilter: 'input'},
+                    {title: '상태', field: "answerYn", tooltip: true, headerTooltip: true, headerFilter: 'select',
+                        headerFilterParams: {
+                            values: {'답변대기':'답변대기', '답변완료':'답변완료'},
+                        }
+                    },
+                    {title: '작성일', field: "createDate", tooltip: true, headerTooltip: true}
                 ],
             });
 
