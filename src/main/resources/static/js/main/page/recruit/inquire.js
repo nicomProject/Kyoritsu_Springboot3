@@ -88,6 +88,15 @@ $(function () {
                         headerHozAlign: "center",
                     },
                     {
+                        title: '상태',
+                        field: "answerYn",
+                        tooltip: true,
+                        headerTooltip: true,
+                        headerSort: false,
+                        hozAlign: "center",
+                        headerHozAlign: "center",
+                    },
+                    {
                         title: '작성일',
                         field: "createDate",
                         tooltip: true,
