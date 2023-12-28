@@ -137,7 +137,7 @@ public class AdminDataInitRunner implements ApplicationRunner {
         }
         if (!adminMenuStoredList.containsKey(AdminMenuType.INQUIRES)) {
             adminMenuList.add(AdminMenu.builder(AdminMenuType.INQUIRES).group(recruit)
-                    .orderSeq(5).icon("fas fa-question-circle").codeDetail("INQUIREY").build());
+                    .orderSeq(5).icon("fas fa-question-circle").codeDetail("INQUIRY").build());
         }
         if (!adminMenuStoredList.containsKey(AdminMenuType.ACCESS)) {
             adminMenuList.add(AdminMenu.builder(AdminMenuType.ACCESS).group(system)
