@@ -6,6 +6,18 @@ $(function () {
             this.event();
         },
         event: function () {
+            formData = {'contents' : '답변'};
+            function validateField(formData) {
+                for (const field in formData) {
+                    console.log(field)
+                    const value = document.getElementById(field).value;
+                    if(!value || value === '<p>&nbsp;</p>'){ // 입력값 없음 || 기본 입력
+                        Alert.warning({text: `${formData[field]}을 입력해 주세요.`})
+                        return false
+                    }
+                }
+                return true;
+            }
 
             const paramValue = this.params.key
 
@@ -25,10 +37,10 @@ $(function () {
                     },
                     success: function (data) {
                         console.log(data)
-                        $(".pageSub #title").val(data.result.items[0].title);
-                        $(".pageSub #inquiry_id").val(data.result.items[0].inquiryId);
+                        $(".pageSub #title").val(data.result.items[0].inquiryTitle);
+                        $(".pageSub #inquiry_id").val(data.result.items[0].inquiryName);
                         $(".pageSub #create_data").val(data.result.items[0].createDate);
-                        $(".pageSub #contents_question").val(data.result.items[0].question);
+                        $(".pageSub #contents_question").val(data.result.items[0].inquiryContent);
                         $(".pageSub #contents").val(data.result.items[0].answer);
 
                         if (data.code == 200) {
@@ -49,9 +61,9 @@ $(function () {
                 oEditors.getById["contents"].exec("UPDATE_CONTENTS_FIELD", []);
                 var answer = $("#contents").val();
 
-                if(action === 'add'){
+                if(action === 'add' && validateField(formData)){
                     AjaxUtil.requestBody({
-                        url: '/api/inquiry/add',
+                        url: '/api/inquiry/addAnswer',
                         data: {
                             answer: answer,
                             key: paramValue
@@ -60,7 +72,7 @@ $(function () {
                             console.log(data)
                             if (data.code == 200) {
                                 Alert.success({text: '채용문의 답변 등록이 완료되었습니다.'}, function(){
-                                    location.href = '/admin/introductions'
+                                    location.href = '/admin/inquires'
                                 })
                             } else {
                                 Swal.fire({
