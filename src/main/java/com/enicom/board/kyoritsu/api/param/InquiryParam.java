@@ -28,6 +28,7 @@ public class InquiryParam {
     private String inquiryPhone;
     private String inquiryContent;
     private String inquiryTitle;
+    private String answer;
     private String answerUser;
     private String inquirySecret;
 
@@ -58,6 +59,9 @@ public class InquiryParam {
         }
         if (this.inquirySecret != null) {
             inquiry.setInquirySecret(this.inquirySecret);
+        }
+        if (this.answer != null) {
+            inquiry.setAnswer(this.answer);
         }
     }
 }

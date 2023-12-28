@@ -83,6 +83,11 @@ public class Inquiry {
     @ColumnDefault("0")
     private Integer hit = 0;
 
+    @Column(name = "answer_yn")
+    @Builder.Default
+    @Comment("답변여부")
+    private String answerYn = "답변대기";
+
     @Column(name = "create_date")
     @Builder.Default
     @JsonSerialize(using = LocalDateTimeSerializer.class)

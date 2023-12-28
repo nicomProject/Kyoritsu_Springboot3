@@ -33,9 +33,17 @@ public class InquiryController {
     }
 
     // [url] : /api/inquiry/findSelf/{key}
+    // 홈페이지용
     @RequestMapping(path = "/inquiry/findSelf/{key}", method = {RequestMethod.GET, RequestMethod.POST})
     public ResponseHandler<?> findSelf(@PathVariable Long key) {
         return new ResponseHandler<>(inquiryService.findAll(key));
+    }
+
+    // [url] : /api/inquiry/findSelf
+    // 관리자 페이지용
+    @RequestMapping(path = "/inquiry/findSelf", method = {RequestMethod.GET, RequestMethod.POST})
+    public ResponseHandler<?> findSelfAdmin(@RequestBody InquiryParam param) {
+        return new ResponseHandler<>(inquiryService.findAll(param));
     }
 
     // [url] : /api/inquiry/findSelfPwd/{key}
@@ -51,6 +59,12 @@ public class InquiryController {
         return new ResponseHandler<>(inquiryService.add(param));
     }
 
+    // [url] : /api/inquiry/addAnswer
+    // Inquiry param을 받아서 Inquiry entity의 answer 추가함
+    @RequestMapping(value = "/inquiry/addAnswer", method = RequestMethod.POST)
+    public ResponseHandler<?> addAnswer(@RequestBody @Valid InquiryParam param) throws Exception {
+        return new ResponseHandler<>(inquiryService.addAnswer(param));
+    }
 
     // [url] : /api/inquiry/update
     @RequestMapping(value = "/inquiry/update", method = RequestMethod.POST)

@@ -9,8 +9,10 @@ import com.enicom.board.kyoritsu.api.param.InquiryParam;
 import com.enicom.board.kyoritsu.api.param.multiple.MultipleParam;
 import com.enicom.board.kyoritsu.api.type.ResponseDataValue;
 import com.enicom.board.kyoritsu.api.vo.PageVO;
+import com.enicom.board.kyoritsu.auth.MemberDetail;
 import com.enicom.board.kyoritsu.dao.entity.Inquiry;
 import com.enicom.board.kyoritsu.dao.repository.InquiryRepository;
+import com.enicom.board.kyoritsu.utils.SecurityUtil;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +21,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class InquiryServiceImpl implements InquiryService {
     private final InquiryRepository inquiryRepository;
+    private final SecurityUtil securityUtil;
 
     // delete_date=null인 모든 Inquiry entity를 create_date 내림차순으로 정렬하여 반환
     @Transactional
@@ -44,6 +47,12 @@ public class InquiryServiceImpl implements InquiryService {
         return PageVO.builder(inquiryRepository.findAllByRecKey(key)).build();
     }
 
+    @Transactional
+    @Override
+    public PageVO<Inquiry> findAll(InquiryParam param) {
+        return PageVO.builder(inquiryRepository.findAllByRecKey(Long.valueOf(param.getKey()))).build();
+    }
+
     // key에 해당하는 Inquiry entity를 찾아 반환
     // pwd 확인을 위해 사용됨
     @Override
@@ -57,6 +66,27 @@ public class InquiryServiceImpl implements InquiryService {
         Inquiry inquiry = param.create();
         param.applyTo(inquiry);
         inquiry.setCreateDate(LocalDateTime.now());
+
+        inquiryRepository.save(inquiry);
+
+        return ResponseDataValue.builder(200).build();
+    }
+
+    // param으로 들어온 값들을 사용하여 Inquiry entity 에 answer 추가 후 save
+    @Transactional
+    @Override
+    public ResponseDataValue<?> addAnswer(InquiryParam param) {
+        MemberDetail member = securityUtil.getCurrentUser();
+        Optional<Inquiry> inquiryOptional = inquiryRepository.findByRecKey(Long.valueOf(param.getKey()));
+        if(!inquiryOptional.isPresent()) {
+            return ResponseDataValue.builder(210).desc("잘못된 등록번호입니다.").build();
+        }
+
+        Inquiry inquiry = inquiryOptional.get();
+        param.applyTo(inquiry); // answer 업데이트
+        inquiry.setAnswerDate(LocalDateTime.now());
+        inquiry.setAnswerUser(member.getId());
+        inquiry.setAnswerYn("답변완료");
 
         inquiryRepository.save(inquiry);
 
