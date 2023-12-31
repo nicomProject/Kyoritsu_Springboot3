@@ -68,7 +68,6 @@ $(function () {
                         title: searchText
                     },
                     success: function (data) {
-                        console.log(data);
                         Table.table.setData(data.result.items);
                     }
                 });
@@ -89,7 +88,7 @@ $(function () {
                 locale: 'ko-kr',
                 langs: TableUtil.setDefaults(),
                 layout: 'fitColumns',
-                placeholder: TableUtil.getPlaceholder('조건에 맞는 공지사항이 없습니다.'),
+                placeholder: TableUtil.getPlaceholder('등록되어있는 채용공고가 없습니다.'),
                 pagination: false,
                 paginationSize: paginationConfig.size,
                 paginationSizeSelector: paginationConfig.selector,
@@ -135,9 +134,20 @@ $(function () {
                         headerSort: false
                     },
                     {title: '제목', field: "title", tooltip: true, headerTooltip: true},
-                    {title: '기간', field: "subtitle", tooltip: true, headerTooltip: true},
-                    {title: '등록일시', field: "createUser", tooltip: true, headerTooltip: true},
-                    {title: '지원자 현황', field: "createDate", tooltip: true, headerTooltip: true},
+                    {title: '기간',
+                        field: "fromDate + toDate",
+                        tooltip: true,
+                        headerTooltip: true,
+                        formatter: function(cell, formatterParams, onRendered) {
+                            const data = cell.getData();
+                            const fromDate = data.fromDate.slice(0, 10) || 0; // fromDate가 없으면 0으로 가정
+                            const toDate = data.toDate.slice(0, 10) || 0;     // toDate가 없으면 0으로 가정
+                            const result = fromDate + "~" + toDate;
+                            return result;
+                        }
+                    },
+                    {title: '등록일시', field: "createDate", tooltip: true, headerTooltip: true},
+                    {title: '지원자 현황', field: "", tooltip: true, headerTooltip: true},
 
                 ],
             });
@@ -145,7 +155,7 @@ $(function () {
             const events = {
                 rowClick: function (e, row) {
                     // window.location.href = '/admin/applicants/' + row.getData().recKey;
-                        let urlDetail = '/api/applicant/findSelf/' + row.getData().recKey
+                        let urlDetail = '/api/applicant/findWithJob/' + row.getData().recKey
                         Content.params.urlDetail = urlDetail;
                     const tableDetail = TableDetail.load('#tableDetail');
                 },
@@ -183,7 +193,7 @@ $(function () {
                 locale: 'ko-kr',
                 langs: TableUtil.setDefaults(),
                 layout: 'fitColumns',
-                placeholder: TableUtil.getPlaceholder('조건에 맞는 공지사항이 없습니다.'),
+                placeholder: TableUtil.getPlaceholder('채용공고 지원자가 없습니다.'),
                 pagination: false,
                 paginationSize: paginationConfig.size,
                 paginationSizeSelector: paginationConfig.selector,
@@ -229,9 +239,8 @@ $(function () {
                         headerSort: false
                     },
                     {title: '이름', field: "name", tooltip: true, headerTooltip: true},
-                    {title: '제목', field: "name", tooltip: true, headerTooltip: true},
-                    {title: '연락처', field: "name", tooltip: true, headerTooltip: true},
-
+                    {title: '연락처', field: "phone", tooltip: true, headerTooltip: true},
+                    {title: '지원일시', field: "createDate", tooltip: true, headerTooltip: true},
                 ],
             });
 

@@ -33,10 +33,12 @@ $(function () {
                     window.location.href = '/admin/job/detail'
                 }
                 else if (action === 'del') {
-                    if(selected.length === 0){
-                        Alert.warning({text: '채용공고를 먼저 선택해주세요!'});
-                        return;
-                    } else if(range === 'list' && selected.length > 0){
+                    if(range === 'list'){
+                        if(selected.length === 0){
+                            Alert.warning({text: '채용공고를 먼저 선택해주세요!'});
+                            return;
+                        }
+
                         AjaxUtil.requestBody({
                             url: '/api/job/delete',
                             data: {
@@ -47,19 +49,23 @@ $(function () {
                             successMessage: '성공적으로 삭제되었습니다',
                             failMessage: '삭제중 오류가 발생하였습니다.',
                         })
-                    }else{
-                        AjaxUtil.requestBody({
-                            url: '/api/job/delete',
-                            data: {
-                                type: 'specific',
-                            },
-                            table: 'table',
-                            successMessage: '성공적으로 삭제되었습니다',
-                            failMessage: '삭제중 오류가 발생하였습니다.',
-                        })
-
+                    } else if (range == 'all') {
+                        Alert.confirm({
+                            title: '전체 삭제',
+                            text: `전체 채용공고를 삭제하시겠습니까?`
+                        }, function (result) {
+                            if (!result.isConfirmed) return;
+                            AjaxUtil.requestBody({
+                                url: '/api/job/delete',
+                                data: {
+                                    type: 'specific',
+                                },
+                                table: 'table',
+                                successMessage: '성공적으로 삭제되었습니다',
+                                failMessage: '삭제중 오류가 발생하였습니다.',
+                            })
+                        });
                     }
-                    // ... (기존의 삭제 로직을 이곳에 삽입)
                 }
                 else if (action === 'category_add'){
                     const request = {
@@ -102,7 +108,7 @@ $(function () {
                 locale: 'ko-kr',
                 langs: TableUtil.setDefaults(),
                 layout: 'fitColumns',
-                placeholder: TableUtil.getPlaceholder('조건에 맞는 공지사항이 없습니다.'),
+                placeholder: TableUtil.getPlaceholder('현재 채용공고가 없습니다.'),
                 pagination: false,
                 paginationSize: paginationConfig.size,
                 paginationSizeSelector: paginationConfig.selector,
@@ -147,15 +153,17 @@ $(function () {
                         download: false,
                         headerSort: false
                     },
-                    {title: '구분', field: "category", tooltip: true, headerTooltip: true, headerFilter: 'select', headerFilterParams: {
-                            values: Content.categoryHash,
-                        },
+                    {title: '구분', field: "category", tooltip: true, headerTooltip: true, headerFilter: 'select',
                         formatter: function(cell) {
-                            return Content.categoryHash[cell.getValue()];
+                            var data = cell.getData()
+                            console.log(cell)
+                            console.log(data)
+                            if (data.category == "") data.category = "도미인 호텔";
+                            return data.category
                         }
                     },
                     {title: '제목', field: "title", tooltip: true, headerTooltip: true, headerFilter: 'input'},
-                    {title: '기간', field: "title", tooltip: true, headerTooltip: true},
+                    // {title: '기간', field: "fromDate + toDate", tooltip: true, headerTooltip: true},
 
                    {title: '등록일시', field: 'createDate', tooltip: true, headerTooltip: true, customDisplay: true},
                     {
@@ -165,13 +173,13 @@ $(function () {
                         headerTooltip: true,
                         formatter: function(cell, formatterParams, onRendered) {
                             const data = cell.getData();
-                            const fromDate = data.fromDate || 0; // fromDate가 없으면 0으로 가정
-                            const toDate = data.toDate || 0;     // toDate가 없으면 0으로 가정
+                            const fromDate = data.fromDate.slice(0, 10) || 0; // fromDate가 없으면 0으로 가정
+                            const toDate = data.toDate.slice(0, 10) || 0;     // toDate가 없으면 0으로 가정
                             const result = fromDate + "~" + toDate;
                             return result;
                         }
                     },
-                    {title: '지원자현황', field: "fromDate", tooltip: true, headerTooltip: true},
+                    {title: '지원자현황', field: "", tooltip: true, headerTooltip: true},
 
                 ],
             });

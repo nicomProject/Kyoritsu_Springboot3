@@ -22,7 +22,7 @@ import java.time.LocalDateTime;
 
 /**
  *  Category entity 정의.
- *  채용 공고 카테고리 정보를 담고 있음.
+ *  지원 분야 카테고리 정보를 담고 있음.
  *  Table name : tb_category
 **/
 

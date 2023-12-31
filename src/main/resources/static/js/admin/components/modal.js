@@ -648,7 +648,7 @@ $(function () {
             })
 
             AddButton.click(function (e) {
-                if (modal.obj.find("#jobCategory").val() != '') {
+                if (modal.obj.find("#jobCategory").val() != '' && modal.obj.find("#jobCategory").val() !== '선택해주세요') {
                     AjaxUtil.requestBody({
                         url: '/api/category/add',
                         data: {
@@ -686,10 +686,7 @@ $(function () {
                                 modal.obj.modal('hide');
                             });
                         } else {
-                            Swal.fire({
-                                icon: 'error',
-                                html: "해당 지원분야의 삭제를 실패하였습니다.",
-                            })
+                            Alert.error({text: data.desc}, function(){});
                         }
                     }
                 })

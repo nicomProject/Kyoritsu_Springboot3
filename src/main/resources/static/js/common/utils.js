@@ -415,7 +415,7 @@ const ParamManager = {
     },
     show: function (modalID, action, params) {
         const urlHash = {
-            'jobModal': '/modal/jobModal',
+            'jobModal': '/modal/job',
         }
 
         let url = urlHash[modalID] || '/modal/' + modalID;

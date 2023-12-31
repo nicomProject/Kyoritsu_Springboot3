@@ -76,6 +76,12 @@
                 <div class="apply-content">
                     <div class="content-default content">
                         <div>
+                            <input id="job" type="number" placeholder="채용공고 rec_key"/>
+                        </div>
+                        <div>
+                            <input id="category" type="text" placeholder="채용공고 카테고리"/>
+                        </div>
+                        <div>
                             <form name="form" method="post" action="http://localhost:8080/board" enctype="multipart/form-data">
                                 <div>증명사진 첨부</div>
                                 <input type="file" name="files" multiple="multiple"/>
@@ -83,7 +89,7 @@
                             </form>
                         </div>
                         <div class="d-flex">
-                            <input type="text" placeholder="성함"/>
+                            <input id="name" type="text" placeholder="성함"/>
                             <!--<div class="form_toggle row-vh d-flex flex-row justify-content-between" >
                                 <div class="form_radio_btn radio_male">
                                     <input id="radio-1" type="radio" name="residence" value="local" checked>
@@ -96,29 +102,38 @@
                             </div>-->
                         </div>
                         <div>
-                            <input type="radio" name="gender" value="male" checked/>
+                            <input id="man" type="radio" name="gender" value="male" checked/>
                             <label>남</label>
-                            <input type="radio" name="gender" value="female"/>
+                            <input id="woman" type="radio" name="gender" value="female"/>
                             <label>여</label>
                         </div>
                         <div>
-                            <input type="text" placeholder="휴대폰 번호('-'없이 입력)"/>
+                            <input id="mobile" type="text" placeholder="휴대폰 번호('-'없이 입력)"/>
                         </div>
                         <div>
-                            <input type="text" placeholder="생년월일(8자리)"/>
+                            <input id="birth" type="text" placeholder="생년월일(2023-12-25)"/>
                         </div>
                         <div class="apply-address">
-                            <input type="text" placeholder="주소"/>
+                            <input id="address" type="text" placeholder="주소"/>
                         </div>
                         <div>
-                            <input type="text" placeholder="상세주소를 입력해주세요">
+                            <input id="addressDetail" type="text" placeholder="상세주소를 입력해주세요">
                         </div>
                         <div class="email">
-                            <input type="text" placeholder="이메일주소를 입력해주세요">
+                            <input id="email" type="text" placeholder="이메일주소를 입력해주세요">
                         </div>
                         <div>
-                            <select>
-                                <option>국적</option>
+                            국적:
+                            <select id="nation" name="nation">
+                                <option value="local">내국인</option>
+                                <option value="foreigner">외국인</option>
+                            </select>
+                        </div>
+                        <div>
+                            경력:
+                            <select id="career" name="career">
+                                <option value="newcomer">신입</option>
+                                <option value="career">경력</option>
                             </select>
                         </div>
                     </div>
@@ -146,7 +161,7 @@
                         <div class="category-title"> 자기소개서 </div>
                         <span> 경험을 바탕으로 자세히 작성해주세요.</span>
                         <div>
-                            <textarea cols="50" rows="10"></textarea>
+                            <textarea id="contents" cols="50" rows="10"></textarea>
                         </div>
                         <div> 0/10000</div>
                     </div>

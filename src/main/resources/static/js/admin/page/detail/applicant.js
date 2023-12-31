@@ -20,6 +20,7 @@ $(function () {
             });
 
             items.forEach(item => {
+                console.log(item)
                 category.append($('<option>', {
                         value: item.recKey,
                         text: item.categoryName,
@@ -51,6 +52,14 @@ $(function () {
                         $("#pass_yn").val(data.result.items[0].passYn);
                         $("#contents_answer").text(data.result.items[0].contentAnswer);
 
+                        $("#supportDetail").append($('<option>', {
+                            value: data.result.items[0].jobId.support,
+                            text: data.result.items[0].jobId.support
+                        }))
+                        $("#experienceDetail").append($('<option>', {
+                            value: data.result.items[0].jobId.experience,
+                            text: data.result.items[0].jobId.experience
+                        }))
 
                         if (data.code == 200) {
                         } else {
