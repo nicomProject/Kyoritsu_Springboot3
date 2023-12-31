@@ -1,0 +1,90 @@
+<div class="modal-dialog modal-dialog-centered">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h4 class="modal-title" id="accountModalLabel">관리자 관리</h4>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+				<i class="fas fa-times"></i>
+			</button>
+		</div>
+		<div class="modal-header modal-title-desc">
+			<div>
+				<i class="fas fa-exclamation-circle"></i>
+				<span class="icon-title modal-ext-desc"> 이용 안내<br>
+					- 관리자 생성 후에는 아이디를 수정할 수 없습니다.<br>
+					- 비밀번호는 초기 비밀번호로 생성됩니다.
+				</span>
+			</div>
+		</div>
+		<div class="modal-body">
+			<form id="deviceForm">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label for="managerId">
+								<i class="fas fa-tag"></i> 아이디
+							</label>
+							<input type="text" class="form-control param" id="managerId" name="userId" autocomplete="off" aria-describedby="invalid_id">
+							<div class="valid-feedback">
+								사용 가능한 아이디입니다.
+							</div>
+							<div class="invalid-feedback"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label for="managerName">
+								<i class="fas fa-tag"></i> 이름
+							</label>
+							<input type="text" class="form-control param" id="managerName" name="name" autocomplete="off" aria-describedby="invalid_name">
+							<div class="invalid-feedback"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label for="managerRole">
+								<i class="fas fa-shield-alt "></i> 권한
+							</label>
+							<select class="form-control param" id="managerRole" name="role" aria-describedby="invalid_role"></select>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group mb-0">
+							<label for="managerEnable">
+								<i class="fas fa-question"></i> 활성여부
+							</label>
+							<select class="form-control param" id="managerEnable" name="enable" aria-describedby="invalid_role">
+								<option value="1" selected>활성</option>
+								<option value="0">비활성</option>
+							</select>
+							<div class="invalid-feedback"></div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-rounded btn-primary btn-pulse me-2" role="action" data-action="add">
+				<i class="fas fa-plus"></i><span class="icon-title">등록</span>
+			</button>
+			<button type="button" class="btn btn-rounded btn-primary btn-update me-2" role="action" data-action="mod">
+				<div class="pen-container">
+					<span class="pen"><span></span></span>
+					<i></i>
+				</div>
+				<span class="icon-title">수정</span>
+			</button>
+			<button class="btn btn-rounded btn-danger btn-trash" role="action" data-action="del">
+				<span class="trash">
+					<span></span><i></i>
+				</span>
+				<span class="icon-title">삭제</span>
+			</button>
+		</div>
+	</div>
+</div>

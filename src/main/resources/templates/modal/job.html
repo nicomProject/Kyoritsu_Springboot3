@@ -1,0 +1,70 @@
+<div class="modal-dialog modal-dialog-centered">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h4 class="modal-title">채용공고 지원분야</h4>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+				<i class="fas fa-times"></i>
+			</button>
+		</div>
+		<div class="modal-header modal-title-desc">
+			<div>
+				<i class="fas fa-exclamation-circle"></i>
+				<span class="icon-title modal-ext-desc"> 이용 안내<br>
+					- 채용공고 지원분야를 추가/삭제를 할 수 있습니다.<br>
+				</span>
+			</div>
+		</div>
+		<div class="modal-body">
+			<form id="bookForm">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label for="jobCategory">지원분야</label>
+							<div class="input-group">
+								<input type="text" class="form-control param" id="jobCategory" name="jobCategory">
+								<div class="input-group-append">
+									<button class="btn btn-round btn-primary bg-gradient-primary" data-action="add" role="action">
+										<i class="fas fa-plus"></i><span class="icon-title">저장</span>
+									</button>
+									<button class="btn btn-round btn-danger bg-gradient-danger" role="action" data-action="delete">
+										<i class="fas fa-trash"></i><span class="icon-title">삭제</span>
+									</button>
+								</div>
+							</div>
+							<div class="invalid-feedback"></div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label for="category">목록</label>
+							<select id="category" name="category" class="form-select">
+								<option value="">선택해주세요</option>
+							</select>
+							<div class="invalid-feedback"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+<!--		<div class="modal-footer" class="auth-edit">-->
+<!--			<button class="btn btn-rounded btn-primary btn-pulse me-2" role="action" data-action="add">-->
+<!--				<i class="fas fa-plus"></i><span class="icon-title">등록</span>-->
+<!--			</button>-->
+<!--			<button type="button" class="btn btn-rounded btn-primary btn-update me-2" role="action" data-action="mod">-->
+<!--				<div class="pen-container">-->
+<!--					<span class="pen"><span></span></span>-->
+<!--					<i></i>-->
+<!--				</div>-->
+<!--				<span class="icon-title">수정</span>-->
+<!--			</button>-->
+<!--			<button class="btn btn-rounded btn-danger btn-trash" role="action" data-action="del">-->
+<!--				<span class="trash">-->
+<!--					<span></span><i></i>-->
+<!--				</span>-->
+<!--				<span class="icon-title">삭제</span>-->
+<!--			</button>-->
+<!--		</div>-->
+</div>

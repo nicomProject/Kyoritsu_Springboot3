@@ -611,7 +611,7 @@ $(function () {
     const jobModal = new AbstractModal('jobModal', {
 
         titleCustom: function () {
-            return "채용공고 카테고리";
+            return "채용공고 지원분야";
         },
         buttonCustom: function (modal) {
 
@@ -632,7 +632,7 @@ $(function () {
                     } else {
                         Swal.fire({
                             icon: 'error',
-                            html: "카테고리 조회가 실패하였습니다.",
+                            html: "지원분야 조회가 실패하였습니다.",
                         })
                     }
                 }
@@ -648,43 +648,47 @@ $(function () {
             })
 
             AddButton.click(function (e) {
-                AjaxUtil.requestBody({
-                    url: '/api/category/add',
-                    data: {
-                        categoryName: modal.obj.find("#jobCategory").val()
-                    },
-                    success: function (data) {
-
-                        if (data.code == 200) {
-                            Alert.success({text: '카테고리가 추가되었습니다'}, function(){
-                                modal.obj.modal('hide');
-                            });
-                        } else {
-                            Swal.fire({
-                                icon: 'error',
-                                html: "카테고리가 추가가 실패하였습니다",
-                            })
+                if (modal.obj.find("#jobCategory").val() != '') {
+                    AjaxUtil.requestBody({
+                        url: '/api/category/add',
+                        data: {
+                            categoryName: modal.obj.find("#jobCategory").val()
+                        },
+                        success: function (data) {
+    
+                            if (data.code == 200) {
+                                Alert.success({text: '지원분야가 추가되었습니다'}, function(){
+                                    modal.obj.modal('hide');
+                                });
+                            } else {
+                                Alert.error({text: data.desc}, function(){});
+                            } 
                         }
-                    }
-                })
+                    })
+                }
             })
 
             DeleteButton.click(function (e) {
+                var categoryName = modal.obj.find("#jobCategory").val()
+                if (categoryName == "") {
+                    return
+                }
+                
                 AjaxUtil.requestBody({
                     url: '/api/category/delete',
                     data: {
-                        categoryName: modal.obj.find("#jobCategory").val()
+                        categoryName: categoryName
                     },
                     success: function (data) {
                         if (data.code == 200)
                         {
-                            Alert.success({text: '카테고리가 삭제되었습니다'}, function(){
+                            Alert.success({text: '지원분야가 삭제되었습니다'}, function(){
                                 modal.obj.modal('hide');
                             });
                         } else {
                             Swal.fire({
                                 icon: 'error',
-                                html: "해당 카테고리가 삭제가 실패하였습니다.",
+                                html: "해당 지원분야의 삭제를 실패하였습니다.",
                             })
                         }
                     }
