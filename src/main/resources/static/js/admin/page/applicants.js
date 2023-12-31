@@ -11,22 +11,25 @@ $(function () {
             const tableDetail = TableDetail.load('#tableDetail');
 
 
-            AjaxUtil.request({
-                url: '/api/category/find',
-                async: false,
-                success: function (data) {
-                    items = data.result.items;
-                }
-            });
-            items.forEach(item => {
-                category.append($('<option>', {
-                        value: item.recKey,
-                        text: item.categoryName,
-                    }
-                ));
-            })
+            // AjaxUtil.request({
+            //     url: '/api/category/find',
+            //     async: false,
+            //     success: function (data) {
+            //         items = data.result.items;
+            //     }
+            // });
+            // items.forEach(item => {
+            //     console.log(item)
+            //     category.append($('<option>', {
+            //             value: item.recKey,
+            //             text: item.categoryName,
+            //         }
+            //     ));
+            // })
 
             category.on('change', function(){
+                Content.params = {}
+                TableDetail.load('#tableDetail');
                 AjaxUtil.requestBody({
                     url: '/api/job/findCategorySelf',
                     data: {
@@ -53,11 +56,15 @@ $(function () {
             $('#searchText').on('keydown', function(event) {
                 if (event.key === 'Enter') {
                     performSearch();
+                    Content.params = {}
+                    TableDetail.load('#tableDetail');
                 }
             });
 
             $('.btn[role="action"][data-action="search"]').on('click', function() {
                 performSearch();
+                Content.params = {}
+                TableDetail.load('#tableDetail');
             });
 
             function performSearch() {
