@@ -2,7 +2,6 @@ package com.enicom.board.kyoritsu.dao.repository.inquiry;
 
 import java.time.LocalDateTime;
 
-import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Repository;
 
 import com.enicom.board.kyoritsu.api.param.multiple.MultipleParam;
