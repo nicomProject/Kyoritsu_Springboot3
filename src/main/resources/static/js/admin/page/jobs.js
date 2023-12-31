@@ -159,6 +159,7 @@ $(function () {
                             console.log(cell)
                             console.log(data)
                             if (data.category == "") data.category = "도미인 호텔";
+                            if (data.category == "dormyinn") data.category = "도미인 호텔"
                             return data.category
                         }
                     },
