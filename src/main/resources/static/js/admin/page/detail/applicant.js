@@ -4,6 +4,7 @@ $(function () {
         subCategorys: [],
         params: {},
         formData: {},
+        categorys: [],
         load: function (params) {
             this.params = params;
 
@@ -16,17 +17,9 @@ $(function () {
                 async: false,
                 success: function (data) {
                     items = data.result.items;
+                    categorys = data.result.items
                 }
             });
-
-            items.forEach(item => {
-                console.log(item)
-                category.append($('<option>', {
-                        value: item.recKey,
-                        text: item.categoryName,
-                    }
-                ));
-            })
 
             category.on("change", function(){
                 categoryValue = $("#categoryDetail option:selected").val()
@@ -40,7 +33,13 @@ $(function () {
                 AjaxUtil.requestBody({
                     url: '/api/applicant/findSelf/' + paramValue,
                     success: function (data) {
-                        console.log(data)
+                        var support = ""
+                        for (var key in categorys) {
+                            if (categorys[key].recKey.toString() == data.result.items[0].jobId.support) {
+                                support = categorys[key].categoryName
+                            }
+                        }
+
                         $("#name").text(data.result.items[0].name);
                         $("#gneder").text(data.result.items[0].gender);
                         $("#phone").text(data.result.items[0].phone);
@@ -51,10 +50,9 @@ $(function () {
                         $("#form_tag").val(data.result.items[0].formTag);
                         $("#pass_yn").val(data.result.items[0].passYn);
                         $("#contents_answer").text(data.result.items[0].contentAnswer);
-
                         $("#supportDetail").append($('<option>', {
                             value: data.result.items[0].jobId.support,
-                            text: data.result.items[0].jobId.support
+                            text: support
                         }))
                         $("#experienceDetail").append($('<option>', {
                             value: data.result.items[0].jobId.experience,
