@@ -40,19 +40,6 @@ $(function () {
                 fCreator: "createSEditor2"
             })
 
-            function validateField(formData) {
-                console.log(formData)
-                for (const field in formData) {
-                    const value = document.getElementById(field).value;
-                    console.log(value)
-                    if(!value){
-                        Alert.warning({text: `${formData[field]}은 필수 입력 항목입니다.`})
-                        return false
-                    }
-                }
-                return true;
-            }
-
             if(paramValue !== ""){
                 AjaxUtil.requestBody({
                     url: '/api/job/findSelf',
@@ -96,7 +83,7 @@ $(function () {
                 var Dateto = $("#Dateto").val();
                 var Datefrom = $("#Datefrom").val();
 
-                if(action === 'add' && validateField(formData)){
+                if(action === 'add' && ValidateField.valid(formData)){
                     AjaxUtil.requestBody({
                         url: '/api/job/add',
                         data: {
@@ -122,7 +109,7 @@ $(function () {
                         }
                     })
                 }
-                else if(action === "update" && validateField(formDataKey)){
+                else if(action === "update" && ValidateField.valid(formDataKey)){
                     AjaxUtil.requestBody({
                         url: '/api/job/update',
                         data: {

@@ -10,21 +10,6 @@ $(function () {
         },
 
         event: function () {
-
-            function validateField(formData) {
-                for (const field in formData) {
-                    console.log(field)
-                    const value = document.getElementById(field).value;
-                    if(!value){
-                        Alert.warning({text: `${formData[field]}은 필수 입력 항목입니다.`})
-                        return false
-                    }
-                }
-                return true;
-
-
-            }
-
             formData = {'manager_id' : '아이디', 'manager_name' : '이름'};
 
             const paramValue = this.params.key
@@ -126,7 +111,7 @@ $(function () {
             buttons.forEach(function (button) {
                 button.addEventListener("click", function () {
                     const action = button.getAttribute("data-action");
-                    if (action === "add" && validateField(formData)) {
+                    if (action === "add" && ValidateField.valid(formData)) {
                         var manager_id = $("#manager_id").val();
                         var manager_name = $("#manager_name").val();
                         var manager_role = $("#manager_role").val();
@@ -154,7 +139,7 @@ $(function () {
                                     }
                                 }
                             })
-                        }else if(paramValue !== "" && validateField(formData)){
+                        }else if(paramValue !== "" && ValidateField.valid(formData)){
 
                             AjaxUtil.requestBody({
                                 url: '/api/manager/update',

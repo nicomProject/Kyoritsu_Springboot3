@@ -7,18 +7,6 @@ $(function () {
         },
         event: function () {
             formData = {'contents' : '답변'};
-            function validateField(formData) {
-                for (const field in formData) {
-                    console.log(field)
-                    const value = document.getElementById(field).value;
-                    if(!value || value === '<p>&nbsp;</p>'){ // 입력값 없음 || 기본 입력
-                        Alert.warning({text: `${formData[field]}을 입력해 주세요.`})
-                        return false
-                    }
-                }
-                return true;
-            }
-
             const paramValue = this.params.key
 
             var oEditors = [];
@@ -61,7 +49,7 @@ $(function () {
                 oEditors.getById["contents"].exec("UPDATE_CONTENTS_FIELD", []);
                 var answer = $("#contents").val();
 
-                if(action === 'add' && validateField(formData)){
+                if(action === 'add' && ValidateField.valid(formData)){
                     AjaxUtil.requestBody({
                         url: '/api/inquiry/addAnswer',
                         data: {

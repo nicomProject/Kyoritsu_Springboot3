@@ -8,21 +8,6 @@ $(function () {
             this.event();
         },
         event: function () {
-
-            function validateField(formData) {
-                for (const field in formData) {
-                    console.log(field)
-                    const value = document.getElementById(field).value;
-                    if(!value){
-                        Alert.warning({text: `${formData[field]}은 필수 입력 항목입니다.`})
-                        return false
-                    }
-                }
-                return true;
-
-
-            }
-
             const paramValue = this.params.key
             formData = {'title' : '제목', 'contents' : '본문'};
 
@@ -143,7 +128,7 @@ $(function () {
                 var titleValue = $("#title").val();
                 var contentsValue = $("#contents").val();
 
-                if(action === 'add' && validateField(formData)){
+                if(action === 'add' && ValidateField.valid(formData)){
                     AjaxUtil.requestBody({
                         url: '/api/notice/add',
                         data: {
@@ -165,7 +150,7 @@ $(function () {
                         }
                     })
                 }
-                else if(action === "update" && validateField(formData)){
+                else if(action === "update" && ValidateField.valid(formData)){
 
                     AjaxUtil.requestBody({
                         url: '/api/notice/update',

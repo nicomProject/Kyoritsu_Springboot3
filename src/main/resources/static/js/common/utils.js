@@ -1354,3 +1354,16 @@ const IconUtil = {
     fail: '<i class="status-0 status-title fas fa-circle"></i>'
 }
 
+const ValidateField = {
+    valid: function (formData) {
+        for (const field in formData) {
+            console.log(field)
+            const value = document.getElementById(field).value;
+            if(!value || value === '<p>&nbsp;</p>'){
+                Alert.warning({text: `${formData[field]}을 입력해 주세요.`})
+                return false
+            }
+        }
+        return true;
+    }
+}

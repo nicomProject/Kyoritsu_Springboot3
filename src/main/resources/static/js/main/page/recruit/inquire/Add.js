@@ -5,20 +5,6 @@ $(function () {
         },
         event: function () {
             formData = {'name' : '이름', 'phone' : '연락처', 'title' : '제목', 'textarea' : '문의내용', 'password' : '비밀번호'};
-
-            function validateField(formData) {
-                console.log(formData);
-                for (const field in formData) {
-                    const value = document.getElementById(field).value;
-                    console.log(value);
-                    if(!value) {
-                        Alert.warning({text: `${formData[field]}은(는) 필수 입력 항목입니다.`});
-                        return false;
-                    }
-                }
-                return true;
-            }
-
             const card = $('.submit-btn');
             card.find('*[role="action"]').click(function(e){
                 const action = this.dataset.action;
@@ -31,7 +17,7 @@ $(function () {
                 console.log(textareaValue);
                 // var secretValue = $("input[name='secret']").prop("checked");
 
-                if(action === 'add' && validateField(formData)){
+                if(action === 'add' && ValidateField.valid(formData)){
                     AjaxUtil.requestBody({
                         url: '/api/inquiry/add',
                         data: {

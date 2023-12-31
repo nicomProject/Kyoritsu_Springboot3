@@ -184,20 +184,6 @@ $(function () {
                 }
             }
 
-
-            function validateField(formData) {
-                for (const field in formData) {
-                    console.log(field)
-                    const value = document.getElementById(field).value;
-                    if(!value){
-                        Alert.warning({text: `${formData[field]}은 필수 입력 항목입니다.`})
-                        return false
-                    }
-                }
-                return true;
-            }
-
-
             const buttons = document.querySelectorAll("button");
             const paramKey = this.params.key
             // 모든 버튼에 클릭 이벤트 리스너를 추가합니다.
@@ -218,7 +204,7 @@ $(function () {
                         console.log(contentsValue)
 
 
-                        if(paramKey === "" && validateField(formData)){
+                        if(paramKey === "" && ValidateField.valid(formData)){
                             AjaxUtil.requestBody({
                                 url: '/api/introductions/add',
                                 data: {
@@ -241,7 +227,7 @@ $(function () {
                                     }
                                 }
                             })
-                        }else if(paramKey !== "" && validateField(formData)){
+                        }else if(paramKey !== "" && ValidateField.valid(formData)){
                             AjaxUtil.requestBody({
                                 url: '/api/introductions/update',
                                 data: {
