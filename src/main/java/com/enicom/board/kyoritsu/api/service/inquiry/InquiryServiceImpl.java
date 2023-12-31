@@ -7,11 +7,12 @@ import org.springframework.stereotype.Service;
 
 import com.enicom.board.kyoritsu.api.param.InquiryParam;
 import com.enicom.board.kyoritsu.api.param.multiple.MultipleParam;
+import com.enicom.board.kyoritsu.api.param.multiple.MultipleType;
 import com.enicom.board.kyoritsu.api.type.ResponseDataValue;
 import com.enicom.board.kyoritsu.api.vo.PageVO;
 import com.enicom.board.kyoritsu.auth.MemberDetail;
 import com.enicom.board.kyoritsu.dao.entity.Inquiry;
-import com.enicom.board.kyoritsu.dao.repository.InquiryRepository;
+import com.enicom.board.kyoritsu.dao.repository.inquiry.InquiryRepository;
 import com.enicom.board.kyoritsu.utils.SecurityUtil;
 
 import jakarta.transaction.Transactional;
@@ -83,9 +84,9 @@ public class InquiryServiceImpl implements InquiryService {
         }
 
         Inquiry inquiry = inquiryOptional.get();
-        param.applyTo(inquiry); // answer 업데이트
         inquiry.setAnswerDate(LocalDateTime.now());
         inquiry.setAnswerUser(member.getId());
+        inquiry.setAnswer(param.getAnswer());
         inquiry.setAnswerYn("답변완료");
 
         inquiryRepository.save(inquiry);
@@ -113,16 +114,25 @@ public class InquiryServiceImpl implements InquiryService {
     @Transactional
     @Override
     public ResponseDataValue<?> delete(MultipleParam param) {
-        Optional<Inquiry> inquiryOptional = inquiryRepository.findByRecKey(Long.valueOf(param.getKey()));
-        if (!inquiryOptional.isPresent()) {
-            return ResponseDataValue.builder(210).desc("잘못된 등록번호입니다.").build();
+        MemberDetail member = securityUtil.getCurrentUser();
+        MultipleType type = param.getType();
+
+        if(type.equals(MultipleType.ONE)) {
+            Optional<Inquiry> inquiryOptional = inquiryRepository.findByRecKey(Long.valueOf(param.getKey()));
+            if(inquiryOptional.isPresent()) {
+                Inquiry inquiry = inquiryOptional.get();
+                inquiry.setDeleteDate(LocalDateTime.now());
+                inquiry.setDeleteUser(member.getId());
+
+                inquiryRepository.save(inquiry);
+            }
         }
-
-        Inquiry inquiry = inquiryOptional.get();
-        inquiry.setDeleteUser(inquiryOptional.get().getInquiryName());
-        inquiry.setDeleteDate(LocalDateTime.now());
-
-        inquiryRepository.save(inquiry);
+        else if(type.equals(MultipleType.LIST)) {
+            inquiryRepository.deleteListContent(param);
+        }
+        else if(type.equals(MultipleType.SPECIFIC)) {
+            inquiryRepository.deleteAllContent();
+        }
 
         return ResponseDataValue.builder(200).build();
     }

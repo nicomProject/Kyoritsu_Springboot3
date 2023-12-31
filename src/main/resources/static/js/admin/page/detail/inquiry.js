@@ -91,7 +91,7 @@ $(function () {
                         url: '/api/inquiry/delete',
                         data: {
                             type: 'one',
-                            id: paramValue
+                            key: paramValue
                         },
                         success: function (data) {
                             if(data.code === 200){

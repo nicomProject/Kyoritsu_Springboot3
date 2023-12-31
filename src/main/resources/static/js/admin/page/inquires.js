@@ -18,7 +18,7 @@ $(function () {
 
 
                 if (action === 'del') {
-                    if(selected.length === 0){
+                    if(selected.length === 0 && range !== 'all'){
                         Alert.warning({text: '채용문의 관리를 먼저 선택해주세요!'});
                         return;
                     } else if(range === 'list' && selected.length > 0){
@@ -44,7 +44,6 @@ $(function () {
                         })
 
                     }
-                    // ... (기존의 삭제 로직을 이곳에 삽입)
                 }
                 else if (action === 'file') {
                     const range = this.dataset.range;
