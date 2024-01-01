@@ -12,6 +12,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -105,5 +106,11 @@ public class Job {
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
     private LocalDateTime toDate;
+    // ------------------------------------------
+
+    // Transient --------------------------------
+    @Transient // 해당 값은 column에 포함시키지 않음
+    @Column(name = "applicant_cnt")
+    private Long applicantCnt;
     // ------------------------------------------
 }

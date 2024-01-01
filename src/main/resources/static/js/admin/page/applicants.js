@@ -154,8 +154,17 @@ $(function () {
                         }
                     },
                     {title: '등록일시', field: "createDate", tooltip: true, headerTooltip: true},
-                    {title: '지원자 현황', field: "", tooltip: true, headerTooltip: true},
-
+                    {
+                        title: '지원자현황', 
+                        field: "applicantCnt", 
+                        tooltip: true, 
+                        headerTooltip: true,
+                        formatter: function(cell, formatterParams, onRendered) {
+                                const data = cell.getData();
+                                const result = data.applicantCnt + "명";
+                                return result;
+                            }
+                    },
                 ],
             });
 

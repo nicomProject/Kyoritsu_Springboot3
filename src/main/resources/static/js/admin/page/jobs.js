@@ -166,7 +166,7 @@ $(function () {
                     {title: '제목', field: "title", tooltip: true, headerTooltip: true, headerFilter: 'input'},
                     // {title: '기간', field: "fromDate + toDate", tooltip: true, headerTooltip: true},
 
-                   {title: '등록일시', field: 'createDate', tooltip: true, headerTooltip: true, customDisplay: true},
+                    {title: '등록일시', field: 'createDate', tooltip: true, headerTooltip: true, customDisplay: true},
                     {
                         title: '공고기간',
                         field: "fromDate + toDate",
@@ -180,7 +180,17 @@ $(function () {
                             return result;
                         }
                     },
-                    {title: '지원자현황', field: "", tooltip: true, headerTooltip: true},
+                    {
+                        title: '지원자현황', 
+                        field: "applicantCnt", 
+                        tooltip: true, 
+                        headerTooltip: true,
+                        formatter: function(cell, formatterParams, onRendered) {
+                                const data = cell.getData();
+                                const result = data.applicantCnt + "명";
+                                return result;
+                            }
+                    },
 
                 ],
             });

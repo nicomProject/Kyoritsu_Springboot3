@@ -1,6 +1,7 @@
 package com.enicom.board.kyoritsu.api.service.job;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -11,7 +12,9 @@ import com.enicom.board.kyoritsu.api.param.multiple.MultipleType;
 import com.enicom.board.kyoritsu.api.type.ResponseDataValue;
 import com.enicom.board.kyoritsu.api.vo.PageVO;
 import com.enicom.board.kyoritsu.auth.MemberDetail;
+import com.enicom.board.kyoritsu.dao.entity.Applicant;
 import com.enicom.board.kyoritsu.dao.entity.Job;
+import com.enicom.board.kyoritsu.dao.repository.applicant.ApplicantRepository;
 import com.enicom.board.kyoritsu.dao.repository.job.JobRepository;
 import com.enicom.board.kyoritsu.utils.SecurityUtil;
 
@@ -23,11 +26,18 @@ import lombok.RequiredArgsConstructor;
 public class JobServiceImpl implements JobService {
     private final SecurityUtil securityUtil;
     private final JobRepository jobRepository;
+    private final ApplicantRepository applicantRepository;
 
     @Transactional
     @Override
     public PageVO<Job> findAll() {
-        return PageVO.builder(jobRepository.findAllByDeleteDateNull()).build();
+        List<Job> jobs = jobRepository.findAllByDeleteDateNull();
+        for(Job j : jobs){
+            Long recKey = j.getRecKey();
+            int applicants = applicantRepository.findByJobId(recKey).size();
+            j.setApplicantCnt(Long.valueOf(applicants));
+        }
+        return PageVO.builder(jobs).build();
     }
 
     @Transactional
