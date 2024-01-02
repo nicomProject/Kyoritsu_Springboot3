@@ -17,6 +17,16 @@ $(function () {
                     $("input[name='secret']").prop("checked", data.result.items[0].inquirySecret);
                     $("input[name='title']").val(data.result.items[0].inquiryTitle);
                     $(".inquire-input").val(data.result.items[0].inquiryContent);
+                    $(".inquire-answer").html(data.result.items[0].answer);
+
+                    // div 표시 설정
+                    if(data.result.items[0].answerYn == '답변대기') {
+                        document.getElementById('answerPending').style.display = 'block';
+                        document.getElementById('answerComplete').style.display = 'none';
+                    } else {
+                        document.getElementById('answerPending').style.display = 'none';
+                        document.getElementById('answerComplete').style.display = 'block';
+                    }
 
                     if (data.code == 200) {
                     } else {
@@ -94,11 +104,5 @@ $(function () {
     Content.load({
         key: $('.param[name="key"]').val() || ''
     });
-    
-    // '답변완료'의 경우, 수정하지 못하도록 변경하고 답변이 보이도록 함
-    var answerYnValue = data.result.items[0].answerYn;
-    if(answerYnValue === '답변완료') {
-        $('.buttons').hide();
-    }
     
 });

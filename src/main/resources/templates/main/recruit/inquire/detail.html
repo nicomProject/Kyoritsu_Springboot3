@@ -94,12 +94,22 @@
                         <textarea class="inquire-input" id="textarea" name="textarea" rows="8" cols="50"></textarea>
                     </div>
                 </div>
-                <div class="buttons">
-                    <div class="update-btn">
-                        <button type="button" role="action" data-action="update"> 수정하기 </button>
+                <!-- 답변대기 상태일 때 보일 div -->
+                <div id="answerPending">
+                    <div class="buttons">
+                        <div class="update-btn">
+                            <button type="button" role="action" data-action="update"> 수정하기 </button>
+                        </div>
+                        <div class="delete-btn">
+                            <button type="button" role="action" data-action="delete"> 삭제하기 </button>
+                        </div>
                     </div>
-                    <div class="delete-btn">
-                        <button type="button" role="action" data-action="delete"> 삭제하기 </button>
+                </div>
+                <!-- 답변완료 상태일 때 보일 div -->
+                <div id="answerComplete">
+                    <div class="content-container">
+                        <div class="title">답변내용</div>
+                        <div class="inquire-answer"></div>
                     </div>
                 </div>
             </div>
