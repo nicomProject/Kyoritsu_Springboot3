@@ -117,6 +117,12 @@ $(function () {
                     jobObject.experience = "신입/경력"
                 }
 
+                if (item.fulltime == "fulltime") {
+                    jobObject.fulltime = "정규직"
+                } else if (item.fulltime == "contract") {
+                    jobObject.fulltime = "계약직"
+                }
+
                 if (item.category == "dormyinn") {
                     jobObject.title = "[" + "도미인" + "]"
                 } else if (item.category == "resort") {
@@ -162,7 +168,7 @@ $(function () {
 
             // 정규직, 상시모집 추가
             var regularDiv = document.createElement('div');
-            regularDiv.textContent = '정규직';
+            regularDiv.textContent = jobObject.fulltime
             var recruitmentDiv = document.createElement('div');
             recruitmentDiv.textContent = jobObject.date;
 

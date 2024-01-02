@@ -27,6 +27,7 @@ public class ApplicantRepositoryCustomImpl implements ApplicantRepositoryCustom 
 
         return factory.selectFrom(qApplicant)
                 .where(qApplicant.jobId.eq(factory.selectFrom(qJob).where(qJob.recKey.eq(jobId))))
+                .orderBy(qApplicant.recKey.asc())
                 .fetch();
     }
 }

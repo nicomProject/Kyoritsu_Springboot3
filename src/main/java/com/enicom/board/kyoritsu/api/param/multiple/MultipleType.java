@@ -3,7 +3,7 @@ package com.enicom.board.kyoritsu.api.param.multiple;
 import com.fasterxml.jackson.annotation.JsonCreator;
 
 public enum MultipleType {
-    ONE, LIST, SPECIFIC, ALL;
+    ONE, LIST, SPECIFIC, ALL, RANGE;
 
     @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
     public static MultipleType from(String code) {

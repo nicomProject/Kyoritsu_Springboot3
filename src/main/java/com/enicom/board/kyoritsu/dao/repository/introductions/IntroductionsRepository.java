@@ -14,6 +14,7 @@ import com.enicom.board.kyoritsu.dao.entity.Content;
 public interface IntroductionsRepository extends CrudRepository<Content, Long> ,IntroductionsRepositoryCustom {
     // Content entity 내의 deleteDate값이 null이 아닌 모든 Content 반환
     List<Content> findAllByDeleteDateNull();
+    List<Content> findAllByDeleteDateIsNullOrderByRecKey();
     // Content entity 내의 recKey를 사용하여 Content entity 찾아 list 형태로 반환
     List<Content> findAllByRecKey(Long recKey);
     // Content entity 내의 recKey를 사용하여 Content entity 찾아 반환

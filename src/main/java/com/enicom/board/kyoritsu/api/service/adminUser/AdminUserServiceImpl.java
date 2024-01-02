@@ -28,7 +28,7 @@ public class AdminUserServiceImpl implements AdminUserService {
 
     @Override
     public PageVO<AdminUser> findAll() {
-        return PageVO.builder(adminUserRepository.findAllByDeleteDateNull()).build();
+        return PageVO.builder(adminUserRepository.findAllByDeleteDateNullOrderByRecKey()).build();
     }
 
     @Override

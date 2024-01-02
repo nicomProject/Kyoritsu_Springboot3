@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import com.enicom.board.kyoritsu.api.type.ResponseDataValue;
 import com.enicom.board.kyoritsu.dao.entity.AccessLog;
-import com.enicom.board.kyoritsu.dao.repository.AccessLogRepository;
+import com.enicom.board.kyoritsu.dao.repository.access.AccessLogRepository;
 import com.enicom.board.kyoritsu.utils.Utils;
 
 import jakarta.servlet.http.HttpServletRequest;

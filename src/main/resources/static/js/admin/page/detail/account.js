@@ -118,6 +118,10 @@ $(function () {
                         var manager_enable = $("#manager_enable").val();
 
                         if(paramValue === ""){
+                            if (!ValidateField.verify(manager_id)) {
+                                Alert.warning({text: "아이디는 영문자, 숫자 4자 이상 12자이내, 첫 글자는 영문자로 사용 가능합니다."});
+                                return
+                            }
                             AjaxUtil.requestBody({
                                 url: '/api/manager/add',
                                 data: {
@@ -140,7 +144,10 @@ $(function () {
                                 }
                             })
                         }else if(paramValue !== "" && ValidateField.valid(formData)){
-
+                            if (!ValidateField.verify(manager_id)) {
+                                Alert.warning({text: "아이디는 영문자, 숫자 4자 이상 12자이내로 사용 가능합니다."});
+                                return
+                            }
                             AjaxUtil.requestBody({
                                 url: '/api/manager/update',
                                 data: {

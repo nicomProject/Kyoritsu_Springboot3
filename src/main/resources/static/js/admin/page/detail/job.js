@@ -56,6 +56,7 @@ $(function () {
                         $(".pageSub #notice_period").val(data.result.items[0].fromDate + "~" + data.result.items[0].toDate);
                         $(".pageSub #support").val(data.result.items[0].support);
                         $(".pageSub #experience").val(data.result.items[0].experience);
+                        $(".pageSub #fulltime").val(data.result.items[0].fulltime)
                         $(".pageSub #Datefrom").val(data.result.items[0].fromDate.substring(0, 10));
                         $(".pageSub #Dateto").val(data.result.items[0].toDate.substring(0, 10));
 
@@ -78,6 +79,7 @@ $(function () {
                 var categoryValue = $("#category").val();
                 var supportValue = $("#support").val();
                 var experienceValue = $("#experience").val();
+                var fulltimeValue = $("#fulltime").val()
                 var titleValue = $("#title").val();
                 var contentsValue = $("#contents").val();
                 var Dateto = $("#Dateto").val();
@@ -90,6 +92,7 @@ $(function () {
                             category: categoryValue,
                             support: supportValue,
                             experience: experienceValue,
+                            full_time: fulltimeValue,
                             title: titleValue,
                             contents: contentsValue,
                             date_from: Datefrom,
@@ -116,6 +119,7 @@ $(function () {
                             category: categoryValue,
                             support: supportValue,
                             experience: experienceValue,
+                            full_time: fulltimeValue,
                             title: titleValue,
                             contents: contentsValue,
                             key: paramValue

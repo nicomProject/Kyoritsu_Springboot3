@@ -7,6 +7,7 @@ import com.enicom.board.kyoritsu.dao.entity.Applicant;
 import com.enicom.board.kyoritsu.dao.repository.applicant.ApplicantRepository;
 import com.enicom.board.kyoritsu.auth.MemberDetail;
 import com.enicom.board.kyoritsu.utils.SecurityUtil;
+import com.enicom.board.kyoritsu.config.EmailConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,7 +37,7 @@ public class ApplicantServiceImpl implements ApplicantService {
     @Transactional
     @Override
     public PageVO<Applicant> findAll(Long key) {
-        return PageVO.builder(applicantRepository.findAllByRecKey(key)).build();
+        return PageVO.builder(applicantRepository.findAllByRecKeyOrderByRecKey(key)).build();
     }
 
     @Transactional
@@ -60,10 +61,9 @@ public class ApplicantServiceImpl implements ApplicantService {
         applicant.setFormTag(param.getFormTag());
         applicant.setPassYn(param.getPassYn());
         applicant.setAnswerId(member.getId());
-
         applicantRepository.save(applicant);
 
-        // EmailConfiguration.sendMail(applicant.getEmail(), param.getContentsAnswer());
+        EmailConfiguration.sendMail(applicant.getEmail(), param.getContentsAnswer());
 
         return ResponseDataValue.builder(200).build();
     }

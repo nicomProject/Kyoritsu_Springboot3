@@ -423,7 +423,6 @@ const ParamManager = {
         // modalID = modalID.replace('Modal', '')
         const obj = $(`#${modalID}Modal`);
 
-
         AjaxUtil.request({
             method: 'GET',
             url: url,
@@ -1365,5 +1364,8 @@ const ValidateField = {
             }
         }
         return true;
+    },
+    verify: function (str) {
+        return (str.length >= 4 && str.length <= 12) && (/^[A-Za-z0-9][A-Za-z0-9]*$/.test(str)) && (/^[A-Za-z]*$/.test(str.slice(0, 1)))
     }
 }

@@ -12,7 +12,6 @@ import com.enicom.board.kyoritsu.api.param.multiple.MultipleType;
 import com.enicom.board.kyoritsu.api.type.ResponseDataValue;
 import com.enicom.board.kyoritsu.api.vo.PageVO;
 import com.enicom.board.kyoritsu.auth.MemberDetail;
-import com.enicom.board.kyoritsu.dao.entity.Applicant;
 import com.enicom.board.kyoritsu.dao.entity.Job;
 import com.enicom.board.kyoritsu.dao.repository.applicant.ApplicantRepository;
 import com.enicom.board.kyoritsu.dao.repository.job.JobRepository;
@@ -31,7 +30,7 @@ public class JobServiceImpl implements JobService {
     @Transactional
     @Override
     public PageVO<Job> findAll() {
-        List<Job> jobs = jobRepository.findAllByDeleteDateNull();
+        List<Job> jobs = jobRepository.findAllByDeleteDateIsNullOrderByRecKey();
         for(Job j : jobs){
             Long recKey = j.getRecKey();
             int applicants = applicantRepository.findByJobId(recKey).size();

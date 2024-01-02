@@ -3,10 +3,82 @@ $(function(){
         params: {},
         load: function(params){
             this.params = params;
-            this.draw();
+            this.event();
         },
-        draw: function(){
+        event: function() {
             const table = Table.load('#table');
+
+            const card = $('.card');
+            card.find('*[role="action"]').click(async function(e){
+                const action = this.dataset.action;
+                const range = this.dataset.range;
+                const selected = table.getSelectedData().map(e => e.recKey);
+
+                if(action === 'del'){
+                    var data = {}
+                    switch (range) {
+                        case "list":
+                            if(selected.length === 0){
+                                Alert.warning({text: '접속기록을 먼저 선택해주세요!'});
+                                return;
+                            }
+                            data = {
+                                type: 'list',
+                                idListLong: selected
+                            }
+                            AjaxUtil.requestBody({
+                                url: '/api/adm/log/access/delete',
+                                data: data,
+                                table: 'table',
+                                successMessage: '성공적으로 삭제되었습니다',
+                                failMessage: '삭제중 오류가 발생하였습니다.',
+                            })
+                            break
+                        case "all":
+                            await Alert.confirm({
+                                title: '전체 삭제',
+                                text: `전체 접속기록을 삭제하시겠습니까?`
+                            }, async function (result) {
+                                if (!result.isConfirmed) return;
+                                data = {
+                                    type: 'specific',
+                                }
+                                AjaxUtil.requestBody({
+                                    url: '/api/adm/log/access/delete',
+                                    data: data,
+                                    table: 'table',
+                                    successMessage: '성공적으로 삭제되었습니다',
+                                    failMessage: '삭제중 오류가 발생하였습니다.',
+                                })
+                            })
+                            break
+                        case "range":
+                            var stDate = prompt("삭제 할 시작 기간을 입력 해 주세요.(예시: 2023-12-15)")
+                            var enDate = prompt("삭제 할 종료 기간을 입력 해 주세요.(예시: 2023-12-31)")
+                            
+                            data = {
+                                type: 'range',
+                                startDate: stDate,
+                                endDate: enDate
+                            }
+                            AjaxUtil.requestBody({
+                                url: '/api/adm/log/access/delete',
+                                data: data,
+                                table: 'table',
+                                successMessage: '성공적으로 삭제되었습니다',
+                                failMessage: '삭제중 오류가 발생하였습니다.',
+                            })
+                            break
+                    }
+                } else if (action == "download") {
+                    const range = this.dataset.range;
+                    if (selected.length === 0) {
+                        Alert.warning({text: '접속 기록을 먼저 선택해주세요!'});
+                        return;
+                    }
+                    TableUtil.download(table, 'excel', '접속 기록 목록');
+                }
+            })
         }
     };
 

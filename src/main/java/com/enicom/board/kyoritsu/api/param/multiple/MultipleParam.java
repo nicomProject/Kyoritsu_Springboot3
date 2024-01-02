@@ -28,6 +28,10 @@ public class MultipleParam {
     // SPECIFIC 조건 value
     private String value;
 
+    // RANGE 조건 목록
+    private String startDate;
+    private String endDate;
+
     public boolean isValid() {
         // 하나 삭제의 경우 id 필수
         if (type.equals(MultipleType.ONE) && id == null) {

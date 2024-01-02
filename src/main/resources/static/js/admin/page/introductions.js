@@ -42,9 +42,7 @@ $(function () {
                             failMessage: '표기중 오류가 발생하였습니다.',
                         })
                     }else{
-                        if(selected.length === 1){
-
-                        }else if(selected.length === 0){
+                        if(selected.length === 0){
                             Alert.warning({text: '소개글을 먼저 선택해주세요!'})
 
                         }else if(selected.length > 1){

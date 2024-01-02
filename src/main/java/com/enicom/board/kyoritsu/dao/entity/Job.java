@@ -55,6 +55,9 @@ public class Job {
     @Column(name = "experience", length = 20)
     private String experience;
 
+    @Column(name = "full_time", length = 10)
+    private String fullTime;
+
     @Column(name = "title", length = 100)
     private String title;
 

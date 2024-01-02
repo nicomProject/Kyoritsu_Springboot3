@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
+import com.enicom.board.kyoritsu.dao.entity.Content;
 import com.enicom.board.kyoritsu.dao.entity.MainMenu;
 import com.enicom.board.kyoritsu.dao.entity.QMainMenu;
 import com.querydsl.jpa.impl.JPAQueryFactory;
@@ -36,9 +37,11 @@ public class MainMenuRepositoryCustomImpl implements MainMenuRepositoryCustom {
                     qMainMenu.url,
                     qMainMenu.use,
                     qMainMenu.name,
-                    qMainMenu.menu.recKey
+                    qMainMenu.menu.recKey,
+                    qMainMenu.content
                 )
                 .from(qMainMenu)
+                .leftJoin(qMainMenu.content)
                 .where(qMainMenu.deleteDate.isNull())
                 .fetch()
                 .stream()
@@ -60,6 +63,8 @@ public class MainMenuRepositoryCustomImpl implements MainMenuRepositoryCustom {
                     MainMenu menu = new MainMenu();
                     menu.setRecKey(tuple.get(qMainMenu.menu.recKey));
                     mainMenu.setMenu(menu);
+                    Content content = tuple.get(qMainMenu.content);
+                    mainMenu.setContent(content);
                     return mainMenu;
                 })
                 .collect(Collectors.toList());

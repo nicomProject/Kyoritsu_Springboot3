@@ -11,5 +11,5 @@ public interface ApplicantRepository extends CrudRepository<Applicant, Long>, Ap
 
     Optional<Applicant> findByRecKey(Long recKey);
 
-    List<Applicant> findAllByRecKey(Long recKey);
+    List<Applicant> findAllByRecKeyOrderByRecKey(Long recKey);
 }

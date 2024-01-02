@@ -18,7 +18,7 @@ public interface AdminUserRepository extends CrudRepository<AdminUser, Long>{
     // roles 리스트에 포함된 역할 중 하나라도 일치하는 모든 AdminUser entity 반환
     List<AdminUser> findAllByRoleIn(List<RoleType> roles);
     // AdminMenu entity 내에 있는 deleteDate가 null인 모든 AdminUser entity 반환
-    List<AdminUser> findAllByDeleteDateNull();
+    List<AdminUser> findAllByDeleteDateNullOrderByRecKey();
     // ids 리스트에 포함된 userId 중 하나라도 일치하는 모든 AdminUser entity 반환
     List<AdminUser> findAllByUserIdIn(List<String> ids);
     // AdminUser entity 내에 있는 reckey 값으로 AdminUser entity를 찾아 List로 반환

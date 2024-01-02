@@ -165,6 +165,7 @@ $(function () {
                                 return result;
                             }
                     },
+
                 ],
             });
 
@@ -257,6 +258,26 @@ $(function () {
                     {title: '이름', field: "name", tooltip: true, headerTooltip: true},
                     {title: '연락처', field: "phone", tooltip: true, headerTooltip: true},
                     {title: '지원일시', field: "createDate", tooltip: true, headerTooltip: true},
+                    {
+                        title: '합격결과',
+                        field: "passYn",
+                        tooltip: true,
+                        headerTooltip: true,
+                        formatter: function (cell) {
+                            var passYn = ""
+                            
+                            switch (cell.getValue()) {
+                                case "pass":
+                                    passYn = "합격"
+                                    break
+                                case "fail":
+                                    passYn = "불합격"
+                                    break
+                                default:
+                                    passYn = ""
+                            }
+                            return passYn
+                    }}
                 ],
             });
 

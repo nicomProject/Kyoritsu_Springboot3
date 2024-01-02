@@ -23,6 +23,7 @@ public class JobParam {
     private String key;
     private String date_to;
     private String date_from;
+    private String full_time;
 
     @JsonIgnore
     public Job create(){
@@ -51,6 +52,9 @@ public class JobParam {
         }
         if (this.experience != null) {
             job.setExperience(this.experience);
+        }
+        if (this.full_time != null) {
+            job.setFullTime(this.full_time);
         }
 
         if (this.date_from != null) {

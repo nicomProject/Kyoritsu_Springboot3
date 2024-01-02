@@ -166,7 +166,7 @@ $(function () {
                     {title: '제목', field: "title", tooltip: true, headerTooltip: true, headerFilter: 'input'},
                     // {title: '기간', field: "fromDate + toDate", tooltip: true, headerTooltip: true},
 
-                    {title: '등록일시', field: 'createDate', tooltip: true, headerTooltip: true, customDisplay: true},
+                   {title: '등록일시', field: 'createDate', tooltip: true, headerTooltip: true, customDisplay: true},
                     {
                         title: '공고기간',
                         field: "fromDate + toDate",
@@ -191,7 +191,6 @@ $(function () {
                                 return result;
                             }
                     },
-
                 ],
             });
 

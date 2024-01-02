@@ -44,7 +44,7 @@ public class IntroductionsServiceImpl implements IntroductionsService {
     @Transactional
     @Override
     public PageVO<Content> findAll() {
-        return PageVO.builder(introductionsRepository.findAllByDeleteDateNull()).build();
+        return PageVO.builder(introductionsRepository.findAllByDeleteDateIsNullOrderByRecKey()).build();
     }
 
     @Transactional
