@@ -56,7 +56,7 @@ $(function () {
                         $(".pageSub #notice_period").val(data.result.items[0].fromDate + "~" + data.result.items[0].toDate);
                         $(".pageSub #support").val(data.result.items[0].support);
                         $(".pageSub #experience").val(data.result.items[0].experience);
-                        $(".pageSub #fulltime").val(data.result.items[0].fulltime)
+                        $(".pageSub #fulltime").val(data.result.items[0].fullTime)
                         $(".pageSub #Datefrom").val(data.result.items[0].fromDate.substring(0, 10));
                         $(".pageSub #Dateto").val(data.result.items[0].toDate.substring(0, 10));
 
