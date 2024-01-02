@@ -60,19 +60,7 @@
         </div>
     </div>
     <!-- End Breadcrumbs -->
-
-    <main>
-        <section id="organization-section" class="organization section">
-            <div class="editor-content container">
-                <div class="chart inview animated fadeInUp">
-                    <h3 class="chart-title">Kyoritsu Maintenance Organization Chart</h3>
-                    <img class="pc_view" src="https://www.kyoritsugroup.co.jp/cms/wp-content/themes/kyoritsugroup/assets/img/company/organization/organization_chart_en_pc.jpg" alt="">
-                    <img class="sp_view" src="https://www.kyoritsugroup.co.jp/cms/wp-content/themes/kyoritsugroup/assets/img/company/organization/organization_chart_en_sp.jpg" alt="">
-                </div>
-            </div>
-        </section>
-    </main>
-
+    <th:block th:replace="~{main/intro/include/orgnaization_include::orgnaization_main}"></th:block>
     <!-- Start Footer Area -->
     <th:block th:replace="~{components/_footer::footer_main}"></th:block>
     <!--/ End Footer Area -->
