@@ -2,6 +2,7 @@ package com.enicom.board.kyoritsu.api.service.adminUser;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -95,17 +96,26 @@ public class AdminUserServiceImpl implements AdminUserService {
         
         MultipleType type = param.getType();
         // 값이 하나라면 바로 삭제 진행
+        // (다중 삭제 버튼이 없으므로 다른 경우에 대해 구현 불필요)
         if(type.equals(MultipleType.ONE)) {
             adminUserRepository.deleteById(Long.valueOf(param.getKey()));
         }
-        // TODO : 값이 여러개라면?
         return ResponseDataValue.builder(200).build();
     }
 
     @Override
     public ResponseDataValue<?> init(MultipleParam param) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'init'");
+        List<AdminUser> adminUsers = adminUserRepository.findAllByUserIdIn(param.getIdList());
+        adminUsers.forEach(adminUser -> {
+            adminUser.setPassword(securityUtil.getEncodedInitPwd());
+            adminUser.setEnable(1);
+            adminUser.setFailureCnt(0);
+            adminUser.setEditDate(LocalDateTime.now());
+        });
+
+        adminUserRepository.saveAll(adminUsers);
+
+        return ResponseDataValue.builder(200).build();
     }
 
     @Transactional
@@ -133,6 +143,11 @@ public class AdminUserServiceImpl implements AdminUserService {
         manager.setPassword(securityUtil.encode(newPassword));
         manager.setEditDate(LocalDateTime.now());
         adminUserRepository.save(manager);
+
+        // 자기 자신일 경우, 로그아웃 처리
+        if(current.getUsername().equals(manager.getUserId())) {
+            return ResponseDataValue.builder(201).build();
+        }
 
         return ResponseDataValue.builder(200).desc("비밀번호가 성공적으로 수정되었습니다!").build();
     }
