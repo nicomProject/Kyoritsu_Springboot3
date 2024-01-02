@@ -185,11 +185,14 @@ $(function () {
                                 key: paramValue
                             },
                             success: function (data) {
-                                if (data.code === 200) {
-                                    Alert.success({text: '비밀번호가 성공적으로 변경되었습니다!<br>변경된 비밀번호로 다시 로그인해주세요!'}, function () {
+                                if (data.code === 201) {
+                                    Alert.success({text: data.desc}, function () {
                                         location.href = '/admin/logout';
-
                                     });
+                                } else if (data.code === 200) {
+                                    Alert.success({text: "비밀번호가 성공적으로 변경되었습니다!"}, function() {
+                                        location.href = '/admin/accounts'
+                                    })
                                 } else {
                                     Alert.warning({text: data.desc});
                                 }

@@ -52,6 +52,8 @@ public class ResponseDataValue<T> {
             msg = "시스템에 문제가 발생하였습니다.\r\n관리자에게 문의해 주시기 바랍니다.";
         } else if (code == 200) {
             msg = "성공적으로 처리되었습니다.";
+        } else if (code == 201) {
+            msg = "비밀번호가 성공적으로 변경되었습니다!\r\n변경된 비밀번호로 다시 로그인해주세요!";
         } else if (code == 210) {
             msg = "조회 결과가 없습니다.";
         } else if (code == 220) {
