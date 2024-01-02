@@ -44,9 +44,9 @@ $(function () {
             $('#category-dormyinn').on('click', function() {
                 that.categorySearch("dormyinn");
             });
-            $('#category-resort').on('click', function() {
-                that.categorySearch("resort");
-            });
+            // $('#category-resort').on('click', function() {
+            //     that.categorySearch("resort");
+            // });
 
             AjaxUtil.request({
                 method: 'GET',
