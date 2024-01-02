@@ -83,7 +83,8 @@ $(function () {
                     AjaxUtil.requestBody({
                         url: '/api/inquiry/delete',
                         data: {
-                            key: paramValue
+                            key: paramValue,
+                            type: 'one'
                         },
                         success: function (data) {
                             if(data.code === 200){
