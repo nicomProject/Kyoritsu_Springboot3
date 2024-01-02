@@ -8,9 +8,22 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeUtility;
 import java.util.Properties;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class EmailConfiguration {
-    public static void sendMail(String toEmail, String answer_content) {
+    // field 정의
+    private static final ExecutorService executorService = Executors.newFixedThreadPool(10);
+
+    // Email 전송 비동기 호출
+    public static void sendEmailAsync(String toEmail, String answerContent) {
+        executorService.submit(() -> {
+            sendMail(toEmail, answerContent);
+        });
+    }
+
+    // mail 전송 함수
+    private static void sendMail(String toEmail, String answer_content) {
 
         String _email = "nicom7708@gmail.com";
         String _password = "lnqvzqvqgckroyqo";
