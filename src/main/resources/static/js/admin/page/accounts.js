@@ -210,7 +210,7 @@ $(function () {
                         }
                     },
                     {
-                        title: '로그인<br>시도 횟수',
+                        title: '로그인<br>실패 횟수',
                         field: "failureCnt",
                         hozAlign: 'center',
                         tooltip: true,
