@@ -12,7 +12,8 @@ $(function () {
                     console.log(data.result.items[0])
                     console.log(data.result.items[0].inquiryName)
                     $("input[name='name']").val(data.result.items[0].inquiryName);
-                    $("input[name='phone']").val(data.result.items[0].inquiryPhone);
+                    // $("input[name='phone']").val(data.result.items[0].inquiryPhone);
+                    $("input[name='email']").val(data.result.items[0].inquiryEmail);
                     $("input[name='password']").val(data.result.items[0].inquiryPwd);
                     $("input[name='secret']").prop("checked", data.result.items[0].inquirySecret);
                     $("input[name='title']").val(data.result.items[0].inquiryTitle);
@@ -40,14 +41,16 @@ $(function () {
             this.event();
         },
         event: function () {
-            formData = {'name' : '이름', 'phone' : '연락처', 'title' : '제목', 'textarea' : '문의내용', 'password' : '비밀번호'};
+            // formData = {'name' : '이름', 'phone' : '연락처', 'title' : '제목', 'textarea' : '문의내용', 'password' : '비밀번호'};
+            formData = {'name' : '이름', 'email' : '이메일', 'title' : '제목', 'textarea' : '문의내용', 'password' : '비밀번호'};
             const paramValue = this.params.key
             const card = $('.container');
             card.find('*[role="action"]').click(function(e){
                 const action = this.dataset.action;
 
                 var nameValue = $("input[name='name']").val();
-                var phoneValue = $("input[name='phone']").val();
+                // var phoneValue = $("input[name='phone']").val();
+                var emailValue = $("input[name='email']").val();
                 var passwordValue = $("input[name='password']").val();
                 var textareaValue = $(".inquire-input").val();
                 var titleValue = $("input[name='title']").val();
@@ -58,7 +61,8 @@ $(function () {
                         url: '/api/inquiry/update',
                         data: {
                             inquiryName: nameValue,
-                            inquiryPhone: phoneValue,
+                            // inquiryPhone: phoneValue,
+                            inquiryEmail: emailValue,
                             inquiryPwd: passwordValue,
                             inquiryContent: textareaValue,
                             inquiryTitle: titleValue,
