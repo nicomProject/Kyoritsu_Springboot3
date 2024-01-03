@@ -107,6 +107,8 @@ $(function () {
                         $(".pageSub #create_user").val(data.result.items[0].createUser);
                         $(".pageSub #create_data").val(data.result.items[0].createDate);
                         $(".pageSub #hit").val(data.result.items[0].hit)
+                        $(".pageSub #Datefrom").val(data.result.items[0].fromDate.substring(0, 10));
+                        $(".pageSub #Dateto").val(data.result.items[0].toDate.substring(0, 10));
 
                         if (data.code == 200) {
                         } else {
@@ -127,6 +129,8 @@ $(function () {
                 var categoryValue = $("#category").val();
                 var titleValue = $("#title").val();
                 var contentsValue = $("#contents").val();
+                var Dateto = $("#Dateto").val();
+                var Datefrom = $("#Datefrom").val();
 
                 if(action === 'add' && ValidateField.valid(formData)){
                     AjaxUtil.requestBody({
@@ -135,6 +139,8 @@ $(function () {
                             category: categoryValue,
                             title: titleValue,
                             contents: contentsValue,
+                            date_from: Datefrom,
+                            date_to: Dateto
                         },
                         success: function (data) {
                             if (data.code == 200) {
