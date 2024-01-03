@@ -4,13 +4,15 @@ $(function () {
             this.event();
         },
         event: function () {
-            formData = {'name' : '이름', 'phone' : '연락처', 'title' : '제목', 'textarea' : '문의내용', 'password' : '비밀번호'};
+            // formData = {'name' : '이름', 'phone' : '연락처', 'title' : '제목', 'textarea' : '문의내용', 'password' : '비밀번호'};
+            formData = {'name' : '이름', 'email' : '이메일', 'title' : '제목', 'textarea' : '문의내용', 'password' : '비밀번호'};
             const card = $('.submit-btn');
             card.find('*[role="action"]').click(function(e){
                 const action = this.dataset.action;
 
                 var nameValue = $("input[name='name']").val();
-                var phoneValue = $("input[name='phone']").val();
+                // var phoneValue = $("input[name='phone']").val();
+                var emailValue = $("input[name='email']").val();
                 var passwordValue = $("input[name='password']").val();
                 var titleValue = $("input[name='title']").val();
                 var textareaValue = $("textarea[name='textarea']").val();
@@ -22,7 +24,8 @@ $(function () {
                         url: '/api/inquiry/add',
                         data: {
                             inquiryName: nameValue,
-                            inquiryPhone: phoneValue,
+                            // inquiryPhone: phoneValue,
+                            inquiryEmail: emailValue,
                             inquiryPwd: passwordValue,
                             inquiryContent: textareaValue,
                             inquiryTitle: titleValue,

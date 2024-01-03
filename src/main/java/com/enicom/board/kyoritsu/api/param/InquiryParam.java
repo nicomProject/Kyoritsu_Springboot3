@@ -26,6 +26,7 @@ public class InquiryParam {
     private String inquiryName;
     private String inquiryPwd;
     private String inquiryPhone;
+    private String inquiryEmail;
     private String inquiryContent;
     private String inquiryTitle;
     private String answer;
@@ -42,6 +43,9 @@ public class InquiryParam {
 
     @JsonIgnore
     public void applyTo(Inquiry inquiry) {
+        if (this.inquiryEmail != null) {
+            inquiry.setInquiryEmail(this.inquiryEmail);
+        }
         if (this.inquiryPhone != null) {
             inquiry.setInquiryPhone(this.inquiryPhone);
         }

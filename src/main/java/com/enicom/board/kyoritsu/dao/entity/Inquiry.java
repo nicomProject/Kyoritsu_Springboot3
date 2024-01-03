@@ -63,6 +63,10 @@ public class Inquiry {
     @Comment("문의 작성한 사용자 핸드폰번호")
     private String inquiryPhone;
 
+    @Column(name = "inquiry_email", length = 200)
+    @Comment("문의 작성한 사용자 이메일")
+    private String inquiryEmail;
+
     @Column(name = "inquiry_content", length = 10000)
     @Comment("문의 작성한 내용")
     private String inquiryContent;
