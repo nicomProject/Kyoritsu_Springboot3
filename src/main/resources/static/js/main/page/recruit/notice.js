@@ -104,6 +104,12 @@ $(function () {
             careerNoticeContainer.appendChild(careerFirstChild)
             
             jobs.forEach(item => {
+                // 채용 공고 기간에 따라 항목 추가
+                var nowTime = Date.now()
+                if (!(nowTime >= Date.parse(item.fromDate) && nowTime <= Date.parse(item.toDate))) {
+                    return
+                }
+
                 var jobObject = {}
 
                 if (item.experience == "newcomer") {
