@@ -1,6 +1,6 @@
 package com.enicom.board.kyoritsu.api.service.job;
 
-import java.time.LocalDateTime;
+import java.time.LocalDateTime;import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -105,17 +105,31 @@ public class JobServiceImpl implements JobService {
     @Transactional
     @Override
     public PageVO<Job> findAllCategory(JobParam param) {
+        List<Job> jobs = new ArrayList<>();
         if(param.getCategory().equals("total")){
-            return PageVO.builder(jobRepository.findAllByDeleteDateNull()).build();
+            jobs = jobRepository.findAllByDeleteDateNull();
         }
         else {
-            return PageVO.builder(jobRepository.findAllByDeleteDateNullAndCategory(param.getCategory())).build();
+            jobs = jobRepository.findAllByDeleteDateNullAndCategory(param.getCategory());
         }
+
+        for(Job j : jobs){
+            Long recKey = j.getRecKey();
+            int applicants = applicantRepository.findByJobId(recKey).size();
+            j.setApplicantCnt(Long.valueOf(applicants));
+        }
+        return PageVO.builder(jobs).build();
     }
 
     @Transactional
     @Override
     public PageVO<Job> findSearch(JobParam param) {
-        return PageVO.builder(jobRepository.findByTitleContainingAndDeleteDateNull(param.getTitle())).build();
+        List<Job> jobs = jobRepository.findByTitleContainingAndDeleteDateNullOrderByRecKey(param.getTitle());
+        for(Job j : jobs){
+            Long recKey = j.getRecKey();
+            int applicants = applicantRepository.findByJobId(recKey).size();
+            j.setApplicantCnt(Long.valueOf(applicants));
+        }
+        return PageVO.builder(jobs).build();
     }
 }

@@ -19,5 +19,5 @@ public interface JobRepository extends CrudRepository<Job, Long>, JobRepositoryC
     List<Job> findAllByRecKey(Long recKey);
     Optional<Job> findByRecKey(Long recKey);
     List<Job> findAllByDeleteDateNullAndCategory(String category);
-    List<Job> findByTitleContainingAndDeleteDateNull(String title);
+    List<Job> findByTitleContainingAndDeleteDateNullOrderByRecKey(String title);
 }
