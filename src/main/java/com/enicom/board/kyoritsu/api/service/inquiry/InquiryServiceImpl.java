@@ -11,6 +11,7 @@ import com.enicom.board.kyoritsu.api.param.multiple.MultipleType;
 import com.enicom.board.kyoritsu.api.type.ResponseDataValue;
 import com.enicom.board.kyoritsu.api.vo.PageVO;
 import com.enicom.board.kyoritsu.auth.MemberDetail;
+import com.enicom.board.kyoritsu.config.EmailConfiguration;
 import com.enicom.board.kyoritsu.dao.entity.Inquiry;
 import com.enicom.board.kyoritsu.dao.repository.inquiry.InquiryRepository;
 import com.enicom.board.kyoritsu.utils.SecurityUtil;
@@ -91,6 +92,8 @@ public class InquiryServiceImpl implements InquiryService {
 
         inquiryRepository.save(inquiry);
 
+        EmailConfiguration.sendEmailAsync(inquiry.getInquiryEmail(), param.getAnswer(), "inquiry");
+
         return ResponseDataValue.builder(200).build();
     }
 
@@ -122,7 +125,10 @@ public class InquiryServiceImpl implements InquiryService {
             if(inquiryOptional.isPresent()) {
                 Inquiry inquiry = inquiryOptional.get();
                 inquiry.setDeleteDate(LocalDateTime.now());
-                inquiry.setDeleteUser(member.getId());
+                // 사용자가 삭제할 경우, '<user>' 값이 deleteUser에 저장
+                if(member == null) inquiry.setDeleteUser("<user>");
+                // 관리자가 삭제할 경우, 관리자명을 deleteUser에 저장
+                else inquiry.setDeleteUser(member.getId());
 
                 inquiryRepository.save(inquiry);
             }
