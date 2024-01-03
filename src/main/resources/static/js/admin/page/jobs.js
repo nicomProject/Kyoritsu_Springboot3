@@ -169,7 +169,7 @@ $(function () {
                    {title: '등록일시', field: 'createDate', tooltip: true, headerTooltip: true, customDisplay: true},
                     {
                         title: '공고기간',
-                        field: "fromDate + toDate",
+                        field: "fromDate",
                         tooltip: true,
                         headerTooltip: true,
                         formatter: function(cell, formatterParams, onRendered) {

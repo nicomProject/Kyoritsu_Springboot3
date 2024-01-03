@@ -142,7 +142,7 @@ $(function () {
                     },
                     {title: '제목', field: "title", tooltip: true, headerTooltip: true},
                     {title: '기간',
-                        field: "fromDate + toDate",
+                        field: "fromDate",
                         tooltip: true,
                         headerTooltip: true,
                         formatter: function(cell, formatterParams, onRendered) {
