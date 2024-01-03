@@ -63,7 +63,7 @@ public class ApplicantServiceImpl implements ApplicantService {
         applicant.setAnswerId(member.getId());
         applicantRepository.save(applicant);
 
-        EmailConfiguration.sendEmailAsync(applicant.getEmail(), param.getContentsAnswer());
+        EmailConfiguration.sendEmailAsync(applicant.getEmail(), param.getContentsAnswer(), "add");
 
         return ResponseDataValue.builder(200).build();
     }
@@ -83,6 +83,13 @@ public class ApplicantServiceImpl implements ApplicantService {
         applicant.setBirthDate(LocalDate.parse(param.getBirthDate(), formatter).atStartOfDay());
         applicant.setJobId(jobOptional.get());
         applicantRepository.save(applicant);
+
+        String answer = "";
+        answer += "지원 공고명: " + jobOptional.get().getTitle() + "\n";
+        answer += "지원자 성함: " + param.getName() + "\n";
+        answer += "지원자 휴대번호: " + param.getPhone() + "\n";
+
+        EmailConfiguration.sendEmailAsync(applicant.getEmail(), answer, "apply");
 
         return ResponseDataValue.builder(200).build();
     }
