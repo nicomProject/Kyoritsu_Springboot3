@@ -16,26 +16,39 @@ public class EmailConfiguration {
     private static final ExecutorService executorService = Executors.newFixedThreadPool(10);
 
     // Email 전송 비동기 호출
-    public static void sendEmailAsync(String toEmail, String answerContent) {
+    public static void sendEmailAsync(String toEmail, String answer, String type) {
+        StringBuffer contents = new StringBuffer();
+        String[] answerContent = answer.split("\n");
+
+        if (type == "apply") {
+            contents.append("<p>Kyoritsu에 지원해 주셔서 감사합니다.</p>");
+            contents.append("<p>지원 내용 확인 부탁드립니다.</p>");
+        } else if (type == "add") {
+            contents.append("<p>Kyoritsu에 지원해 주셔서 감사합니다.</p>");
+            contents.append("<p>채용 공고 지원 결과에 대해 안내드립니다.</p>");
+        } else if (type == "inquiry") {
+            contents.append("<p>Kyoritsu 채용 문의 답변이 등록되었습니다.</p>");
+            contents.append("<p>채용 문의 답변 내용 확인 부탁드립니다.</p>");
+        }
+
+        contents.append("<br>");
+        for (String ac : answerContent) {
+            contents.append("<p>"+ac+"</p>");
+        }
+        
         executorService.submit(() -> {
-            sendMail(toEmail, answerContent);
+            sendMail(toEmail, contents);
         });
     }
 
     // mail 전송 함수
-    private static void sendMail(String toEmail, String answer_content) {
-
+    private static void sendMail(String toEmail, StringBuffer contents) {
         String _email = "nicom7708@gmail.com";
         String _password = "lnqvzqvqgckroyqo";
 
         String subject = "안녕하세요. 교리츠 인사담당자입니다.";
         String fromMail = "jjg@enicom.co.kr";
         String fromName = "교리츠 인사담당자";
-
-        // mail contents
-        StringBuffer contents = new StringBuffer();
-        contents.append("<p>채용 공고 지원 결과 확인 부탁드립니다.</p><br>");
-        contents.append(answer_content);
 
         // mail properties
         Properties props = new Properties();
@@ -54,7 +67,7 @@ public class EmailConfiguration {
 
         try {
             MimeMessage message = new MimeMessage(mailSession);
-
+            // mail contents
             message.setFrom(new InternetAddress(fromMail, MimeUtility.encodeText(fromName, "UTF-8", "B"))); // 한글의 경우 encoding 필요
             message.setRecipients(
                     Message.RecipientType.TO,
