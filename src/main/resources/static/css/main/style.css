@@ -37,6 +37,7 @@ section .sub-title{
     background: white;
     padding: 0;
     margin: 20px auto;
+    max-width: 50% !important;
 }
 
 .apply .container .title-container{
@@ -78,6 +79,67 @@ section .sub-title{
     padding-left: 10px;
 }
 
+.content-default.content .flex-box{
+    display: flex;
+}
+
+.content-default.content .flex-box .flex-box-first{
+    flex: 3;
+}
+
+.content-default.content .flex-box .flex-box-second{
+    flex: 3;
+}
+
+.content-default.content .flex-box .flex-box-second .apply-label{
+    visibility: hidden;
+}
+
+.content-default.content .flex-box .flex-box-third{
+    flex: 2;
+}
+
+.content-default.content .flex-box .flex-box-third img{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.content-default.content .flex-box input:not(.apply-label input){
+    width: 80%;
+    height: 40px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.content-default.content .apply-address input{
+   width: 95%;
+   height: 40px;
+   margin-top: 2px;
+   margin-bottom: 2px;
+}
+
+.content-default.content .radio-buttons input[type="radio"] {
+    display: none; /* 숨겨진 라디오 버튼 */
+}
+
+.content-default.content .radio-buttons label {
+    display: inline-block;
+    padding: 12px 24px;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: -9px;
+    cursor: pointer;
+    background-color: #ddd; /* 체크되지 않은 상태의 배경색 */
+}
+
+.content-default.content .radio-buttons input[type="radio"]:checked + label {
+    background-color: #66cdaa; /* 체크된 상태의 배경색 */
+    color: #fff; /* 체크된 상태의 텍스트 색상 */
+}
+
+
 .form_radio_btn {
     height : 45px;
     border: 1px solid #EAE7E7;
@@ -115,13 +177,25 @@ section .sub-title{
     padding: 0 20px;
 }
 
-.apply-content .content-default .apply-address{
-    display: flex;
-}
 
 .apply-content .category-title {
     font-weight: 600;
     font-size: 1rem;
+}
+
+.apply-content .apply-button {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.apply-content .apply-button .btn-notice {
+    width: 250px;
+    height: 60px;
+    background-color: #000;
+    opacity: 0.83;
+    color: white;
+    font-size: 22px;
 }
 
 .apply .submit-container{
@@ -1844,7 +1918,9 @@ section .sub-title{
 }
 
 .organization.section .container .chart img{
-    width: 100%;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* location */
@@ -2214,6 +2290,10 @@ section .sub-title{
 #recruit-notice-section .container .notice-list > div{
     display: flex;
     justify-content: space-between;
+}
+
+#recruit-notice-section .container .notice-list a{
+    width: 100%;
 }
 
 #recruit-notice-section .top-line{

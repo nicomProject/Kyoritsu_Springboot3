@@ -112,6 +112,8 @@ $(function () {
 
                 var jobObject = {}
 
+                console.log(item)
+
                 if (item.experience == "newcomer") {
                     jobObject.parentClass = ".new-graduates.card-box"
                     jobObject.experience = "신입"
@@ -131,9 +133,15 @@ $(function () {
 
                 if (item.category == "dormyinn") {
                     jobObject.title = "[" + "도미인" + "]"
-                } else if (item.category == "resort") {
+                }
+                else if (item.category == "resort") {
                     jobObject.title = "[" + "리조트" + "]"
                 }
+
+                if(item.recKey != null){
+                    jobObject.recKey = item.recKey
+                }
+
                 jobObject.title += " " + item.title
                 jobObject.date = item.fromDate.slice(0, 10) + "~" + item.toDate.slice(0, 10)
 
@@ -144,9 +152,13 @@ $(function () {
             // 부모 요소 가져오기
             var noticeListContainer = document.querySelector(jobObject.parentClass);
 
-            // 새로운 div 엘리먼트 생성
-            var noticeItem = document.createElement('div');
+            // 새로운 li 엘리먼트 생성
+            var noticeItem = document.createElement('li');
             noticeItem.className = 'notice-item'; // 클래스 추가
+
+            // 하위 레벨의 a 태그 생성
+            var noticeLink = document.createElement('a');
+            noticeLink.href = '/recruit/notice/detail/' + jobObject.recKey; // 원하는 href 값으로 변경
 
             // 상위 레벨의 div 생성
             var topLineDiv = document.createElement('div');
@@ -162,7 +174,7 @@ $(function () {
             // Career Title 생성
             var careerTitleDiv = document.createElement('div');
             careerTitleDiv.className = 'career-title';
-            careerTitleDiv.textContent = jobObject.title
+            careerTitleDiv.textContent = jobObject.title;
 
             // Top Line에 추가
             topLineDiv.appendChild(careerCategoryDiv);
@@ -174,17 +186,13 @@ $(function () {
 
             // 정규직, 상시모집 추가
             var regularDiv = document.createElement('div');
-            regularDiv.textContent = jobObject.fulltime
+            regularDiv.textContent = jobObject.fulltime;
             var recruitmentDiv = document.createElement('div');
             recruitmentDiv.textContent = jobObject.date;
 
             // Bottom Line에 추가
             bottomLineDiv.appendChild(regularDiv);
             bottomLineDiv.appendChild(recruitmentDiv);
-
-            // 최종적으로 생성된 엘리먼트들을 조립
-            noticeItem.appendChild(topLineDiv);
-            noticeItem.appendChild(bottomLineDiv);
 
             // 공유 아이콘 추가
             var shareIconDiv = document.createElement('div');
@@ -193,15 +201,19 @@ $(function () {
             shareIcon.className = 'fas fa-solid fa-share';
             shareIconDiv.appendChild(shareIcon);
 
-            // 새로운 div 엘리먼트 생성
-            var dep1Div = document.createElement('div');
-            dep1Div.appendChild(noticeItem)
-            dep1Div.appendChild(shareIconDiv)
+            // 최종적으로 생성된 엘리먼트들을 조립
+            noticeLink.appendChild(topLineDiv);
+            noticeLink.appendChild(bottomLineDiv);
+            noticeLink.appendChild(shareIconDiv);
 
-            // 새로운 div 엘리먼트 생성
-            var noticeList = document.createElement('div');
-            noticeList.className = "notice-list"
-            noticeList.appendChild(dep1Div)
+            // 새로운 li 엘리먼트 생성
+            var dep1Div = document.createElement('li');
+            dep1Div.appendChild(noticeLink);
+
+            // 새로운 ul 엘리먼트 생성
+            var noticeList = document.createElement('ul');
+            noticeList.className = "notice-list";
+            noticeList.appendChild(dep1Div);
 
             // 부모 요소에 추가
             noticeListContainer.appendChild(noticeList);

@@ -8,7 +8,7 @@ $(function () {
             card.find('*[role="action"]').click(function(e){
                 const action = this.dataset.action;
                 const answer = $("#answer")
-                
+
                 if (!answer[0].checked) {
                     alert("지원 유의 사항을 확인 해 주세요.")
                     answer.focus()
@@ -18,89 +18,49 @@ $(function () {
                     var birth = $("#birth")
                     var birthDate = birth.val();
 
-                    var job = $("#job");
-                    var jobId = job.val();
+                    var jobId = $("#job").val();
+                    // var jobId = 3;
 
-                    var category = $("#category");
-                    var categoryData = category.val();
+                    var category = $("#category").val();
+                    // var category = "category";
 
-                    var email = $("#email");
-                    var emailData = email.val();
+                    var email = $("#email").val();
+                    // var email = "email";
 
                     var gender = $("#man")[0].checked == true ? "male" : "female";
+                    // var gender = "male"
 
-                    var name = $("#name");
-                    var nameData = name.val();
+                    var name = $("#name").val();
+                    // var name = "name";
                     
-                    var nation = $("#nation")
-                    var nationality = nation.val()
+                    var nationality = $("#nation").val()
+                    // var nationality = "nation"
 
-                    var mobile = $("#mobile");
-                    var mobileData = mobile.val();
+                    var mobile = $("#mobile").val();
+                    // var mobile = "mobile";
 
-                    var career = $("#career");
-                    var careerData = career.val();
+                    var career = $("#career").val();
+                    // var career = "newcomer"
 
                     var address = $("#address").val();
                     var addressDetail = $("#addressDetail").val();
 
-                    var contents = $("#contents");
-                    var contentsData = contents.val();
-
-                    if (birthDate.length == 0) {
-                        alert("생년월일은 필수 데이터입니다.")
-                        birth.focus()
-                        return
-                    }
-                    else if (jobId.length == 0) {
-                        alert("채용공고 선택은 필수 데이터입니다.")
-                        job.focus()
-                        return
-                    }
-                    else if (categoryData.length == 0) {
-                        alert("카테고리 선택은 필수 데이터입니다.")
-                        category.focus()
-                        return
-                    }
-                    else if (emailData.length == 0) {
-                        alert("이메일은 필수 데이터입니다.")
-                        email.focus()
-                        return
-                    }
-                    else if (gender.length == 0) {
-                        alert("성별은 필수 데이터입니다.")
-                        gender.focus()
-                        return
-                    }
-                    else if (nameData.length == 0) {
-                        alert("성함은 필수 데이터입니다.")
-                        name.focus()
-                        return
-                    }
-                    else if (mobileData.length == 0) {
-                        alert("휴대폰 번호는 필수 데이터입니다.")
-                        mobile.focus()
-                        return
-                    }
-                    else if (contentsData.length == 0) {
-                        alert("자기소개서는 필수 데이터입니다.")
-                        contents.focus()
-                        return
-                    }
+                    var contents = $("#contents").val();
+                    // var contents = "contents";
 
                     AjaxUtil.requestBody({
                         url: '/api/applicant/apply',
                         data: {
                             birthDate : birthDate,
                             jobId : jobId,
-                            category : categoryData,
-                            email : emailData,
+                            category : category,
+                            email : email,
                             gender : gender,
-                            name : nameData,
+                            name : name,
                             nationality : nationality,
-                            phone : mobileData,
-                            career : careerData,
-                            contents : contentsData
+                            phone : mobile,
+                            career : career,
+                            contents : contents
                         },
                         success: function (data) {
                             console.log(data)
@@ -127,6 +87,7 @@ $(function () {
                     contentsField.val(contentsField.val().slice(0, countsMaxCountValue))
                 }
             });
+
         }
     }
 
