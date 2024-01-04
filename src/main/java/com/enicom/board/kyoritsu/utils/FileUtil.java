@@ -2,12 +2,12 @@ package com.enicom.board.kyoritsu.utils;
 
 import com.enicom.board.kyoritsu.api.service.file.FileVO;
 import com.enicom.board.kyoritsu.api.type.ResponseDataValue;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
