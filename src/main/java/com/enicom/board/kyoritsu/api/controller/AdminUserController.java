@@ -65,4 +65,12 @@ public class AdminUserController {
     public ResponseHandler<?> changePassword(@RequestBody @Valid AdminUserPasswordParam param) {
         return new ResponseHandler<>(adminUserService.changePassword(param));
     }
+
+    // [url] : /api/manager/init
+    @RequestMapping(path = "/manager/init", method = {RequestMethod.POST})
+    @ApiMapping(order = 56, desc = "[관리자] 관리자 초기화", param = MultipleParam.class)
+    public ResponseHandler<?> initAdminUserInfo(@RequestBody @Valid MultipleParam param) {
+        return new ResponseHandler<>(adminUserService.init(param));
+    }
+
 }

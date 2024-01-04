@@ -142,11 +142,22 @@ $(function () {
                         }
                     },
                     {title: '제목', field: "title", headerHozAlign: "center", tooltip: true, headerTooltip: true, headerFilter: 'input'},
-                    {title: '조회수', field: "hit", headerHozAlign: "center", tooltip: true, headerTooltip: true},
+                    {
+                        title: '게시기간',
+                        field: "fromDate",
+                        tooltip: true,
+                        headerTooltip: true,
+                        formatter: function(cell, formatterParams, onRendered) {
+                            const data = cell.getData();
+                            const fromDate = data.fromDate.slice(0, 10) || 0; // fromDate가 없으면 0으로 가정
+                            const toDate = data.toDate.slice(0, 10) || 0;     // toDate가 없으면 0으로 가정
+                            const result = fromDate + "~" + toDate;
+                            return result;
+                        }
+                    },
                     {title: '작성자', field: "createUser", headerHozAlign: "center", tooltip: true, headerTooltip: true},
                     {title: '작성일', field: "createDate", headerHozAlign: "center", tooltip: true, headerTooltip: true},
-
-
+                    {title: '조회수', field: "hit", headerHozAlign: "center", tooltip: true, headerTooltip: true},
                 ],
             });
 

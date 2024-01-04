@@ -27,11 +27,13 @@
                 <table class="pageSubTable" th:if="${key == null}">
                     <colgroup>
                         <col width="10%"/>
-                        <col width="90%"/>
+                        <col width="40%"/>
+                        <col width="10%"/>
+                        <col width="40%"/>
                     </colgroup>
                     <tr class="pageSub">
                         <td><label for="category">카테고리</label></td>
-                        <td>
+                        <td colspan="3">
                             <!--                            <input type="text" id="category" name="category" required></td>-->
                             <select id="category" name="category" class="form-select">
                                 <option value="news">뉴스</option>
@@ -39,12 +41,18 @@
                         </td>
                     </tr>
                     <tr class="pageSub">
+                        <td><label for="Datefrom">시작일</label></td>
+                        <td ><input type="Date" name="Datefrom" id="Datefrom" autocomplete="off" class="form-control"></td>
+                        <td><label for="Dateto">종료일</label></td>
+                        <td><input type="Date" name="Dateto" id="Dateto" autocomplete="off" class="form-control"></td>
+                    </tr>
+                    <tr class="pageSub">
                         <td><label for="title">제목</label></td>
-                        <td><input type="text" id="title" name="title" class="form-control"></td>
+                        <td colspan="3"><input type="text" id="title" name="title" class="form-control"></td>
                     </tr>
                     <tr class="pageSub">
                         <td><label for="contents">본문</label></td>
-                        <td>
+                        <td colspan="4">
                             <textarea class="form-control" name="contents" id="contents" rows="10" cols="100" ></textarea>
                         </td>
                     </tr>
@@ -70,6 +78,12 @@
                         <col width="40%"/>
                     </colgroup>
                     <tr class="pageSub">
+                        <td><label for="create_user">작성자</label></td>
+                        <td><input type="text" id="create_user" name="sub_title" class="form-control" disabled="disabled" readonly="readonly"></td>
+                        <td><label for="create_data">작성일</label></td>
+                        <td><input type="text" id="create_data" name="sub_title" class="form-control" disabled="disabled" readonly="readonly"></td>
+                    </tr>
+                    <tr class="pageSub">
                         <td><label for="category">카테고리</label></td>
                         <td>
                             <!--                            <input type="text" id="category" name="category" required></td>-->
@@ -81,14 +95,14 @@
                         </td>
                     </tr>
                     <tr class="pageSub">
-                        <td><label for="title">제목</label></td>
-                        <td colspan="3"><input type="text" id="title" name="title" class="form-control"></td>
+                        <td><label for="Datefrom">시작일</label></td>
+                        <td ><input type="Date" name="Datefrom" id="Datefrom" autocomplete="off" class="form-control"></td>
+                        <td><label for="Dateto">종료일</label></td>
+                        <td colspan="3"><input type="Date" name="Dateto" id="Dateto" autocomplete="off" class="form-control"></td>
                     </tr>
                     <tr class="pageSub">
-                        <td><label for="create_user">작성자</label></td>
-                        <td><input type="text" id="create_user" name="sub_title" class="form-control" disabled="disabled" readonly="readonly"></td>
-                        <td><label for="create_data">작성일</label></td>
-                        <td><input type="text" id="create_data" name="sub_title" class="form-control" disabled="disabled" readonly="readonly"></td>
+                        <td><label for="title">제목</label></td>
+                        <td colspan="3"><input type="text" id="title" name="title" class="form-control"></td>
                     </tr>
                     <tr class="pageSub">
                         <td><label for="contents">본문</label></td>

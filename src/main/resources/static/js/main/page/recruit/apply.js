@@ -7,9 +7,16 @@ $(function () {
             const card = $('.submit-btn');
             card.find('*[role="action"]').click(function(e){
                 const action = this.dataset.action;
-                if(action === 'submit'){
-                    var birthDate = $("#birth").val();
-                    // var birthDate = "2023-12-12";
+                const answer = $("#answer")
+
+                if (!answer[0].checked) {
+                    alert("지원 유의 사항을 확인 해 주세요.")
+                    answer.focus()
+                    return
+                }
+                if(action === 'submit' && answer){
+                    var birth = $("#birth")
+                    var birthDate = birth.val();
 
                     var jobId = $("#job").val();
                     // var jobId = 3;
@@ -64,20 +71,23 @@ $(function () {
                         }
                     })
                 }
-                else if(action === 'preview'){
-                    var name = document.getElementById('name').value;
-                    var mobile = document.getElementById('mobile').value;
-                    // 새 창을 열어서 apply_form.html 페이지를 불러온다.
-                    var newWindow = window.open('notice/apply_popup.html', 'Application Form', 'width=1200,height=900');
-                    newWindow.opener.document.getElementById('name').value = "gd";
+            });
 
-                    newWindow.onload = function () {
-                        newWindow.document.getElementById('name').value = name;
-                        newWindow.document.getElementById('mobile').value = mobile;
-                        // 추가로 필요한 초기화 또는 스크립트 적용
-                    };
+            const contentsField = $("#contents");
+            const contentsCount = $("#contentsCount");
+            const contentsMaxCount = $("#contentsMaxCount");
+            const countsMaxCountValue = contentsMaxCount[0].innerText;
+
+            contentsField.on('input propertychange', function() {
+                var cnt = (this.value.length);
+                contentsCount[0].innerText = cnt;
+
+                if (countsMaxCountValue < cnt) {
+                    alert("최대 입력 글자수를 초과하였습니다.\n글자수 제한: "+countsMaxCountValue)
+                    contentsField.val(contentsField.val().slice(0, countsMaxCountValue))
                 }
-            })
+            });
+
         }
     }
 

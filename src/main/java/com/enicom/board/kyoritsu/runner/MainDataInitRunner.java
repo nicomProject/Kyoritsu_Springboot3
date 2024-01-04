@@ -10,7 +10,9 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import com.enicom.board.kyoritsu.dao.entity.Category;
 import com.enicom.board.kyoritsu.dao.entity.MainMenu;
+import com.enicom.board.kyoritsu.dao.repository.category.CategoryRepository;
 import com.enicom.board.kyoritsu.dao.repository.mainMenu.MainMenuRepository;
 import com.enicom.board.kyoritsu.dao.type.MainMenuType;
 
@@ -28,16 +30,19 @@ import lombok.extern.slf4j.Slf4j;
 public class MainDataInitRunner implements ApplicationRunner {
     // field 정의
     private final MainMenuRepository mainMenuRepository;
+    private final CategoryRepository categoryRepository;
 
     @Autowired
-    public MainDataInitRunner(MainMenuRepository mainMenuRepository) {
+    public MainDataInitRunner(MainMenuRepository mainMenuRepository, CategoryRepository categoryRepository) {
         this.mainMenuRepository = mainMenuRepository;
+        this.categoryRepository = categoryRepository;
     }
 
     // 프로그램 실행 시, 최초 1회 실행
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        configureMainMenu(); // MainMenu entity 추가 (메인 메뉴 그룹 및 하위 메뉴 설정)
+        configureMainMenu();        // MainMenu entity 추가 (메인 메뉴 그룹 및 하위 메뉴 설정)
+        configureSupportMenu();     // Category entity 추가 (지원분야 설정. 나중에 Support entity로 변경 예정)
     }
 
     // MainMenu entity 추가 (메인 메뉴 그룹 및 하위 메뉴 설정)
@@ -99,5 +104,25 @@ public class MainDataInitRunner implements ApplicationRunner {
         // mainMenu 업데이트
         log.info("누락된 하위 메뉴 {}건 추가됨", mainMenuList.size());
         mainMenuRepository.saveAll(mainMenuList);
+    }
+
+    // Category entity 추가 (지원분야 설정)
+    private void configureSupportMenu() {
+        // DB에서 support 불러오기
+        Map<String, Category> supportStoredList = new HashMap<>();
+        categoryRepository.findAll().forEach(support -> {
+            supportStoredList.put(support.getCategoryName(), support);
+        });
+
+        // 기존 support 그룹에 추가되어 있지 않은 support라면, supportList에 추가
+        List<Category> supportList = new ArrayList<>();
+        if(!supportStoredList.containsKey("프런트")) supportList.add(Category.builder().categoryName("프런트").build()); 
+        if(!supportStoredList.containsKey("레스토랑")) supportList.add(Category.builder().categoryName("레스토랑").build()); 
+        if(!supportStoredList.containsKey("하우스키핑")) supportList.add(Category.builder().categoryName("하우스키핑").build()); 
+
+        // support 업데이트
+        log.info("기존 지원분야 {}건 확인", supportStoredList.size());
+        log.info("누락된 지원분야 {}건 추가됨", supportList.size());
+        categoryRepository.saveAll(supportList);
     }
 }

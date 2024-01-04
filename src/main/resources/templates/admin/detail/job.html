@@ -24,12 +24,21 @@
             </div>
             <div class="card-body">
                 <table class="pageSubTable" th:if="${key == null}">
+                    <colgroup>
+                        <col width="10%"/>
+                        <col width="15%"/>
+                        <col width="10%"/>
+                        <col width="15%"/>
+                        <col width="10%"/>
+                        <col width="15%"/>
+                        <col width="10%"/>
+                        <col width="15%"/>
+                    </colgroup>
                     <tr class="pageSub">
                         <td><label for="category">카테고리</label></td>
                         <td>
                             <select id="category" name="category" class="form-select">
                                 <option value="dormyinn">도미인 호텔</option>
-                                <option value="resort">리조트</option>
                             </select>
                         </td>
                         <td><label for="support">지원분야</label></td>
@@ -55,23 +64,23 @@
                     </tr>
                     <tr class="pageSub">
                         <td><label for="title">제목</label></td>
-                        <td colspan="5"><input type="text" id="title" name="title" class="form-control"></td>
+                        <td colspan="7"><input type="text" id="title" name="title" class="form-control"></td>
                     </tr>
                     <tr class="pageSub">
 <!--                        <td><label for="notice_period">공고기간</label></td>-->
 <!--                        <td><input type="text" id="notice_period" name="notice_period"></td>-->
                         <td><label for="Datefrom">시작일</label></td>
-                        <td ><input type="Date" name="Datefrom" id="Datefrom" autocomplete="off" class="form-control"></td>
+                        <td colspan="3"><input type="Date" name="Datefrom" id="Datefrom" autocomplete="off" class="form-control"></td>
                         <td><label for="Dateto">종료일</label></td>
                         <td colspan="3"><input type="Date" name="Dateto" id="Dateto" autocomplete="off" class="form-control"></td>
                     </tr>
                     <tr class="pageSub">
                         <td><label for="contents">본문</label></td>
-                        <td colspan="5">
+                        <td colspan="8">
                             <textarea class="form-control" name="contents" id="contents" rows="10" cols="100" ></textarea>
                         </td>
                     </tr>
-                    <tr class="pageSub" >
+                    <tr class="pageSub">
                         <td><label for="management">관리</label></td>
                         <td colspan="5"><div type="text" id="management" name="management">
                             <button class="btn btn-round btn-success bg-gradient-success" role="action" data-action="list">
@@ -89,12 +98,21 @@
                 </table>
 
                 <table class="pageSubTable" th:if="${key != null}">
+                    <colgroup>
+                        <col width="10%"/>
+                        <col width="15%"/>
+                        <col width="10%"/>
+                        <col width="15%"/>
+                        <col width="10%"/>
+                        <col width="15%"/>
+                        <col width="10%"/>
+                        <col width="15%"/>
+                    </colgroup>
                     <tr class="pageSub">
                         <td><label for="category">카테고리</label></td>
                         <td>
                             <select id="category" name="category" class="form-select">
                                 <option value="dormyinn">도미인 호텔</option>
-                                <option value="resort">리조트</option>
                             </select>
                         </td>
                         <td><label for="support">지원분야</label></td>
@@ -120,19 +138,19 @@
                     </tr>
                     <tr class="pageSub">
                         <td><label for="title">제목</label></td>
-                        <td colspan="5"><input type="text" id="title" name="title" class="form-control"></td>
+                        <td colspan="7"><input type="text" id="title" name="title" class="form-control"></td>
                     </tr>
                     <tr class="pageSub">
                         <!--                        <td><label for="notice_period">공고기간</label></td>-->
                         <!--                        <td><input type="text" id="notice_period" name="notice_period"></td>-->
                         <td><label for="Datefrom">시작일</label></td>
-                        <td ><input type="Date" name="Datefrom" id="Datefrom" autocomplete="off" class="form-control"></td>
+                        <td colspan="3"><input type="Date" name="Datefrom" id="Datefrom" autocomplete="off" class="form-control"></td>
                         <td><label for="Dateto">종료일</label></td>
                         <td colspan="3"><input type="Date" name="Dateto" id="Dateto" autocomplete="off" class="form-control"></td>
                     </tr>
                     <tr class="pageSub">
                         <td><label for="contents">본문</label></td>
-                        <td colspan="5">
+                        <td colspan="8">
                             <textarea class="form-control" name="contents" id="contents" rows="10" cols="100" ></textarea>
                         </td>
                     </tr>

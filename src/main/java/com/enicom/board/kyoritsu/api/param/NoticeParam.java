@@ -1,5 +1,8 @@
 package com.enicom.board.kyoritsu.api.param;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 import com.enicom.board.kyoritsu.dao.entity.Notice;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -28,6 +31,8 @@ public class NoticeParam {
     private String contents;
     private String category;
     private String key;
+    private String date_to;
+    private String date_from;
 
     @JsonIgnore
     public Notice create(){
@@ -39,6 +44,8 @@ public class NoticeParam {
 
     @JsonIgnore
     public void applyTo(Notice notice) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
         if (this.title != null) {
             notice.setTitle(this.title);
         }
@@ -47,6 +54,14 @@ public class NoticeParam {
         }
         if (this.category != null) {
             notice.setCategory(this.category);
+        }
+        if (this.date_to != null) {
+            LocalDate dateTime = LocalDate.parse(this.date_to, formatter);
+            notice.setToDate(dateTime.atStartOfDay());
+        }
+        if (this.date_from != null) {
+            LocalDate dateTime = LocalDate.parse(this.date_from, formatter);
+            notice.setFromDate(dateTime.atStartOfDay());
         }
     }
 }
