@@ -17,6 +17,7 @@ public interface JobRepository extends CrudRepository<Job, Long>, JobRepositoryC
     List<Job> findAllByDeleteDateIsNullOrderByRecKey();
     // Job entity 내의 recKey를 사용하여 Job entity 찾아 반환
     List<Job> findAllByRecKey(Long recKey);
+
     Optional<Job> findByRecKey(Long recKey);
     List<Job> findAllByDeleteDateNullAndCategory(String category);
     List<Job> findByTitleContainingAndDeleteDateNull(String title);

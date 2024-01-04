@@ -72,6 +72,20 @@ public class HomeController {
         return String.format("main/recruit/inquire/%s", action);
     }
 
+    // [url] : /recruit/inquire/{action}/{key}
+    // inquire에서 자신이 작성한 페이지 접근할 때 사용
+    @GetMapping("/recruit/notice/{action}/{page}")
+    public String recruitNoticeAction(Model model, @PathVariable String action, @PathVariable String page) throws IOException {
+        model.addAttribute("key", page);
+        return String.format("main/recruit/notice/%s", action);
+    }
+
+    // [url] : /recruit/inquire/{action}
+    @GetMapping("/recruit/notice/{page}")
+    public String recruitNoticeAction(@PathVariable String page) {
+        return String.format("main/recruit/notice/%s", page);
+    }
+
     // [url] : /admin
     @GetMapping(path = {"/admin"})
     public String admin(Model model) {

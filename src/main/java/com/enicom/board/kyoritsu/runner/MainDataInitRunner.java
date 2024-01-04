@@ -85,10 +85,7 @@ public class MainDataInitRunner implements ApplicationRunner {
         if(!mainMenuStoredList.containsKey("오시는길")) mainMenuList.add(MainMenu.builder().order(5).menu(company).url("/intro/location").name("오시는길").nameEnglish("way to come").nameJapanese("アクセス").type(MainMenuType.INTRO).build());
         
         // '사업영역' 하위 메뉴
-        if(!mainMenuStoredList.containsKey("기숙사")) mainMenuList.add(MainMenu.builder().order(1).menu(product).url("/business/dormitory").name("기숙사").nameEnglish("dormitory").nameJapanese("寮").type(MainMenuType.INTRO).build());
         if(!mainMenuStoredList.containsKey("도미인")) mainMenuList.add(MainMenu.builder().order(2).menu(product).url("/business/dormyinn").name("도미인").nameEnglish("Dormy Inn").nameJapanese("ドーミー").type(MainMenuType.INTRO).build());
-        if(!mainMenuStoredList.containsKey("리조트")) mainMenuList.add(MainMenu.builder().order(3).menu(product).url("/business/resort").name("리조트").nameEnglish("resort").nameJapanese("リゾート").type(MainMenuType.INTRO).build());
-        if(!mainMenuStoredList.containsKey("노인주택")) mainMenuList.add(MainMenu.builder().order(4).menu(product).url("/business/seniorlife").name("노인주택").nameEnglish("Senior housing").nameJapanese("高齢住宅").type(MainMenuType.INTRO).build());
 
         // '채용정보' 하위 메뉴
         if(!mainMenuStoredList.containsKey("채용안내")) mainMenuList.add(MainMenu.builder().order(1).menu(recruit).url("/recruit/info").name("채용안내").nameEnglish("Recruitment information").nameJapanese("採用案内").type(MainMenuType.GENERAL).build());

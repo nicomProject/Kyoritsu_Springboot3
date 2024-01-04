@@ -1,0 +1,117 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="~{components/_include::include_main}"></th:block>
+
+<body>
+<!-- Preloader -->
+<div class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-icon">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+<!-- /End Preloader -->
+
+<!-- ========================= header start ========================= -->
+<th:block th:replace="~{components/_header::header_main}"></th:block>
+<!-- ========================= header end ========================= -->
+<input type="hidden" class="param" name="key" th:value="${key}"/>
+<!-- Start Breadcrumbs -->
+<div class="breadcrumbs" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumbs-content">
+                    <ul class="breadcrumb-nav">
+                        <li><a href="../">Home</a></li>
+                        <li><a href="">채용정보</a></li>
+                        <li>채용 지원</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumbs-content title">
+                    <h1 class="page-title">채용 지원</h1>
+                    <p>Business plan draws on a wide range of knowledge from different business disciplines. Business draws on a wide range of different business .</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumbs-content center">
+                    <button type="button" onclick="location.href='/recruit/info'">채용 안내</button>
+                    <button type="button" onclick="location.href='/recruit/notice'">채용 공고</button>
+                    <button type="button" onclick="location.href='/recruit/apply'">채용 지원</button>
+                    <button type="button" onclick="location.href='/recruit/inquire'">채용 문의</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Breadcrumbs -->
+
+<!-- Start Features Area -->
+<main>
+    <section class="apply apply-section">
+        <div class="sub-title">
+            채용 상세
+        </div>
+        <div class="container">
+            <div class="title-container">
+                <div class="apply-career"></div>
+                <div class="apply-title"></div>
+                <div class="apply-subtitle">
+                    <span></span>
+                </div>
+                <div class="share-icon"><i class="fas fa-solid fa-share"></i></div>
+            </div>
+            <div class="apply-content">
+                <div class="content-default content">
+                    <div class="content-default content-all">
+                    </div>
+                    <div class="apply-button">
+                    <button type="button" class="btn-notice">
+                    지원하기
+                    </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="submit-container">
+        </div>
+    </section>
+    <!-- End Features Area -->
+</main>
+<!-- /End Newsletter Area -->
+
+<!-- Start Footer Area -->
+<th:block th:replace="~{components/_footer::footer_main}"></th:block>
+<!--/ End Footer Area -->
+
+<!-- ========================= scroll-top ========================= -->
+<a href="#" class="scroll-top btn-hover">
+    <i class="lni lni-chevron-up"></i>
+</a>
+
+<!-- ========================= JS here ========================= -->
+<script src="/static/js/main/template/bootstrap.min.js"></script>
+<script src="/static/js/main/template/count-up.min.js"></script>
+<script src="/static/js/main/template/wow.min.js"></script>
+<script src="/static/js/main/template/tiny-slider.js"></script>
+<script src="/static/js/main/template/glightbox.min.js"></script>
+<script src="/static/js/main/template/imagesloaded.min.js"></script>
+<script src="/static/js/main/template/isotope.min.js"></script>
+<script src="/static/js/main/template/main.js"></script>
+
+<script type="text/javascript" src="/static/js/main/page/recruit/notice/detail.js"></script>
+</body>
+</html>

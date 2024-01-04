@@ -64,6 +64,19 @@ $(function () {
                         }
                     })
                 }
+                else if(action === 'preview'){
+                    var name = document.getElementById('name').value;
+                    var mobile = document.getElementById('mobile').value;
+                    // 새 창을 열어서 apply_form.html 페이지를 불러온다.
+                    var newWindow = window.open('notice/apply_popup.html', 'Application Form', 'width=1200,height=900');
+                    newWindow.opener.document.getElementById('name').value = "gd";
+
+                    newWindow.onload = function () {
+                        newWindow.document.getElementById('name').value = name;
+                        newWindow.document.getElementById('mobile').value = mobile;
+                        // 추가로 필요한 초기화 또는 스크립트 적용
+                    };
+                }
             })
         }
     }
