@@ -1,13 +1,14 @@
 package com.enicom.board.kyoritsu.api.service.file;
 
 import com.enicom.board.kyoritsu.api.param.file.FileInfoParam;
-import com.enicom.board.kyoritsu.api.type.PageVO;
 import com.enicom.board.kyoritsu.api.type.ResponseDataValue;
+import com.enicom.board.kyoritsu.api.vo.PageVO;
 import com.enicom.board.kyoritsu.utils.FileUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.multipart.MultipartFile;
+
+import lombok.extern.slf4j.Slf4j;
 
 
 @Slf4j

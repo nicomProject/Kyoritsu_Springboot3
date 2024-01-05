@@ -43,6 +43,7 @@ public class MainMenuRepositoryCustomImpl implements MainMenuRepositoryCustom {
                 .from(qMainMenu)
                 .leftJoin(qMainMenu.content)
                 .where(qMainMenu.deleteDate.isNull())
+                .orderBy(qMainMenu.recKey.asc())
                 .fetch()
                 .stream()
                 .map(tuple -> {
@@ -95,6 +96,7 @@ public class MainMenuRepositoryCustomImpl implements MainMenuRepositoryCustom {
                 )
                 .from(qMainMenu)
                 .where(qMainMenu.deleteDate.isNull())
+                .orderBy(qMainMenu.recKey.asc())
                 .fetch()
                 .stream()
                 .map(tuple -> {
@@ -145,6 +147,7 @@ public class MainMenuRepositoryCustomImpl implements MainMenuRepositoryCustom {
                 )
                 .from(qMainMenu)
                 .where(qMainMenu.deleteDate.isNull())
+                .orderBy(qMainMenu.recKey.asc())
                 .fetch()
                 .stream()
                 .map(tuple -> {
