@@ -71,6 +71,33 @@ $(function () {
                         }
                     })
                 }
+                else if(action === 'preview'){
+                    var formData = new FormData();
+                    var fields = ['name', 'gender', 'birth', 'mobile', 'options', 'email', 'em_mobile'];
+
+                    fields.forEach(function (field) {
+                        var input = document.getElementById(field);
+                        formData.append(field, input ? input.value : "");
+                    });
+
+                    // 파일 업로드 필드 추가
+                    var fileInput = document.querySelector('input[type="file"]');
+                    for (var i = 0; i < fileInput.files.length; i++) {
+                        formData.append('files', fileInput.files[i]);
+                    }
+
+                    fields.forEach(function (field) {
+                        $('#' + field + "_modal").text(formData.get(field));
+                    });
+
+                    // 라디오 버튼 값 추가
+                    formData.append('answer', document.querySelector('input[name="answer"]:checked').value);
+
+                    $('#previewContent').text(JSON.stringify(Object.fromEntries(formData.entries())));
+
+                    $('#previewModal').modal('show');
+
+                }
             });
 
             const contentsField = $("#contents");

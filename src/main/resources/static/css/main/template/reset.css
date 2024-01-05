@@ -453,6 +453,10 @@ big {
 	max-width:70%;
 }
 
+.modal-body .container{
+	max-width:100%;
+}
+
 .inquire.container{
 	max-width:70%;
 }
