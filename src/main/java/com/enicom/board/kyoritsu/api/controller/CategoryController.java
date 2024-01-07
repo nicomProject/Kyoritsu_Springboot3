@@ -12,7 +12,7 @@ import com.enicom.board.kyoritsu.api.type.ResponseHandler;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 /**
- *  채용공고 카테고리에 대한 내용 요청을 받고 처리함
+ *  채용공고 지원분야에 대한 내용 요청을 받고 처리함
 **/
 
 @RestController

@@ -9,6 +9,8 @@ const Data = {
     subMenuCheck:[],
     subMenuCheckHash: {},
     subMenus: [],
+    recruitCategoryHash: {},
+    recruitSupportHash: {},
     /**
      * @param config
      * @param {boolean} config.role 역할 사용여부
@@ -17,6 +19,7 @@ const Data = {
         const roleUse = config.role && true;
         const allRoleUse = config.allRole && true;
         const menuUse = config.menu && true;
+        const recruitUse = config.recruit && true;
 
         if (allRoleUse) {
             this.getAllRoles();
@@ -27,8 +30,30 @@ const Data = {
         if(menuUse){
             this.getMenus();
         }
+        if(recruitUse){
+            this.getRecruitCategoryAndSupport();
+        }
 
     },
+
+    /**
+     * 채용공고 카테고리(category) 및 지원분야(support) 조회
+     */
+    getRecruitCategoryAndSupport: function () {
+        const that = this;
+        // 현재로써 category는 도미인 호텔 고정
+        that.recruitCategoryHash = {'dormyinn':'도미인 호텔'};
+        AjaxUtil.request({
+            url: '/api/category/find',
+            success: function (data) {
+                const items = data.result && data.result.items || [];
+                items.forEach(item => {
+                    that.recruitSupportHash[item.recKey] = item.categoryName;
+                });
+            }
+        })
+    },
+
     /**
      * 모든 관리자 역할 조회
      */

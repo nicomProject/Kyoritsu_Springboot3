@@ -1,11 +1,21 @@
 $(function () {
     const Content = {
         params: {},
+        memberInfo: {},
         load: function (params) {
             this.params = params;
 
             Data.load({allRole: true});
+            this.loadMemberInfo();
             this.event();
+        },
+        loadMemberInfo: function() {
+            const memberInfoElement = document.getElementById("memberInfo");
+            this.memberInfo = {
+                id: memberInfoElement.getAttribute("data-id"),
+                name: memberInfoElement.getAttribute("data-name"),
+                authorities: memberInfoElement.getAttribute("data-authorities")
+            };
         },
         event: function () {
             const card = $('.card')
@@ -19,6 +29,7 @@ $(function () {
                     window.location.href = '/admin/account/detail'                }
                 // 관리자 초기화
                 else if (action === 'reset') {
+                    console.log(Content.memberInfo.id);
                     const selected = table.getSelectedData().map(e => e.userId);
                     if(selected.length === 0){
                         Alert.warning({
@@ -26,7 +37,7 @@ $(function () {
                             text: '초기화하실 관리자를 선택해주세요!'
                         });
                     }
-                    else if (selected.includes(memberInfo.id)) {
+                    else if (selected.includes(Content.memberInfo.id)) {
                         Alert.warning({
                             title: '관리자 초기화',
                             text: '현재 로그인한 계정이 포함되어 있습니다.<br>이를 제외하고 다시 진행해주세요!'

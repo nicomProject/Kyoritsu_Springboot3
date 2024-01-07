@@ -47,11 +47,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumbs-content center">
-                        <button type="button" onclick="location.href='/recruit/employee_info'">직원 소개</button>
-                        <button type="button" onclick="location.href='/recruit/info'">채용 안내</button>
-                        <button type="button" onclick="location.href='/recruit/notice'">채용 공고</button>
-                        <button type="button" onclick="location.href='/recruit/apply'">채용 지원</button>
-                        <button type="button" onclick="location.href='/recruit/inquire'">채용 문의</button>
+                        <button type="button" id="btnEmployeeInfo">직원 소개</button>
+                        <button type="button" id="btnInfo">채용 안내</button>
+                        <button type="button" id="btnNotice">채용 공고</button>
+                        <button type="button" id="btnApply">채용 지원</button>
+                        <button type="button" id="btnInquire">채용 문의</button>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                 <div>공고검색</div>
             </div>
             <div class="search-input">
-                <input type="text" id="searchText" placeholder="찾으시는 공고의 키워드를 입력하세요" />
+                <input type="text" id="searchText" placeholder="찾으시는 공고의 키워드(제목)를 입력하세요" />
                 <button class="btn btn-round me-1" role="action" data-action="search">
                     <i class="fas fa-search"></i>
                 </button>
@@ -84,13 +84,10 @@
         <section id="recruit-notice-section" class="recruit-notice section">
             <div class="container">
                 <div class="new-graduates card-box">
-                    <div class="title"> 신입채용 </div>
+                    <div class="title"> 신입 채용 공고 </div>
                 </div>
                 <div class="mid-career card-box">
-                    <div class="title"> 경력채용 </div>
-                </div>
-                <div class="part-time card-box">
-                    <div class="title"> 계약직채용 </div>
+                    <div class="title"> 경력 채용 공고 </div>
                 </div>
             </div>
         </section>

@@ -1,0 +1,171 @@
+var fileNo = 0;
+var filesArr = [];
+
+// 파일 입력(input)에 이벤트 추가
+document.getElementById('fileInput').addEventListener('change', function() {
+    addFile(this);
+});
+
+// 테스트 버튼에 이벤트 추가
+document.getElementById('checkButton').addEventListener('click', function() {
+    submitForm();
+});
+
+/* 첨부파일 추가 */
+function addFile(obj) {
+    var maxFileCnt = 5; // 첨부파일 최대 개수
+    var attFileCnt = document.querySelectorAll('.filebox').length-1; // 기존 추가된 첨부파일 개수 (어딘가 1개가 껴있는데.. 뭐지..)
+    var remainFileCnt = maxFileCnt - attFileCnt; // 추가로 첨부가능한 개수
+    var curFileCnt = obj.files.length; // 현재 선택된 첨부파일 개수
+
+    console.log("기존 추가된 첨부파일 개수: "+attFileCnt);
+    console.log("추가로 첨부가능한 개수: "+remainFileCnt);
+    console.log("현재 선택된 첨부파일 개수: "+curFileCnt);
+
+    // 첨부파일 개수 확인
+    if (curFileCnt > remainFileCnt) {
+        alert("첨부파일은 최대 " + maxFileCnt + "개 까지 첨부 가능합니다.");
+    } else {
+        for (const file of obj.files) {
+            // 첨부파일 검증
+            if (validation(file)) {
+                // 파일 배열에 담기
+                var reader = new FileReader();
+                reader.onload = function() {
+                    filesArr.push(file);
+                };
+                reader.readAsDataURL(file);
+
+                // 목록 추가
+                let htmlData = '';
+                htmlData += '<div id="file' + fileNo + '" class="filebox">';
+                htmlData += '   <p class="name">' + file.name + '</p>';
+                // htmlData += '   <a class="delete" onclick="deleteFile(' + fileNo + ');"><i class="far fa-minus-square"></i></a>';
+                htmlData += '   <a id="delete'+fileNo+'" class="delete"><i class="far fa-minus-square"></i></a>';
+                htmlData += '</div>';
+                document.querySelector('.file-list').insertAdjacentHTML('beforeend', htmlData);
+
+                // 삭제 버튼에 대한 이벤트 핸들러를 추가
+                console.log('delete'+fileNo);
+                var deleteButton = document.getElementById('delete'+fileNo);
+                deleteButton.addEventListener('click', function(fileNo) {
+                    return function() {
+                        deleteFile(fileNo);
+                    };
+                }(fileNo));
+                fileNo++;
+            } else {
+                continue;
+            }
+        }
+    }
+    // 초기화
+    obj.value = "";
+}
+
+/* 첨부파일 검증 */
+function validation(obj) {
+    const fileTypes = ['application/pdf', 'image/gif', 'image/jpeg', 'image/png', 'image/bmp', 'image/tif', 'application/haansofthwp', 'application/x-hwp'];
+    if (obj.name.length > 100) {
+        alert("파일명이 100자 이상인 파일은 제외되었습니다.");
+        return false;
+    } else if (obj.size > (100 * 1024 * 1024)) {
+        alert("최대 파일 용량인 100MB를 초과한 파일은 제외되었습니다.");
+        return false;
+    } else if (obj.name.lastIndexOf('.') == -1) {
+        alert("확장자가 없는 파일은 제외되었습니다.");
+        return false;
+    } else if (!fileTypes.includes(obj.type)) {
+        alert("첨부가 불가능한 파일은 제외되었습니다.");
+        return false;
+    } else {
+        return true;
+    }
+}
+
+/* 첨부파일 삭제 */
+function deleteFile(num) {
+    document.querySelector("#file" + num).remove();
+    filesArr[num].is_delete = true;
+    updateFileList(); // 파일 삭제 후 목록 업데이트
+}
+
+/* 파일 목록 업데이트 */
+function updateFileList() {
+    var fileListBox = document.querySelector('.file-list');
+    fileListBox.innerHTML = ''; // 파일 목록 초기화
+
+    for (var i = 0; i < filesArr.length; i++) {
+        if (!filesArr[i].is_delete) {
+            let fileDiv = document.createElement('div');
+            fileDiv.classList.add('filebox');
+            fileDiv.setAttribute('id', 'file' + i);
+
+            let nameParagraph = document.createElement('p');
+            nameParagraph.classList.add('name');
+            nameParagraph.textContent = filesArr[i].name;
+
+            let deleteLink = document.createElement('a');
+            deleteLink.classList.add('delete');
+            deleteLink.innerHTML = '<i class="far fa-minus-square"></i>';
+            deleteLink.addEventListener('click', createDeleteHandler(i));
+
+            fileDiv.appendChild(nameParagraph);
+            fileDiv.appendChild(deleteLink);
+            fileListBox.appendChild(fileDiv);
+        }
+    }
+}
+
+// 클릭 핸들러를 만드는 함수
+function createDeleteHandler(index) {
+    return function() {
+        deleteFile(index);
+    };
+}
+
+/* 파일 가져오기 */
+window.getFiles = function() {
+    var list = [];
+    for (var i = 0; i < filesArr.length; i++) {
+        // 삭제되지 않은 파일만 리스트에 담기
+        if (!filesArr[i].is_delete) {
+            list.push(filesArr[i]);
+        }
+    }
+    
+    return list;
+}
+
+/* 파일 확인 */
+function submitForm() {
+    var list = [];
+    for (var i = 0; i < filesArr.length; i++) {
+        if (!filesArr[i].is_delete) {
+            list.push(filesArr[i]);
+        }
+    }
+
+    console.log(list.toString());
+
+    // $.ajax({
+    //     method: 'POST',
+    //     url: '/register',
+    //     dataType: 'json',
+    //     data: formData,
+    //     async: true,
+    //     timeout: 30000,
+    //     cache: false,
+    //     headers: {
+    //         'cache-control': 'no-cache',
+    //         'pragma': 'no-cache'
+    //     },
+    //     success: function() {
+    //         alert("파일업로드 성공");
+    //     },
+    //     error: function(xhr, desc, err) {
+    //         alert('에러가 발생 하였습니다.');
+    //         return;
+    //     }
+    // });
+}

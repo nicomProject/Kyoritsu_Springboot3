@@ -34,6 +34,21 @@ $(function () {
             this.event();
         },
         event: function () {
+            document.getElementById("btnOverview").addEventListener("click", function() {
+                window.location.href = '/intro/overview';
+            });
+            document.getElementById("btnVision").addEventListener("click", function() {
+                window.location.href = '/intro/vision';
+            });
+            document.getElementById("btnHistory").addEventListener("click", function() {
+                window.location.href = '/intro/history';
+            });
+            document.getElementById("btnOrganization").addEventListener("click", function() {
+                window.location.href = '/intro/organization';
+            });
+            document.getElementById("btnLocation").addEventListener("click", function() {
+                window.location.href = '/intro/location';
+            });
         }
     }
 

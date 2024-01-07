@@ -1,9 +1,39 @@
 $(function () {
     const Content = {
+        supportHash: {},
         load: function () {
+            const that = this;
+            AjaxUtil.request({
+                url: '/api/category/find',
+                async: false,
+                success: function (data) {
+                    items = data.result.items;
+                    console.log(items);
+                    items.forEach(menu => {
+                        that.supportHash[menu.recKey] = menu.categoryName;
+                    });
+                    console.log(that.supportHash);
+                }
+            });
             this.event();
         },
         event: function () {
+            document.getElementById("btnEmployeeInfo").addEventListener("click", function() {
+                window.location.href = '/recruit/employee_info';
+            });
+            document.getElementById("btnInfo").addEventListener("click", function() {
+                window.location.href = '/recruit/info';
+            });
+            document.getElementById("btnNotice").addEventListener("click", function() {
+                window.location.href = '/recruit/notice';
+            });
+            document.getElementById("btnApply").addEventListener("click", function() {
+                window.location.href = '/recruit/apply';
+            });
+            document.getElementById("btnInquire").addEventListener("click", function() {
+                window.location.href = '/recruit/inquire';
+            });
+
             const that = this
             const $body = $('body');
             const navbar = $('.navbar');
@@ -92,6 +122,7 @@ $(function () {
             });
         },
         setJobObject: function(jobs) {
+            const that = this;
             var newNoticeContainer = document.querySelector(".new-graduates.card-box");
             var careerNoticeContainer = document.querySelector(".mid-career.card-box");
 
@@ -120,22 +151,20 @@ $(function () {
                 } else if (item.experience == "career") {
                     jobObject.parentClass = ".mid-career.card-box"
                     jobObject.experience = "경력"
-                } else if (item.experience == "Synthesis") {
-                    jobObject.parentClass = ".new-graduates.card-box"
-                    jobObject.experience = "신입/경력"
-                }
+                } 
+                // else if (item.experience == "Synthesis") {
+                //     jobObject.parentClass = ".both.card-box"
+                //     jobObject.experience = "신입/경력"
+                // }
 
-                if (item.fulltime == "fulltime") {
+                if (item.fullTime == "fulltime") {
                     jobObject.fulltime = "정규직"
-                } else if (item.fulltime == "contract") {
+                } else if (item.fullTime == "contract") {
                     jobObject.fulltime = "계약직"
                 }
 
                 if (item.category == "dormyinn") {
-                    jobObject.title = "[" + "도미인" + "]"
-                }
-                else if (item.category == "resort") {
-                    jobObject.title = "[" + "리조트" + "]"
+                    jobObject.title = "[" + "도미인 호텔" + "]" + " [" + that.supportHash[item.support] + "]"
                 }
 
                 if(item.recKey != null){
@@ -171,6 +200,14 @@ $(function () {
             careerCategorySpan.textContent = jobObject.experience;
             careerCategoryDiv.appendChild(careerCategorySpan);
 
+            // 정규직/계약직 생성
+            var fulltimeDiv = document.createElement('div');
+            fulltimeDiv.className = 'fulltime';
+            var fulltimeSpan = document.createElement('span');
+            fulltimeSpan.textContent = jobObject.fulltime;
+            console.log(jobObject.fulltime);
+            fulltimeDiv.appendChild(fulltimeSpan);
+
             // Career Title 생성
             var careerTitleDiv = document.createElement('div');
             careerTitleDiv.className = 'career-title';
@@ -178,6 +215,7 @@ $(function () {
 
             // Top Line에 추가
             topLineDiv.appendChild(careerCategoryDiv);
+            topLineDiv.appendChild(fulltimeDiv);
             topLineDiv.appendChild(careerTitleDiv);
 
             // Bottom Line 생성

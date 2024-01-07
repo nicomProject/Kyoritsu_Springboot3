@@ -49,11 +49,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="breadcrumbs-content center">
-                        <button type="button" onclick="location.href='/intro/overview'">기업개요</button>
-                        <button type="button" onclick="location.href='/intro/vision'">경영이념/비전</button>
-                        <button type="button" onclick="location.href='/intro/history'">연혁</button>
-                        <button type="button" onclick="location.href='/intro/organization'">조직도</button>
-                        <button type="button" onclick="location.href='/intro/location'">오시는길</button>
+                        <button type="button" id="btnOverview">기업개요</button>
+                        <button type="button" id="btnVision">경영이념/비전</button>
+                        <button type="button" id="btnHistory">연혁</button>
+                        <button type="button" id="btnOrganization">조직도</button>
+                        <button type="button" id="btnLocation">오시는길</button>
                     </div>
                 </div>
             </div>
@@ -131,20 +131,9 @@
     <script src="/static/js/main/template/isotope.min.js"></script>
     <script src="/static/js/main/template/main.js"></script>
 
-    <!-- kakao map api-->
+    <!-- kakao map api -->
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c9e8bdd8cc8839729e4a9e3515d5f3a7"></script>
-
-    <script type="text/javascript">
-
-        var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
-        var options = { //지도를 생성할 때 필요한 기본 옵션
-            center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-            level: 3 //지도의 레벨(확대, 축소 정도)
-        };
-
-        var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
-
-    </script>
+    <script type="text/javascript" src="/static/js/main/page/intro/kakaomap/kakao-map.js"></script>
 
     <script type="text/javascript" src="/static/js/main/page/intro/location.js"></script>
   </body>

@@ -14,11 +14,11 @@
     <ul class="navbar-nav"></ul>
 
     <script type="text/javascript" src="/static/js/admin/components/side.js"></script>
-    <script th:inline="javascript">
-        const memberInfo = {
-            id: [[member_id]],
-            name: [[member_name]],
-            authorities: [[member_authorities]]
-        };
-    </script>
+
+    <!-- csp policy를 위해 inline script 삭제, div에 값을 담아 사용 -->
+    <div id="memberInfo" 
+     th:data-id="${member_id}" 
+     th:data-name="${member_name}" 
+     th:data-authorities="${member_authorities}" style="display:none;"></div>
+
 </aside>

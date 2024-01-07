@@ -37,11 +37,7 @@
     </div>
 
     <th:block th:replace="~{components/_modals::modal('password')}"></th:block>
-    <script>
-        $(".changeModel").val($(".card-title").text())
-        console.log($(".card-title").text())
-        console.log($("#changeModel").val())
-    </script>
+    <script src="/static/js/components/_header.js"></script>
 </nav>
 
 <header class="header navbar-area" th:fragment="header_main">

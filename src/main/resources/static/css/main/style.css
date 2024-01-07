@@ -68,6 +68,14 @@ section .sub-title{
     padding: 0 5px;
 }
 
+.apply .container .title-container .apply-fulltime{
+    font-size: 0.7rem;
+    border: 1px solid #b2b2b2;
+    border-radius: 3px;
+    padding: 0 5px;
+    margin-left: 5px;
+}
+
 .apply .container .title-container .apply-title{
     font-size: 1rem;
     font-weight: 600;
@@ -2341,7 +2349,7 @@ section .sub-title{
 
 #recruit-notice-section .top-line .career-title{
     font-weight: 500;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 #recruit-notice-section .top-line,
@@ -2361,6 +2369,16 @@ section .sub-title{
 #recruit-notice-section .mid-career,
 #recruit-notice-section .part-time{
     margin-top: 50px;
+}
+
+#recruit-notice-section .card-box .top-line .fulltime span{
+    font-size: 0.7rem;
+    border: 1px solid #bdbdbd;
+    display: inline-block;
+    padding: 3px;
+    margin: 0;
+    margin-left: 5px;
+    line-height: 1;
 }
 
 #recruit-notice-section .card-box .top-line .career-category span{
@@ -2422,4 +2440,96 @@ section .sub-title{
 
 .breadcrumbs .blank{
     margin-bottom: 110px;
+}
+
+
+/* 지원서 작성 프로필 부분 */
+.previewImg {
+    margin-left: 20px;
+}
+
+.filebox {
+    display: inline-block;
+    margin-left: 28px;
+}
+
+.filebox label {
+    display: inline-block;
+    padding: 4px 8px;
+    margin-left: 5px;
+    color: #999;
+    font-size: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    border-radius: .25em;
+    cursor: pointer;
+    color: #fff;
+    background-color: #000000;
+    border: 1px solid #000000;
+}
+
+.filebox input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.filebox .upload-name {
+    display: inline-block;
+    padding: 0.3em 0.4em;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: transparent;
+    border: none;
+    border-bottom-color:transparent;
+    border-radius: .25em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* 지원서 작성 부분의 첨부파일 부분 */
+.apply .container .content .file-list{
+    height: 200px;
+    overflow: auto;
+    border: 1px solid #989898;
+    padding: 10px;
+}
+.apply .container .content .file-list .filebox {
+    display: block;
+    width: 90%;
+    margin-bottom: 10px;
+}
+.apply .container .content .file-list .filebox p {
+    font-size: 14px;
+    margin-top: 10px;
+    display: inline-block;
+}
+.apply .container .content .file-list .filebox .delete i{
+    color: #ff5353;
+    margin-left: 5px;
+}
+/* 기본 파일 입력 필드 숨기기 */
+input[type="file"] {
+  display: none;
+}
+label[for="fileInput"] {
+    display: inline-block;
+    padding: 6px 10px;
+    color: #999;
+    font-size: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    border-radius: .25em;
+    cursor: pointer;
+    color: #fff;
+    background-color: gray;
+    border: 1px solid gray;
 }

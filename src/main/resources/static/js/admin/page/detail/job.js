@@ -122,6 +122,8 @@ $(function () {
                             full_time: fulltimeValue,
                             title: titleValue,
                             contents: contentsValue,
+                            date_from: Datefrom,
+                            date_to: Dateto,
                             key: paramValue
                         },
                         success: function (data) {

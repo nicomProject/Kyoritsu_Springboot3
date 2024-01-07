@@ -42,7 +42,7 @@ public class ImageController {
     }
 
     @RequestMapping(path = "/uploadImages", method = RequestMethod.POST)
-    public String testRoomImage(Model model, HttpServletRequest request, HttpServletResponse response, @RequestParam("images") MultipartFile[] images) {
+    public String uploadImages(Model model, HttpServletRequest request, HttpServletResponse response, @RequestParam("images") MultipartFile[] images) {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         SimpleDateFormat sdf = new SimpleDateFormat ("yyyyMMddhhmmss");
 

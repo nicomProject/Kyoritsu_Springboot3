@@ -39,6 +39,7 @@ public class HomeController {
     public String home(Model model, HttpServletRequest request) {
         HttpSession session = request.getSession();
         String language = (String) session.getAttribute("languageValue");
+        if(language == null) language = "kr";
         model.addAttribute("language", language);
         return "main/index";
     }
@@ -59,7 +60,7 @@ public class HomeController {
     }
 
     // [url] : /recruit/inquire/{action}/{key}
-    // inquire에서 자신이 작성한 페이지 접근할 때 사용
+    // 채용문의에서 자신이 작성한 페이지 접근할 때 사용
     @GetMapping("/recruit/inquire/{action}/{key}")
     public String recruitAction(Model model, @PathVariable String action, @PathVariable long key) throws IOException {
         model.addAttribute("key", key);
@@ -84,6 +85,13 @@ public class HomeController {
     @GetMapping("/recruit/notice/{page}")
     public String recruitNoticeAction(@PathVariable String page) {
         return String.format("main/recruit/notice/%s", page);
+    }
+
+    // [url] : /recruit/apply/{page}
+    @GetMapping("/recruit/apply/{key}")
+    public String recruitApplyAction(Model model, @PathVariable long key) throws IOException {
+        model.addAttribute("key", key);
+        return String.format("main/recruit/apply");
     }
 
     // [url] : /admin

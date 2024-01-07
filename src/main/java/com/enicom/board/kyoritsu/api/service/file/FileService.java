@@ -2,16 +2,14 @@ package com.enicom.board.kyoritsu.api.service.file;
 
 import com.enicom.board.kyoritsu.api.param.file.FileInfoParam;
 import com.enicom.board.kyoritsu.api.type.ResponseDataValue;
+import com.enicom.board.kyoritsu.api.vo.FileVO;
 import com.enicom.board.kyoritsu.api.vo.PageVO;
 import com.enicom.board.kyoritsu.utils.FileUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.multipart.MultipartFile;
 
-import lombok.extern.slf4j.Slf4j;
 
-
-@Slf4j
 public class FileService {
     /**
      * [파일 관리] 파일 목록 조회

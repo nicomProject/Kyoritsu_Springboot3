@@ -3,11 +3,11 @@ spring:
   datasource:
     url: jdbc:postgresql://127.0.0.1:5432/postgres
     username: postgres
-    password: nicom123.
+    password: nicom123
   jpa:
     # hibernate는 자동으로 적절한 DB dialect를 선택할 수 있기 때문에, WARN을 없애기 위해 삭제
     # database-platform: org.hibernate.dialect.PostgreSQLDialect
     open-in-view: false
     hibernate:
-      # ddl-auto: none
-     ddl-auto: create
+      ddl-auto: none
+    #  ddl-auto: create

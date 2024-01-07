@@ -74,15 +74,21 @@ public class SecurityConfiguration {
         http
             .headers(headerConfig -> 
                 headerConfig
+                    // Spring security 6.1 부터 xssProtection()이 권장되지 않음. [따라서 CSP로 구성하여 XSS 공격을 방지함]
+                    .xssProtection(xss -> 
+                        xss.disable()
+                    )
+                    .contentSecurityPolicy(CSPConfig -> 
+                        // kakao-map 허용
+                        CSPConfig.policyDirectives(
+                            // "script-src 'self' 'unsafe-eval' 'unsafe-inline' http://dapi.kakao.com http://t1.daumcdn.net; script-src-elem 'self' http://dapi.kakao.com http://t1.daumcdn.net; object-src 'none';")
+                            "script-src 'self' 'unsafe-eval' http://dapi.kakao.com http://t1.daumcdn.net; script-src-elem 'self' http://dapi.kakao.com http://t1.daumcdn.net; object-src 'none';")
+                    )
                     .frameOptions(frameOptionsConfig -> 
                         frameOptionsConfig.sameOrigin() // 'X-Frame-Options'를 'SAMEORIGIN'
                     )
-                    // Spring security 6.1 부터 xssProtection()이 권장되지 않음. [따라서 CSP로 구성하여 XSS 공격을 방지함](아직안함)
-                    // .xssProtection()
-                    // .contentSecurityPolicy(CSPConfig -> 
-                    //     CSPConfig.policyDirectives("script-src 'self'; object-src 'none';")
-                    // )
             )
+            // .addFilterBefore(new XssFilter(), UsernamePasswordAuthenticationFilter.class)
             .authenticationManager(authManager(http))
             .authorizeHttpRequests(authorizeHttpRequestsConfig -> 
                 authorizeHttpRequestsConfig

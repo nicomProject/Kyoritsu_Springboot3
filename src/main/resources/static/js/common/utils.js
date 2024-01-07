@@ -1358,6 +1358,13 @@ const ValidateField = {
         for (const field in formData) {
             console.log(field)
             const value = document.getElementById(field).value;
+            // 'birth' 자릿수 확인
+            const birthVal = value.replace(/\D/g, ''); // 숫자 이외의 문자 제거
+            if(field === 'birth' && birthVal.length !== 8){
+                Alert.warning({text: `${formData[field]}을 정확히 입력해 주세요.`}) // 생년월일을 정확히 입력해 주세요.
+                return false
+            }
+            // 다른 일반 친구들 확인
             if(!value || value === '<p>&nbsp;</p>'){
                 Alert.warning({text: `${formData[field]}을 입력해 주세요.`})
                 return false

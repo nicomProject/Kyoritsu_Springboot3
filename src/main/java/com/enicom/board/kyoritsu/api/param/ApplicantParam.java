@@ -63,5 +63,4 @@ public class ApplicantParam {
            applicant.setContents(this.contents);
        }
    }
-
 }

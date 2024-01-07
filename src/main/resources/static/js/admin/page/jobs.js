@@ -1,23 +1,10 @@
 $(function () {
     const Content = {
-        categoryHash:{},
         params: {},
         load: function (params) {
-            const that = this;
-            let items = [];
             this.params = params;
 
-            AjaxUtil.request({
-                url: '/api/category/find',
-                async: false,
-                success: function (data) {
-                    items = data.result.items;
-                    items.forEach(menu => {
-                        that.categoryHash[menu.recKey] = menu.categoryName;
-                    })
-                }
-            });
-            Data.load({role: true});
+            Data.load({role: true, recruit: true});
             this.event();
         },
         event: function () {
@@ -102,7 +89,8 @@ $(function () {
         },
         draw: function (target) {
             const that = this;
-            const roleHash = Data.roleHash || {};
+            const categoryHash = Data.recruitCategoryHash || {};
+            const supportHash = Data.recruitSupportHash || {};
 
             const table = new Tabulator(target, {
                 locale: 'ko-kr',
@@ -124,6 +112,7 @@ $(function () {
                         return [];
                     }
                     response = response.result;
+                    console.log(response.items);
                     return response.items;
                 },
                 ajaxError: TableUtil.ajaxError,
@@ -153,20 +142,20 @@ $(function () {
                         download: false,
                         headerSort: false
                     },
-                    {title: '구분', field: "category", tooltip: true, headerTooltip: true, headerFilter: 'select',
-                        formatter: function(cell) {
-                            var data = cell.getData()
-                            console.log(cell)
-                            console.log(data)
-                            if (data.category == "") data.category = "도미인 호텔";
-                            if (data.category == "dormyinn") data.category = "도미인 호텔"
-                            return data.category
+                    {title: '카테고리', field: "category", tooltip: true, headerTooltip: true, headerFilter: 'select', headerFilterParams: {
+                            values: categoryHash,
+                        }, formatter: function(cell) {
+                            return categoryHash[cell.getValue()] || cell.getValue();
+                        }
+                    },
+                    {title: '지원분야', field: "support", tooltip: true, headerTooltip: true, headerFilter: 'select', headerFilterParams: {
+                            values: supportHash,
+                        }, formatter: function(cell) {
+                            return supportHash[cell.getValue()] || cell.getValue();
                         }
                     },
                     {title: '제목', field: "title", tooltip: true, headerTooltip: true, headerFilter: 'input'},
-                    // {title: '기간', field: "fromDate + toDate", tooltip: true, headerTooltip: true},
-
-                   {title: '등록일시', field: 'createDate', tooltip: true, headerTooltip: true, customDisplay: true},
+                    {title: '등록일시', field: 'createDate', tooltip: true, headerTooltip: true, customDisplay: true},
                     {
                         title: '공고기간',
                         field: "fromDate",

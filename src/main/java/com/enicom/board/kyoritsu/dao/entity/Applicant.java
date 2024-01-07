@@ -55,9 +55,13 @@ public class Applicant {
     @Comment("경력구분")
     private String career;
 
-    @Column(name = "image", length = 1000)
-    @Comment("증명사진")
-    private String image;
+    @Column(name = "profilePath", length = 1000)
+    @Comment("증명사진 경로")
+    private String profilePath;
+
+    @Column(name = "filesPath", length = 1000)
+    @Comment("첨부파일 경로")
+    private String[] filesPath;
 
     @Column(name = "name", length = 50)
     @Comment("지원자명")
@@ -71,7 +75,7 @@ public class Applicant {
     @Comment("생년월일")
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @JsonDeserialize(using = LocalDateTimeDeserializer.class)
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Seoul")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "Asia/Seoul")
     private LocalDateTime birthDate;
 
     @Column(name = "create_date")
