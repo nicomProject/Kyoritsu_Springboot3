@@ -36,10 +36,7 @@ public class ApplicantController {
     }
 
     @RequestMapping(value = "/applicant/apply_files", method = RequestMethod.POST)
-    public ResponseHandler<?> ApplyFiles(@RequestPart("profile") MultipartFile profile, @RequestPart("files") MultipartFile[] files) throws Exception {
-        System.out.println("profile: "+profile);
-        System.out.println("files: "+files);
-        return new ResponseHandler<>(200);
-        // return new ResponseHandler<>(applicantService.applyFiles(param));
+    public ResponseHandler<?> ApplyFiles(@RequestPart("recKey") String recKey, @RequestPart("name") String applicantName, @RequestPart("profile") MultipartFile profile, @RequestPart("files") MultipartFile[] files) throws Exception {
+        return new ResponseHandler<>(applicantService.applyFiles(Long.parseLong(recKey), applicantName, profile, files));
     }
 }
