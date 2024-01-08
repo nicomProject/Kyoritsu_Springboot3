@@ -22,10 +22,13 @@ public class EmailConfiguration {
 
         if (type == "apply") {
             contents.append("<p>Kyoritsu에 지원해 주셔서 감사합니다.</p>");
-            contents.append("<p>지원 내용 확인 부탁드립니다.</p>");
+            contents.append("<p>지원서 접수 완료를 알려드립니다.</p>");
+            contents.append("<p>지원 결과는 해당 메일을 통해 전달될 예정입니다.</p>");
         } else if (type == "add") {
             contents.append("<p>Kyoritsu에 지원해 주셔서 감사합니다.</p>");
             contents.append("<p>채용 공고 지원 결과에 대해 안내드립니다.</p>");
+            contents.append("<br>");
+            contents.append("<p>===============[본문]===============</p>");
         } else if (type == "inquiry") {
             contents.append("<p>Kyoritsu 채용 문의 답변이 등록되었습니다.</p>");
             contents.append("<p>채용 문의 답변 내용 확인 부탁드립니다.</p>");
