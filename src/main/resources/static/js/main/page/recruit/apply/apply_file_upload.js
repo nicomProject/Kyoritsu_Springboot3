@@ -14,7 +14,7 @@ document.getElementById('checkButton').addEventListener('click', function() {
 /* 첨부파일 추가 */
 function addFile(obj) {
     var maxFileCnt = 5; // 첨부파일 최대 개수
-    var attFileCnt = document.querySelectorAll('.filebox').length-1; // 기존 추가된 첨부파일 개수 (어딘가 1개가 껴있는데.. 뭐지..)
+    var attFileCnt = document.querySelectorAll('.filebox').length; // 기존 추가된 첨부파일 개수
     var remainFileCnt = maxFileCnt - attFileCnt; // 추가로 첨부가능한 개수
     var curFileCnt = obj.files.length; // 현재 선택된 첨부파일 개수
 
@@ -139,6 +139,13 @@ window.getFiles = function() {
 
 /* 파일 확인 */
 function submitForm() {
+    var maxFileCnt = 5; // 첨부파일 최대 개수
+    var attFileCnt = document.querySelectorAll('.filebox').length; // 기존 추가된 첨부파일 개수
+    var remainFileCnt = maxFileCnt - attFileCnt; // 추가로 첨부가능한 개수
+
+    console.log("기존 추가된 첨부파일 개수: "+attFileCnt);
+    console.log("추가로 첨부가능한 개수: "+remainFileCnt);
+
     var list = [];
     for (var i = 0; i < filesArr.length; i++) {
         if (!filesArr[i].is_delete) {

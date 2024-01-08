@@ -164,13 +164,16 @@ $(function () {
                             career : top.jobObject.experience,        // 신입/경력
                             jobId : jobId,                            // 지원하는 공고 번호
                         },
-                        success: function () {
+                        success: function (data) {
                             console.log("JSON 데이터 저장 성공");
-                            uploadFiles();
+                            const recKey = data.result;
+                            console.log("applicant recKey: "+recKey);
+
+                            uploadFiles(recKey);
                         }
                     })
 
-                    function uploadFiles() {
+                    function uploadFiles(recKey) {
                         // 파일 데이터들 추가
                         var formData = new FormData();
                         formData.append('profile', rawProfile);
@@ -178,6 +181,9 @@ $(function () {
                         rawFiles.forEach(rawFile => {
                             formData.append('files', rawFile);
                         });
+                        // DB 저장을 위한 key,name 추가
+                        formData.append('recKey', recKey);
+                        formData.append('name', $("#name").val());
                         // 요청 보내기
                         $.ajax({
                             url:"/api/applicant/apply_files",
@@ -243,8 +249,9 @@ $(function () {
 
 
             // 프로필 첨부
-            $('.filebox .upload-hidden').on('change', function(){  			
+            $('.fileboxProfile .upload-hidden').on('change', function(){  			
                 if(window.FileReader){
+                    if($(this)[0].files[0] == null) return false;
                     var filename = $(this)[0].files[0].name;
                     if(!validFileType(filename)){
                         alert("허용하지 않는 확장자 파일입니다.");
