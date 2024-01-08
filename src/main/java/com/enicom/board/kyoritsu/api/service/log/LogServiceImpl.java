@@ -34,7 +34,6 @@ public class LogServiceImpl implements LogService {
             accessLogRepository.deleteAllAccessLog();
         }
         else if(type.equals(MultipleType.RANGE)) {
-            System.out.println("TTTTTTEEEEEEEEEESSSSSSSSSSTTTTTTTTTTTTTT");
             accessLogRepository.deleteRangeAccessLog(param);
         }
 

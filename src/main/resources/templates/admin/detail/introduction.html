@@ -7,8 +7,8 @@
 
     <input type="hidden" class="param" name="key" th:value="${key}"/>
 
-    <div class="container-fluid page-container">
-        <div class="card">
+    <div class="container-fluid page-container" id="container-detail">
+        <div class="card" id="page-container-detail">
             <div class="card-header card-header-primary" th:if="${key != null}">
                 <h4 class="card-title">소개글 수정</h4>
                 <p class="card-category ellipsis">

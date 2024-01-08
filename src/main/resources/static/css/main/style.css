@@ -2174,6 +2174,37 @@ section .sub-title{
     margin-bottom: 25px;
 }
 
+#recruit-info-section3{
+    padding-bottom: 50px !important;
+    padding-top: 50px !important;
+}
+
+#recruit-info-section3 .table{
+    width: 100%;
+    height: 2rem;
+}
+
+#recruit-info-section3 .table th{
+    border-color: inherit;
+}
+
+#recruit-info-section3 .table th h3{
+    margin-bottom: 5px;
+}
+
+#recruit-info-section3 .table td{
+    border-bottom-width: 0;
+}
+
+#recruit-info-section3 .table .contact-info{
+    padding-top: 20px;
+}
+
+#recruit-info-section4{
+    padding-bottom: 50px !important;
+    padding-top: 50px !important;
+}
+
 #recruit-info-section4{
     background: #f7f7f7;
 }
@@ -2231,25 +2262,8 @@ section .sub-title{
     vertical-align: middle;
 }
 
-#recruit-info-section5 .table{
-    width: 100%;
-    height: 2rem;
-}
-
-#recruit-info-section5 .table th{
-    border-color: inherit;
-}
-
-#recruit-info-section5 .table th h3{
-    margin-bottom: 5px;
-}
-
-#recruit-info-section5 .table td{
-    border-bottom-width: 0;
-}
-
-#recruit-info-section5 .table .contact-info{
-    padding-top: 20px;
+#recruit-info-section6 .container{
+    text-align: center;
 }
 
 #recruit-info-section6 .container .btn{

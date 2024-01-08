@@ -53,21 +53,53 @@ $(function(){
                             })
                             break
                         case "range":
-                            var stDate = prompt("삭제 할 시작 기간을 입력 해 주세요.(예시: 2023-12-15)")
-                            var enDate = prompt("삭제 할 종료 기간을 입력 해 주세요.(예시: 2023-12-31)")
-                            
-                            data = {
-                                type: 'range',
-                                startDate: stDate,
-                                endDate: enDate
-                            }
-                            AjaxUtil.requestBody({
-                                url: '/api/adm/log/access/delete',
-                                data: data,
-                                table: 'table',
-                                successMessage: '성공적으로 삭제되었습니다',
-                                failMessage: '삭제중 오류가 발생하였습니다.',
-                            })
+                            // var stDate = prompt("삭제 할 시작 기간을 입력 해 주세요.(예시: 2023-12-15)")
+                            // var enDate = prompt("삭제 할 종료 기간을 입력 해 주세요.(예시: 2023-12-31)")
+
+                            Swal.fire({
+                                title: '기간별 삭제 설정',
+                                html: `
+                                <input type="text" id="start-date" class="swal2-input" placeholder="시작일 예시) 2023-12-15">
+                                <input type="text" id="end-date" class="swal2-input" placeholder="종료일 예시) 2023-12-31">
+                                <div id="error-message" style="color: red; margin-top: 5px;"></div>
+                                `,
+                                icon: 'info',
+                                customClass: {
+                                    confirmButton: `btn btn-info`,
+                                    cancelButton: `btn btn-secondary`
+                                },
+                                showCancelButton: true,
+                                confirmButtonText: '삭제',
+                                cancelButtonText: '취소',
+                                showLoaderOnConfirm: true,
+                                allowOutsideClick: () => !Swal.isLoading(),
+                                preConfirm: () => {
+                                    const startDate = document.getElementById('start-date').value;
+                                    const endDate = document.getElementById('end-date').value;
+
+                                    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+                                    if (!dateRegex.test(startDate) || !dateRegex.test(endDate)) {
+                                        document.getElementById('error-message').innerHTML = '날짜 형식을 확인해주세요 (예: 2023-12-15)';
+                                        return false;
+                                    }
+
+                                    return { startDate, endDate };
+                                }
+                            }).then((result) => {
+                                if (!result.isConfirmed) return;
+                                data = {
+                                    type: 'range',
+                                    startDate: result.value.startDate,
+                                    endDate: result.value.endDate
+                                }
+                                AjaxUtil.requestBody({
+                                    url: '/api/adm/log/access/delete',
+                                    data: data,
+                                    table: 'table',
+                                    successMessage: '성공적으로 삭제되었습니다',
+                                    failMessage: '삭제중 오류가 발생하였습니다.',
+                                })
+                            });
                             break
                     }
                 } else if (action == "download") {
