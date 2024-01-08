@@ -38,8 +38,16 @@ $(function () {
                                 type: 'one',
                             },
                             table: 'table',
-                            successMessage: '성공적으로 표기되었습니다',
-                            failMessage: '표기중 오류가 발생하였습니다.',
+                            success: function(data) {
+                                Alert.success({text: '성공적으로 표기되었습니다.'}, function(){
+                                    location.reload();
+                                });
+                            },
+                            error: function(e) {
+                                Alert.error({text: '표기중 오류가 발생하였습니다.'}, function(){
+                                    location.reload();
+                                });
+                            }
                         })
                     }else{
                         if(selected.length === 0){
