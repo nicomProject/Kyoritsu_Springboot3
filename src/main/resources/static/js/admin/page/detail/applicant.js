@@ -33,6 +33,7 @@ $(function () {
                 AjaxUtil.requestBody({
                     url: '/api/applicant/findSelf/' + paramValue,
                     success: function (data) {
+                        console.log(data.result.items[0]);
                         var support = ""
                         for (var key in categorys) {
                             if (categorys[key].recKey.toString() == data.result.items[0].jobId.support) {
@@ -41,7 +42,7 @@ $(function () {
                         }
 
                         $("#name").text(data.result.items[0].name);
-                        $("#gneder").text(data.result.items[0].gender);
+                        $("#gender").text(data.result.items[0].gender);
                         $("#phone").text(data.result.items[0].phone);
                         $("#email").text(data.result.items[0].email);
                         $("#birth").text(data.result.items[0].birthDate);
@@ -50,6 +51,10 @@ $(function () {
                         $("#form_tag").val(data.result.items[0].formTag);
                         $("#pass_yn").val(data.result.items[0].passYn);
                         $("#contents_answer").text(data.result.items[0].contentAnswer);
+                        console.log(data.result.items[0].profilePath.substring(1));
+                        // var profilePath = data.result.items[0].profilePath; // 변수에 담아 전달해야 절대경로로 동작함
+                        // $("#profile").attr("src", profilePath);
+                        $("#profile").attr("src", data.result.items[0].profilePath.substring(1));
                         $("#supportDetail").append($('<option>', {
                             value: data.result.items[0].jobId.support,
                             text: support
