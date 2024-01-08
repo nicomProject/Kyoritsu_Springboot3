@@ -21,14 +21,30 @@ import jakarta.servlet.http.HttpServletResponse;
 @RequestMapping(path = "/storage")
 public class FileDownloadController {
     @GetMapping("/profiles/{applicantIdName}/{fileName}")
-    public void downloadFile(@PathVariable("applicantIdName") String applicantIdName, @PathVariable("fileName") String fileName, HttpServletResponse response) throws IOException {
+    public void downloadProfile(@PathVariable("applicantIdName") String applicantIdName, @PathVariable("fileName") String fileName, HttpServletResponse response) throws IOException {
 
         String path = "storage/profiles/"+applicantIdName+"/"+fileName;
     
         byte[] fileByte = FileUtils.readFileToByteArray(new File(path));
 
         response.setContentType("application/octet-stream");
-        response.setHeader("Content-Disposition", "attachment; fileName=\"" + URLEncoder.encode("증명사진_19.jpg", "UTF-8")+"\";");
+        response.setHeader("Content-Disposition", "attachment; fileName=\"" + URLEncoder.encode(fileName, "UTF-8")+"\";");
+        response.setHeader("Content-Transfer-Encoding", "binary");
+
+        response.getOutputStream().write(fileByte);
+        response.getOutputStream().flush();
+        response.getOutputStream().close();
+    }
+
+    @GetMapping("/files/{applicantIdName}/{fileName}")
+    public void downloadFile(@PathVariable("applicantIdName") String applicantIdName, @PathVariable("fileName") String fileName, HttpServletResponse response) throws IOException {
+
+        String path = "storage/files/"+applicantIdName+"/"+fileName;
+    
+        byte[] fileByte = FileUtils.readFileToByteArray(new File(path));
+
+        response.setContentType("application/octet-stream");
+        response.setHeader("Content-Disposition", "attachment; fileName=\"" + URLEncoder.encode(fileName, "UTF-8")+"\";");
         response.setHeader("Content-Transfer-Encoding", "binary");
 
         response.getOutputStream().write(fileByte);
