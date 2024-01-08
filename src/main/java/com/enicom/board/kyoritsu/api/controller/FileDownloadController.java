@@ -51,4 +51,20 @@ public class FileDownloadController {
         response.getOutputStream().flush();
         response.getOutputStream().close();
     }
+
+    @GetMapping("/images/{fileName}")
+    public void downloadImages(@PathVariable("fileName") String fileName, HttpServletResponse response) throws IOException {
+
+        String path = "storage/images/"+fileName;
+    
+        byte[] fileByte = FileUtils.readFileToByteArray(new File(path));
+
+        response.setContentType("application/octet-stream");
+        response.setHeader("Content-Disposition", "attachment; fileName=\"" + URLEncoder.encode(fileName, "UTF-8")+"\";");
+        response.setHeader("Content-Transfer-Encoding", "binary");
+
+        response.getOutputStream().write(fileByte);
+        response.getOutputStream().flush();
+        response.getOutputStream().close();
+    }
 }

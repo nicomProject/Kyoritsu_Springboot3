@@ -88,30 +88,12 @@ $(function () {
 
             formData = {'title' : '제목', 'sub_title' : '소제목', 'contents' : '본문'};
 
-            // nhn.husky.EZCreator.createInIFrame({
-            //     oAppRef: oEditors,
-            //     elPlaceHolder: "contents",
-            //     sSkinURI: "/static/js/smartEditor/SmartEditor2Skin.html",
-            //     fCreator: "createSEditor2"
-            // })
             nhn.husky.EZCreator.createInIFrame({
                 oAppRef: oEditors,
                 elPlaceHolder: "contents",
                 sSkinURI: "/static/js/smartEditor/SmartEditor2Skin.html",
-                fOnAppLoad : function(){
-                    fn_checkClipboard();//추가한 함수
-                },
                 fCreator: "createSEditor2"
             });
-
-            function urlToBlob(url) {
-                return fetch(url).then(response => {
-                    if (response.status === 200) {
-                        return response.blob();
-                    }
-                    throw new Error('Network response was not ok.');
-                });
-            }
 
             function dataURLtoBlob(dataURL) {
                 // Base64 데이터를 디코딩합니다.
@@ -130,69 +112,61 @@ $(function () {
                 return blob;
             }
 
+            async function uploadImages(contentsValue) {
+                var promises = []
+                var parser = new DOMParser()
+                var contentHTML = parser.parseFromString(contentsValue, "text/html")
+                var imgTag = contentHTML.querySelectorAll("img")
 
-            function fn_checkClipboard() {
-                var target_se2 = document.querySelector("iframe").contentWindow.document.querySelector("iframe").contentWindow.document.querySelector(".se2_inputarea");
-
-                var observer = new MutationObserver(function (mutationsList) {
-                    mutationsList.forEach(function (mutation) {
-                        if (mutation.type === "childList" || mutation.type === "characterData") {
-                            // 변경된 노드를 모두 가져오기
-                            var changedNodes = Array.from(target_se2.querySelectorAll("p"));
-
-                            checkForImg(changedNodes);
+                for(var i = 0; i<imgTag.length; i++) {
+                    var promise = new Promise(function (resolve, reject) {
+                        var img = imgTag[i]
+                        var imgSrc = img.getAttribute("src");
+                        if(imgSrc.includes("http")) {
+                            alert("외부 URL 이미지 파일은 첨부할 수 없습니다.")
+                            return
                         }
-                    });
-                });
 
+                        var blob = dataURLtoBlob(imgSrc);
+                        var formData = new FormData();
+                        formData.append('images', blob, 'image' + i + '.png');
 
-                observer.observe(target_se2, { subtree: true, characterData: true, childList: true });
-
-                function checkForImg(changedNodes) {
-                    changedNodes.forEach(function (pElement, index) {
-                        var imgElement = pElement.querySelector("img");
-                        if (imgElement) {
-                            var imgSrc = imgElement.getAttribute("src");
-
-                            // imgSrc가 데이터 URL이라면
-                            if (imgSrc.startsWith('data:')) {
-                                var blob = dataURLtoBlob(imgSrc);
-                                var formData = new FormData();
-                                formData.append('images', blob, 'image' + index + '.png');
-
-                                var xhr = new XMLHttpRequest();
-                                xhr.open('POST', '/api/uploadImages', true);
-
-                                xhr.onload = function () {
-                                    if (xhr.status === 200) {
-                                        console.log('서버 응답:', xhr.responseText);
-                                        var imageUrl = xhr.responseText;
-
-                                        var imageSrc = "/static/images/" + imageUrl;
-                                        imgElement.setAttribute("src", imageSrc);
-                                    } else {
-                                        console.error('서버 응답 에러:', xhr.status);
-                                    }
-                                };
-
-                                xhr.send(formData);
-                            } else {
-                                console.log("외부 URL 이미지는 업로드하지 않습니다.");
+                        $.ajax({
+                            url: '/api/uploadImages',
+                            type: 'POST',
+                            data: formData,
+                            async: true,
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            success: function (data) {
+                                console.log('서버 응답:', data);
+                                var imageUrl = data;
+                                var imageSrc = "/storage/images/" + imageUrl;
+                                contentsValue = contentsValue.replace(imgSrc, imageSrc);
+                                resolve()
+                            },
+                            error: function(data){
+                                console.log(data)
+                                reject()
                             }
-                        }
-                    });
+                        });
+                    })
+                    promises.push(promise);
                 }
+                await Promise.all(promises);
+
+                return contentsValue
             }
 
             const buttons = document.querySelectorAll("button");
             const paramKey = this.params.key
             // 모든 버튼에 클릭 이벤트 리스너를 추가합니다.
             buttons.forEach(function (button) {
-                button.addEventListener("click", function () {
+                button.addEventListener("click", async function () {
                     // data-action 속성을 확인하여 해당 동작을 처리합니다.
                     const action = button.getAttribute("data-action");
                     oEditors.getById["contents"].exec("UPDATE_CONTENTS_FIELD", []);
-
 
                     if (action === "add") {
                         var titleValue = $("#title").val();
@@ -201,8 +175,8 @@ $(function () {
                         var categoryValue = $("#category").val();
                         var sub_categoryValue = $("#sub_category").val();
 
-                        console.log(contentsValue)
-
+                        contentsValue = await uploadImages(contentsValue)
+                        // console.log(contentsValue)
 
                         if(paramKey === "" && ValidateField.valid(formData)){
                             AjaxUtil.requestBody({

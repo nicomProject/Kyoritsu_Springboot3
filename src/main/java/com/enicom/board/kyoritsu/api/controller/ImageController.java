@@ -44,9 +44,9 @@ public class ImageController {
     @RequestMapping(path = "/uploadImages", method = RequestMethod.POST)
     public String uploadImages(Model model, HttpServletRequest request, HttpServletResponse response, @RequestParam("images") MultipartFile[] images) {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        SimpleDateFormat sdf = new SimpleDateFormat ("yyyyMMddhhmmss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmssSSS");
 
-        File folder = new File("./static/images");
+        File folder = new File("./storage/images");
         if (!folder.exists()) {
             folder.mkdirs();
             log.info("폴더가 생성되었습니다. folder path: {}", folder);
