@@ -561,15 +561,30 @@ body.g-sidenav-hidden:not(.g-sidenav-pinned) .sidenav:not(:hover) .nav-link-text
     height: calc(100% - 75px);
     padding: 1rem;
     margin: 0;
+    overflow: scroll;
 }
-.page-container > .row, .page-container > .card {
+
+.page-container:not(#container-detail) > .card {
     height: 100%;
 }
+
+@media (min-width:2560px) {
+    .page-container > #page-container-detail  {
+        height: 100%;
+    }
+}
+
+@media (max-width:2599px) {
+    .page-container > #page-container-detail  {
+    }
+}
+
+
 .card-header.card-header-action {
     padding-bottom: 0 !important;
 }
 .card-body {
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 *[role="action"][data-action="refresh"] {
     font-size: 1.2rem;
@@ -1509,9 +1524,9 @@ input[type=checkbox]:checked {
 .table #management {
     display: flex;
     Align-items: center;
-    position: absolute;
     right: 5%;
     padding: 5px;
+    justify-content: end;
 }
 
 .table #management button {
