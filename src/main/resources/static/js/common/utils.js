@@ -1353,18 +1353,31 @@ const IconUtil = {
     fail: '<i class="status-0 status-title fas fa-circle"></i>'
 }
 
+// field 유효성 검사 모음
 const ValidateField = {
+
+    // formData 인자로 받은 field에 대해 유효성 검사 함수
     valid: function (formData) {
         for (const field in formData) {
             console.log(field)
             const value = document.getElementById(field).value;
-            // 'birth' 자릿수 확인
-            const birthVal = value.replace(/\D/g, ''); // 숫자 이외의 문자 제거
-            if(field === 'birth' && birthVal.length !== 8){
-                Alert.warning({text: `${formData[field]}을 정확히 입력해 주세요.`}) // 생년월일을 정확히 입력해 주세요.
-                return false
+            // 'birth' 유효성 확인
+            if(field === 'birth'){
+                var result = this.checkValidDate(value);
+                if(result == false) {
+                    Alert.warning({text: `${formData[field]}을 정확히 입력해 주세요.`}) // 생년월일을 정확히 입력해 주세요.
+                    return false;
+                }
             }
-            // 다른 일반 친구들 확인
+            // 'email' 유효성 확인
+            if(field === 'email'){
+                var result = this.checkValidEmail(value);
+                if(result == false) {
+                    Alert.warning({text: `${formData[field]}을 정확히 입력해 주세요.`}) // 이메일을 정확히 입력해 주세요.
+                    return false;
+                }
+            }
+            // 이외의 값 확인
             if(!value || value === '<p>&nbsp;</p>'){
                 Alert.warning({text: `${formData[field]}을 입력해 주세요.`})
                 return false
@@ -1372,7 +1385,32 @@ const ValidateField = {
         }
         return true;
     },
+
+    // str 인자로 받은 관리자 id에 대한 유효성 검사 함수
     verify: function (str) {
         return (str.length >= 4 && str.length <= 12) && (/^[A-Za-z0-9][A-Za-z0-9]*$/.test(str)) && (/^[A-Za-z]*$/.test(str.slice(0, 1)))
+    },
+
+    // 날짜 유효성 검사 함수 (윤년 포함)
+    checkValidDate: function (value) {
+        var result = true;
+        try {
+            var date = value.replace(/^(\d{4})(\d{2})(\d{2})$/, '$1-$2-$3').split("-");
+            var y = parseInt(date[0], 10),
+                m = parseInt(date[1], 10),
+                d = parseInt(date[2], 10);
+            var dateRegex = /^(?=\d)(?:(?:31(?!.(?:0?[2469]|11))|(?:30|29)(?!.0?2)|29(?=.0?2.(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00)))(?:\x20|$))|(?:2[0-8]|1\d|0?[1-9]))([-.\/])(?:1[012]|0?[1-9])\1(?:1[6-9]|[2-9]\d)?\d\d(?:(?=\x20\d)\x20|$))?(((0?[1-9]|1[012])(:[0-5]\d){0,2}(\x20[AP]M))|([01]\d|2[0-3])(:[0-5]\d){1,2})?$/;
+            result = dateRegex.test(d+'-'+m+'-'+y);
+        } catch (err) {
+            result = false;
+        }
+        return result;
+    },
+
+    // 이메일 유효성 검사 함수
+    checkValidEmail: function (value) {
+        const pattern = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-za-z0-9\-]+/;
+        var result = pattern.test(value);
+        return pattern.test(value);
     }
 }

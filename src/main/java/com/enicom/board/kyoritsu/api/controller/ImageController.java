@@ -42,17 +42,19 @@ public class ImageController {
     }
 
     @RequestMapping(path = "/uploadImages", method = RequestMethod.POST)
-    public String uploadImages(Model model, HttpServletRequest request, HttpServletResponse response, @RequestParam("images") MultipartFile[] images) {
+    public String uploadImages(Model model, HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "images", required = false) MultipartFile[] images) {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmssSSS");
 
         File folder = new File("./storage/images");
-        if (!folder.exists()) {
+        if (images != null && !folder.exists()) {
             folder.mkdirs();
             log.info("폴더가 생성되었습니다. folder path: {}", folder);
         }
 
         try {
+            if(images != null) {
+
             for (int i = 0; i < images.length; i++) {
                 MultipartFile image = images[i];
 
@@ -60,8 +62,9 @@ public class ImageController {
                     // 이미지 데이터를 바이트 배열로 가져옴
                     byte[] fileData = image.getBytes();
 
-                    // 파일 이름을 생성 (예: image0.png, image1.png)
-                    String fileName = "image" + sdf.format(timestamp) + ".png";
+                    // 파일 이름을 생성
+                    int randomNum = (int) (Math.random() * 9000) + 1000; // 4자리 난수
+                    String fileName = "image" + sdf.format(timestamp) + "_" + randomNum + ".png";
 
                     // 파일을 서버에 저장
                     try {
@@ -76,14 +79,18 @@ public class ImageController {
                     }
                     String imageUrl = fileName;
 
+                    // 이미지 url 경로 반환
                     return imageUrl;
-
-                    // 파일 경로나 URL을 클라이언트에게 전달하거나 저장 로직을 추가하세요
                 }
+            }
+            }
+            else {
+                return "This image already exists";
             }
         } catch (Exception e) {
             e.printStackTrace();
+            return "Image upload failed";
         }
-        return "Image upload failed"; // 실패한 경우에도 어떤 값을 반환할지 정의
+        return "It shouldn't be appeared!!!";
     }
 }

@@ -1,8 +1,11 @@
 $(function () {
+
     const Content = {
-        supportHash: {},
+        supportHash: {}, // 현재 지원분야로 설정된 값들을 저장
         load: function () {
             const that = this;
+
+            // 현재 지원분야에 대한 정보 요청
             AjaxUtil.request({
                 url: '/api/category/find',
                 async: false,
@@ -15,84 +18,66 @@ $(function () {
                     console.log(that.supportHash);
                 }
             });
+
+            // 현재 채용 공고에 대한 요청
+            AjaxUtil.request({
+                method: 'GET',
+                url: '/api/job/find',
+                async: false,
+                success: function (data) {
+                    // 채용 공고 리스트 제작
+                    that.setJobObject(data.result.items)
+                }
+            });
+
+            // event 등록
             this.event();
         },
+
+        // 이벤트 등록
         event: function () {
-            document.getElementById("btnEmployeeInfo").addEventListener("click", function() {
-                window.location.href = '/recruit/employee_info';
-            });
-            document.getElementById("btnInfo").addEventListener("click", function() {
-                window.location.href = '/recruit/info';
-            });
-            document.getElementById("btnNotice").addEventListener("click", function() {
-                window.location.href = '/recruit/notice';
-            });
-            document.getElementById("btnApply").addEventListener("click", function() {
-                window.location.href = '/recruit/apply';
-            });
-            document.getElementById("btnInquire").addEventListener("click", function() {
-                window.location.href = '/recruit/inquire';
-            });
-
             const that = this
-            const $body = $('body');
-            const navbar = $('.navbar');
 
-            navbar.find('.navbar-close').on({
-                click: function (e) {
-                    $body.removeClass('g-sidenav-pinned');
-                }
-            });
-            navbar.find('.navbar-open').on({
-                click: function (e) {
-                    $body.addClass('g-sidenav-pinned');
-                }
-            });
+            // 메뉴 버튼 이벤트 등록
+            document.getElementById("btnEmployeeInfo").addEventListener("click", function() { window.location.href = '/recruit/employee_info'; });
+            document.getElementById("btnInfo").addEventListener("click", function() { window.location.href = '/recruit/info'; });
+            document.getElementById("btnNotice").addEventListener("click", function() { window.location.href = '/recruit/notice'; });
+            document.getElementById("btnApply").addEventListener("click", function() { window.location.href = '/recruit/apply'; });
+            document.getElementById("btnInquire").addEventListener("click", function() { window.location.href = '/recruit/inquire'; });
 
-            navbar.find('.sidenav-button').on({
-                click: function (e) {
-                    const icon = $(this).find('i');
-                    icon.toggleClass('fa-compress');
-                    icon.toggleClass('fa-thumbtack');
-                    $body.toggleClass('g-sidenav-hidden');
-                }
-            })
-
+            // 카테고리 검색 이벤트 등록
             $('.btn[role="action"][data-action="search"]').on('click', function() {
                 that.performSearch();
             });
+
+            // 텍스트 검색 이벤트 등록
             $('#searchText').on('keydown', function(event) {
                 if (event.key === 'Enter') {
                     that.performSearch();
                 }
             });
 
-            // 이거는 카테고리로 검색하는 API 만들어서 처리해야할듯.
+            // '전체' 키워드 클릭 이벤트 등록
             $('#category-total').on('click', function() {
                 that.categorySearch("total");
             });
+            // '도미인 호텔' 키워드 클릭 이벤트 등록
             $('#category-dormyinn').on('click', function() {
                 that.categorySearch("dormyinn");
             });
-            // $('#category-resort').on('click', function() {
-            //     that.categorySearch("resort");
-            // });
 
-            AjaxUtil.request({
-                method: 'GET',
-                url: '/api/job/find',
-                async: false,
-                success: function (data) {
-                    that.setJobObject(data.result.items)
-                }
-            });
         },
+
+        // 카테고리 버튼 검색 함수
         categorySearch: function(search) {
             var that = this
+
+            // 아무 값도 없을 때는 '전체' 검색으로 간주
             if (search == "" || search == undefined) {
                 search = "total"
             }
 
+            // 검색 키워드에 따른 채용 공고 요청
             AjaxUtil.requestBody({
                 url: '/api/job/findCategorySelf',
                 data: {
@@ -100,16 +85,22 @@ $(function () {
                 },
                 success: function (data) {
                     console.log(data);
+                    // 채용 공고 리스트 제작
                     that.setJobObject(data.result.items);
                 }
             });
         },
+
+        // 텍스트 검색 함수
         performSearch: function(search) {
             var that = this;
+
+            // 아무 값도 없을 때는 '전체' 검색으로 간주
             if (search == "" || search == undefined) {
                 search = $('#searchText').val();
             }
 
+            // 검색 키워드에 따른 채용 공고 요청
             AjaxUtil.requestBody({
                 url: '/api/job/search',
                 data: {
@@ -117,34 +108,39 @@ $(function () {
                 },
                 success: function (data) {
                     console.log(data);
+                    // 채용 공고 리스트 제작
                     that.setJobObject(data.result.items);
                 }
             });
         },
+
+        // 채용 공고 리스트 제작 함수
         setJobObject: function(jobs) {
             const that = this;
+
+            // container 로드
             var newNoticeContainer = document.querySelector(".new-graduates.card-box");
             var careerNoticeContainer = document.querySelector(".mid-career.card-box");
 
+            // 신입 채용 공고 리스트
             var newFirstChild = newNoticeContainer.firstElementChild
             newNoticeContainer.innerHTML = ''
             newNoticeContainer.appendChild(newFirstChild)
 
+            // 경력 채용 공고 리스트
             var careerFirstChild = careerNoticeContainer.firstElementChild
             careerNoticeContainer.innerHTML = ''
             careerNoticeContainer.appendChild(careerFirstChild)
-            
-            jobs.forEach(item => {
-                // 채용 공고 기간에 따라 항목 추가
-                var nowTime = Date.now()
-                if (!(nowTime >= Date.parse(item.fromDate) && nowTime <= Date.parse(item.toDate))) {
-                    return
-                }
 
+            // 공고 제작
+            jobs.forEach(item => {
                 var jobObject = {}
 
-                console.log(item)
+                // 채용 공고 기간 내 항목만 추가
+                var nowTime = Date.now()
+                if (!(nowTime >= Date.parse(item.fromDate) && nowTime <= Date.parse(item.toDate))) return;
 
+                // 신입/경력 정보
                 if (item.experience == "newcomer") {
                     jobObject.parentClass = ".new-graduates.card-box"
                     jobObject.experience = "신입"
@@ -152,31 +148,34 @@ $(function () {
                     jobObject.parentClass = ".mid-career.card-box"
                     jobObject.experience = "경력"
                 } 
-                // else if (item.experience == "Synthesis") {
-                //     jobObject.parentClass = ".both.card-box"
-                //     jobObject.experience = "신입/경력"
-                // }
 
+                // 정규직/계약직 정보
                 if (item.fullTime == "fulltime") {
                     jobObject.fulltime = "정규직"
                 } else if (item.fullTime == "contract") {
                     jobObject.fulltime = "계약직"
                 }
 
+                // 카테고리 정보
                 if (item.category == "dormyinn") {
                     jobObject.title = "[" + "도미인 호텔" + "]" + " [" + that.supportHash[item.support] + "]"
                 }
 
+                // 채용 공고 id 정보
                 if(item.recKey != null){
                     jobObject.recKey = item.recKey
                 }
 
+                // 채용 공고명 및 채용기간 설정
                 jobObject.title += " " + item.title
                 jobObject.date = item.fromDate.slice(0, 10) + "~" + item.toDate.slice(0, 10)
 
+                // 공고 제작
                 this.createJob(jobObject)
             })
         },
+
+        // 공고 제작 함수
         createJob: function(jobObject) {
             // 부모 요소 가져오기
             var noticeListContainer = document.querySelector(jobObject.parentClass);
@@ -187,7 +186,7 @@ $(function () {
 
             // 하위 레벨의 a 태그 생성
             var noticeLink = document.createElement('a');
-            noticeLink.href = '/recruit/notice/detail/' + jobObject.recKey; // 원하는 href 값으로 변경
+            noticeLink.href = '/recruit/notice/detail/' + jobObject.recKey;
 
             // 상위 레벨의 div 생성
             var topLineDiv = document.createElement('div');
@@ -222,9 +221,9 @@ $(function () {
             var bottomLineDiv = document.createElement('div');
             bottomLineDiv.className = 'bottom-line';
 
-            // 정규직, 상시모집 추가
+            // 지원기간 추가
             var regularDiv = document.createElement('div');
-            regularDiv.textContent = jobObject.fulltime;
+            regularDiv.textContent = '지원기간';
             var recruitmentDiv = document.createElement('div');
             recruitmentDiv.textContent = jobObject.date;
 
@@ -233,16 +232,16 @@ $(function () {
             bottomLineDiv.appendChild(recruitmentDiv);
 
             // 공유 아이콘 추가
-            var shareIconDiv = document.createElement('div');
-            shareIconDiv.className = 'share-icon';
-            var shareIcon = document.createElement('i');
-            shareIcon.className = 'fas fa-solid fa-share';
-            shareIconDiv.appendChild(shareIcon);
+            // var shareIconDiv = document.createElement('div');
+            // shareIconDiv.className = 'share-icon';
+            // var shareIcon = document.createElement('i');
+            // shareIcon.className = 'fas fa-solid fa-share';
+            // shareIconDiv.appendChild(shareIcon);
 
             // 최종적으로 생성된 엘리먼트들을 조립
             noticeLink.appendChild(topLineDiv);
             noticeLink.appendChild(bottomLineDiv);
-            noticeLink.appendChild(shareIconDiv);
+            // noticeLink.appendChild(shareIconDiv);
 
             // 새로운 li 엘리먼트 생성
             var dep1Div = document.createElement('li');

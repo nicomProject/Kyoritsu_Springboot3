@@ -40,6 +40,9 @@ $(function () {
                                 support = categorys[key].categoryName
                             }
                         }
+                        var experience = ""
+                        if(data.result.items[0].jobId.experience == 'career') experience = "경력직";
+                        if(data.result.items[0].jobId.experience == 'newcomer') experience = "계약직";
 
                         $("#name").text(data.result.items[0].name);
                         $("#gender").text(data.result.items[0].gender);
@@ -59,7 +62,7 @@ $(function () {
                         }))
                         $("#experienceDetail").append($('<option>', {
                             value: data.result.items[0].jobId.experience,
-                            text: data.result.items[0].jobId.experience
+                            text: experience
                         }))
 
                         if (data.code == 200) {
