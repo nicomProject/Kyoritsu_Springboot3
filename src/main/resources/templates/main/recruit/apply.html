@@ -184,8 +184,7 @@
                     <label>아니오</label>
                 </div>
                 <div class="submit-btn">
-                    <!-- 잠시 비활성화 -->
-                    <!-- <button type="button" role="action" data-action="preview"> 미리보기 </button> -->
+                    <button type="button" role="action" data-action="preview"> 미리보기 </button>
                     <button type="button" role="action" data-action="submit"> 제출하기 </button>
                 </div>
             </div>
@@ -203,6 +202,8 @@
       <i class="lni lni-chevron-up"></i>
     </a>
 
+    <th:block th:replace="~{main/recruit/notice/apply_modal::apply_manager}"></th:block>
+    
     <!-- ========================= JS here ========================= -->
     <script src="/static/js/main/template/bootstrap.min.js"></script>
     <script src="/static/js/main/template/count-up.min.js"></script>
@@ -216,6 +217,5 @@
     <script type="text/javascript" src="/static/js/main/page/recruit/apply/apply_file_upload.js"></script>
     <script type="text/javascript" src="/static/js/main/page/recruit/apply.js"></script>
 
-   <th:block th:replace="~{main/recruit/notice/apply_modal::apply_manager}"></th:block>
   </body>
 </html>

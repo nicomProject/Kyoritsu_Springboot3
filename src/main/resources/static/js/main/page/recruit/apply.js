@@ -187,28 +187,43 @@ $(function () {
 
                 // 미리보기 버튼 클릭
                 else if(action === 'preview'){
-                    var formData = new FormData();
-                    var fields = ['name', 'gender', 'birth', 'mobile', 'options', 'email', 'em_mobile'];
+                    var birth = document.getElementById('birth')
+                    var birthModal = document.getElementById('birth_modal')
+                    birthModal.innerText = birth.value
 
-                    fields.forEach(function (field) {
-                        var input = document.getElementById(field);
-                        formData.append(field, input ? input.value : "");
-                    });
+                    var email = document.getElementById('email')
+                    var emailModal = document.getElementById('email_modal')
+                    emailModal.innerText = email.value
 
-                    // 파일 업로드 필드 추가
-                    var fileInput = document.querySelector('input[type="file"]');
-                    for (var i = 0; i < fileInput.files.length; i++) {
-                        formData.append('files', fileInput.files[i]);
-                    }
+                    var man = document.getElementById('man')
+                    var genderModal = document.getElementById('gender_modal')
+                    genderModal.innerText = man.checked == true ? "남성" : "여성";
 
-                    fields.forEach(function (field) {
-                        $('#' + field + "_modal").text(formData.get(field));
-                    });
+                    var name = document.getElementById('name')
+                    var nameModal = document.getElementById('name_modal')
+                    nameModal.innerText = name.value
 
-                    // 라디오 버튼 값 추가
-                    formData.append('answer', document.querySelector('input[name="answer"]:checked').value);
+                    var korean = document.getElementById('korean')
+                    var nationalityModal = document.getElementById('nationality_modal')
+                    nationalityModal.innerText = korean.checked == true ? "내국인" : "외국인"
 
-                    $('#previewContent').text(JSON.stringify(Object.fromEntries(formData.entries())));
+                    var mobile = document.getElementById('mobile')
+                    var phoneModal = document.getElementById('phone_modal')
+                    phoneModal.innerText = mobile.value
+
+                    var address = document.getElementById('address')
+                    var addressModal = document.getElementById('address_modal')
+                    addressModal.innerText = address.value
+
+                    var addressDetail = document.getElementById('addressDetail')
+                    var addressDetailModal = document.getElementById('addressDetail_modal')
+                    addressDetailModal.innerText = addressDetail.value
+
+                    var contents = document.getElementById('contents')
+                    var contentsModal = document.getElementById('contents_answer')
+                    contentsModal.innerHTML = contents.value
+
+                    readImage($("#profile")[0], "previewImg_modal"); //미리보기
 
                     $('#previewModal').modal('show');
                 }
@@ -271,7 +286,7 @@ $(function () {
                 $(this).prev().val(filename);
 
                 // 프로필 미리보기 설정
-                readImage($(this)[0]);
+                readImage($(this)[0], "previewImg");
             });
 
             // 프로필 확장자 확인 (png, jpg, jpeg만 가능)
@@ -299,17 +314,26 @@ $(function () {
             }
 
             // 프로필 미리보기
-            function readImage(input) {
+            function readImage(input, tag) {
                 if(input.files && input.files[0]) {
                     const reader = new FileReader();
                     reader.onload = function(e){
-                        const previewImage = document.getElementById("previewImg");
+                        const previewImage = document.getElementById(tag);
                         previewImage.src = e.target.result;
                     }
                     // reader가 이미지 읽도록 설정
                     reader.readAsDataURL(input.files[0]);
                 }
             }
+
+            var previewCloseIcon = document.getElementById("closeIcon")
+            var previewCloseBtn = document.getElementById("closeBtn")
+            previewCloseIcon.addEventListener("click", function() {
+                $('#previewModal').modal('hide');
+            });
+            previewCloseBtn.addEventListener("click", function() {
+                $('#previewModal').modal('hide');
+            });
         }
     }
 

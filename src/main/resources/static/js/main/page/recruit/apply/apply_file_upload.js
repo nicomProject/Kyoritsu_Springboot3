@@ -44,6 +44,7 @@ function addFile(obj) {
                 htmlData += '   <a id="delete'+fileNo+'" class="delete"><i class="far fa-minus-square"></i></a>';
                 htmlData += '</div>';
                 document.querySelector('.file-list').insertAdjacentHTML('beforeend', htmlData);
+                document.querySelector('#attechment_answer').insertAdjacentHTML('beforeend', htmlData.replace('<i class="far fa-minus-square"></i>', ''));
 
                 // 삭제 버튼에 대한 이벤트 핸들러를 추가
                 console.log('delete'+fileNo);
