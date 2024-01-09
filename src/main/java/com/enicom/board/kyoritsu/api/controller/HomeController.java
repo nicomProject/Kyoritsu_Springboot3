@@ -199,7 +199,7 @@ public class HomeController {
         return "error";
     }
 
-    // 현재 유저에 대한 정보를 가져옴
+    // 현재 유저에 대한 정보를 가져오는 함수
     private MemberDetail getCurrentUser(Model model) {
         MemberDetail member = securityUtil.getCurrentUser();
 

@@ -7,12 +7,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+/**
+ *  code 데이터 변경값을 담을 class 정의.
+**/
+
 @Builder
 @Getter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
 public class CodeParam {
-    @NotNull(message = "변경하실 코드 값을 입력해 주세요")
+    @NotNull(message = "변경하실 code 값은 필수입니다.")
     private String value;
 }

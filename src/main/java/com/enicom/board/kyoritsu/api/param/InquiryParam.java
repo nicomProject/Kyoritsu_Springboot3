@@ -3,6 +3,9 @@ package com.enicom.board.kyoritsu.api.param;
 import com.enicom.board.kyoritsu.dao.entity.Inquiry;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -21,17 +24,21 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class InquiryParam {
-    // field 정의
     private String key;
+    @NotBlank(message = "채용 문의자 이름은 필수 입력값입니다.")
     private String inquiryName;
+    @NotBlank(message = "채용 문의 비밀번호는 필수 입력값입니다.")
     private String inquiryPwd;
-    private String inquiryPhone;
+    // private String inquiryPhone;
+    @NotBlank(message = "채용 문의 이메일은 필수 입력값입니다.")
     private String inquiryEmail;
+    @NotNull(message = "채용 문의 본문은 null일 수 없습니다.")
     private String inquiryContent;
+    @NotEmpty(message = "채용 문의 비밀번호는 필수 입력값입니다.")
     private String inquiryTitle;
     private String answer;
     private String answerUser;
-    private String inquirySecret;
+    // private String inquirySecret;
 
     @JsonIgnore
     public Inquiry create(){
@@ -46,9 +53,9 @@ public class InquiryParam {
         if (this.inquiryEmail != null) {
             inquiry.setInquiryEmail(this.inquiryEmail);
         }
-        if (this.inquiryPhone != null) {
-            inquiry.setInquiryPhone(this.inquiryPhone);
-        }
+        // if (this.inquiryPhone != null) {
+        //     inquiry.setInquiryPhone(this.inquiryPhone);
+        // }
         if (this.inquiryName != null) {
             inquiry.setInquiryName(this.inquiryName);
         }
@@ -61,9 +68,9 @@ public class InquiryParam {
         if (this.inquiryTitle != null) {
             inquiry.setInquiryTitle(this.inquiryTitle);
         }
-        if (this.inquirySecret != null) {
-            inquiry.setInquirySecret(this.inquirySecret);
-        }
+        // if (this.inquirySecret != null) {
+        //     inquiry.setInquirySecret(this.inquirySecret);
+        // }
         if (this.answer != null) {
             inquiry.setAnswer(this.answer);
         }

@@ -15,7 +15,9 @@ import com.enicom.board.kyoritsu.api.type.ResponseHandler;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
-
+/**
+ *  관리자의 데이터를 요청받고 처리함.
+**/
 
 @RestController
 @RequiredArgsConstructor
@@ -26,50 +28,50 @@ public class AdminUserController {
 
     // [url] : /api/managers
     @RequestMapping(path = "/managers", method = {RequestMethod.GET, RequestMethod.POST})
-    @ApiMapping(order = 50, desc = "[관리자] 관리자 목록 조회")
+    @ApiMapping(order = 6, desc = "[관리자] 관리자 목록 조회")
     public ResponseHandler<?> getAdminUserList() {
         return new ResponseHandler<>(adminUserService.findAll());
     }
 
     // [url] : /api/manager/add
     @RequestMapping(path = "/manager/add", method = {RequestMethod.POST})
-    @ApiMapping(order = 51, desc = "[관리자] 관리자 추가", param = AdminUserInfoParam.class)
+    @ApiMapping(order = 7, desc = "[관리자] 관리자 추가", param = AdminUserInfoParam.class)
     public ResponseHandler<?> addAdminUserInfo(@RequestBody @Valid AdminUserInfoParam param) {
         return new ResponseHandler<>(adminUserService.add(param));
     }
 
     // [url] : /api/manager/findSelf
-    @ApiMapping(order = 52, desc = "[관리자] 특정 관리자 조회", param = AdminUserInfoParam.class)
+    @ApiMapping(order = 8, desc = "[관리자] 특정 관리자 조회", param = AdminUserInfoParam.class)
     @RequestMapping(path = "/manager/findSelf", method = {RequestMethod.GET, RequestMethod.POST})
     public ResponseHandler<?> findSelf(@RequestBody AdminUserInfoParam param) {
         return new ResponseHandler<>(adminUserService.findAll(param));
     }
 
     // [url] : /api/manager/update
-    @ApiMapping(order = 53, desc = "[관리자] 특정 관리자 업데이트", param = AdminUserInfoParam.class)
+    @ApiMapping(order = 9, desc = "[관리자] 특정 관리자 업데이트", param = AdminUserInfoParam.class)
     @RequestMapping(value = "/manager/update", method = RequestMethod.POST)
-    public ResponseHandler<?> update(@RequestBody @Valid AdminUserInfoParam param) throws Exception {
+    public ResponseHandler<?> update(@RequestBody @Valid AdminUserInfoParam param) {
         return new ResponseHandler<>(adminUserService.modify(param));
     }
 
     // [url] : /api/manager/delete
-    @ApiMapping(order = 54, desc = "[관리자] 특정 관리자 삭제", param = AdminUserInfoParam.class)
+    @ApiMapping(order = 10, desc = "[관리자] 특정 관리자 삭제", param = AdminUserInfoParam.class)
     @RequestMapping(value = "/manager/delete", method = RequestMethod.POST)
-    public ResponseHandler<?> delete(@RequestBody @Valid MultipleParam param) throws Exception {
+    public ResponseHandler<?> delete(@RequestBody MultipleParam param) throws Exception {
         return new ResponseHandler<>(adminUserService.delete(param));
     }
 
     // [url] : /api/manager/mypassword
     @RequestMapping(path = "/manager/mypassword", method = {RequestMethod.POST})
-    @ApiMapping(order = 55, desc = "[관리자] 관리자 비밀번호 변경", param = AdminUserPasswordParam.class)
+    @ApiMapping(order = 11, desc = "[관리자] 특정 관리자 비밀번호 변경", param = AdminUserPasswordParam.class)
     public ResponseHandler<?> changePassword(@RequestBody @Valid AdminUserPasswordParam param) {
         return new ResponseHandler<>(adminUserService.changePassword(param));
     }
 
     // [url] : /api/manager/init
     @RequestMapping(path = "/manager/init", method = {RequestMethod.POST})
-    @ApiMapping(order = 56, desc = "[관리자] 관리자 초기화", param = MultipleParam.class)
-    public ResponseHandler<?> initAdminUserInfo(@RequestBody @Valid MultipleParam param) {
+    @ApiMapping(order = 12, desc = "[관리자] 특정 관리자 초기화", param = MultipleParam.class)
+    public ResponseHandler<?> initAdminUserInfo(@RequestBody MultipleParam param) {
         return new ResponseHandler<>(adminUserService.init(param));
     }
 
