@@ -576,6 +576,7 @@ body.g-sidenav-hidden:not(.g-sidenav-pinned) .sidenav:not(:hover) .nav-link-text
 
 @media (max-width:2599px) {
     .page-container > #page-container-detail  {
+        height: 100%;
     }
 }
 

@@ -169,11 +169,14 @@ $(function () {
                             contentType :   false,    // formData 전송 시 설정
                             processData :   false,    // formData 전송 시 설정
 
-                            success:(data)=>{
-                                // 파일 저장 성공 확인
-                                alert(data.desc)
-                                // 채용 공고로 이동
+                            success:async (data)=>{
                                 if(data.code === 200) {
+                                    // 파일 저장 성공 확인
+                                    await Swal.fire({
+                                        icon: 'success',
+                                        html: data.desc
+                                    });
+                                    // 채용 공고로 이동
                                     location.href = '/recruit/notice'
                                 }
                             },

@@ -19,13 +19,15 @@
     <!-- ========================= header end ========================= -->
 
     <input type="hidden" id="overview_contentId" class="param contentId" name="key"/>
+    <input type="hidden" id="page_group_id" value="about_us"/>
+    <input type="hidden" id="page_id" value="overview"/>
 
     <!-- Start Breadcrumbs -->
     <div class="breadcrumbs" data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="breadcrumbs-content">
+                    <div class="breadcrumbs-content" id="breadcrumbs-nav">
                         <ul class="breadcrumb-nav">
                             <li><a href="../">Home</a></li>
                             <li><a href="">회사소개</a></li>
@@ -37,7 +39,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12" id="breadcrumbs-title">
                     <div class="breadcrumbs-content title">
                         <h1 class="page-title">회사소개</h1>
                         <p>Business plan draws on a wide range of knowledge from different business disciplines. Business draws on a wide range of different business .</p>
@@ -45,10 +47,9 @@
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12" id="breadcrumbs-content">
                     <div class="breadcrumbs-content center">
                         <button type="button" id="btnOverview">기업개요</button>
                         <button type="button" id="btnVision">경영이념/비전</button>

@@ -3,87 +3,89 @@
 <th:block th:replace="~{components/_include::include_main}"></th:block>
 
 <body>
-<!-- Preloader -->
-<div class="preloader">
-    <div class="preloader-inner">
-        <div class="preloader-icon">
-            <span></span>
-            <span></span>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </div>
-</div>
-<!-- /End Preloader -->
+    <!-- /End Preloader -->
 
-<!-- ========================= header start ========================= -->
-<th:block th:replace="~{components/_header::header_main}"></th:block>
-<!-- ========================= header end ========================= -->
+    <!-- ========================= header start ========================= -->
+    <th:block th:replace="~{components/_header::header_main}"></th:block>
+    <!-- ========================= header end ========================= -->
 
-<input class="param contentId" id="history_contentId" name="key" type="hidden"/>
+    <input type="hidden" id="history_contentId" class="param contentId" name="key"/>
+    <input type="hidden" id="page_group_id" value="about_us"/>
+    <input type="hidden" id="page_id" value="history"/>
 
-<!-- Start Breadcrumbs -->
-<div class="breadcrumbs" data-stellar-background-ratio="0.5">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="breadcrumbs-content">
-                    <ul class="breadcrumb-nav">
-                        <li><a href="../">Home</a></li>
-                        <li><a href="">회사소개</a></li>
-                        <li>연혁</li>
-                    </ul>
+    <!-- Start Breadcrumbs -->
+    <div class="breadcrumbs" data-stellar-background-ratio="0.5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumbs-content" id="breadcrumbs-nav">
+                        <ul class="breadcrumb-nav">
+                            <li><a href="../">Home</a></li>
+                            <li><a href="">회사소개</a></li>
+                            <li>연혁</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12" id="breadcrumbs-title">
+                    <div class="breadcrumbs-content title">
+                        <h1 class="page-title">회사소개</h1>
+                        <p>Business plan draws on a wide range of knowledge from different business disciplines. Business draws on a wide range of different business .</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12" id="breadcrumbs-content">
+                    <div class="breadcrumbs-content center">
+                        <button type="button" id="btnOverview">기업개요</button>
+                        <button type="button" id="btnVision">경영이념/비전</button>
+                        <button type="button" id="btnHistory">연혁</button>
+                        <button type="button" id="btnOrganization">조직도</button>
+                        <button type="button" id="btnLocation">오시는길</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="breadcrumbs-content title">
-                    <h1 class="page-title">회사소개</h1>
-                    <p>Business plan draws on a wide range of knowledge from different business disciplines. Business draws on a wide range of different business .</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="breadcrumbs-content center">
-                    <button type="button" id="btnOverview">기업개요</button>
-                    <button type="button" id="btnVision">경영이념/비전</button>
-                    <button type="button" id="btnHistory">연혁</button>
-                    <button type="button" id="btnOrganization">조직도</button>
-                    <button type="button" id="btnLocation">오시는길</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Breadcrumbs -->
+    <!-- End Breadcrumbs -->
 
-<!-- Start Features Area -->
-<th:block th:replace="~{main/intro/include/history_include::history_main}"></th:block>
-<!--End Newsletter Area -->
+    <!-- Start Features Area -->
+    <th:block th:replace="~{main/intro/include/history_include::history_main}"></th:block>
+    <!--End Newsletter Area -->
 
-<!-- Start Footer Area -->
-<th:block th:replace="~{components/_footer::footer_main}"></th:block>
-<!--/ End Footer Area -->
+    <!-- Start Footer Area -->
+    <th:block th:replace="~{components/_footer::footer_main}"></th:block>
+    <!--/ End Footer Area -->
 
-<!-- ========================= scroll-top ========================= -->
-<a class="scroll-top btn-hover" href="#">
-    <i class="lni lni-chevron-up"></i>
-</a>
+    <!-- ========================= scroll-top ========================= -->
+    <a class="scroll-top btn-hover" href="#">
+        <i class="lni lni-chevron-up"></i>
+    </a>
 
-<!-- ========================= JS here ========================= -->
-<script src="/static/js/main/template/bootstrap.min.js"></script>
-<script src="/static/js/main/template/count-up.min.js"></script>
-<script src="/static/js/main/template/wow.min.js"></script>
-<script src="/static/js/main/template/tiny-slider.js"></script>
-<script src="/static/js/main/template/glightbox.min.js"></script>
-<script src="/static/js/main/template/imagesloaded.min.js"></script>
-<script src="/static/js/main/template/isotope.min.js"></script>
-<script src="/static/js/main/template/main.js"></script>
+    <!-- ========================= JS here ========================= -->
+    <script src="/static/js/main/template/bootstrap.min.js"></script>
+    <script src="/static/js/main/template/count-up.min.js"></script>
+    <script src="/static/js/main/template/wow.min.js"></script>
+    <script src="/static/js/main/template/tiny-slider.js"></script>
+    <script src="/static/js/main/template/glightbox.min.js"></script>
+    <script src="/static/js/main/template/imagesloaded.min.js"></script>
+    <script src="/static/js/main/template/isotope.min.js"></script>
+    <script src="/static/js/main/template/main.js"></script>
 
-<script src="/static/js/main/page/intro/history.js" type="text/javascript"></script>
-</body>
+    <script src="/static/js/main/page/intro/history.js" type="text/javascript"></script>
+  </body>
 </html>
