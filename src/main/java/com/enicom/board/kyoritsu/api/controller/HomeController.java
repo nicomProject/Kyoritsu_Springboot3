@@ -66,21 +66,33 @@ public class HomeController {
     // [url] : /recruit/inquire/{action}/{key}
     // 채용문의에서 자신이 작성한 페이지 접근할 때 사용
     @GetMapping("/recruit/inquire/{action}/{key}")
-    public String recruitAction(Model model, @PathVariable String action, @PathVariable long key) throws IOException {
+    public String recruitAction(Model model, @PathVariable String action, @PathVariable long key, HttpServletRequest request) throws IOException {
+        HttpSession session = request.getSession();
+        String language = (String) session.getAttribute("languageValue");
+        if(language == null) language = "kr";
+        model.addAttribute("language", language);
         model.addAttribute("key", key);
         return String.format("main/recruit/inquire/%s", action);
     }
 
     // [url] : /recruit/inquire/{action}
     @GetMapping("/recruit/inquire/{action}")
-    public String recruitAction(@PathVariable String action) {
+    public String recruitAction(@PathVariable String action, Model model, HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        String language = (String) session.getAttribute("languageValue");
+        if(language == null) language = "kr";
+        model.addAttribute("language", language);
         return String.format("main/recruit/inquire/%s", action);
     }
 
     // [url] : /recruit/notice/{action}/{key}
     // 채용공고에서 채용 상세 페이지 접근할 때 사용
     @GetMapping("/recruit/notice/{action}/{page}")
-    public String recruitNoticeAction(Model model, @PathVariable String action, @PathVariable String page) throws IOException {
+    public String recruitNoticeAction(Model model, @PathVariable String action, @PathVariable String page, HttpServletRequest request) throws IOException {
+        HttpSession session = request.getSession();
+        String language = (String) session.getAttribute("languageValue");
+        if(language == null) language = "kr";
+        model.addAttribute("language", language);
         model.addAttribute("key", page);
         return String.format("main/recruit/notice/%s", action);
     }
@@ -93,7 +105,11 @@ public class HomeController {
 
     // [url] : /recruit/apply/{page}
     @GetMapping("/recruit/apply/{key}")
-    public String recruitApplyAction(Model model, @PathVariable long key) throws IOException {
+    public String recruitApplyAction(Model model, @PathVariable long key, HttpServletRequest request) throws IOException {
+        HttpSession session = request.getSession();
+        String language = (String) session.getAttribute("languageValue");
+        if(language == null) language = "kr";
+        model.addAttribute("language", language);
         model.addAttribute("key", key);
         return String.format("main/recruit/apply");
     }

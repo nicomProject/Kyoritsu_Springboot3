@@ -1,0 +1,41 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<main th:fragment="inquire_add_main_jp" th:if="${language} == 'jp'">
+    <section class="apply-inquire apply-section">
+        <div class="sub-title">
+            採用に関するお問い合わせ
+        </div>
+        <div class="container">
+            <div class="inquire container">
+                <div class="info-container">
+                    <div>
+                        <label name="name">氏名</label><a>&nbsp;&nbsp;</a>
+                        <input type="text" id="name" name="name" placeholder="お名前を入力してください" />
+                    </div>
+                    <div>
+                        <label name="email">メールアドレス</label><a>&nbsp;&nbsp;</a>
+                        <input type="text" id="email" name="email" placeholder="メールアドレスを入力してください">
+                    </div>
+                    <div>
+                        <label name="password">パスワード</label><a>&nbsp;&nbsp;</a>
+                        <input type="password" id="password" name="password" placeholder="パスワードを入力してください" />
+                    </div>
+                </div>
+                <div class="content-container">
+                    <div class="title">お問い合わせ内容</div>
+                    <div>
+                        お問い合わせの受付と処理のために上記のように個人情報（連絡先情報）を収集し、目的達成後は速やかに情報を破棄します。回答が登録されたら、お問い合わせ内容の修正および削除はできませんので、ご注意ください。
+                    </div>
+                    <div>
+                        <input class="content-title" type="title" id="title" name="title" placeholder="タイトルを入力してください" />
+                    </div>
+                    <div>
+                        <textarea class="inquire-input" id="textarea" name="textarea" rows="8" cols="50"></textarea>
+                    </div>
+                </div>
+                <div class="submit-btn">
+                    <button type="button" role="action" data-action="add"> 送信する </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

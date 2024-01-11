@@ -20,6 +20,7 @@
 
     <input type="hidden" id="page_group_id" value="recruit"/>
     <input type="hidden" id="page_id" value="notice"/>
+    <input type="hidden" id="language" th:value="${language}"/>
 
     <!-- Start Breadcrumbs -->
     <div class="breadcrumbs" id="recruitment" data-stellar-background-ratio="0.5">
@@ -63,38 +64,9 @@
     <!-- End Breadcrumbs -->
 
 	<!-- Start Features Area -->
-
-
-    <main>
-        <div class="search-container">
-            <div class="search-title">
-                <div>공고검색</div>
-            </div>
-            <div class="search-input">
-                <input type="text" id="searchText" placeholder="찾으시는 공고의 공고명을 입력하세요" />
-                <button class="btn btn-round me-1" role="action" data-action="search">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-            <div class="search-category">
-                <ul class="job-category">
-                    <li id="category-total" style="cursor: pointer;">전체</li>
-                    <li id="category-dormyinn" style="cursor: pointer;">도미인 호텔</li>
-                    <!-- <li id="category-resort">리조트</li> -->
-                </ul>
-            </div>
-        </div>
-        <section id="recruit-notice-section" class="recruit-notice section">
-            <div class="container">
-                <div class="new-graduates card-box">
-                    <div class="title"> 신입 채용 공고 </div>
-                </div>
-                <div class="mid-career card-box">
-                    <div class="title"> 경력 채용 공고 </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <th:block th:replace="~{main/recruit/include/notice/notice_include_kr::notice_main_kr}"></th:block>
+    <th:block th:replace="~{main/recruit/include/notice/notice_include_eng::notice_main_eng}"></th:block>
+    <th:block th:replace="~{main/recruit/include/notice/notice_include_jp::notice_main_jp}"></th:block>
     <!-- /End Newsletter Area -->
 
     <!-- Start Footer Area -->

@@ -20,6 +20,7 @@
         
     <input type="hidden" id="page_group_id" value="recruit"/>
     <input type="hidden" id="page_id" value="inquire"/>
+    <input type="hidden" id="language" th:value="${language}"/>
 
     <!-- Start Breadcrumbs -->
     <div class="breadcrumbs" id="recruitment" data-stellar-background-ratio="0.5">
@@ -63,21 +64,10 @@
     <!-- End Breadcrumbs -->
 
 	<!-- Start Features Area -->
-    <main>
-        <section class="apply-inquire apply-section">
-            <div class="sub-title">
-                채용문의
-            </div>
-            <div class="container">
-                <div id="table"></div>
-            </div>
-            <div class="submit-btn">
-                <button type="button" role="action" data-action="add"> 문의하기 </button>
-            </div>
-        </section>
-        <!-- End Features Area -->
-    </main>
-    <!-- /End Newsletter Area -->
+    <th:block th:replace="~{main/recruit/include/inquire/inquire_include_kr::inquire_main_kr}"></th:block>
+    <th:block th:replace="~{main/recruit/include/inquire/inquire_include_eng::inquire_main_eng}"></th:block>
+    <th:block th:replace="~{main/recruit/include/inquire/inquire_include_jp::inquire_main_jp}"></th:block>
+    <!-- End Features Area -->
 
     <!-- Start Footer Area -->
     <th:block th:replace="~{components/_footer::footer_main}"></th:block>

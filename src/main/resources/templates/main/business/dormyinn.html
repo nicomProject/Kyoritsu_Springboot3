@@ -21,6 +21,7 @@
     <input type="hidden" id="dormyinn_contentId" class="param contentId" name="key"/>
     <input type="hidden" id="page_group_id" value="business_area"/>
     <input type="hidden" id="page_id" value="dormyinn"/>
+    <input type="hidden" id="language" th:value="${language}"/>
 
     <!-- Start Breadcrumbs -->
     <div class="breadcrumbs" id="business" data-stellar-background-ratio="0.5">
@@ -53,7 +54,9 @@
     <!-- End Breadcrumbs -->
 
 	<!-- Start Features Area -->
-    <th:block th:replace="~{main/business/include/dormyinn_include::dormyinn_main}"></th:block>
+    <th:block th:replace="~{main/business/include/dormyinn_include_kr::dormyinn_main_kr}"></th:block>
+    <!-- <th:block th:replace="~{main/business/include/dormyinn_include_eng::dormyinn_main_eng}"></th:block> -->
+    <!-- <th:block th:replace="~{main/business/include/dormyinn_include_jp::dormyinn_main_jp}"></th:block> -->
     <!-- /End Newsletter Area -->
 
     <!-- Start Footer Area -->

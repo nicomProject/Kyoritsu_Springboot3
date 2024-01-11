@@ -40,12 +40,19 @@ $(function () {
         table: null,
         load: function (target) {
             const that = this;
+            const content = { kr: "채용문의가 없습니다.", eng: "There are no inquiries about recruitment.", jp: "採用のお問い合わせはありません。" };
+            const title = { kr: "제목", eng: "Title", jp: "タイトル" };
+            const writer = { kr: "작성자", eng: "Writer", jp: "作成者" };
+            const view = { kr: "조회수", eng: "Views", jp: "閲覧数" };
+            const status = { kr: "상태", eng: "Status", jp: "状態" };
+            const creationDate = { kr: "작성일", eng: "Creation date", jp: "作成日" };
+            const language = document.getElementById('language').value;
             const table = new Tabulator(target, {
                 locale: 'ko-kr',
                 langs: TableUtil.setDefaults(),
                 layout: 'fitColumns',
                 placeholder: `<div>
-                                <div class="mt-3">채용문의가 없습니다.</div>
+                                <div class="mt-3">${content[language]}</div>
                               </div>`,
                 pagination: false,
                 paginationSize: paginationConfig.size,
@@ -77,7 +84,7 @@ $(function () {
                         headerSort: false
                     },
                     {
-                        title: '제목',
+                        title: title[language],
                         field: "inquiryTitle",
                         tooltip: true,
                         headerTooltip: true,
@@ -86,7 +93,7 @@ $(function () {
                         headerHozAlign: "center",
                     },
                     {
-                        title: '작성자',
+                        title: writer[language],
                         field: "inquiryName",
                         tooltip: true,
                         headerTooltip: true,
@@ -95,7 +102,7 @@ $(function () {
                         headerHozAlign: "center",
                     },
                     {
-                        title: '조회수',
+                        title: view[language],
                         field: "hit",
                         tooltip: true,
                         headerTooltip: true,
@@ -104,7 +111,7 @@ $(function () {
                         headerHozAlign: "center",
                     },
                     {
-                        title: '상태',
+                        title: status[language],
                         field: "answerYn",
                         tooltip: true,
                         headerTooltip: true,
@@ -113,7 +120,7 @@ $(function () {
                         headerHozAlign: "center",
                     },
                     {
-                        title: '작성일',
+                        title: creationDate[language],
                         field: "createDate",
                         tooltip: true,
                         headerTooltip: true,

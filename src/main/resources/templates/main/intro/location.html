@@ -4,23 +4,24 @@
 
 <body>
     <!-- Preloader -->
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="preloader-inner">
             <div class="preloader-icon">
                 <span></span>
                 <span></span>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- /End Preloader -->
 
     <!-- ========================= header start ========================= -->
     <th:block th:replace="~{components/_header::header_main}"></th:block>
     <!-- ========================= header end ========================= -->
-
+    
     <input type="hidden" id="location_contentId" class="param contentId" name="key"/>
     <input type="hidden" id="page_group_id" value="about_us"/>
     <input type="hidden" id="page_id" value="location"/>
+    <input type="hidden" id="language" th:value="${language}"/>
 
     <!-- Start Breadcrumbs -->
     <div class="breadcrumbs" id="company" data-stellar-background-ratio="0.5">
@@ -64,14 +65,15 @@
     <!-- End Breadcrumbs -->
 
 	<!-- Start Features Area -->
-
     <main>
         <section id="location-section" class="location section">
             <div class="editor-content container">
             <div class="flex-box">
                 <div class="box-1 inview animated fadeInUp">
                     <h2 class="sec-title">
-                        <p class="en">오시는길</p>
+                        <p class="en" th:if="${language} == 'kr'">오시는길</p>
+                        <p class="en" th:if="${language} == 'eng'">Directions</p>
+                        <p class="en" th:if="${language} == 'jp'">アクセス</p>
                     </h2>
                 </div>
                 </div>
@@ -80,40 +82,50 @@
                     <div id="map"></div>
                     <div class="map-info">
                         <div class="top">
-                            <h3>교리츠 <span>본사</span></h3>
+                            <h3 th:if="${language} == 'kr'">교리츠 <span>본사</span></h3>
+                            <h3 th:if="${language} == 'eng'">Kyoritsu <span>Headquarters</span></h3>
+                            <h3 th:if="${language} == 'jp'">共立 <span>本社</span></h3>
                             <ul>
-                                <li><h4>서울시 강남구 봉은사로 129 서평타운 314호</h4></li>
+                                <li><h4 th:if="${language} == 'kr'">서울시 강남구 봉은사로 129 서평타운 314호</h4></li>
+                                <li><h4 th:if="${language} == 'eng'">129 Bongeunsa-ro, Gangnam-gu, Seoul, Korea</h4></li>
+                                <li><h4 th:if="${language} == 'jp'">ソウル市江南区奉恩寺路129、巨平タウン314号室</h4></li>
                                 <li></li>
-                                <li><a href=""><p>길찾기</p>
-<!--                                    <img src="images/contact/contact_arrow.png" alt="">-->
+                                <li><a href="" th:if="${language} == 'kr'"><p>길찾기</p>
+                                <li><a href="" th:if="${language} == 'eng'"><p>Directions</p>
+                                <li><a href="" th:if="${language} == 'jp'"><p>アクセス</p>
                                 </a></li>
                             </ul>
                         </div>
                         <div class="bottom">
                             <ul>
-<!--                                <li><img src="images/contact/contact_icon1.png" alt=""></li>-->
-                                <li>전화</li>
+                                <li th:if="${language} == 'kr'">전화</li>
+                                <li th:if="${language} == 'eng'">TEL</li>
+                                <li th:if="${language} == 'jp'">電話</li>
                                 <li><span>02-548-5489</span></li>
                             </ul>
                             <ul>
-<!--                                <li><img src="images/contact/contact_icon2.png" alt=""></li>-->
-                                <li>팩스</li>
-                                <li>팩스번호</li>
+                                <li th:if="${language} == 'kr'">팩스</li>
+                                <li th:if="${language} == 'eng'">FAX</li>
+                                <li th:if="${language} == 'jp'">ファックス</li>
+                                <li>00000000</li>
                             </ul>
                             <ul>
-<!--                                <li><img src="images/contact/contact_icon3.png" alt=""></li>-->
-                                <li>E-Mail</li>
-                                <li>이메일 번호</li>
+                                <li th:if="${language} == 'kr'">이메일</li>
+                                <li th:if="${language} == 'eng'">E-Mail</li>
+                                <li th:if="${language} == 'jp'">メール</li>
+                                <li>example@example.com</li>
                             </ul>
                             <ul>
-<!--                                <li><img src="images/contact/contact_icon4.png" alt=""></li>-->
-                                <li>제품 및 기타 문의</li>
-                                <li>제품 및 기타 문의</li>
+                                <li th:if="${language} == 'kr'">제품 및 기타 문의</li>
+                                <li th:if="${language} == 'eng'">Product and Other Inquiries</li>
+                                <li th:if="${language} == 'jp'">製品およびその他のお問い合わせ</li>
+                                <li>000-0000-0000</li>
                             </ul>
                             <ul>
-<!--                                <li><img src="images/contact/contact_icon5.png" alt=""></li>-->
-                                <li>A/S콜센터</li>
-                                <li>A/S콜센터</li>
+                                <li th:if="${language} == 'kr'">A/S 콜센터</li>
+                                <li th:if="${language} == 'eng'">After-Sales Service Call Center</li>
+                                <li th:if="${language} == 'jp'">アフターサービスコールセンター</li>
+                                <li>000-0000-0000</li>
                             </ul>
                         </div>
                     </div>

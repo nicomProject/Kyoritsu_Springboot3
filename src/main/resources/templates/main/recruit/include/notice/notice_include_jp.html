@@ -1,0 +1,30 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<main th:fragment="notice_main_jp" th:if="${language} == 'jp'">
+    <div class="search-container">
+        <div class="search-title">
+            <div>求人検索</div>
+        </div>
+        <div class="search-input">
+            <input type="text" id="searchText" placeholder="お探しの求人タイトルを入力してください" />
+            <button class="btn btn-round me-1" role="action" data-action="search">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <div class="search-category">
+            <ul class="job-category">
+                <li id="category-total" style="cursor: pointer;">全て</li>
+                <li id="category-dormyinn" style="cursor: pointer;">ドーミーインホテル</li>
+            </ul>
+        </div>
+    </div>
+    <section id="recruit-notice-section" class="recruit-notice section">
+        <div class="container">
+            <div class="new-graduates card-box">
+                <div class="title"> 新卒採用募集 </div>
+            </div>
+            <div class="mid-career card-box">
+                <div class="title"> 経験者採用募集 </div>
+            </div>
+        </div>
+    </section>
+</main>

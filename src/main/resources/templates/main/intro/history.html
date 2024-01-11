@@ -21,6 +21,7 @@
     <input type="hidden" id="history_contentId" class="param contentId" name="key"/>
     <input type="hidden" id="page_group_id" value="about_us"/>
     <input type="hidden" id="page_id" value="history"/>
+    <input type="hidden" id="language" th:value="${language}"/>
 
     <!-- Start Breadcrumbs -->
     <div class="breadcrumbs" id="company" data-stellar-background-ratio="0.5">
@@ -64,7 +65,9 @@
     <!-- End Breadcrumbs -->
 
     <!-- Start Features Area -->
-    <th:block th:replace="~{main/intro/include/history_include::history_main}"></th:block>
+    <th:block th:replace="~{main/intro/include/history/history_include_kr::history_main_kr}"></th:block>
+    <th:block th:replace="~{main/intro/include/history/history_include_eng::history_main_eng}"></th:block>
+    <th:block th:replace="~{main/intro/include/history/history_include_jp::history_main_jp}"></th:block>
     <!--End Newsletter Area -->
 
     <!-- Start Footer Area -->

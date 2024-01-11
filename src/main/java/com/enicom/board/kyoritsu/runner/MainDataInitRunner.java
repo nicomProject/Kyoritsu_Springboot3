@@ -84,10 +84,10 @@ public class MainDataInitRunner implements ApplicationRunner {
         
         // '회사소개' 하위 메뉴
         if(!mainMenuStoredList.containsKey("기업개요")) mainMenuList.add(MainMenu.builder().order(1).menu(company).url("/intro/overview").name("기업개요").nameEnglish("Company Overview").nameJapanese("企業概要").type(MainMenuType.INTRO).build());
-        if(!mainMenuStoredList.containsKey("경영이념/비전")) mainMenuList.add(MainMenu.builder().order(2).menu(company).url("/intro/vision").name("경영이념/비전").nameEnglish("Management philosophy/vision").nameJapanese("経営理念/ビジョン").type(MainMenuType.INTRO).build());
-        if(!mainMenuStoredList.containsKey("연혁")) mainMenuList.add(MainMenu.builder().order(3).menu(company).url("/intro/history").name("연혁").nameEnglish("history").nameJapanese("歴史").type(MainMenuType.INTRO).build());
-        if(!mainMenuStoredList.containsKey("조직도")) mainMenuList.add(MainMenu.builder().order(4).menu(company).url("/intro/organization").name("조직도").nameEnglish("organization").nameJapanese("組織図").type(MainMenuType.INTRO).build());
-        if(!mainMenuStoredList.containsKey("오시는길")) mainMenuList.add(MainMenu.builder().order(5).menu(company).url("/intro/location").name("오시는길").nameEnglish("way to come").nameJapanese("アクセス").type(MainMenuType.INTRO).build());
+        if(!mainMenuStoredList.containsKey("경영이념/비전")) mainMenuList.add(MainMenu.builder().order(2).menu(company).url("/intro/vision").name("경영이념/비전").nameEnglish("Management philosophy/Vision").nameJapanese("経営理念/ビジョン").type(MainMenuType.INTRO).build());
+        if(!mainMenuStoredList.containsKey("연혁")) mainMenuList.add(MainMenu.builder().order(3).menu(company).url("/intro/history").name("연혁").nameEnglish("History").nameJapanese("歴史").type(MainMenuType.INTRO).build());
+        if(!mainMenuStoredList.containsKey("조직도")) mainMenuList.add(MainMenu.builder().order(4).menu(company).url("/intro/organization").name("조직도").nameEnglish("Organization").nameJapanese("組織図").type(MainMenuType.INTRO).build());
+        if(!mainMenuStoredList.containsKey("오시는길")) mainMenuList.add(MainMenu.builder().order(5).menu(company).url("/intro/location").name("오시는길").nameEnglish("Direction").nameJapanese("アクセス").type(MainMenuType.INTRO).build());
         
         // '사업영역' 하위 메뉴
         if(!mainMenuStoredList.containsKey("도미인")) mainMenuList.add(MainMenu.builder().order(2).menu(product).url("/business/dormyinn").name("도미인").nameEnglish("Dormy Inn").nameJapanese("ドーミー").type(MainMenuType.INTRO).build());
@@ -100,7 +100,7 @@ public class MainDataInitRunner implements ApplicationRunner {
         if(!mainMenuStoredList.containsKey("채용문의")) mainMenuList.add(MainMenu.builder().order(5).menu(recruit).url("/recruit/inquire").name("채용문의").nameEnglish("Recruitment Inquiry").nameJapanese("採用お問い合わせ").type(MainMenuType.GENERAL).build());
 
         // '공지사항' 하위 메뉴
-        if(!mainMenuStoredList.containsKey(("공지사항"))) mainMenuList.add(MainMenu.builder().order(1).menu(notice).url("/notice/notice").name("뉴스").nameEnglish("Announcement").nameJapanese("お知らせ").type(MainMenuType.GENERAL).build());
+        if(!mainMenuStoredList.containsKey(("공지사항"))) mainMenuList.add(MainMenu.builder().order(1).menu(notice).url("/notice/notice").name(" 공지사항 ").nameEnglish("Announcement").nameJapanese("お知らせ").type(MainMenuType.GENERAL).build());
 
         // mainMenu 업데이트
         log.info("누락된 하위 메뉴 {}건 추가됨", mainMenuList.size());

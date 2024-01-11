@@ -236,6 +236,7 @@ $(function () {
             const contentsField         =   $("#contents");
             const contentsCount         =   $("#contentsCount");
             const contentsMaxCount      =   $("#contentsMaxCount");
+            console.log(contentsMaxCount);
             const countsMaxCountValue   =   contentsMaxCount[0].innerText;
             // 자기소개서 글자 개수 업데이트
             contentsField.on('input propertychange', function() {

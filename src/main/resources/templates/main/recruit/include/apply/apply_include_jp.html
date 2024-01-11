@@ -1,0 +1,113 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<main th:fragment="apply_main_jp" th:if="${language} == 'jp'">
+    <section class="apply apply-section">
+        <div class="sub-title">
+            応募書類の記入
+        </div>
+        <div class="container">
+            <div class="title-container">
+                <div class="apply-career"></div>
+                <div class="apply-fulltime"></div>
+                <div class="apply-title"></div>
+                <div class="apply-subtitle">
+                    <span> - 応募期間: </span>
+                    <span class="apply-date"></span>
+                </div>
+            </div>
+            <div class="apply-content">
+                <div class="content-default content">
+                    <div class="flex-box">
+                        <div class="flex-box-first">
+                            <div class="d-flex">
+                                <input id="name" type="text" placeholder="氏名" />
+                            </div>
+                            <div class="apply-label">
+                                <input id="man" type="radio" name="gender" value="male" checked />
+                                <label for="man">男性</label>
+                                <input id="woman" type="radio" name="gender" value="female" />
+                                <label for="woman">女性</label>
+                            </div>
+                            <div>
+                                <input id="birth" type="text" placeholder="生年月日(8桁)" />
+                            </div>
+                            <div>
+                                <input id="mobile" type="text" placeholder="携帯電話番号('-'なしで入力)" />
+                            </div>
+                        </div>
+                        <div class="flex-box-second">
+                            <div class="radio-buttons">
+                                <input type="radio" id="korean" name="options" checked />
+                                <label for="korean">韓国国籍</label>
+                                <input type="radio" id="foreign" name="options" />
+                                <label for="foreign">外国籍</label>
+                            </div>
+                            <!-- これは未使用のようですが？ -->
+                            <div class="apply-label">
+                                <input id="man" type="radio" name="gender" value="male" />
+                                <label>男性</label>
+                                <input id="woman" type="radio" name="gender" value="female" />
+                                <label>女性</label>
+                            </div>
+                            <div>
+                                <input id="email" type="text" placeholder="メールアドレス">
+                            </div>
+                            <div>
+                            </div>
+                        </div>
+                        <div class="flex-box-third">
+                            <img id="previewImg" alt="応募書類のプロフィール" src="/static/images/profile.png"
+                                class="rounded-circle avatar-img previewImg">
+                            <div class="fileboxProfile">
+                                <label for="profile">写真選択</label>
+                                <input class="upload-name" value="" disabled="disabled">
+                                <input type="file" id="profile" name="profile" class="upload-hidden" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="apply-address">
+                        <div>
+                            <input id="address" type="text" placeholder="住所" />
+                        </div>
+                        <div>
+                            <input id="addressDetail" type="text" placeholder="詳細住所(ない場合は空白にしてください)">
+                        </div>
+                    </div>
+                </div>
+                <div class="content-personal content">
+                    <div class="category-title">自己紹介書</div>
+                    <span>経験に基づいて詳細に記入してください。</span>
+                    <div>
+                        <textarea id="contents" cols="50" rows="10"></textarea>
+                    </div>
+                    <div><span id="contentsCount">0</span>/<span id="contentsMaxCount">10000</span></div>
+                </div>
+                <div class="content-file content">
+                    <div class="category-title">添付ファイル</div>
+                    <label for="fileInput">ファイル選択</label>
+                    <span>ポートフォリオを添付してください。(最大5つまで)</span>
+                    <form id="uploadForm" method="POST" enctype="multipart/form-data">
+                        <input type="file" id="fileInput" multiple />
+                        <div class="file-list"></div>
+                    </form>
+                    <button id="checkButton">ファイル確認</button>
+                </div>
+            </div>
+        </div>
+        <div class="submit-container">
+            <div>
+                <span>
+                    上記の情報は全て応募者自身によって提供されたものです。正確でありますか？<br>
+                    応募書類の情報が事実でない場合、受諾または雇用が取り消される可能性があります。
+                </span>
+                <input id="answer" type="radio" name="answer" value="yes" />
+                <label>はい</label>
+                <input type="radio" name="answer" value="no" checked />
+                <label>いいえ</label>
+            </div>
+            <div class="submit-btn">
+                <button type="button" role="action" data-action="preview">プレビュー</button>
+                <button type="button" role="action" data-action="submit">提出する</button>
+            </div>
+        </div>
+    </section>
+</main>

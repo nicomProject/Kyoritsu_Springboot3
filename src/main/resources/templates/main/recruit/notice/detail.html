@@ -21,6 +21,7 @@
     <input type="hidden" class="param" name="key" th:value="${key}"/>
     <input type="hidden" id="page_group_id" value="recruit"/>
     <input type="hidden" id="page_id" value="notice"/>
+    <input type="hidden" id="language" th:value="${language}"/>
 
     <!-- Start Breadcrumbs -->
     <div class="breadcrumbs" data-stellar-background-ratio="0.5">
@@ -64,40 +65,10 @@
     <!-- End Breadcrumbs -->
 
     <!-- Start Features Area -->
-    <main>
-        <section class="apply apply-section">
-            <div class="sub-title">
-                채용 상세
-            </div>
-            <div class="container">
-                <div class="title-container">
-                    <div class="apply-career"></div>
-                    <div class="apply-fulltime"></div>
-                    <div class="apply-title"></div>
-                    <div class="apply-subtitle">
-                        <span></span>
-                    </div>
-                    <!-- <div class="share-icon"><i class="fas fa-solid fa-share"></i></div> -->
-                </div>
-                <div class="apply-content">
-                    <div class="content-default content">
-                        <div class="content-default content-all">
-                        </div>
-                        <div class="apply-button">
-                        <button type="button" class="btn-notice">
-                        지원하기
-                        </button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="submit-container">
-            </div>
-        </section>
-        <!-- End Features Area -->
-    </main>
-    <!-- /End Newsletter Area -->
+    <th:block th:replace="~{main/recruit/include/notice/detail/notice_detail_include_kr::notice_detail_main_kr}"></th:block>
+    <th:block th:replace="~{main/recruit/include/notice/detail/notice_detail_include_eng::notice_detail_main_eng}"></th:block>
+    <th:block th:replace="~{main/recruit/include/notice/detail/notice_detail_include_jp::notice_detail_main_jp}"></th:block>
+    <!-- End Features Area -->
 
     <!-- Start Footer Area -->
     <th:block th:replace="~{components/_footer::footer_main}"></th:block>
