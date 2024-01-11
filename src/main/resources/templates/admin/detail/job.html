@@ -12,14 +12,14 @@
                 <h4 class="card-title">채용공고 수정</h4>
                 <p class="card-category ellipsis">
                     <i class="fas fa-arrow-right"></i>
-                    <span class="icon-title"></span>
+                    <span class="icon-title">채용공고 수정 페이지입니다.</span>
                 </p>
             </div>
             <div class="card-header card-header-primary" th:if="${key == null}">
                 <h4 class="card-title">채용공고 추가</h4>
                 <p class="card-category ellipsis">
                     <i class="fas fa-arrow-right"></i>
-                    <span class="icon-title"></span>
+                    <span class="icon-title">채용공고 추가 페이지입니다.</span>
                 </p>
             </div>
             <div class="card-body">
@@ -89,9 +89,9 @@
                             <button class="btn btn-round btn-primary bg-gradient-primary" role="action" data-action="add">
                                 <i class="fas fa-plus"></i><span class="icon-title">저장</span>
                             </button>
-                            <button class="btn btn-round btn-danger bg-gradient-danger" role="action" data-action="delete">
+                            <!-- <button class="btn btn-round btn-danger bg-gradient-danger" role="action" data-action="delete">
                                 <i class="fas fa-trash"></i><span class="icon-title">삭제</span>
-                            </button>
+                            </button> -->
                         </div>
                         </td>
                     </tr>
@@ -158,13 +158,13 @@
                         <td><label for="management">관리</label></td>
                         <td colspan="5"><div type="text" id="management" name="management">
                             <button class="btn btn-round btn-success bg-gradient-success" role="action" data-action="list">
-                                <i class="fas fa-plus"></i><span class="icon-title">목록</span>
+                                <i class="fas fa-list"></i><span class="icon-title">목록</span>
                             </button>
                             <button class="btn btn-round btn-primary bg-gradient-primary" role="action" data-action="update" th:if="${key != null}">
                                 <i class="fas fa-plus"></i><span class="icon-title">수정</span>
                             </button>
                             <button class="btn btn-round btn-danger bg-gradient-danger" role="action" data-action="delete">
-                                <i class="fas fa-plus"></i><span class="icon-title">삭제</span>
+                                <i class="fas fa-trash"></i><span class="icon-title">삭제</span>
                             </button>
                         </div>
                         </td>

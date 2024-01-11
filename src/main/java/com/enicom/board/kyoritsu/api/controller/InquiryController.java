@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.enicom.board.kyoritsu.api.annotation.ApiMapping;
 import com.enicom.board.kyoritsu.api.param.InquiryParam;
 import com.enicom.board.kyoritsu.api.param.multiple.MultipleParam;
 import com.enicom.board.kyoritsu.api.service.inquiry.InquiryService;
@@ -15,7 +16,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
 /**
- *  채용문의에 대한 요청을 받고 처리함
+ *  채용문의에 대한 요청을 받고 처리함.
 **/
 
 @RestController
@@ -26,55 +27,58 @@ public class InquiryController {
     private final InquiryService inquiryService;
 
     // [url] : /api/inquiry/find
-    // Inquiry entity중 delete_date=null인 record들을 create_date 내림차순으로 정렬하여 반환
     @RequestMapping(path = "/inquiry/find", method = {RequestMethod.GET, RequestMethod.POST})
+    @ApiMapping(order = 24, desc = "[관리자/사용자] 채용문의 모두 조회")
     public ResponseHandler<?> find() {
         return new ResponseHandler<>(inquiryService.findAll());
     }
 
-    // [url] : /api/inquiry/findSelf/{key}
-    // 홈페이지용
+    // [url] : /api/inquiry/findSelf/{key} (홈페이지용)
     @RequestMapping(path = "/inquiry/findSelf/{key}", method = {RequestMethod.GET, RequestMethod.POST})
+    @ApiMapping(order = 25, desc = "[사용자] 특정 채용문의 조회")
     public ResponseHandler<?> findSelf(@PathVariable Long key) {
         return new ResponseHandler<>(inquiryService.findAll(key));
     }
 
-    // [url] : /api/inquiry/findSelf
-    // 관리자 페이지용
+    // [url] : /api/inquiry/findSelf (관리자 페이지용)
     @RequestMapping(path = "/inquiry/findSelf", method = {RequestMethod.GET, RequestMethod.POST})
+    @ApiMapping(order = 26, desc = "[관리자] 특정 채용문의 조회")
     public ResponseHandler<?> findSelfAdmin(@RequestBody InquiryParam param) {
         return new ResponseHandler<>(inquiryService.findAll(param));
     }
 
     // [url] : /api/inquiry/findSelfPwd/{key}
     @RequestMapping(path = "/inquiry/findSelfPwd/{key}", method = {RequestMethod.GET, RequestMethod.POST})
+    @ApiMapping(order = 27, desc = "[사용자] 특정 채용문의 비밀번호 조회")
     public ResponseHandler<?> findSelfPwd(@PathVariable Long key) {
         return new ResponseHandler<>(inquiryService.findAllSelfPwd(key));
     }
 
     // [url] : /api/inquiry/add
-    // Inquiry param을 받아서 Inquiry entity 추가함
     @RequestMapping(value = "/inquiry/add", method = RequestMethod.POST)
+    @ApiMapping(order = 28, desc = "[사용자] 채용문의 추가")
     public ResponseHandler<?> add(@RequestBody @Valid InquiryParam param) throws Exception {
         return new ResponseHandler<>(inquiryService.add(param));
     }
 
     // [url] : /api/inquiry/addAnswer
-    // Inquiry param을 받아서 Inquiry entity의 answer 추가함
     @RequestMapping(value = "/inquiry/addAnswer", method = RequestMethod.POST)
-    public ResponseHandler<?> addAnswer(@RequestBody @Valid InquiryParam param) throws Exception {
+    @ApiMapping(order = 29, desc = "[관리자] 채용문의 답변 추가")
+    public ResponseHandler<?> addAnswer(@RequestBody InquiryParam param) throws Exception {
         return new ResponseHandler<>(inquiryService.addAnswer(param));
     }
 
     // [url] : /api/inquiry/update
     @RequestMapping(value = "/inquiry/update", method = RequestMethod.POST)
+    @ApiMapping(order = 30, desc = "[사용자] 채용문의 업데이트")
     public ResponseHandler<?> update(@RequestBody @Valid InquiryParam param) throws Exception {
         return new ResponseHandler<>(inquiryService.update(param));
     }
 
     // [url] : /api/inquiry/delete
     @RequestMapping(value = "/inquiry/delete", method = RequestMethod.POST)
-    public ResponseHandler<?> delete(@RequestBody @Valid MultipleParam param) throws Exception {
+    @ApiMapping(order = 30, desc = "[관리자] 채용문의 삭제")
+    public ResponseHandler<?> delete(@RequestBody MultipleParam param) throws Exception {
         return new ResponseHandler<>(inquiryService.delete(param));
     }
 

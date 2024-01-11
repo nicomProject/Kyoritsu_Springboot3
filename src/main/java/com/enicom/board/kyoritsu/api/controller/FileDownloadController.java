@@ -10,17 +10,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.enicom.board.kyoritsu.api.annotation.ApiMapping;
 
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
- *  첨부파일 다운로드에 사용되는 컨트롤러
+ *  첨부파일 및 이미지 다운로드 요청을 받고 처리함.
 **/
 
 @Controller
 @RequestMapping(path = "/storage")
 public class FileDownloadController {
+
+    // [url] : /storage/profiles/{applicantIdName}/{fileName}
     @GetMapping("/profiles/{applicantIdName}/{fileName}")
+    @ApiMapping(order = 20, desc = "[관리자] 지원자 프로필 다운로드")
     public void downloadProfile(@PathVariable("applicantIdName") String applicantIdName, @PathVariable("fileName") String fileName, HttpServletResponse response) throws IOException {
 
         String path = "storage/profiles/"+applicantIdName+"/"+fileName;
@@ -36,7 +40,9 @@ public class FileDownloadController {
         response.getOutputStream().close();
     }
 
+    // [url] : /storage/files/{applicantIdName}/{fileName}
     @GetMapping("/files/{applicantIdName}/{fileName}")
+    @ApiMapping(order = 21, desc = "[관리자] 지원자 첨부파일 다운로드")
     public void downloadFile(@PathVariable("applicantIdName") String applicantIdName, @PathVariable("fileName") String fileName, HttpServletResponse response) throws IOException {
 
         String path = "storage/files/"+applicantIdName+"/"+fileName;
@@ -52,7 +58,9 @@ public class FileDownloadController {
         response.getOutputStream().close();
     }
 
+    // [url] : /storage/images/{fileName}
     @GetMapping("/images/{fileName}")
+    @ApiMapping(order = 22, desc = "[관리자/사용자] 게시글 이미지 다운로드")
     public void downloadImages(@PathVariable("fileName") String fileName, HttpServletResponse response) throws IOException {
 
         String path = "storage/images/"+fileName;

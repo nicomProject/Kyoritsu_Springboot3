@@ -5,6 +5,10 @@ import lombok.Data;
 import java.util.List;
 import java.util.Map;
 
+/**
+ *  요청에 대한 다중 데이터를 받기 위한 class 정의.
+**/
+
 @Data
 public class MultipleParam {
     private MultipleType type;

@@ -5,6 +5,13 @@ import lombok.*;
 import com.enicom.board.kyoritsu.dao.entity.Applicant;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+/**
+ *  지원자 데이터를 담을 class 정의.
+**/
+
 @Builder
 @Getter
 @AllArgsConstructor
@@ -17,15 +24,25 @@ public class ApplicantParam {
     private String formTag;
     private String contentsAnswer;
     
+    @NotBlank(message = "생년월일은 필수 입력값입니다.")
     private String birthDate;
+    @NotNull(message = "채용공고 id는 필수 입력값입니다.")
     private Long jobId;
+    @NotBlank(message = "지원분야는 필수 입력값입니다.")
     private String category;
+    @NotBlank(message = "이메일은 필수 입력값입니다.")
     private String email;
+    @NotBlank(message = "성별은 필수 입력값입니다.")
     private String gender;
+    @NotBlank(message = "지원자 이름은 필수 입력값입니다.")
     private String name;
+    @NotBlank(message = "내/외국인 여부는 필수 입력값입니다.")
     private String nationality;
+    @NotBlank(message = "휴대전화 번호는 필수 입력값입니다.")
     private String phone;
+    @NotBlank(message = "경력/신입 여부는 필수 입력값입니다.")
     private String career;
+    @NotNull(message = "자기소개서 내용은 null일 수 없습니다.")
     private String contents;
 
    @JsonIgnore

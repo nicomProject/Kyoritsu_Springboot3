@@ -48,6 +48,9 @@ $(function () {
             document.getElementById("btnInquire").addEventListener("click", function() {
                 window.location.href = '/recruit/inquire';
             });
+            document.getElementById("btnNotice2").addEventListener("click", function() {
+                window.location.href = '/recruit/notice';
+            });
         }
     }
 

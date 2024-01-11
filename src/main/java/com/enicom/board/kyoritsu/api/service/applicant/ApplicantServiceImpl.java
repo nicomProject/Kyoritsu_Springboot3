@@ -120,13 +120,9 @@ public class ApplicantServiceImpl implements ApplicantService {
         if(!folderProfile.exists()) {
             folderProfile.mkdirs();
         }
-        if(!folderFiles.exists()) {
+        if(files != null && !folderFiles.exists()) {
             folderFiles.mkdirs();
         }
-
-        // 맨 앞에 . 지우기
-        // folderProfile = new File("/storage/profiles/"+recKey+"_"+applicantName);
-        // folderFiles = new File("/storage/files/"+recKey+"_"+applicantName);
 
         // profile 및 files 경로
         String profilePath = "";
@@ -151,23 +147,27 @@ public class ApplicantServiceImpl implements ApplicantService {
 
         // 파일 데이터를 서버에 파일로 저장
         try {
-            for(MultipartFile file : files) {
-                byte[] fileData = file.getBytes();
+            // 파일이 있다면 진행
+            if(files != null){
+                for(MultipartFile file : files) {
+                    byte[] fileData = file.getBytes();
 
-                try {
-                    String filePath = String.format("%s/%s", folderFiles.getPath(), file.getOriginalFilename());
-                    filesPath.add(filePath);
-                    File f = new File(filePath);
-                    FileOutputStream fos = new FileOutputStream(f);
-                    fos.write(fileData);
-                    fos.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    try {
+                        String filePath = String.format("%s/%s", folderFiles.getPath(), file.getOriginalFilename());
+                        filesPath.add(filePath);
+                        File f = new File(filePath);
+                        FileOutputStream fos = new FileOutputStream(f);
+                        fos.write(fileData);
+                        fos.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         // 해당하는 Applicant 찾아서 DB에 경로 저장
         Applicant applicant = applicantRepository.findById(recKey).orElse(null);
         applicant.setProfilePath(profilePath);

@@ -18,12 +18,15 @@
     <th:block th:replace="~{components/_header::header_main}"></th:block>
     <!-- ========================= header end ========================= -->
 
+    <input type="hidden" id="page_group_id" value="recruit"/>
+    <input type="hidden" id="page_id" value="notice"/>
+
     <!-- Start Breadcrumbs -->
     <div class="breadcrumbs" data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="breadcrumbs-content">
+                    <div class="breadcrumbs-content" id="breadcrumbs-nav">
                         <ul class="breadcrumb-nav">
                             <li><a href="../">Home</a></li>
                             <li><a href="">채용정보</a></li>
@@ -35,7 +38,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12" id="breadcrumbs-title">
                     <div class="breadcrumbs-content title">
                         <h1 class="page-title">채용 공고</h1>
                         <p>Business plan draws on a wide range of knowledge from different business disciplines. Business draws on a wide range of different business .</p>
@@ -45,7 +48,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12" id="breadcrumbs-content">
                     <div class="breadcrumbs-content center">
                         <button type="button" id="btnEmployeeInfo">직원 소개</button>
                         <button type="button" id="btnInfo">채용 안내</button>
@@ -68,7 +71,7 @@
                 <div>공고검색</div>
             </div>
             <div class="search-input">
-                <input type="text" id="searchText" placeholder="찾으시는 공고의 키워드(제목)를 입력하세요" />
+                <input type="text" id="searchText" placeholder="찾으시는 공고의 공고명을 입력하세요" />
                 <button class="btn btn-round me-1" role="action" data-action="search">
                     <i class="fas fa-search"></i>
                 </button>

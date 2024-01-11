@@ -25,7 +25,7 @@ import com.enicom.board.kyoritsu.utils.ParamUtil;
 import jakarta.validation.constraints.NotNull;
 
 /**
- *  Api로 사용되는 class에 대해 확인할 때 사용.
+ *  Api로 사용되는 class에 대해 확인할 때 사용함.
 **/
 
 @RestController
@@ -44,6 +44,7 @@ public class ApiController {
 
     // [url] : /api/list
     @RequestMapping(path = "/list", method = {RequestMethod.GET, RequestMethod.POST})
+    @ApiMapping(order = 0, desc = "[조회] API 리스트 조회")
     public ResponseHandler<?> getApiList() {
         // apiList 생성
         List<Map<String, Object>> apiList = new ArrayList<>();

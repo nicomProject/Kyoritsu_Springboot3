@@ -9,7 +9,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="previewModalLabel">미리보기</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" id="closeIcon" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -29,7 +29,7 @@
                                 <td id="name_modal"></td>
                                 <td>성별</td>
                                 <td id="gender_modal"></td>
-                                <td colspan="6" rowspan="3"><img style="width: 105px;" alt="계정 이미지 프로필" src="/static/images/profile.png" class="rounded-circle avatar-img"></td>
+                                <td colspan="6" rowspan="3"><img style="width: 105px;" id="previewImg_modal" alt="계정 이미지 프로필" src="/static/images/profile.png" class="rounded-circle avatar-img"></td>
                             </tr>
                             <tr>
                                 <td colspan="2" style="border-bottom-width:0"></td>
@@ -46,12 +46,14 @@
                                 <td id="nationality_modal"></td>
                             </tr>
                             <tr>
-                                <td colspan="2" style="border-bottom-width:0"></td>
-                                <td colspan="6">주소</td>
+                                <td colspan="2" style="border-bottom-width:0;"></td>
+                                <td colspan="2">주소</td>
+                                <td id="address_modal"></td>
                             </tr>
                             <tr>
                                 <td colspan="2" style="border-bottom-width:0"></td>
-                                <td colspan="6">상세주소</td>
+                                <td colspan="2">상세주소</td>
+                                <td id="addressDetail_modal"></td>
                             </tr>
                             <tr>
                                 <td colspan="2" style="border-bottom-width:0"></td>
@@ -60,7 +62,7 @@
                             <tr>
                                 <td colspan="2" style="border-bottom-width:0; margin-top:10px"></td>
                                 <td colspan="6">
-                                    <textarea class="form-control" name="contents_question" id="contents_question" rows="10" cols="100" ></textarea>
+                                    <textarea class="form-control" name="contents_question" id="contents_answer" rows="10" cols="100" disabled readonly ></textarea>
                                 </td>
                             </tr>
 
@@ -71,7 +73,7 @@
                             <tr>
                                 <td colspan="2" style="border-bottom-width:0; margin-top:10px"></td>
                                 <td colspan="6">
-                                    <textarea class="form-control" name="contents_question" id="contents_question" rows="10" cols="100" ></textarea>
+                                    <div class="form-control" name="contents_question" id="attachment_answer" rows="10" cols="100"  disabled readonly></div>
                                 </td>
                             </tr>
                             </tbody>
@@ -80,12 +82,11 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                <button type="button" class="btn btn-secondary" id="closeBtn" data-dismiss="modal">닫기</button>
             </div>
         </div>
     </div>
 </div>
-<script>
-</script>
+    <script type="text/javascript" src="/static/js/main/page/recruit/apply/apply_file_upload.js"></script>
 </body>
 </html>

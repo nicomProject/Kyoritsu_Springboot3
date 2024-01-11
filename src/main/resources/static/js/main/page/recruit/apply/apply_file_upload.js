@@ -37,13 +37,17 @@ function addFile(obj) {
                 reader.readAsDataURL(file);
 
                 // 목록 추가
-                let htmlData = '';
+                var htmlData = '';
                 htmlData += '<div id="file' + fileNo + '" class="filebox">';
                 htmlData += '   <p class="name">' + file.name + '</p>';
-                // htmlData += '   <a class="delete" onclick="deleteFile(' + fileNo + ');"><i class="far fa-minus-square"></i></a>';
                 htmlData += '   <a id="delete'+fileNo+'" class="delete"><i class="far fa-minus-square"></i></a>';
                 htmlData += '</div>';
                 document.querySelector('.file-list').insertAdjacentHTML('beforeend', htmlData);
+
+                // 미리보기 목록 추가
+                var newHtmlData = htmlData.replace('<i class="far fa-minus-square"></i>','')
+                newHtmlData = newHtmlData.replace(' class="filebox"','')
+                document.querySelector('#attachment_answer').insertAdjacentHTML('beforeend', newHtmlData);
 
                 // 삭제 버튼에 대한 이벤트 핸들러를 추가
                 console.log('delete'+fileNo);
@@ -92,8 +96,13 @@ function deleteFile(num) {
 
 /* 파일 목록 업데이트 */
 function updateFileList() {
+    // 지원서 첨부파일 미리보기 리스트
+    var fileListBoxModal = document.querySelector('#attachment_answer');
+    fileListBoxModal.innerHTML = '';
+
+    // 지원서 첨부파일 리스트
     var fileListBox = document.querySelector('.file-list');
-    fileListBox.innerHTML = ''; // 파일 목록 초기화
+    fileListBox.innerHTML = '';
 
     for (var i = 0; i < filesArr.length; i++) {
         if (!filesArr[i].is_delete) {
@@ -112,7 +121,14 @@ function updateFileList() {
 
             fileDiv.appendChild(nameParagraph);
             fileDiv.appendChild(deleteLink);
+
             fileListBox.appendChild(fileDiv);
+
+            // 미리보기에도 적용
+            var newHtmlData = fileDiv.outerHTML.replace('<i class="far fa-minus-square"></i>','')
+            newHtmlData = newHtmlData.replace(' class="filebox"','')
+            document.querySelector('#attachment_answer').insertAdjacentHTML('beforeend', newHtmlData);
+
         }
     }
 }
