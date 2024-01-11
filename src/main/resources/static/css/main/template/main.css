@@ -1600,6 +1600,11 @@ p {
   font-weight: 700;
 }
 
+.Features .feature-content .button {
+  display: flex;
+  justify-content: right;
+}
+
 .Features .feature-item {
   margin-bottom: 15px;
   position: relative;
@@ -2333,7 +2338,7 @@ span.circle {
 }
 
 .footer .logo img {
-  width: 170px;
+  width: 100px;
 }
 
 .footer .f-about {
@@ -2421,21 +2426,63 @@ span.circle {
 }
 
 .footer .footer-middle {
-  padding-bottom: 50px;
-  padding-top: 50px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  background-color: #000;
+  opacity: 0.6;
+}
+
+.footer .footer_menu {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.footer .footer_menu li:first-child {
+  margin-right: 30px;
+  font-size: 20px;
+}
+
+.footer .footer_menu li:first-child a{
+  font-size: 20px
+}
+
+.footer .footer_menu li:not(:first-child) {
+  margin-left: 15px;
+  font-size: 15px;
+}
+
+.footer #footer_left {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  border-right: 1px solid white;
+  padding-right: 10%;
+}
+
+.footer #footer_left #footer_left_content {
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.footer #footer_left #footer_left_content a{
+  margin-bottom: 10px;
+}
+
+.footer #footer_right {
+  padding-left: 10%;
 }
 
 .footer .single-footer {
-  margin-top: 30px;
+margin-top: 30px;
 }
 
 .footer .single-footer h3 {
-  color: #333;
-  font-size: 20px;
-  font-weight: 600;
-  position: relative;
-  text-transform: capitalize;
-  margin-bottom: 25px;
+color: #333;
+font-size: 20px;
+font-weight: 600;
+position: relative;
+text-transform: capitalize;
+margin-bottom: 25px;
 }
 
 /* Footer Link */
@@ -2444,9 +2491,6 @@ span.circle {
   position: relative;
 }
 
-.footer .f-link ul li:last-child {
-  margin: 0;
-}
 
 .footer .f-link ul li:hover:before {
   background: #333;
@@ -2454,10 +2498,6 @@ span.circle {
 
 .footer.index2 .f-link ul li:hover:before {
   background: #333;
-}
-
-.footer .f-link ul li:last-child {
-  margin-bottom: 0px;
 }
 
 .footer .f-link ul li a {
@@ -2482,7 +2522,9 @@ span.circle {
   line-height: 30px;
 }
 
-.footer .f-contact ul {}
+.footer .f-contact ul {
+  display: flex;
+}
 
 .footer .f-contact ul li {
   display: inline-block;
