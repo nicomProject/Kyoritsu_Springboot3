@@ -184,28 +184,61 @@ th {
 	color:#fff;
 }
 /* Bread Crumbs */
-.breadcrumbs {
+/*.breadcrumbs {*/
+/*	background-image: url('/static/images/main/hero-bg.jpg');*/
+/*	background-size: cover;*/
+/*	background-position: center;*/
+/*	background-repeat: no-repeat;*/
+/*	position: relative;*/
+/*	!* padding-top: 110px; *!*/
+/*}*/
+
+#company.breadcrumbs{
+	background-image: url('/static/images/main/company_image.PNG');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	/* padding-top: 110px; */
+}
+
+#business.breadcrumbs{
+	background-image: url('/static/images/main/business_image.PNG');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	/* padding-top: 110px; */
+}
+
+#announcement.breadcrumbs{
+	background-image: url('/static/images/main/announcement_image.PNG');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	/* padding-top: 110px; */
+}
+
+#recruitment.breadcrumbs{
+	background-image: url('/static/images/main/recruitment_image.PNG');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	/* padding-top: 110px; */
+}
+
+#main_index.breadcrumbs{
 	background-image: url('/static/images/main/hero-bg.jpg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	position: relative;
 	/* padding-top: 110px; */
-	
 }
+
 /*Subheader*/
-.breadcrumbs:before{
-    content: '';
-    background-color: #000;
-    opacity: 0.9;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-	
-}
 .breadcrumbs .breadcrumbs-content{
     position: relative;
 }
