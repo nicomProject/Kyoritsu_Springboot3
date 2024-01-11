@@ -10,7 +10,7 @@ spring:
   # thymeleaf 설정
   thymeleaf:
     cache: false
-    enabeld: true
+    enabled: true
     prefix: classpath:/templates/
     suffix: .html
   # profile 설정
@@ -34,7 +34,7 @@ spring:
 
 # Server configuration
 server:
-  port: 9000
+  port: 80
 
 # Logging configuration
 logging:
