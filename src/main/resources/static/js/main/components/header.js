@@ -1,6 +1,7 @@
 const Menu = {
     menus: [],
     subMenus: [],
+    languageVal: null,
     load: function (value) {
         let languageValue = value;
         const that = this;
@@ -20,10 +21,13 @@ const Menu = {
 
                 if(items[0].name){
                     languageValue = "kr"
+                    that.languageVal = "kr"
                 }else if(items[0].nameEnglish){
                     languageValue = "eng"
+                    that.languageVal = "eng"
                 }else{
                     languageValue = "jp"
+                    that.languageVal = "jp"
                 }
 
                 $('#language-button').val(languageValue);
