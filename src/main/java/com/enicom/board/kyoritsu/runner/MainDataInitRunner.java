@@ -56,7 +56,7 @@ public class MainDataInitRunner implements ApplicationRunner {
         // 기본 mainMenu (MainMenuType.GROUP) 정의
         MainMenu company = MainMenu.builder().order(1).name("회사소개").nameEnglish("About Us").nameJapanese("会社紹介").type(MainMenuType.GROUP).build();
         MainMenu product = MainMenu.builder().order(2).name("사업영역").nameEnglish("Business area").nameJapanese("事業領域").type(MainMenuType.GROUP).build();
-        MainMenu notice = MainMenu.builder().order(3).name("공지사항").nameEnglish("announcement").nameJapanese("お知らせ").type(MainMenuType.GROUP).build();
+        MainMenu notice = MainMenu.builder().order(3).name("공지사항").nameEnglish("Announcement").nameJapanese("お知らせ").type(MainMenuType.GROUP).build();
         MainMenu recruit = MainMenu.builder().order(4).name("채용정보").nameEnglish("Recruitment information").nameJapanese("採用情報").type(MainMenuType.GROUP).build();
 
         // 기존 mainMenu 그룹에 추가되어 있지 않은 mainMenu라면, mainMenuGroupList에 추가
@@ -67,7 +67,7 @@ public class MainDataInitRunner implements ApplicationRunner {
         if(!mainMenuStoredList.containsKey("사업영역")) {
             mainMenuGroupList.add(product);
         } 
-        if(!mainMenuStoredList.containsKey("뉴스")) {
+        if(!mainMenuStoredList.containsKey("공지사항")) {
             mainMenuGroupList.add(notice);
         } 
         if(!mainMenuStoredList.containsKey("채용정보")) {
@@ -99,8 +99,8 @@ public class MainDataInitRunner implements ApplicationRunner {
         if(!mainMenuStoredList.containsKey("채용지원")) mainMenuList.add(MainMenu.builder().order(4).menu(recruit).url("/recruit/apply").name("채용지원").nameEnglish("Recruitment support").nameJapanese("採用支援").type(MainMenuType.GENERAL).build());
         if(!mainMenuStoredList.containsKey("채용문의")) mainMenuList.add(MainMenu.builder().order(5).menu(recruit).url("/recruit/inquire").name("채용문의").nameEnglish("Recruitment Inquiry").nameJapanese("採用お問い合わせ").type(MainMenuType.GENERAL).build());
 
-        // '뉴스' 하위 메뉴
-        if(!mainMenuStoredList.containsKey(("공지사항"))) mainMenuList.add(MainMenu.builder().order(1).menu(notice).url("/notice/notice").name("공지사항").nameEnglish("Announcement").nameJapanese("お知らせ").type(MainMenuType.GENERAL).build());
+        // '공지사항' 하위 메뉴
+        if(!mainMenuStoredList.containsKey(("공지사항"))) mainMenuList.add(MainMenu.builder().order(1).menu(notice).url("/notice/notice").name("뉴스").nameEnglish("Announcement").nameJapanese("お知らせ").type(MainMenuType.GENERAL).build());
 
         // mainMenu 업데이트
         log.info("누락된 하위 메뉴 {}건 추가됨", mainMenuList.size());
