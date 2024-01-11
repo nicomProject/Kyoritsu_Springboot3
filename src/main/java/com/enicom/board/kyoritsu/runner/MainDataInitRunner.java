@@ -56,7 +56,7 @@ public class MainDataInitRunner implements ApplicationRunner {
         // 기본 mainMenu (MainMenuType.GROUP) 정의
         MainMenu company = MainMenu.builder().order(1).name("회사소개").nameEnglish("About Us").nameJapanese("会社紹介").type(MainMenuType.GROUP).build();
         MainMenu product = MainMenu.builder().order(2).name("사업영역").nameEnglish("Business area").nameJapanese("事業領域").type(MainMenuType.GROUP).build();
-        MainMenu notice = MainMenu.builder().order(3).name("뉴스").nameEnglish("announcement").nameJapanese("お知らせ").type(MainMenuType.GROUP).build();
+        MainMenu notice = MainMenu.builder().order(3).name("공지사항").nameEnglish("announcement").nameJapanese("お知らせ").type(MainMenuType.GROUP).build();
         MainMenu recruit = MainMenu.builder().order(4).name("채용정보").nameEnglish("Recruitment information").nameJapanese("採用情報").type(MainMenuType.GROUP).build();
 
         // 기존 mainMenu 그룹에 추가되어 있지 않은 mainMenu라면, mainMenuGroupList에 추가
