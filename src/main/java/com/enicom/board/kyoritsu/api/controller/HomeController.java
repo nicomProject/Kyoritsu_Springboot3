@@ -46,9 +46,13 @@ public class HomeController {
 
     // [url] : /{category}/{page}
     @GetMapping(path = {"/{category}/{page}"})
-    public String main(@PathVariable String category, @PathVariable String page) {
+    public String main(@PathVariable String category, @PathVariable String page, Model model, HttpServletRequest request) {
         String menu = category;
         String view = page;
+        HttpSession session = request.getSession();
+        String language = (String) session.getAttribute("languageValue");
+        if(language == null) language = "kr";
+        model.addAttribute("language", language);
         return String.format("main/%s/%s", menu, view);
     }
 

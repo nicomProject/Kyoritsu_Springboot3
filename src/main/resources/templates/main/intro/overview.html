@@ -21,6 +21,7 @@
     <input type="hidden" id="overview_contentId" class="param contentId" name="key"/>
     <input type="hidden" id="page_group_id" value="about_us"/>
     <input type="hidden" id="page_id" value="overview"/>
+    <input type="hidden" id="language" th:value="${language}"/>
 
     <!-- Start Breadcrumbs -->
     <div class="breadcrumbs" data-stellar-background-ratio="0.5">
@@ -64,8 +65,9 @@
     <!-- End Breadcrumbs -->
 
 	<!-- Start Features Area -->
-
-    <th:block th:replace="~{main/intro/include/overview_include::over_main}"></th:block>
+    <th:block th:replace="~{main/intro/include/overview/overview_include_kr::over_main_kr}"></th:block>
+    <th:block th:replace="~{main/intro/include/overview/overview_include_eng::over_main_eng}"></th:block>
+    <th:block th:replace="~{main/intro/include/overview/overview_include_jp::over_main_jp}"></th:block>
     <!-- End Features Area -->
     <!-- Start Footer Area -->
     <th:block th:replace="~{components/_footer::footer_main}"></th:block>
