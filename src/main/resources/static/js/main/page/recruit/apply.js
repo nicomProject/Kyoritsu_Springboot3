@@ -56,8 +56,6 @@ $(function () {
                 $('.apply-career').text("신입")
             }else if(items.experience === "career"){
                 $('.apply-career').text("경력")
-            }else{
-                $('.apply-career').text("신입/경력")
             }
 
             // 카테고리 정보
