@@ -1424,7 +1424,6 @@ p {
 .hero-slider {
   position: relative;
   /*background: #005bab08;*/
-
   background-image: url(/static/images/main/hero-bg.jpg);
   background-size: contain;
 }
@@ -2138,6 +2137,20 @@ span.circle {
   position: relative;
 }
 
+.team-card .content#vision_one_box {
+  padding: 30px 20px;
+  position: relative;
+  aspect-ratio: 4 / 3;
+
+}
+
+.team-card .content#vision_two_box {
+  padding: 30px 20px;
+  position: relative;
+  aspect-ratio: 8 / 3;
+}
+
+
 .team-card .content::before {
   content: '';
   position: absolute;
@@ -2167,6 +2180,10 @@ span.circle {
   margin-top: 10px;
   margin-bottom: 0;
   font-size: 14px;
+  display: flex;
+  flex-direction: column; /* 수직 방향으로 정렬 */
+  align-items: center; /* 수직 정렬 */
+  justify-content: center; /* 수평 정렬 */
 }
 
 .team-view-btn {
