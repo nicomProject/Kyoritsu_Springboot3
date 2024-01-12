@@ -537,6 +537,7 @@ section .sub-title{
 
 .overview.section .container .flex-box .box-2{
     margin-top: 18px;
+    width: 100%;
 }
 
 .company_profile .profile-sec .inner .flex-box .box-2 .profile{
@@ -546,10 +547,13 @@ section .sub-title{
 .overview.section .container .flex-box .box-2 .profile .profile-key{
     padding-right: 14px;
     border-right: solid 2px #0067bb;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    flex-grow: 1;
     text-align: right;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .overview.section .container .flex-box .box-2 .profile .profile-value{
@@ -557,8 +561,12 @@ section .sub-title{
     padding-left: 26px;
     margin-right: 5px;
     line-height: 1.8125;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .overview.section .container .flex-box .box-2 .profile .profile-value p{
     font-weight: bold !important;
@@ -567,10 +575,10 @@ section .sub-title{
 
 .overview.section .container .flex-box .box-2 .profile-7 .profile-value p{
     display: flex;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     flex-wrap: wrap;
     align-items: baseline;
-    width: 100%;
+    width: 60%;
     margin-bottom: 12px;
 }
 
@@ -593,6 +601,7 @@ section .sub-title{
 .overview.section .editor-content .box-2 .profile{
     display: flex;
     padding-bottom: 10px;
+    margin-top: 15px;
 }
 
 .overview.section .editor-content .box-2 .profile-7 .profile-value p .position{
@@ -601,18 +610,20 @@ section .sub-title{
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: flex-end;
-
     width: 57%;
     line-height: 1.2;
+    font-size: 1.3rem;
 }
 
 .overview.section .editor-content .box-2 .profile-7 .profile-value p .name{
     width: 32%;
     margin-right: 2%;
     line-height: 1.2;
+    font-size: 1.3rem;
 }
 
 .overview.section .container .flex-box .box-2 .profile .small{
+    font-size: 1.3rem;
     font-weight: normal;
 }
 
@@ -648,20 +659,46 @@ section .sub-title{
     flex-direction: column;
 }
 
-.vision.section .img-wrap .img-text{
+.vision.section .img-text{
     position: absolute;
-    top: 40%;
-    left: 50%;
+    top: 50%;
+    left: 20%;
     width: 100%;
     transform: translate( -50%, -50%);
     text-align: center;
-    font-size: 5rem;
-    color: white;
+    font-size: 8rem;
     font-weight: 600;
+    color: rgba(0, 103, 187, 0.4);
 }
 
-.vision.section .team-card .content h3{
-    line-height: 25px !important;
+.vision.section .team-card .content .vision_div{
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; /* 수직 방향으로 정렬 */
+    align-items: center; /* 수직 정렬 */
+    justify-content: center; /* 수평 정렬 */
+    text-align: center;
+}
+
+.vision.section .team-card .content .vision_div p:nth-child(2){
+    line-height: 35px !important;
+    font-size: 1.8rem;
+    color:#0067bb;
+}
+
+.vision.section .team-card .content .vision_div i {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.vision.section .team-card .content .vision_div p:nth-child(3){
+    color: #6e607c;
+    margin-top: 25px;
+    margin-bottom: 0;
+    font-size: 1.2rem;
 }
 
 /* history */
@@ -1956,6 +1993,11 @@ section .sub-title{
     align-items: center;
 }
 
+.organization .chart.inview.animated.fadeInUp {
+    margin-top : 50px;
+    width: 100%;
+}
+
 .organization.section .container .chart{
     margin: 122px 49px 0;
 }
@@ -1990,9 +2032,15 @@ section .sub-title{
     flex-direction: column;
 }
 
+.location.section .location-container .top{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .location.section .location-container .map-info .bottom{
     display: flex;
     justify-content: space-between;
+    font-size: 1.2rem;
 }
 
 /* notice/notice */
