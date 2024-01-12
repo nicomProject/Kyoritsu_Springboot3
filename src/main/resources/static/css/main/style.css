@@ -2509,7 +2509,7 @@ section .sub-title{
 
 /* tabulator */
 .tabulator .tabulator-tableholder{
-    height: 150px !important;
+    height: auto !important;
 }
 
 .tabulator .tabulator-tableholder .tabulator-placeholder[tabulator-render-mode="virtual"]{
