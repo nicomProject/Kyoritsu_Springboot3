@@ -69,6 +69,10 @@ $(function () {
             document.getElementById("btnLocation").addEventListener("click", function() {
                 window.location.href = '/intro/location';
             });
+            document.querySelectorAll('button').forEach(function(button) {
+                button.classList.remove('activation');
+                if(button.id == "btnLocation") button.classList.add('activation');
+            });
         }
     }
     Content.load();

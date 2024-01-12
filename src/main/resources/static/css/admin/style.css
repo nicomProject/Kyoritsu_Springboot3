@@ -611,6 +611,9 @@ body.g-sidenav-hidden:not(.g-sidenav-pinned) .sidenav:not(:hover) .nav-link-text
 .card .card-body {
     padding: 1rem;
 }
+.card .card-body {
+    height: 500px;
+}
 .card .card-header {
     padding-bottom: 0;
     align-items: center;

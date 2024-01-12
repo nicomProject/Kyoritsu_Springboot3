@@ -74,7 +74,18 @@ $(function () {
                     {title: title[language], field: "title", tooltip: true, headerTooltip: true, headerSort: false, hozAlign: "center", headerHozAlign: "center", },
                     {title: writer[language], field: "createUser", tooltip: true, headerTooltip: true, headerSort: false, hozAlign: "center", headerHozAlign: "center",},
                     {title: view[language], field: "hit", tooltip: true, headerTooltip: true, headerSort: false, hozAlign: "center", headerHozAlign: "center",},
-                    {title: creationDate[language], field: "createDate", tooltip: true, headerTooltip: true, headerSort: false, hozAlign: "center", headerHozAlign: "center",},
+                    {title: creationDate[language], field: "createDate", tooltip: true, headerTooltip: true, headerSort: false, hozAlign: "center", headerHozAlign: "center",
+                        formatter: function(cell, formatterParams, onRendered) {
+                            var date = cell.getValue();
+                            var formattedDate = new Date(date);
+                            var formattedString = formattedDate.getFullYear().toString() + '-' +
+                                                ('0' + (formattedDate.getMonth() + 1)).slice(-2) + '-' +
+                                                ('0' + formattedDate.getDate()).slice(-2) + ' ' +
+                                                ('0' + formattedDate.getHours()).slice(-2) + ':' +
+                                                ('0' + formattedDate.getMinutes()).slice(-2);
+                            return formattedString;
+                        },
+                    },
                 ],
             });
 

@@ -1084,9 +1084,51 @@ p {
   padding: 13px 30px;
 }
 
-.header .button {
+.header .language-button {
   margin-left: 40px;
   width: 10%;
+}
+
+.header .language-button select {
+  margin-left: 40px;
+  width: 100px; /* 버튼의 가로 길이를 설정합니다. */
+  padding: 5px 10px; /* 상하좌우 패딩을 설정합니다. */
+  background-color: #ffffff; /* 파란색 배경을 설정합니다. */
+  color: #0065d1; /* 글씨 색을 흰색으로 설정합니다. */
+  border: 1px solid #929292;
+  border-radius: 20px; /* 모서리를 둥글게 설정합니다. */
+  font-size: 13px; /* 글씨 크기를 설정합니다. */
+  font-weight: 600;
+  cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경합니다. */
+}
+
+.header .language-button select option {
+  font-size: 13px; /* 글씨 크기를 설정합니다. */
+  color: #000000; /* 글씨 색을 흰색으로 설정합니다. */
+  font-weight: 400;
+  cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경합니다. */
+}
+
+.header .language-button select:hover {
+  background-color: #ffffff; /* 마우스를 올렸을 때 배경색을 어둡게 변경합니다. */
+}
+
+select option[value="kr"]::before {
+    content: "\f024"; /* Unicode 코드 포인트로 깃발 아이콘 설정 (Font Awesome에서는 \f024이 한국 깃발 아이콘입니다.) */
+    font-family: 'Font Awesome 5 Free'; /* Font Awesome 사용할 때 필요한 폰트 패밀리 지정 */
+    margin-right: 5px; /* 아이콘과 텍스트 사이 여백 설정 */
+}
+
+select option[value="eng"]::before {
+    content: "\f024"; /* 예시로 같은 깃발 아이콘을 사용했지만, 각 나라에 맞는 아이콘 코드로 변경하세요. */
+    font-family: 'Font Awesome 5 Free';
+    margin-right: 5px;
+}
+
+select option[value="jp"]::before {
+    content: "\f024";
+    font-family: 'Font Awesome 5 Free';
+    margin-right: 5px;
 }
 
 /*===== NAVBAR =====*/
@@ -1131,6 +1173,7 @@ p {
 
 .navbar-brand {
   padding: 0;
+  margin-right: 50px;
   /* 추가됨 */
   padding-top: 11px;
   padding-bottom: 10px; /* fix : 모바일 화면 크기일 때, 브랜드 배너가 화면 위아래에 딱 붙는 것을 방지 */
@@ -1141,6 +1184,7 @@ p {
 }
 
 .navbar-toggler {
+  margin-left: auto;
   padding: 0px;
 }
 
@@ -2725,6 +2769,9 @@ margin-bottom: 25px;
   margin-left: 10%;
   margin-right: 10%;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-item.col-12.col-md-3.mx-2 .nav-link {

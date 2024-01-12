@@ -3,12 +3,15 @@ $(function () {
 
     const Content = {
         supportHash: {}, // 현재 지원분야로 설정된 값들을 저장
-        load: function (params) {
+        load: async function (params) {
             const that = this;
 
             // 채용 공고를 통해 접근하도록 함
             if (params.key == 0 || params.key == undefined) {
-                alert("채용 공고를 선택 해 주세요.")
+                await Swal.fire({
+                    icon: 'info',
+                    html: "채용 공고를 선택해 주세요."
+                });
                 window.location.href = '/recruit/notice'
                 return
             }
@@ -85,6 +88,11 @@ $(function () {
             document.getElementById("btnNotice").addEventListener("click", function() { window.location.href = '/recruit/notice'; });
             document.getElementById("btnApply").addEventListener("click", function() { window.location.href = '/recruit/apply'; });
             document.getElementById("btnInquire").addEventListener("click", function() { window.location.href = '/recruit/inquire'; });
+            // 현재 메뉴 버튼 활성화
+            document.querySelectorAll('button').forEach(function(button) {
+                button.classList.remove('activation');
+                if(button.id == "btnApply") button.classList.add('activation');
+            });
 
             // 지원하기 버튼 클릭 이벤트 등록
             const card = $('.submit-btn');

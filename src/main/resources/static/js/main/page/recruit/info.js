@@ -51,6 +51,10 @@ $(function () {
             document.getElementById("btnNotice2").addEventListener("click", function() {
                 window.location.href = '/recruit/notice';
             });
+            document.querySelectorAll('button').forEach(function(button) {
+                button.classList.remove('activation');
+                if(button.id == "btnInfo") button.classList.add('activation');
+            });
         }
     }
 

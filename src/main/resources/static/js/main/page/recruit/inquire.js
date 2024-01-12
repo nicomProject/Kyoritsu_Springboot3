@@ -22,6 +22,11 @@ $(function () {
             document.getElementById("btnInquire").addEventListener("click", function() {
                 window.location.href = '/recruit/inquire';
             });
+            // 현재 메뉴 버튼 활성화
+            document.querySelectorAll('button').forEach(function(button) {
+                button.classList.remove('activation');
+                if(button.id == "btnInquire") button.classList.add('activation');
+            });
 
             Table.load("#table");
 

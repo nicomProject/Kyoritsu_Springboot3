@@ -44,6 +44,11 @@ $(function () {
             document.getElementById("btnNotice").addEventListener("click", function() { window.location.href = '/recruit/notice'; });
             document.getElementById("btnApply").addEventListener("click", function() { window.location.href = '/recruit/apply'; });
             document.getElementById("btnInquire").addEventListener("click", function() { window.location.href = '/recruit/inquire'; });
+            // 현재 메뉴 버튼 활성화
+            document.querySelectorAll('button').forEach(function(button) {
+                button.classList.remove('activation');
+                if(button.id == "btnNotice") button.classList.add('activation');
+            });
 
             // 카테고리 검색 이벤트 등록
             $('.btn[role="action"][data-action="search"]').on('click', function() {

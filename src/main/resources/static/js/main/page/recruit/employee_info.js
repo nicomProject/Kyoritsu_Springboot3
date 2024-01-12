@@ -22,8 +22,11 @@ $(function () {
             document.getElementById("btnInquire").addEventListener("click", function() {
                 window.location.href = '/recruit/inquire';
             });
+            document.querySelectorAll('button').forEach(function(button) {
+                button.classList.remove('activation');
+                if(button.id == "btnEmployeeInfo") button.classList.add('activation');
+            });
         }
     }
-
     Content.load();
 });
