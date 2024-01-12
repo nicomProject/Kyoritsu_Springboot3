@@ -122,6 +122,8 @@ $(function () {
         // 채용 공고 리스트 제작 함수
         setJobObject: function(jobs) {
             const that = this;
+            const language = document.getElementById('language').value;
+            const content = { kr: "현재 채용공고가 없습니다.", eng: "There are currently no job openings.", jp: "現在、求人募集はありません。" };
 
             // container 로드
             var newNoticeContainer = document.querySelector(".new-graduates.card-box");
@@ -178,6 +180,21 @@ $(function () {
                 // 공고 제작
                 this.createJob(jobObject)
             })
+
+            if ((newNoticeContainer.childElementCount) == 1) { // 등록된 신입 지원 공고가 없는 경우
+                var nonNotice = document.createElement('div');
+                nonNotice.className = "notice-list";
+                nonNotice.style.backgroundColor = "lightgray"
+                nonNotice.innerText = content[language];
+                newNoticeContainer.appendChild(nonNotice);
+            }
+            if ((careerNoticeContainer.childElementCount) == 1) { // 등록된 경력 지원 공고가 없는 경우
+                var nonNotice = document.createElement('div');
+                nonNotice.className = "notice-list";
+                nonNotice.style.backgroundColor = "lightgray"
+                nonNotice.innerText = content[language];
+                careerNoticeContainer.appendChild(nonNotice);
+            }
         },
 
         // 공고 제작 함수
