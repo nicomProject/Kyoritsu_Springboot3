@@ -232,7 +232,7 @@ const Menu = {
         const path = subMenu.url || '/';
         let activated = location.pathname ===  path ? 'active' : '';
 
-        return $(`<li class="nav-item col-12 mx-2 ${activated}"><a href="${path}">${displayName}</a></li>`);
+        return $(`<li class="nav-item col-12 mx-0 ${activated}"><a href="${path}">${displayName}</a></li>`);
     },
 };
 
