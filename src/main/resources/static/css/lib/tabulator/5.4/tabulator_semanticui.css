@@ -741,7 +741,7 @@
 
 .tabulator .tabulator-footer .tabulator-paginator {
   flex: 1;
-  text-align: right;
+  text-align: center;
   color: #555;
   font-family: inherit;
   font-weight: inherit;

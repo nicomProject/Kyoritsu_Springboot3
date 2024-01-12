@@ -54,14 +54,29 @@ $(function () {
             const language = document.getElementById('language').value;
             const table = new Tabulator(target, {
                 locale: 'ko-kr',
-                langs: TableUtil.setDefaults(),
+                langs: {
+                    "ko-kr":{
+                        pagination:{
+                            "first":"<<",
+                            "first_title":"",
+                            "last":">>",
+                            "last_title":"",
+                            "prev":"<",
+                            "prev_title":"",
+                            "next":">",
+                            "next_title":"",
+                        }
+                    }
+                },
                 layout: 'fitColumns',
                 placeholder: `<div>
-                                <div class="mt-3">${content[language]}</div>
+                                <div class="mt-5 mb-5">${content[language]}</div>
                               </div>`,
-                pagination: false,
-                paginationSize: paginationConfig.size,
-                paginationSizeSelector: paginationConfig.selector,
+                pagination: true,
+                paginationSize: 5,
+                paginationSizeSelector:null,
+                paginationInitialPage:1,
+                paginationButtonCount:10,
                 ajaxLoaderLoading: TableUtil.getLoaderLoading(),
                 ajaxURL: Content.params.url,
                 ajaxConfig: ajaxConfig,
