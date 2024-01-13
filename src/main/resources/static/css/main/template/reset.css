@@ -256,13 +256,14 @@ th {
 	font-weight: 700;
 	position: relative;
 	padding-bottom: 22px;
+	display: inline-block;
 }
 .breadcrumbs .breadcrumbs-content .page-title:before{
 	position:absolute;
 	content:"";
 	bottom:0;
 	height:2px;
-	width:150px;
+	width:100%;
 	background:#005bab;
 }
 .breadcrumbs .breadcrumbs-content .breadcrumb-nav {
