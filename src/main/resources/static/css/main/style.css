@@ -2560,6 +2560,7 @@ section .sub-title{
     transition: background-color 0.3s ease; /* 부드러운 배경색 전환 효과 */
     border-radius: 0px;
     font-size: 18px;
+    white-space: nowrap;
 }
 
 .breadcrumbs-content.center .activation {
