@@ -1085,13 +1085,13 @@ p {
 }
 
 .header .language-button {
-  margin-left: 40px;
+  /*margin-left: 40px;*/
   width: 10%;
 }
 
 .header .language-button select {
   margin-left: 40px;
-  width: 100px; /* 버튼의 가로 길이를 설정합니다. */
+  width: 80%; /* 버튼의 가로 길이를 설정합니다. */
   padding: 5px 10px; /* 상하좌우 패딩을 설정합니다. */
   background-color: #ffffff; /* 파란색 배경을 설정합니다. */
   color: #0065d1; /* 글씨 색을 흰색으로 설정합니다. */
@@ -1100,6 +1100,7 @@ p {
   font-size: 13px; /* 글씨 크기를 설정합니다. */
   font-weight: 600;
   cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경합니다. */
+  text-align: center;
 }
 
 .header .language-button select option {
@@ -1111,6 +1112,16 @@ p {
 
 .header .language-button select:hover {
   background-color: #ffffff; /* 마우스를 올렸을 때 배경색을 어둡게 변경합니다. */
+}
+
+.popup_msg {
+  margin: 59px auto 0;
+  padding: 28px 83.5px 21px;
+  font-size: 1.6rem;
+  text-align: left;
+  border: 2px solid #0067bb;
+  line-height: 1.9;
+  width: 643px;
 }
 
 select option[value="kr"]::before {
@@ -1360,7 +1371,7 @@ select option[value="jp"]::before {
 }
 
 .navbar-nav .nav-item .sub-menu {
-  min-width: 220px;
+  /*min-width: 220px;*/
   background-color: #fff;
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
   position: absolute;
@@ -1465,11 +1476,18 @@ select option[value="jp"]::before {
 /*======================================
    02. Hero Area CSS
 ========================================*/
-.hero-slider {
+.hero-slider .swiper-container .swiper-wrapper .swiper-slide#swiper-container-1st {
   position: relative;
   /*background: #005bab08;*/
   background-image: url(/static/images/main/hero-bg.jpg);
-  background-size: contain;
+  background-size: cover;
+}
+
+.hero-slider .swiper-container .swiper-wrapper .swiper-slide#swiper-container-2st {
+  position: relative;
+  /*background: #005bab08;*/
+  background-image: url(/static/images/main/hero-bg-2.PNG);
+  background-size: cover;
 }
 
 .hero-slider .single-slider {
@@ -1606,6 +1624,16 @@ select option[value="jp"]::before {
   width: 20px;
 }
 
+.hero-slider .swiper-wrapper {
+  display: flex;  /* 수평으로 배치되도록 설정 */
+}
+
+.hero-slider .swiper-container {
+  display: flex;  /* 수평으로 배치되도록 설정 */
+  flex-direction: row;  /* 수평으로 배치되도록 설정 */
+}
+
+
 /*=========================
    End Hero Area CSS
 ===========================*/
@@ -1701,7 +1729,7 @@ select option[value="jp"]::before {
 
 .feature-right {
   position: relative;
-  background-image: url('/static/images/bizfinity/thumbnail.png');
+  background-image: url('/static/images/bizfinity/dormyinn.PNG');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
@@ -2487,8 +2515,8 @@ span.circle {
 }
 
 .footer .footer-middle {
-  padding-bottom: 30px;
-  padding-top: 30px;
+  padding-bottom: 15px;
+  padding-top: 15px;
   background-color: #000;
   opacity: 0.6;
 }

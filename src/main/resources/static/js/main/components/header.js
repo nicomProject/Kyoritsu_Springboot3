@@ -217,15 +217,15 @@ const Menu = {
     },
     createMenuGroup: function (menu, languageValue) {
         const displayName = (languageValue === 'kr') ? menu.name : (languageValue === 'eng') ? menu.nameEnglish : menu.nameJapanese;
-        return $(`<li class="nav-item col-12 col-md-3 mx-2">
-                    <a class="nav-link" href="javascript:void(0)"
-                        data-bs-toggle="collapse" data-bs-target="#submenu-${menu.recKey}-1"
-                        aria-controls="navbarSupportedContent" aria-expanded="false"
-                        aria-label="Toggle navigation"> ${displayName}
-                    </a>
-                    <ul class="sub-menu collapse" id="submenu-${menu.recKey}-1">
-                    </ul>
-                </li>`);
+        return $(`<li class="nav-item col-12 col-md-3 mx-2" style="position: relative;">
+                <a class="nav-link" href="javascript:void(0)"
+                    data-bs-toggle="collapse" data-bs-target="#submenu-${menu.recKey}-1"
+                    aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation""> ${displayName}
+                </a>
+                <ul class="sub-menu collapse" id="submenu-${menu.recKey}-1" style="width: 100%; position: absolute; left: 50%; transform: translateX(-50%);">
+                </ul>
+            </li>`);
     },
     createSubMenuItem: function (subMenu, languageValue) {
         const displayName = (languageValue === 'kr') ? subMenu.name : (languageValue === 'eng') ? subMenu.nameEnglish : subMenu.nameJapanese;
@@ -245,7 +245,23 @@ $(function () {
         },
         event: function () {
 
+            const contactButton = $('.button');
             const languageButton = $('#language-button');
+
+            contactButton.on('click', function (){
+                popup();
+            })
+
+            function popup() {
+                var newWindowWidth = 629;
+                var newWindowHeight = 296;
+
+                var newWindow = window.open('/index_popup', 'Contact', 'width=' + newWindowWidth + ',height=' + newWindowHeight + ',top=' + "100" +  ',location=no');
+
+                if (!newWindow) {
+                    alert('팝업이 차단되었습니다. 팝업을 허용해주세요.');
+                }
+            }
 
             // select 요소의 변경 이벤트 리스너 추가
             languageButton.on('change', function () {

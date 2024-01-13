@@ -2,48 +2,60 @@
 <main th:fragment="index_main_eng">
     <!-- Start Hero Area -->
     <section class="hero-slider" th:if="${language} == 'eng'">
-        <div class="single-slider">
-            <div class="container">
-                <div class="row ">
-                    <div class="col-lg-6 co-12">
-                        <div class="home-slider">
-                            <div class="hero-text">
-                                <span class="small-title">Business Solution</span>
-                                <h1><span>We Provide Quality</span><br> Consulting Services</h1>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting <br> industry.
-                                    Lorem
-                                    Ipsum has been the industry's standard <br>dummy text ever since.</p>
-                                <div class="button">
-                                    <a href="/intro/overview" class="btn mouse-dir">Learn More <span
-                                            class="dir-part"></span></a>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- 첫 번째 슬라이드 -->
+                <div class="swiper-slide" id="swiper-container-1st">
+                    <div class="single-slider">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-12">
+                                    <div class="home-slider">
+                                        <div class="hero-text">
+                                            <span class="small-title">Business Solution</span>
+                                            <h1><span>We Provide Quality</span><br> Consulting Services</h1>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting <br> industry.
+                                                Lorem
+                                                Ipsum has been the industry's standard <br>dummy text ever since.</p>
+                                            <div class="button">
+                                                <a href="/intro/overview" class="btn mouse-dir">Learn More <span
+                                                        class="dir-part"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="hero-text">
-                                <span class="small-title">Business Solution</span>
-                                <h1><span>We Provide Quality</span><br> Consulting Services</h1>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting <br> industry.
-                                    Lorem
-                                    Ipsum has been the industry's standard <br>dummy text ever since.</p>
-                                <div class="button">
-                                    <a href="/intro/overview" class="btn mouse-dir">Learn More <span
-                                            class="dir-part"></span></a>
-                                </div>
-                            </div>
-                            <div class="hero-text">
-                                <span class="small-title">Business Solution</span>
-                                <h1><span>We Provide Quality</span><br> Consulting Services</h1>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting <br> industry.
-                                    Lorem
-                                    Ipsum has been the industry's standard <br>dummy text ever since.</p>
-                                <div class="button">
-                                    <a href="/intro/overview" class="btn mouse-dir">Learn More <span
-                                            class="dir-part"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 두 번째 슬라이드 -->
+                <div class="swiper-slide" id="swiper-container-2st">
+                    <div class="single-slider">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-12">
+                                    <div class="home-slider">
+                                        <div class="hero-text">
+                                            <span class="small-title">Business Solution</span>
+                                            <h1><span>We Provide Quality</span><br> Consulting Services</h1>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting <br> industry.
+                                                Lorem
+                                                Ipsum has been the industry's standard <br>dummy text ever since.</p>
+                                            <div class="button">
+                                                <a href="/intro/overview" class="btn mouse-dir">Learn More <span
+                                                        class="dir-part"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </section>
     <!-- End Hero Area -->
@@ -93,15 +105,6 @@
                             <img src="/static/images/bizfinity/img_building-01.svg">
                         </figure>
                         <div class="caption">
-                            <p class="category">
-                                <span>
-                                    Dormitories
-                                </span>
-                            </p>
-                            <p class="count">
-                                520
-                                <span>buildings</span>
-                            </p>
                         </div>
                     </li>
                     <li class="wow fadeInUp">
@@ -109,15 +112,6 @@
                             <img src="/static/images/bizfinity/img_building-02.svg">
                         </figure>
                         <div class="caption">
-                            <p class="category">
-                                <span>
-                                    Dormitories
-                                </span>
-                            </p>
-                            <p class="count">
-                                520
-                                <span>buildings</span>
-                            </p>
                         </div>
                     </li>
                     <li class="wow fadeInUp">
@@ -125,15 +119,6 @@
                             <img src="/static/images/bizfinity/img_building-03.svg">
                         </figure>
                         <div class="caption">
-                            <p class="category">
-                                <span>
-                                    Resorts
-                                </span>
-                            </p>
-                            <p class="count">
-                                520
-                                <span>buildings</span>
-                            </p>
                         </div>
                     </li>
                     <li class="wow fadeInUp">
@@ -141,15 +126,6 @@
                             <img src="/static/images/bizfinity/img_building-04.svg">
                         </figure>
                         <div class="caption">
-                            <p class="category">
-                                <span>
-                                    Elderly Housing
-                                </span>
-                            </p>
-                            <p class="count">
-                                520
-                                <span>buildings</span>
-                            </p>
                         </div>
                     </li>
                 </ul>

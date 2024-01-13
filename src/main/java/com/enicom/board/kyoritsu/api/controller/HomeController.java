@@ -44,6 +44,11 @@ public class HomeController {
         return "main/index";
     }
 
+    @GetMapping("/index_popup")
+    public String showPopup() {
+        return "main/index_popup";
+    }
+
     // [url] : /{category}/{page}
     @GetMapping(path = {"/{category}/{page}"})
     public String main(@PathVariable String category, @PathVariable String page, Model model, HttpServletRequest request) {

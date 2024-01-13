@@ -1,5 +1,29 @@
 (function () {
 
+
+	function initializeSwiper() {
+		var swiper = new Swiper(".swiper-container", {
+			slidesPerView: 1, // Set to 1 to show one slide at a time
+			centeredSlides: true,
+			autoplay: {
+				delay: 2500,
+				disableOnInteraction: false,
+			},
+			loop: false,
+			loopAdditionalSlides: 1,
+			pagination: false,
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+		});
+	}
+
+	document.addEventListener('DOMContentLoaded', function () {
+		initializeSwiper();
+
+		// ... 기타 초기화 코드 계속 ...
+	});
 	"use strict";
 
 	//===== Prealoder

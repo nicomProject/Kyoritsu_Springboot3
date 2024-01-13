@@ -26,6 +26,7 @@ $(function () {
             const creationDate = { kr: "작성일", eng: "Creation date", jp: "作成日" };
             const language = document.getElementById('language').value;
             const table = new Tabulator(target, {
+                minHeight: 500,
                 locale: 'ko-kr',
                 langs: {
                     "ko-kr":{

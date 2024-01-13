@@ -2,44 +2,60 @@
 <main th:fragment="index_main_kr">
     <!-- Start Hero Area -->
     <section class="hero-slider" th:if="${language} == 'kr'">
-        <div class="single-slider">
-            <div class="container">
-                <div class="row ">
-                    <div class="col-lg-6 co-12">
-                        <div class="home-slider">
-                            <div class="hero-text">
-                                <span class="small-title wow fadeInUp" data-wow-delay=".3s">Business Solution</span>
-                                <h1><span>당신의 내일을 위해</span><br> 쉬는 날을 올바르게 시작하세요.</h1>
-                                <p>우리의 사명은 음식과 주거를 통해 깊은 휴식과 편안함을 제공하여<br>
-                                    모든 사람들이 만족스러운 '활기찬 삶'을 누릴 수 있도록 함으로써<br>
-                                    사람들에게 '좋은 아침'을 가져다 주는 것입니다.</p>
-                                <div class="button wow fadeInUp" data-wow-delay=".9s">
-                                    <a href="/intro/overview" class="btn mouse-dir">더 알아보기 <span
-                                            class="dir-part"></span></a>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- 첫 번째 슬라이드 -->
+                <div class="swiper-slide" id="swiper-container-1st">
+                    <div class="single-slider">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-12">
+                                    <div class="home-slider">
+                                        <div class="hero-text wow fadeInUp" data-wow-delay=".3s">
+                                            <span class="small-title">Business Solution</span>
+                                            <h1><span>당신의 내일을 위해</span><br> 쉬는 날을 올바르게 시작하세요.</h1>
+                                            <p>우리의 사명은 음식과 주거를 통해 깊은 휴식과 편안함을 제공하여<br>
+                                                모든 사람들이 만족스러운 '활기찬 삶'을 누릴 수 있도록 함으로써<br>
+                                                사람들에게 '좋은 아침'을 가져다 주는 것입니다.</p>
+                                            <div class="button wow fadeInUp" data-wow-delay=".9s">
+                                                <a href="/intro/overview" class="btn mouse-dir">더 알아보기 <span
+                                                        class="dir-part"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="hero-text">
-                                <span class="small-title">Business Solution</span>
-                                <h1><span>당신의</span><br> 쉬는 날을 올바르게 시작하세요.</h1>
-                                <p>우리의 사명은 음식과 주거를 통해 깊은 휴식과 편안함을 제공하여<br>
-                                    모든 사람들이 만족스러운 '활기찬 삶'을 누릴 수 있도록 함으로써<br>
-                                    사람들에게 '좋은 아침'을 가져다 주는 것입니다.</p>
-                            </div>
-                            <div class="hero-text">
-                                <span class="small-title">Business Solution</span>
-                                <h1><span>당신의</span><br> 쉬는 날을 올바르게 시작하세요.</h1>
-                                <p>우리의 사명은 음식과 주거를 통해 깊은 휴식과 편안함을 제공하여<br>
-                                    모든 사람들이 만족스러운 '활기찬 삶'을 누릴 수 있도록 함으로써<br>
-                                    사람들에게 '좋은 아침'을 가져다 주는 것입니다.</p>
-                                <div class="button">
-                                    <a href="/intro/overview" class="btn mouse-dir">더 알아보기 <span
-                                            class="dir-part"></span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 두 번째 슬라이드 -->
+                <div class="swiper-slide" id="swiper-container-2st">
+                    <div class="single-slider">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-12">
+                                    <div class="home-slider">
+                                        <div class="hero-text wow fadeInUp" data-wow-delay=".3s">
+                                            <span class="small-title">Business Solution</span>
+                                            <h1><span>당신의 내일을 위해</span><br> 쉬는 날을 올바르게 시작하세요.</h1>
+                                            <p>우리의 사명은 음식과 주거를 통해 깊은 휴식과 편안함을 제공하여<br>
+                                                모든 사람들이 만족스러운 '활기찬 삶'을 누릴 수 있도록 함으로써<br>
+                                                사람들에게 '좋은 아침'을 가져다 주는 것입니다.</p>
+                                            <div class="button wow fadeInUp" data-wow-delay=".9s">
+                                                <a href="/intro/overview" class="btn mouse-dir">더 알아보기 <span
+                                                        class="dir-part"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
     </section>
     <!-- End Hero Area -->
@@ -52,7 +68,7 @@
                     <div class="feature-right wow fadeInUp" data-wow-delay=".3s">
                         <div class="watch-inner">
                             <div class="video-head wow zoomIn" data-wow-delay="0.4s">
-                                <a href="https://youtu.be/t0zB-fOuzEk" class="glightbox video"><i
+                                <a href="https://www.youtube.com/watch?v=CEA3yc-qDd4" class="glightbox video"><i
                                         class="lni lni-play"></i></a>
                             </div>
                         </div>
@@ -88,15 +104,6 @@
                             <img src="/static/images/bizfinity/img_building-01.svg">
                         </figure>
                         <div class="caption">
-                            <p class="category">
-                                <span>
-                                    기숙사
-                                </span>
-                            </p>
-                            <p class="count">
-                                520
-                                <span>buildings</span>
-                            </p>
                         </div>
                     </li>
                     <li class="wow fadeInUp">
@@ -104,15 +111,6 @@
                             <img src="/static/images/bizfinity/img_building-02.svg">
                         </figure>
                         <div class="caption">
-                            <p class="category">
-                                <span>
-                                    도미인
-                                </span>
-                            </p>
-                            <p class="count">
-                                520
-                                <span>buildings</span>
-                            </p>
                         </div>
                     </li>
                     <li class="wow fadeInUp">
@@ -120,15 +118,6 @@
                             <img src="/static/images/bizfinity/img_building-03.svg">
                         </figure>
                         <div class="caption">
-                            <p class="category">
-                                <span>
-                                    리조트
-                                </span>
-                            </p>
-                            <p class="count">
-                                520
-                                <span>buildings</span>
-                            </p>
                         </div>
                     </li>
                     <li class="wow fadeInUp">
@@ -136,15 +125,6 @@
                             <img src="/static/images/bizfinity/img_building-04.svg">
                         </figure>
                         <div class="caption">
-                            <p class="category">
-                                <span>
-                                    노인주택
-                                </span>
-                            </p>
-                            <p class="count">
-                                520
-                                <span>buildings</span>
-                            </p>
                         </div>
                     </li>
                 </ul>

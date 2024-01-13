@@ -68,6 +68,7 @@ $(function () {
                         }
                     }
                 },
+                minHeight: 500,
                 layout: 'fitColumns',
                 placeholder: `<div>
                                 <div class="mt-5 mb-5">${content[language]}</div>
