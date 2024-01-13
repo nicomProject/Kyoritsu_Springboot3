@@ -1,0 +1,251 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<main th:fragment="index_main_eng">
+    <!-- Start Hero Area -->
+    <section class="hero-slider" th:if="${language} == 'eng'">
+        <div class="single-slider">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-6 co-12">
+                        <div class="home-slider">
+                            <div class="hero-text">
+                                <span class="small-title">Business Solution</span>
+                                <h1><span>We Provide Quality</span><br> Consulting Services</h1>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting <br> industry.
+                                    Lorem
+                                    Ipsum has been the industry's standard <br>dummy text ever since.</p>
+                                <div class="button">
+                                    <a href="/intro/overview" class="btn mouse-dir">Learn More <span
+                                            class="dir-part"></span></a>
+                                </div>
+                            </div>
+                            <div class="hero-text">
+                                <span class="small-title">Business Solution</span>
+                                <h1><span>We Provide Quality</span><br> Consulting Services</h1>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting <br> industry.
+                                    Lorem
+                                    Ipsum has been the industry's standard <br>dummy text ever since.</p>
+                                <div class="button">
+                                    <a href="/intro/overview" class="btn mouse-dir">Learn More <span
+                                            class="dir-part"></span></a>
+                                </div>
+                            </div>
+                            <div class="hero-text">
+                                <span class="small-title">Business Solution</span>
+                                <h1><span>We Provide Quality</span><br> Consulting Services</h1>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting <br> industry.
+                                    Lorem
+                                    Ipsum has been the industry's standard <br>dummy text ever since.</p>
+                                <div class="button">
+                                    <a href="/intro/overview" class="btn mouse-dir">Learn More <span
+                                            class="dir-part"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Hero Area -->
+
+    <!-- Start Features Area -->
+    <section class="Features section" th:if="${language == 'eng'}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="feature-right wow fadeInUp" data-wow-delay=".3s">
+                        <div class="watch-inner">
+                            <div class="video-head wow zoomIn" data-wow-delay="0.4s">
+                                <a href="https://youtu.be/t0zB-fOuzEk" class="glightbox video"><i
+                                        class="lni lni-play"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="feature-content">
+                        <div class="title">
+                            <span class="wow fadeInRight" data-wow-delay=".3s">Introduction</span>
+                            <h3 class="wow fadeInRight" data-wow-delay=".5s">Business Areas</h3>
+                        </div>
+                        <div class="feature-item wow fadeInUp" data-wow-delay=".5s">
+                            <div class="feature-thumb">
+                                <i class="lni lni-bar-chart"></i>
+                            </div>
+                            <div class="banner-content">
+                                <h2 class="title">Dormy Inn</h2>
+                                <p>Our business hotel chain inherits the know-how of dormitory business,
+                                    offering a comfortable atmosphere akin to 'home' and providing relaxation.
+                                    We operate standard business hotels along with Japanese-style premium brand
+                                    hotels such as 'Onyado Nono.'</p>
+                            </div>
+                            <div class="button">
+                                <a href="/business/dormyinn" class="btn mouse-dir">Learn More </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <ul class="building">
+                    <li class="wow fadeInUp">
+                        <figure>
+                            <img src="/static/images/bizfinity/img_building-01.svg">
+                        </figure>
+                        <div class="caption">
+                            <p class="category">
+                                <span>
+                                    Dormitories
+                                </span>
+                            </p>
+                            <p class="count">
+                                520
+                                <span>buildings</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="wow fadeInUp">
+                        <figure>
+                            <img src="/static/images/bizfinity/img_building-02.svg">
+                        </figure>
+                        <div class="caption">
+                            <p class="category">
+                                <span>
+                                    Dormitories
+                                </span>
+                            </p>
+                            <p class="count">
+                                520
+                                <span>buildings</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="wow fadeInUp">
+                        <figure>
+                            <img src="/static/images/bizfinity/img_building-03.svg">
+                        </figure>
+                        <div class="caption">
+                            <p class="category">
+                                <span>
+                                    Resorts
+                                </span>
+                            </p>
+                            <p class="count">
+                                520
+                                <span>buildings</span>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="wow fadeInUp">
+                        <figure>
+                            <img src="/static/images/bizfinity/img_building-04.svg">
+                        </figure>
+                        <div class="caption">
+                            <p class="category">
+                                <span>
+                                    Elderly Housing
+                                </span>
+                            </p>
+                            <p class="count">
+                                520
+                                <span>buildings</span>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- End Features Area -->
+
+    <!-- Start Service Area -->
+    <section class="services section" th:if="${language == 'eng'}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-12">
+                    <div class="section-title">
+                        <span class="wow fadeInDown" data-wow-delay=".2s">About Us</span>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Corporate Activities</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">There are many variations of passages of Lorem
+                            Ipsum available, but the majority have suffered alteration in some form.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="single-service wow fadeInUp" data-wow-delay=".2s">
+                        <div class="serial">
+                            <span><i class="lni lni-code"></i></span>
+                        </div>
+                        <h3><a href="service-single.html">Corporate IR</a></h3>
+                        <p>Need A Project Completed By An Expert? Let’s Go! Access A Human Resources Consultant To
+                            Answer Questions</p>
+                        <div class="circles-wrap">
+                            <div class="circles">
+                                <span class="circle circle-1"></span>
+                                <span class="circle circle-2"></span>
+                                <span class="circle circle-3"></span>
+                                <span class="circle circle-4"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="single-service wow fadeInUp" data-wow-delay=".3s">
+                        <div class="serial">
+                            <span><i class="lni lni-vector"></i></span>
+                        </div>
+                        <h3><a href="service-single.html">Group Companies</a></h3>
+                        <p>Need A Project Completed By An Expert? Let’s Go! Access A Human Resources Consultant To
+                            Answer Questions</p>
+                        <div class="circles-wrap">
+                            <div class="circles">
+                                <span class="circle circle-1"></span>
+                                <span class="circle circle-2"></span>
+                                <span class="circle circle-3"></span>
+                                <span class="circle circle-4"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="single-service wow fadeInUp" data-wow-delay=".5s">
+                        <div class="serial">
+                            <span><i class="lni lni-keyword-research"></i></span>
+                        </div>
+                        <h3><a href="service-single.html">Corporate Growth</a></h3>
+                        <p>Need A Project Completed By An Expert? Let’s Go! Access A Human Resources Consultant To
+                            Answer Questions</p>
+                        <div class="circles-wrap">
+                            <div class="circles">
+                                <span class="circle circle-1"></span>
+                                <span class="circle circle-2"></span>
+                                <span class="circle circle-3"></span>
+                                <span class="circle circle-4"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="single-service wow fadeInUp" data-wow-delay=".6s">
+                        <div class="serial">
+                            <span><i class="lni lni-seo"></i></span>
+                        </div>
+                        <h3><a href="service-single.html">Recruitment</a></h3>
+                        <p>Need A Project Completed By An Expert? Let’s Go! Access A Human Resources Consultant To
+                            Answer Questions</p>
+                        <div class="circles-wrap">
+                            <div class="circles">
+                                <span class="circle circle-1"></span>
+                                <span class="circle circle-2"></span>
+                                <span class="circle circle-3"></span>
+                                <span class="circle circle-4"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /End Services Area -->
+</main>
