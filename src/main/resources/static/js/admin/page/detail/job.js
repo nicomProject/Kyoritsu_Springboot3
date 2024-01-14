@@ -155,6 +155,14 @@ $(function () {
                 return contentsValue
             }
 
+            function dateValidate(dateTo, dateFrom) {
+                var vaild = (dateTo >= dateFrom)
+                if (!vaild) {
+                    Alert.warning({text: "시작일이 종료일보다 클 수 없습니다."})
+                }
+                return vaild
+            }
+
             // key값이 있을 때 -> 채용공고 요청
             if(paramValue !== ""){
                 // 채용공고 상세내용 요청
@@ -208,7 +216,7 @@ $(function () {
                 var Datefrom = $("#Datefrom").val();
 
                 // 채용 공고 등록 버튼 이벤트 등록
-                if(action === 'add' && ValidateField.valid(formData)){
+                if(action === 'add' && ValidateField.valid(formData) && dateValidate(Dateto, Datefrom)){
                     // 이미지 업로드
                     contentsValue = await uploadImages(contentsValue)
 
@@ -243,7 +251,7 @@ $(function () {
                 }
 
                 // 채용 공고 수정 버튼 이벤트 등록
-                else if(action === "update" && ValidateField.valid(formDataKey)){
+                else if(action === "update" && ValidateField.valid(formDataKey) && dateValidate(Dateto, Datefrom)){
                     // 이미지 업로드
                     contentsValue = await uploadImages(contentsValue)
 

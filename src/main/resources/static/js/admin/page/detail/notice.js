@@ -136,6 +136,14 @@ $(function () {
                 return contentsValue
             }
 
+            function dateValidate(dateTo, dateFrom) {
+                var vaild = (dateTo >= dateFrom)
+                if (!vaild) {
+                    Alert.warning({text: "시작일이 종료일보다 클 수 없습니다."})
+                }
+                return vaild
+            }
+
             // key값이 있을 때 -> 공지사항 요청
             if(paramValue !== ""){
                 // 공지사항 상세내용 요청
@@ -182,7 +190,7 @@ $(function () {
                 var Datefrom      = $("#Datefrom").val();
 
                 // 공지사항 등록 버튼 이벤트 등록
-                if(action === 'add' && ValidateField.valid(formData)){
+                if(action === 'add' && ValidateField.valid(formData) && dateValidate(Dateto, Datefrom)){
                     // 이미지 업로드
                     contentsValue = await uploadImages(contentsValue)
 
@@ -212,7 +220,7 @@ $(function () {
                 }
 
                 // 공지사항 업데이트 버튼 이벤트 등록
-                else if(action === "update" && ValidateField.valid(formData)){
+                else if(action === "update" && ValidateField.valid(formData) && dateValidate(Dateto, Datefrom)){
                     // 이미지 업로드
                     contentsValue = await uploadImages(contentsValue)
 
