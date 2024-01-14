@@ -26,7 +26,6 @@ $(function () {
             const creationDate = { kr: "작성일", eng: "Creation date", jp: "作成日" };
             const language = document.getElementById('language').value;
             const table = new Tabulator(target, {
-                minHeight: 500,
                 locale: 'ko-kr',
                 langs: {
                     "ko-kr":{
@@ -63,6 +62,17 @@ $(function () {
                         return [];
                     }
                     response = response.result;
+
+                    var nowTime = Date.now()
+                    var items = response.items
+                    var itemsResult = []
+
+                    // 채용 공고 기간 내 항목만 추가
+                    for(var i=0; i<items.length; i++) {
+                        if (nowTime >= Date.parse(items[i].fromDate) && nowTime <= Date.parse(items[i].toDate)) {
+                            itemsResult.push(items[i])
+                        }
+                    }
                     return response.items;
                 },
                 ajaxError: TableUtil.ajaxError,
