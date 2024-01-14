@@ -77,6 +77,8 @@ public class ResponseDataValue<T> {
             msg = "해당 아이디를 가진 관리자가 존재합니다. (다른 아이디를 사용해 주세요.)";
         } else if (code == 410) {
             msg = "필수 파라미터 값이 누락되었습니다.";
+        } else if (code == 411) {
+            msg = "해당 지원분야를 사용한 지원공고가 존재합니다. (지원공고가 삭제되었는지 확인해주세요.)";
         } else if (code == 420) {
             msg = "잘못된 아이디 또는 패스워드입니다.";
         } else if (code == 421) {
