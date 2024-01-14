@@ -1,6 +1,8 @@
 package com.enicom.board.kyoritsu.api.param;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 import com.enicom.board.kyoritsu.dao.entity.Job;
@@ -37,6 +39,7 @@ public class JobParam {
     @JsonIgnore
     public void applyTo(Job job) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalTime dayEndTime = LocalTime.of(23, 59, 59);
 
         if (this.title != null) {
             job.setTitle(this.title);
@@ -56,14 +59,13 @@ public class JobParam {
         if (this.full_time != null) {
             job.setFullTime(this.full_time);
         }
-
         if (this.date_from != null) {
             LocalDate dateTime = LocalDate.parse(this.date_from, formatter);
             job.setFromDate(dateTime.atStartOfDay());
         }
-        if (this.date_from != null) {
+        if (this.date_to != null) {
             LocalDate dateTime = LocalDate.parse(this.date_to, formatter);
-            job.setToDate(dateTime.atStartOfDay());
+            job.setToDate(LocalDateTime.of(dateTime, dayEndTime));
         }
     }
 
