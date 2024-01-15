@@ -6,10 +6,10 @@ document.getElementById('fileInput').addEventListener('change', function() {
     addFile(this);
 });
 
-// 테스트 버튼에 이벤트 추가
-document.getElementById('checkButton').addEventListener('click', function() {
-    submitForm();
-});
+// // 테스트 버튼에 이벤트 추가
+// document.getElementById('checkButton').addEventListener('click', function() {
+//     submitForm();
+// });
 
 /* 첨부파일 추가 */
 function addFile(obj) {
