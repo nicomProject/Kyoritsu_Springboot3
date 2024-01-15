@@ -45,7 +45,11 @@ public class HomeController {
     }
 
     @GetMapping("/index_popup")
-    public String showPopup() {
+    public String showPopup(Model model, HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        String language = (String) session.getAttribute("languageValue");
+        if(language == null) language = "kr";
+        model.addAttribute("language", language);
         return "main/index_popup";
     }
 

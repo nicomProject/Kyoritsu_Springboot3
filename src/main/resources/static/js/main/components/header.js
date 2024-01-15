@@ -252,9 +252,24 @@ $(function () {
                 popup();
             })
 
+
+
             function popup() {
-                var newWindowWidth = 629;
-                var newWindowHeight = 360;
+                var newWindowWidth;
+                var newWindowHeight;
+                if(Menu.languageVal === "kr"){
+                    newWindowWidth = 570;
+                    newWindowHeight = 350;
+                }else if(Menu.languageVal === "eng")
+                {
+                    newWindowWidth = 920;
+                    newWindowHeight = 360;
+                }else if(Menu.languageVal === "jp")
+                {
+                    newWindowWidth = 845;
+                    newWindowHeight = 360;
+                }
+
 
                 var newWindow = window.open('/index_popup', 'Contact', 'width=' + newWindowWidth + ',height=' + newWindowHeight + ',top=' + "100" +  ',location=no');
 

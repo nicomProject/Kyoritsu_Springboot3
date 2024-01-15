@@ -82,13 +82,13 @@
                     <div id="map"></div>
                     <div class="map-info">
                         <div class="top">
-                            <h3 th:if="${language} == 'kr'">교리츠 <span>본사</span></h3>
-                            <h3 th:if="${language} == 'eng'">Kyoritsu <span>Headquarters</span></h3>
-                            <h3 th:if="${language} == 'jp'">共立 <span>本社</span></h3>
+                            <a th:if="${language} == 'kr'">교리츠 <span>본사</span></a>
+                            <a th:if="${language} == 'eng'">Kyoritsu <span>Headquarters</span></a>
+                            <a th:if="${language} == 'jp'">共立 <span>本社</span></a>
                             <ul>
-                                <li><h4 th:if="${language} == 'kr'">서울시 강남구 봉은사로 129 서평타운 314호</h4></li>
-                                <li><h4 th:if="${language} == 'eng'">129 Bongeunsa-ro, Gangnam-gu, Seoul, Korea</h4></li>
-                                <li><h4 th:if="${language} == 'jp'">ソウル市江南区奉恩寺路129、巨平タウン314号室</h4></li>
+                                <li><a th:if="${language} == 'kr'">서울시 강남구 봉은사로 129 서평타운 314호</a></li>
+                                <li><a th:if="${language} == 'eng'">129 Bongeunsa-ro, Gangnam-gu, Seoul, Korea</a></li>
+                                <li><a th:if="${language} == 'jp'">ソウル市江南区奉恩寺路129、巨平タウン314号室</a></li>
                                 </a></li>
                             </ul>
                         </div>

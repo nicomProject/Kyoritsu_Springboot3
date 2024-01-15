@@ -1091,7 +1091,7 @@ p {
 
 .header .language-button select {
   margin-left: 40px;
-  width: 80%; /* 버튼의 가로 길이를 설정합니다. */
+  width: 85%; /* 버튼의 가로 길이를 설정합니다. */
   padding: 5px 10px; /* 상하좌우 패딩을 설정합니다. */
   background-color: #ffffff; /* 파란색 배경을 설정합니다. */
   color: #0065d1; /* 글씨 색을 흰색으로 설정합니다. */
@@ -1672,6 +1672,7 @@ select option[value="jp"]::before {
 }
 
 .Features .feature-content .button {
+  margin-top: 2%;
   display: flex;
   justify-content: right;
 }
@@ -2523,22 +2524,23 @@ span.circle {
 
 .footer .footer_menu {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 1%;
 }
 
 .footer .footer_menu li:first-child {
-  font-size: 20px;
-  min-width: 35%;
+  font-size: clamp(10px, 2vw, 1.8vh);
+  min-width: 25%;
   text-align: center;
 }
 
 .footer .footer_menu li:first-child a{
-  font-size: 20px
+  font-size: clamp(16px, 2vw, 1.8vh);
+
 }
 
 .footer .footer_menu li:not(:first-child) {
   /*margin-left: -5%;*/
-  font-size: 15px;
+  font-size: clamp(10px, 2vw, 1.8vh);
 }
 
 .footer #footer_left {
@@ -2551,7 +2553,7 @@ span.circle {
 
 .footer #footer_left #footer_left_content {
   margin-left: 20px;
-  font-size: 18px;
+  font-size: clamp(16px, 2vw, 1.6vh);
 }
 
 .footer #footer_left #footer_left_content a{
@@ -2627,9 +2629,9 @@ margin-bottom: 25px;
   margin-right: 10px;
   display: inline-block;
   color: #555;
-  font-size: 14px;
   font-weight: 500;
   font-weight: 400;
+  font-size: clamp(12px, 2vw, 1.6vh);
 }
 
 .footer .f-contact ul li a:hover {

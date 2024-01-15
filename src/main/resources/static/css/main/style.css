@@ -433,7 +433,7 @@ section .sub-title{
 .dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-3 a,
 .resort.section .editor-content .box-2 .profile.profile-1 .profile-link-3 a,
 .seniorlife.section .editor-content .box-2 .profile.profile-1 .profile-link-3 a{
-    margin-bottom: 10px; /* 원하는 만큼의 간격을 설정합니다. */
+    line-height: 1.5;
 }
 
 .dormitory.section .editor-content .box-2 .profile.profile-2,
@@ -524,7 +524,7 @@ section .sub-title{
     margin-left: auto; /* 왼쪽 여백을 자동으로 설정하여 가운데 정렬합니다. */
     margin-right: auto; /* 오른쪽 여백을 자동으로 설정하여 가운데 정렬합니다. */
     margin-top: 45px;
-    line-height: 1.8721428571;
+    line-height: 1.5;
     font-size: 1.5rem;
     text-align: center;
 }
@@ -587,8 +587,8 @@ section .sub-title{
 }
 .sec-title .en {
     color: #0067bb;
-    font-size: 3.2rem;
     font-weight: bold;
+    font-size: clamp(32px, 2vw, 4.2vh);
 }
 
 
@@ -687,21 +687,23 @@ section .sub-title{
 }
 
 .vision.section .team-card .content .vision_div p:nth-child(2){
-    line-height: 35px !important;
-    font-size: 1.6rem;
+    font-size: clamp(16px, 2vw, 2.2vh);
+    line-height: 1.2; /* 원하는 비율로 설정 */
     color:#0067bb;
 }
 
 .vision.section .team-card .content .vision_div i {
-    font-size: 4rem;
-    margin-bottom: 4%;
+    font-size: 5rem;
+    margin-bottom: 20px;
 }
 
 .vision.section .team-card .content .vision_div p:nth-child(3){
     color: #6e607c;
-    margin-top: 5%;
+    margin-top: 25px;
     margin-bottom: 0;
-    font-size: 1.2rem;
+    font-size: clamp(14px, 2vw, 2.2vh);
+    line-height: 1.2; /* 원하는 비율로 설정 */
+    /*font-size: 1.5rem;*/
 }
 
 /* history */
@@ -2059,12 +2061,15 @@ section .sub-title{
 .location.section .location-container .top{
     margin-top: 20px;
     margin-bottom: 20px;
+    font-size: clamp(16px, 2vw, 2.2vh);
+    line-height: 1.4; /* 원하는 비율로 설정 */
 }
 
 .location.section .location-container .map-info .bottom{
     display: flex;
     justify-content: space-between;
-    font-size: 1.2rem;
+    font-size: clamp(14px, 2vw, 2.2vh);
+    line-height: 1.2; /* 원하는 비율로 설정 */
 }
 
 /* notice/notice */
@@ -2562,7 +2567,8 @@ section .sub-title{
 }
 
 .breadcrumbs-content.center button {
-    padding: 45px 90px; /* 버튼 안의 내용과 버튼 주변 간격 조절 */
+    /*padding: 45px 90px; !* 버튼 안의 내용과 버튼 주변 간격 조절 *!*/
+    padding: clamp(10px, 4vw, 40px) clamp(10px, 3vw, 80px);
     background-color: rgba(0, 0, 0, 0.5); /* 90% 투명한 회색 배경 */
     color: #fff; /* 텍스트 색상 설정 */
     border: none; /* 테두리 제거 */
@@ -2575,6 +2581,7 @@ section .sub-title{
 
 .breadcrumbs-content.center .activation {
     background-color: #f5f5f5;
+    font-size: clamp(18px, 2vw, 1.5vh);
     color: #000;
 }
 
