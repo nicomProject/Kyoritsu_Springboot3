@@ -6,11 +6,13 @@ $(function () {
         load: async function (params) {
             const that = this;
 
+            const alert = {kr:'채용 공고를 선택해 주세요', eng:'Please select a job posting.', jp:'採用公告を選択してください。'}
+            var languageValue = document.getElementById("language").value;
             // 채용 공고를 통해 접근하도록 함
             if (params.key == 0 || params.key == undefined) {
                 await Swal.fire({
                     icon: 'info',
-                    html: "채용 공고를 선택해 주세요."
+                    html: alert[languageValue]
                 });
                 window.location.href = '/recruit/notice'
                 return
