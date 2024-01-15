@@ -210,8 +210,9 @@ const Menu = {
     createBreadcrumbsNav: function (menu, subMenu, languageValue, detailPageName) {
         const displayNameMenu = (languageValue === 'kr') ? menu.name : (languageValue === 'eng') ? menu.nameEnglish : menu.nameJapanese;
         const displayNameSubMenu = (languageValue === 'kr') ? subMenu.name : (languageValue === 'eng') ? subMenu.nameEnglish : subMenu.nameJapanese;
-        if(detailPageName === 'apply') return $(`<li><a href="/">Home</a></li><li><a href="../notice">${displayNameMenu}</a></li><li>${displayNameSubMenu}</li>`);
-        else if(detailPageName !== '') return $(`<li><a href="/">Home</a></li><li><a href="../../${detailPageName}">${displayNameMenu}</a></li><li>${displayNameSubMenu}</li>`);
+        if(detailPageName === 'recruit_apply') return $(`<li><a href="/">Home</a></li><li><a href="../notice">${displayNameMenu}</a></li><li>${displayNameSubMenu}</li>`);      // 채용지원 페이지 (지원서 작성)
+        else if(detailPageName === 'inquire_add') return $(`<li><a href="/">Home</a></li><li><a href="../inquire">${displayNameMenu}</a></li><li>${displayNameSubMenu}</li>`);   // 채용문의 작성 페이지
+        else if(detailPageName !== '') return $(`<li><a href="/">Home</a></li><li><a href="../../${detailPageName}">${displayNameMenu}</a></li><li>${displayNameSubMenu}</li>`);// 이외에 상세 페이지
         else return $(`<li><a href="/">Home</a></li><li><a href="">${displayNameMenu}</a></li><li>${displayNameSubMenu}</li>`);
     },
     createMenuGroupName: function (menu, languageValue) {
