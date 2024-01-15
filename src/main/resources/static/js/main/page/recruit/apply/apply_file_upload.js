@@ -7,9 +7,9 @@ document.getElementById('fileInput').addEventListener('change', function() {
 });
 
 // 테스트 버튼에 이벤트 추가
-document.getElementById('checkButton').addEventListener('click', function() {
-    submitForm();
-});
+// document.getElementById('checkButton').addEventListener('click', function() {
+//     submitForm();
+// });
 
 /* 첨부파일 추가 */
 function addFile(obj) {
@@ -170,25 +170,4 @@ function submitForm() {
     }
 
     console.log(list.toString());
-
-    // $.ajax({
-    //     method: 'POST',
-    //     url: '/register',
-    //     dataType: 'json',
-    //     data: formData,
-    //     async: true,
-    //     timeout: 30000,
-    //     cache: false,
-    //     headers: {
-    //         'cache-control': 'no-cache',
-    //         'pragma': 'no-cache'
-    //     },
-    //     success: function() {
-    //         alert("파일업로드 성공");
-    //     },
-    //     error: function(xhr, desc, err) {
-    //         alert('에러가 발생 하였습니다.');
-    //         return;
-    //     }
-    // });
 }
