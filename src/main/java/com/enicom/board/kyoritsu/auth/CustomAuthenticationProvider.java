@@ -1,8 +1,8 @@
 package com.enicom.board.kyoritsu.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AccountExpiredException;
 import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.LockedException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -44,7 +44,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         }
         if(member == null) {
             System.out.println("일치하는 사용자 아이디가 없습니다.");
-            throw new BadCredentialsException("일치하는 사용자 아이디가 없습니다.");
+            throw new AccountExpiredException("일치하는 사용자 아이디가 없습니다.");
         }
 
         System.out.println(member.getPassword());
@@ -60,7 +60,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
             throw new LockedException("로그인 시도 가능 횟수를 초과했습니다.\r\n관리자에게 문의하시기 바랍니다.");
         } else if (!this.passwordEncoder.matches(password, member.getPassword())) {
             System.out.println("비밀번호가 일치하지 않습니다. 로그인 실패 5회 초과 시 계정이 비활성화됩니다. (현재 "+(member.getFailureCnt()+1)+" 회)");
-            throw new BadCredentialsException("비밀번호가 일치하지 않습니다. 로그인 실패 5회 초과 시 계정이 비활성화됩니다. (현재 "+(member.getFailureCnt()+1)+" 회)");
+            throw new AccountExpiredException("비밀번호가 일치하지 않습니다. 로그인 실패 5회 초과 시 계정이 비활성화됩니다. (현재 "+(member.getFailureCnt()+1)+" 회)");
         }
 
         // 인증 성공 시, token 반환
