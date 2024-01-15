@@ -1,3 +1,5 @@
+let detailPageName; // 현재 페이지가 detail 페이지인지 여부(detail페이지 : 페이지명, not detail페이지 : '')
+
 const Menu = {
     menus: [],
     subMenus: [],
@@ -31,6 +33,9 @@ const Menu = {
                 }
 
                 $('#language-button').val(languageValue);
+                detailPageName = $('#detail_page_name').val() || '';
+
+                console.log(detailPageName);
 
                 /* 각 메뉴별 content 불러오기 */
                 const submenu = Menu.subMenus;
@@ -119,23 +124,23 @@ const Menu = {
                         var pageIdVal = document.getElementById('page_id').value;
                         if(index == 0 && pageIdVal == 'overview') {
                             // (기업개요)
-                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue);
+                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue, detailPageName);
                             container_breadcrumbs_nav.append(breadcrumbsNav);
                         } if(index == 1 && pageIdVal == 'vision') {
                             // (경영이념/비전)
-                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue);
+                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue, detailPageName);
                             container_breadcrumbs_nav.append(breadcrumbsNav);
                         } if(index == 2 && pageIdVal == 'history') {
                             // (연혁)
-                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue);
+                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue, detailPageName);
                             container_breadcrumbs_nav.append(breadcrumbsNav);
                         } if(index == 3 && pageIdVal == 'organization') {
                             // (조직도)
-                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue);
+                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue, detailPageName);
                             container_breadcrumbs_nav.append(breadcrumbsNav);
                         } if(index == 4 && pageIdVal == 'location') {
                             // (오시는 길)
-                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue);
+                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue, detailPageName);
                             container_breadcrumbs_nav.append(breadcrumbsNav);
                         }
                     }
@@ -147,7 +152,7 @@ const Menu = {
                         var pageIdVal = document.getElementById('page_id').value;
                         if(index == 0 && pageIdVal == 'dormyinn') {
                             // (도미인)
-                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue);
+                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue, detailPageName);
                             container_breadcrumbs_nav.append(breadcrumbsNav);
                         }
                     }
@@ -159,7 +164,7 @@ const Menu = {
                         var pageIdVal = document.getElementById('page_id').value;
                         if(index == 0 && pageIdVal == 'notice') {
                             // (공지사항)
-                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue);
+                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue, detailPageName);
                             container_breadcrumbs_nav.append(breadcrumbsNav);
                         }
                     }
@@ -175,23 +180,23 @@ const Menu = {
                         var pageIdVal = document.getElementById('page_id').value;
                         if(index == 0 && pageIdVal == 'employee_info') {
                             // (직원소개)
-                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue);
+                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue, detailPageName);
                             container_breadcrumbs_nav.append(breadcrumbsNav);
                         } if(index == 1 && pageIdVal == 'info') {
                             // (채용안내)
-                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue);
+                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue, detailPageName);
                             container_breadcrumbs_nav.append(breadcrumbsNav);
                         } if(index == 2 && pageIdVal == 'notice') {
                             // (채용공고)
-                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue);
+                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue, detailPageName);
                             container_breadcrumbs_nav.append(breadcrumbsNav);
                         } if(index == 3 && pageIdVal == 'apply') {
                             // (채용지원)
-                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue);
+                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue, detailPageName);
                             container_breadcrumbs_nav.append(breadcrumbsNav);
                         } if(index == 4 && pageIdVal == 'inquire') {
                             // (채용문의)
-                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue);
+                            const breadcrumbsNav = that.createBreadcrumbsNav(menu, subMenu, languageValue, detailPageName);
                             container_breadcrumbs_nav.append(breadcrumbsNav);
                         }
                     }
@@ -202,10 +207,12 @@ const Menu = {
         });
 
     },
-    createBreadcrumbsNav: function (menu, subMenu, languageValue) {
+    createBreadcrumbsNav: function (menu, subMenu, languageValue, detailPageName) {
         const displayNameMenu = (languageValue === 'kr') ? menu.name : (languageValue === 'eng') ? menu.nameEnglish : menu.nameJapanese;
         const displayNameSubMenu = (languageValue === 'kr') ? subMenu.name : (languageValue === 'eng') ? subMenu.nameEnglish : subMenu.nameJapanese;
-        return $(`<li><a href="../">Home</a></li><li><a href="">${displayNameMenu}</a></li><li>${displayNameSubMenu}</li>`);
+        if(detailPageName === 'apply') return $(`<li><a href="/">Home</a></li><li><a href="../notice">${displayNameMenu}</a></li><li>${displayNameSubMenu}</li>`);
+        else if(detailPageName !== '') return $(`<li><a href="/">Home</a></li><li><a href="../../${detailPageName}">${displayNameMenu}</a></li><li>${displayNameSubMenu}</li>`);
+        else return $(`<li><a href="/">Home</a></li><li><a href="">${displayNameMenu}</a></li><li>${displayNameSubMenu}</li>`);
     },
     createMenuGroupName: function (menu, languageValue) {
         const displayName = (languageValue === 'kr') ? menu.name : (languageValue === 'eng') ? menu.nameEnglish : menu.nameJapanese;
