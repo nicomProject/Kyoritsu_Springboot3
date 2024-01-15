@@ -74,7 +74,7 @@ $(function () {
                             itemsResult.push(items[i])
                         }
                     }
-                    return response.items;
+                    return itemsResult;
                 },
                 ajaxError: TableUtil.ajaxError,
                 columnHeaderVertAlign: "middle",
