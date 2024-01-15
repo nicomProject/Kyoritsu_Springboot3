@@ -130,12 +130,13 @@ $(function () {
                         headerSort: false
                     },
                     {title: '카테고리', field: "category", headerHozAlign: "center", tooltip: true, headerTooltip: true, headerFilter: 'select', headerFilterParams: {
-                            values: {"news" : "뉴스"}, // 가능한 필드 값
+                            values: {"news" : "공지사항"}, // 가능한 필드 값
                         },
                         formatter: function(cell) {
                             var originalValue = cell.getValue();
+                            console.log(originalValue);
                             if (originalValue === "news") {
-                                return "뉴스";
+                                return "공지사항";
                             } else {
                                 return originalValue;
                             }

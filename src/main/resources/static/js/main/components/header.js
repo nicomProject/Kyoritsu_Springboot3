@@ -96,7 +96,7 @@ const Menu = {
                     const menuGroupName = that.createMenuGroupName(menu, languageValue);
                     container_breadcrumbs_title.append(menuGroupName);
                 } if(menu.recKey == 3 && pageGroupIdVal == 'news') {
-                    // (뉴스)
+                    // (공지사항)
                     const menuGroupName = that.createMenuGroupName(menu, languageValue);
                     container_breadcrumbs_title.append(menuGroupName);
                 } if(menu.recKey == 4 && pageGroupIdVal == 'recruit') {
@@ -157,7 +157,7 @@ const Menu = {
                         }
                     }
                 }
-                // 3. 뉴스
+                // 3. 공지사항
                 if(menu.recKey == 3 && pageGroupIdVal == 'news') {
                     // breadcrumbs-nav 추가 
                     if(document.getElementById('page_id') != null) {
