@@ -254,7 +254,7 @@ $(function () {
 
             function popup() {
                 var newWindowWidth = 629;
-                var newWindowHeight = 296;
+                var newWindowHeight = 360;
 
                 var newWindow = window.open('/index_popup', 'Contact', 'width=' + newWindowWidth + ',height=' + newWindowHeight + ',top=' + "100" +  ',location=no');
 

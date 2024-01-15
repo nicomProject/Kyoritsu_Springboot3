@@ -2527,8 +2527,9 @@ span.circle {
 }
 
 .footer .footer_menu li:first-child {
-  margin-right: 30px;
   font-size: 20px;
+  min-width: 35%;
+  text-align: center;
 }
 
 .footer .footer_menu li:first-child a{
@@ -2536,7 +2537,7 @@ span.circle {
 }
 
 .footer .footer_menu li:not(:first-child) {
-  margin-left: 15px;
+  /*margin-left: -5%;*/
   font-size: 15px;
 }
 
@@ -2545,7 +2546,7 @@ span.circle {
   justify-content: right;
   align-items: center;
   border-right: 1px solid white;
-  padding-right: 10%;
+  padding-right: 5%;
 }
 
 .footer #footer_left #footer_left_content {
@@ -2558,7 +2559,7 @@ span.circle {
 }
 
 .footer #footer_right {
-  padding-left: 10%;
+  padding-left: 5%;
 }
 
 .footer .single-footer {
@@ -2623,6 +2624,7 @@ margin-bottom: 25px;
 }
 
 .footer .f-contact ul li a {
+  margin-right: 10px;
   display: inline-block;
   color: #555;
   font-size: 14px;

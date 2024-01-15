@@ -25,6 +25,10 @@ section .sub-title{
     font-size: 13px !important;
 }
 
+.apply-section .tabulator .tabulator-placeholder{
+    height: 500px;
+}
+
 .apply-section .tabulator > div.tabulator-header > div{
     border-top: 2px solid black;
 }
@@ -684,18 +688,18 @@ section .sub-title{
 
 .vision.section .team-card .content .vision_div p:nth-child(2){
     line-height: 35px !important;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color:#0067bb;
 }
 
 .vision.section .team-card .content .vision_div i {
-    font-size: 5rem;
-    margin-bottom: 20px;
+    font-size: 4rem;
+    margin-bottom: 4%;
 }
 
 .vision.section .team-card .content .vision_div p:nth-child(3){
     color: #6e607c;
-    margin-top: 25px;
+    margin-top: 5%;
     margin-bottom: 0;
     font-size: 1.2rem;
 }
@@ -2070,6 +2074,10 @@ section .sub-title{
     font-size: 13px !important;
 }
 
+.notice.section .tabulator .tabulator-placeholder {
+    height: 500px;
+}
+
 .notice.section .tabulator > div.tabulator-header > div{
     border-top: 2px solid black;
 }
@@ -2277,6 +2285,7 @@ section .sub-title{
     margin: 20px 0;
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 
 #recruit-info-section2 .container .card-box .content{
@@ -2284,6 +2293,7 @@ section .sub-title{
     line-height: 1.2rem;
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 
 #recruit-info-section2 .container .card-box i{
@@ -2559,7 +2569,7 @@ section .sub-title{
     cursor: pointer; /* 마우스 커서를 포인터로 변경하여 클릭 가능한 상태로 표시 */
     transition: background-color 0.3s ease; /* 부드러운 배경색 전환 효과 */
     border-radius: 0px;
-    font-size: 18px;
+    font-size: 1.2rem;
     white-space: nowrap;
 }
 
