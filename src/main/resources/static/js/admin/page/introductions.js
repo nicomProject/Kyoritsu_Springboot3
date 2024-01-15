@@ -63,27 +63,44 @@ $(function () {
                         Alert.warning({text: '소개글을 먼저 선택해주세요!'});
                         return;
                     } else if(range === 'list' && selected.length > 0){
-                        AjaxUtil.requestBody({
-                            url: '/api/introductions/delete',
-                            data: {
-                                type: 'list',
-                                idListLong: selected
-                            },
-                            table: 'table',
-                            successMessage: '성공적으로 삭제되었습니다',
-                            failMessage: '삭제중 오류가 발생하였습니다.',
-                        })
-                    }else{
-                        AjaxUtil.requestBody({
-                            url: '/api/introductions/delete',
-                            data: {
-                                type: 'specific',
-                            },
-                            table: 'table',
-                            successMessage: '성공적으로 삭제되었습니다',
-                            failMessage: '삭제중 오류가 발생하였습니다.',
-                        })
-
+                        // 소개글 삭제 확인
+                        Alert.confirm({
+                            title: '선택 삭제',
+                            text: `선택한 소개글을 삭제하시겠습니까?`
+                        }, function (result) {
+                            // 확인 버튼 이외는 무시
+                            if (!result.isConfirmed) return;
+                            // 선택한 소개글 삭제 요청
+                            AjaxUtil.requestBody({
+                                url: '/api/introductions/delete',
+                                data: {
+                                    type: 'list',
+                                    idListLong: selected
+                                },
+                                table: 'table',
+                                successMessage: '성공적으로 삭제되었습니다',
+                                failMessage: '삭제중 오류가 발생하였습니다.',
+                            })
+                        });
+                    }else if(range == 'all'){
+                        // 소개글 삭제 확인
+                        Alert.confirm({
+                            title: '전체 삭제',
+                            text: `전체 소개글을 삭제하시겠습니까?`
+                        }, function (result) {
+                            // 확인 버튼 이외는 무시
+                            if (!result.isConfirmed) return;
+                            // 전체 소개글 삭제 요청
+                            AjaxUtil.requestBody({
+                                url: '/api/introductions/delete',
+                                data: {
+                                    type: 'specific',
+                                },
+                                table: 'table',
+                                successMessage: '성공적으로 삭제되었습니다',
+                                failMessage: '삭제중 오류가 발생하였습니다.',
+                            })
+                        });
                     }
                 }
                 else if (action === 'file') {

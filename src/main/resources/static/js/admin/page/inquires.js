@@ -19,36 +19,53 @@ $(function () {
 
                 if (action === 'del') {
                     if(selected.length === 0 && range !== 'all'){
-                        Alert.warning({text: '채용문의 관리를 먼저 선택해주세요!'});
+                        Alert.warning({text: '채용문의를 먼저 선택해주세요!'});
                         return;
                     } else if(range === 'list' && selected.length > 0){
-                        AjaxUtil.requestBody({
-                            url: '/api/inquiry/delete',
-                            data: {
-                                type: 'list',
-                                idListLong: selected
-                            },
-                            table: 'table',
-                            successMessage: '성공적으로 삭제되었습니다',
-                            failMessage: '삭제중 오류가 발생하였습니다.',
-                        })
-                    }else{
-                        AjaxUtil.requestBody({
-                            url: '/api/inquiry/delete',
-                            data: {
-                                type: 'specific',
-                            },
-                            table: 'table',
-                            successMessage: '성공적으로 삭제되었습니다',
-                            failMessage: '삭제중 오류가 발생하였습니다.',
-                        })
-
+                        // 채용문의 삭제 확인
+                        Alert.confirm({
+                            title: '선택 삭제',
+                            text: `선택한 채용문의를 삭제하시겠습니까?`
+                        }, function (result) {
+                            // 확인 버튼 이외는 무시
+                            if (!result.isConfirmed) return;
+                            // 선택한 채용문의 삭제 요청
+                            AjaxUtil.requestBody({
+                                url: '/api/inquiry/delete',
+                                data: {
+                                    type: 'list',
+                                    idListLong: selected
+                                },
+                                table: 'table',
+                                successMessage: '성공적으로 삭제되었습니다',
+                                failMessage: '삭제중 오류가 발생하였습니다.',
+                            })
+                        });
+                    }else if(range == 'all'){
+                        // 채용문의 삭제 확인
+                        Alert.confirm({
+                            title: '전체 삭제',
+                            text: `전체 채용문의를 삭제하시겠습니까?`
+                        }, function (result) {
+                            // 확인 버튼 이외는 무시
+                            if (!result.isConfirmed) return;
+                            // 선택한 채용문의 삭제 요청
+                            AjaxUtil.requestBody({
+                                url: '/api/inquiry/delete',
+                                data: {
+                                    type: 'specific',
+                                },
+                                table: 'table',
+                                successMessage: '성공적으로 삭제되었습니다',
+                                failMessage: '삭제중 오류가 발생하였습니다.',
+                            })
+                        });
                     }
                 }
                 else if (action === 'file') {
                     const range = this.dataset.range;
                     if (selected.length === 0) {
-                        Alert.warning({text: '채용문의 관리를 먼저 선택해주세요!'});
+                        Alert.warning({text: '채용문의를 먼저 선택해주세요!'});
                         return;
                     }
                     // 다운로드
