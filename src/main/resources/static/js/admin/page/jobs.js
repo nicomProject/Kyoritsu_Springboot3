@@ -137,7 +137,7 @@ $(function () {
                 locale: 'ko-kr',
                 langs: TableUtil.setDefaults(),
                 layout: 'fitColumns',
-                placeholder: TableUtil.getPlaceholder('현재 채용공고가 없습니다.'),
+                placeholder: TableUtil.getPlaceholder('조건에 맞는 채용공고가 없습니다.'),
                 pagination: false,
                 paginationSize: paginationConfig.size,
                 paginationSizeSelector: paginationConfig.selector,
