@@ -68,13 +68,13 @@ $(function () {
                         }
                     }
                 },
-                minHeight: 500,
+                minHeight: 450,
                 layout: 'fitColumns',
                 placeholder: `<div>
                                 <div class="mt-5 mb-5">${content[language]}</div>
                               </div>`,
                 pagination: true,
-                paginationSize: 5,
+                paginationSize: 10,
                 paginationSizeSelector:null,
                 paginationInitialPage:1,
                 paginationButtonCount:10,
