@@ -155,15 +155,14 @@ p {
 }
 
 .scroll-top {
-  width: 45px;
-  height: 45px;
-  background: #005bab;
+  width: 65px;
+  height: 65px;
+  background: #ffffff;
   display: flex !important;
   justify-content: center;
-  align-items: center;
   font-size: 14px;
-  color: #fff !important;
-  border-radius: 0;
+  color: #005bab !important;
+  border-radius: 40px;
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -172,6 +171,8 @@ p {
   transition: all 0.3s ease-out 0s;
   text-align: center;
   line-height: 45px;
+  border: 3px solid #005bab;
+  flex-direction: column;
 }
 
 .scroll-top:hover {
@@ -2596,8 +2597,7 @@ span.circle {
 .footer .footer-middle {
   padding-bottom: 15px;
   padding-top: 15px;
-  background-color: #000;
-  opacity: 0.6;
+  background-color: #005BAB;
 }
 
 .footer .footer_menu {
@@ -2643,16 +2643,17 @@ span.circle {
 }
 
 .footer .single-footer {
-margin-top: 30px;
+  margin-top: 30px;
+  color: #ffffff;
 }
 
 .footer .single-footer h3 {
-color: #333;
-font-size: 20px;
-font-weight: 600;
-position: relative;
-text-transform: capitalize;
-margin-bottom: 25px;
+  color: #333;
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+  text-transform: capitalize;
+  margin-bottom: 25px;
 }
 
 /* Footer Link */
@@ -2706,7 +2707,7 @@ margin-bottom: 25px;
 .footer .f-contact ul li a {
   margin-right: 10px;
   display: inline-block;
-  color: #555;
+  color: #ffffff;
   font-weight: 500;
   font-weight: 400;
   font-size: clamp(12px, 2vw, 1.6vh);
@@ -2835,6 +2836,46 @@ margin-bottom: 25px;
 .footer .footer-bottom .right {
   text-align: right;
 }
+
+
+.footer .main-logo img{
+  padding: 10px !important;
+  width: 150px !important;
+}
+
+.footer .main-logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 1920px) {
+  .footer .footer-item {
+    font-size: 1rem;
+    padding: 0.3rem 0.4rem;
+    margin: 4px 2px;
+  }
+
+  .footer .footer-item:hover > .footer-item-desc {
+    right: 55px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .footer .footer-item {
+    font-size: 1rem;
+    padding: 0.3rem 0.4rem;
+    margin: 4px 2px;
+  }
+
+  .footer .footer-item:hover > .footer-item-desc {
+    right: 55px;
+    font-size: 0.8rem;
+  }
+}
+
+
 
 /*======================================
 	End Footer	CSS
