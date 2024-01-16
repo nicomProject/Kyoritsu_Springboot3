@@ -221,27 +221,30 @@ const Menu = {
     },
     createBreadcrumbsMenu: function (menu, btnId, languageValue) {
         const displayName = (languageValue === 'kr') ? menu.name : (languageValue === 'eng') ? menu.nameEnglish : menu.nameJapanese;
-        return $(`<button type="button" id="${btnId}">${displayName}</button>`);
+        return $(`<button type="button"  class="navbar-toggler" id="${btnId}">${displayName}</button>`);
     },
     createMenuGroup: function (menu, languageValue) {
         const displayName = (languageValue === 'kr') ? menu.name : (languageValue === 'eng') ? menu.nameEnglish : menu.nameJapanese;
-        return $(`<li class="nav-item col-12 col-md-3 mx-2" style="position: relative;">
-                <a class="nav-link" href="javascript:void(0)"
-                    data-bs-toggle="collapse" data-bs-target="#submenu-${menu.recKey}-1"
-                    aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation""> ${displayName}
-                </a>
-                <ul class="sub-menu collapse" id="submenu-${menu.recKey}-1" style="width: 100%; position: absolute; left: 50%; transform: translateX(-50%);">
-                </ul>
-            </li>`);
+        return $(`<li class="nav-item" style="position: relative;">
+            <a class="nav-link" href="javascript:void(0)"
+                data-bs-toggle="collapse" data-bs-target="#submenu-${menu.recKey}-1"
+                aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"> 
+                <i class="your-icon-class"></i> ${displayName}
+            </a>
+            <ul class="sub-menu collapse" id="submenu-${menu.recKey}-1" style="width: 100%; position: absolute; left: 50%; transform: translateX(-50%);">
+            </ul>
+        </li>`);
+
     },
     createSubMenuItem: function (subMenu, languageValue) {
         const displayName = (languageValue === 'kr') ? subMenu.name : (languageValue === 'eng') ? subMenu.nameEnglish : subMenu.nameJapanese;
         const path = subMenu.url || '/';
-        let activated = location.pathname ===  path ? 'active' : '';
+        let activated = location.pathname === path ? 'active' : '';
 
-        return $(`<li class="nav-item col-12 mx-0 ${activated}"><a href="${path}">${displayName}</a></li>`);
+        return $(`<li class="nav-item col-12 mx-0 ${activated} nav-item-custom"><a href="${path}">${displayName}</a></li>`);
     },
+
 };
 
 
