@@ -3076,7 +3076,7 @@ select option[value="jp"]::before {
   gap: 48px;
 }
 
-
+/*찐찐 테스트*/
 /* 서브메뉴의 스타일 */
 .sub-menu-custom {
   width: 500px; /* 원하는 넓이로 설정 */
