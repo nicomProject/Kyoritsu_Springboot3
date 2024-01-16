@@ -212,7 +212,7 @@ th {
 }
 
 #announcement.breadcrumbs{
-	background-image: url('/static/images/main/announcement_image.PNG');
+	background-image: url('/static/images/main/announcement_image.jpg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
