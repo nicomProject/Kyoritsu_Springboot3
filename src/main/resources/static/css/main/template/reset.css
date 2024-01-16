@@ -240,10 +240,10 @@ th {
 
 /*Subheader*/
 .breadcrumbs .breadcrumbs-content{
-    position: relative;
+	position: relative;
 }
 .breadcrumbs .breadcrumbs-content.right{
-   margin-top:50px;
+	margin-top:50px;
 }
 .breadcrumbs .breadcrumbs-content p{
 	color:#fff;
@@ -281,26 +281,26 @@ th {
 }
 .breadcrumbs .breadcrumbs-content .breadcrumb-nav li,
 .breadcrumbs .breadcrumbs-content .breadcrumb-nav li a{
-    color: #fff;
-    font-size: 14px;
+	color: #fff;
+	font-size: 14px;
 	font-weight:500;
 }
 .breadcrumbs .breadcrumbs-content .breadcrumb-nav li a{
-    padding-right: 15px;
-    margin-right: 15px;
-    position: relative;
+	padding-right: 15px;
+	margin-right: 15px;
+	position: relative;
 }
 .breadcrumbs .breadcrumbs-content .breadcrumb-nav li a:hover{
-    color: #0C59DB;
+	color: #0C59DB;
 }
 .breadcrumbs .breadcrumbs-content .breadcrumb-nav li a:after{
-    content: '';
-    height: 80%;
-    width: 2px;
-    background-color: #fff;
-    position: absolute;
-    top: 2px;
-    right: 0;
+	content: '';
+	height: 80%;
+	width: 2px;
+	background-color: #fff;
+	position: absolute;
+	top: 2px;
+	right: 0;
 }
 /* Pagination CSS */
 .pagination {
@@ -355,7 +355,7 @@ select,
 optgroup,
 textarea {
 	color: #333;
-    font-family: 'Poppins', sans-serif;
+	font-family: 'Poppins', sans-serif;
 	font-weight:400;
 	font-size: 14px;
 	line-height: 24px;
@@ -455,6 +455,25 @@ big {
 	min-height: 789.41px;
 }
 
+.Features.section,
+.About.section
+{
+	padding-top: 5%;
+	padding-bottom: 5%;
+	position: relative;
+	min-height: 300px;
+}
+
+.Images.section,
+.Gallery.section
+{
+	background-color: rgb(0 0 0 / 6%);
+	padding-top: 5%;
+	padding-bottom: 5%;
+	position: relative;
+	min-height: 300px;
+}
+
 /* Section Title */
 .section-title {
 	text-align: center;
@@ -483,13 +502,13 @@ big {
 }
 .section-title h2:before{
 	position: absolute;
-    left:50%;
-    margin-left: -25px;
-    bottom: -1px;
-    height: 2px;
-    width: 50px;
-    background: #005bab;
-    content: "";
+	left:50%;
+	margin-left: -25px;
+	bottom: -1px;
+	height: 2px;
+	width: 50px;
+	background: #005bab;
+	content: "";
 }
 .section-title p {
 	font-size: 14px;
@@ -532,47 +551,47 @@ big {
 	box-shadow: 0px 20px 60px #00000024;
 }
 .mouse-dir{
-    overflow: hidden;
-    position: relative;
-    -webkit-transition: 0.6s;
-    -o-transition: 0.6s;
-    transition: 0.6s;
-    z-index: 1;
+	overflow: hidden;
+	position: relative;
+	-webkit-transition: 0.6s;
+	-o-transition: 0.6s;
+	transition: 0.6s;
+	z-index: 1;
 }
 .mouse-dir .dir-part{
-    position: absolute;
-    display: block;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: #005bab;
-    -webkit-transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
-    -o-transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
-    transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-    z-index: -1;
+	position: absolute;
+	display: block;
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	background: #005bab;
+	-webkit-transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+	-o-transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+	transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	z-index: -1;
 }
 .mouse-dir:hover .dir-part{
-    width: 260%;
-    height: 562.5px;
+	width: 260%;
+	height: 562.5px;
 
 }
 .button .btn{
-    display: inline-block;
-    text-transform: capitalize;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 15px 30px;
-    background-color: #ffffff;
-    color: #005bab;
-    -webkit-box-shadow: 0 0 30px 0 rgba(0,0,0,0.05);
-            box-shadow: 0 0 30px 0 rgba(0,0,0,0.05);
-    border: none;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s;
+	display: inline-block;
+	text-transform: capitalize;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 15px 30px;
+	background-color: #ffffff;
+	color: #005bab;
+	-webkit-box-shadow: 0 0 30px 0 rgba(0,0,0,0.05);
+	box-shadow: 0 0 30px 0 rgba(0,0,0,0.05);
+	border: none;
+	-webkit-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
 	border-radius:0;
 }
 
@@ -594,17 +613,17 @@ big {
 
 .button .btn:hover,
 .button .btn:hover {
-    color: #ffffff;
+	color: #ffffff;
 }
 .button .btn {
-    background-color: #005bab;
-    color: #ffffff;
+	background-color: #005bab;
+	color: #ffffff;
 }
 .button .btn:hover {
-    color: #005bab;
+	color: #005bab;
 }
 .button .btn .dir-part {
-    background-color: #ffffff;
+	background-color: #ffffff;
 }
 .button .btn.white-bg{
 	border:2px solid transparent;
@@ -1041,32 +1060,32 @@ object {
 
 /* Video Animations */
 @keyframes play-btn-1 {
-  0% {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-    opacity: 1; }
-  100% {
-    -webkit-transform: scale(1.5);
-    -moz-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    -o-transform: scale(1.5);
-    transform: scale(1.5);
-    opacity: 0; } }
+	0% {
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+		opacity: 1; }
+	100% {
+		-webkit-transform: scale(1.5);
+		-moz-transform: scale(1.5);
+		-ms-transform: scale(1.5);
+		-o-transform: scale(1.5);
+		transform: scale(1.5);
+		opacity: 0; } }
 @keyframes play-btn-2 {
-  0% {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-    opacity: 1; }
-  100% {
-    -webkit-transform: scale(2);
-    -moz-transform: scale(2);
-    -ms-transform: scale(2);
-    -o-transform: scale(2);
-    transform: scale(2);
-    opacity: 0; } }
+	0% {
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+		opacity: 1; }
+	100% {
+		-webkit-transform: scale(2);
+		-moz-transform: scale(2);
+		-ms-transform: scale(2);
+		-o-transform: scale(2);
+		transform: scale(2);
+		opacity: 0; } }
