@@ -1084,15 +1084,27 @@ p {
   padding: 13px 30px;
 }
 
+@media screen and (max-width: 1920px) {
+  .header .button .btn {
+    padding: calc(13px * 1920 / 2560) calc(30px * 1920 / 2560) !important;
+  }
+}
+
+/* 1366x768 해상도에서의 padding 설정 (비율 계산) */
+@media screen and (max-width: 1366px) {
+  .header .button .btn {
+    padding: calc(13px * 1366 / 2560) calc(30px * 1366 / 2560) !important;
+  }
+}
+
 .header .language-button {
   /*margin-left: 40px;*/
-  width: 10%;
 }
 
 .header .language-button select {
   margin-left: auto;
   margin-right: auto;
-  width: 85%; /* 버튼의 가로 길이를 설정합니다. */
+  width: 100%; /* 버튼의 가로 길이를 설정합니다. */
   padding: 5px 10px; /* 상하좌우 패딩을 설정합니다. */
   background-color: #ffffff; /* 파란색 배경을 설정합니다. */
   color: #0065d1; /* 글씨 색을 흰색으로 설정합니다. */
@@ -1102,6 +1114,21 @@ p {
   font-weight: 600;
   cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경합니다. */
   text-align: center;
+}
+
+@media screen and (max-width: 1920px) {
+  .header .language-button select {
+    padding: calc(5px * 1920 / 2560) calc(10px * 1920 / 2560);
+    font-size: calc(13px * 1920 / 2560);
+  }
+}
+
+/* 1366x768 해상도에서의 padding 설정 (비율 계산) */
+@media screen and (max-width: 1366px) {
+  .header .language-button select {
+    padding: calc(5px * 1366 / 2560) calc(10px * 1366 / 2560);
+    font-size: calc(13px * 1366 / 2560);
+  }
 }
 
 .header .language-button select option {
@@ -1154,6 +1181,20 @@ select option[value="jp"]::before {
   padding: 0;
 }
 
+
+/*@media screen and (max-width: 1920px) {*/
+/*  .navbar-area {*/
+/*    width: calc(100% * 1920 / 2560);*/
+/*  }*/
+/*}*/
+
+/*!* 1366x768 해상도에서의 padding 설정 (비율 계산) *!*/
+/*@media screen and (max-width: 1366px) {*/
+/*  .navbar-area {*/
+/*    width: calc(100% * 1366 / 2560);*/
+/*  }*/
+/*}*/
+
 .navbar-area.header-3 {
   background: #fff;
 }
@@ -1179,6 +1220,9 @@ select option[value="jp"]::before {
 
 .navbar {
   padding: 0;
+
+
+
   position: relative;
   transition: all 0.3s ease-out 0s;
 }
@@ -1492,25 +1536,11 @@ select option[value="jp"]::before {
 }
 
 .hero-slider .single-slider {
-  height: 600px;
+  height: 100%;
   background-size: cover;
   background-position: center;
   position: relative;
   background: rgb(0 0 0 / 26%);
-}
-
-/* 1920x1080 해상도에서의 폰트 크기 설정 (비율 계산) */
-@media screen and (max-width: 1920px) {
-  .hero-slider .single-slider {
-    height: calc(600px * 1920 / 2560);
-  }
-}
-
-/* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
-@media screen and (max-width: 1366px) {
-  .hero-slider .single-slider {
-    height: calc(600px * 1366 / 2560);
-  }
 }
 
 .hero-slider .single-slider::before {
@@ -1531,20 +1561,23 @@ select option[value="jp"]::before {
 
 .hero-slider .hero-text {
   float: none;
-  margin-top: 150px;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
 /* 1920x1080 해상도에서의 폰트 크기 설정 (비율 계산) */
 @media screen and (max-width: 1920px) {
   .hero-slider .hero-text {
-    margin-top: calc(150px * 1920 / 2560);
+    margin-top: calc(10% * 1920 / 2560);
+    margin-bottom: calc(10% * 1920 / 2560);
   }
 }
 
 /* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
 @media screen and (max-width: 1366px) {
   .hero-slider .hero-text {
-    margin-top: calc(150px * 1366 / 2560);
+    margin-top: calc(10% * 1366 / 2560);
+    margin-bottom: calc(10% * 1366 / 2560);
   }
 }
 
@@ -1569,44 +1602,47 @@ select option[value="jp"]::before {
   margin-bottom: 15px;
 }
 
-.hero-slider .hero-text  .content-title {
-  font-size: 40px;
-  line-height: 1.2;
-  color: #ffffff;
-  font-weight: 300;
-}
-
-/* 1920x1080 해상도에서의 폰트 크기 설정 */
 @media screen and (max-width: 1920px) {
-  .hero-slider .hero-text .content-title {
-    font-size: calc(40px * 1920 / 2560);
+  .hero-slider .hero-text .small-title {
+    padding: calc(5px * 1920 / 2560) calc(18px * 1920 / 2560);
+    font-size: calc(15px * 1920 / 2560);
+    margin-bottom: calc(15px * 1920 / 2560);
   }
 }
 
-/* 1366x768 해상도에서의 폰트 크기 설정 */
+/* 1366x768 해상도에서의 padding 설정 (비율 계산) */
 @media screen and (max-width: 1366px) {
+  .hero-slider .hero-text .small-title {
+    padding: calc(5px * 1366 / 2560) calc(18px * 1366 / 2560);
+    font-size: calc(15px * 1366 / 2560);
+    margin-bottom: calc(15px * 1366 / 2560);
+  }
+}
+
+.hero-slider .hero-text .content-title {
+  font-size: 34px;
+  line-height: 1.2;
+  color: #ffffff;
+  font-weight: bold
+}
+
+/* 1366x768 해상도에서의 폰트 크기 설정 */
+@media screen and (max-width: 1280px) {
   .hero-slider .hero-text .content-title {
-    font-size: calc(40px * 1366 / 2560);
+    font-size: calc(32px * 1280 / 1920);
   }
 }
 
 .hero-slider .hero-text .content-detail {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   color: #ffffff;
 }
 
-/* 1920x1080 해상도에서의 폰트 크기 설정 */
-@media screen and (max-width: 1920px) {
-  .hero-slider .hero-text .content-detail {
-    font-size: calc(16px * 1920 / 2560);
-  }
-}
-
 /* 1366x768 해상도에서의 폰트 크기 설정 */
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1280px) {
   .hero-slider .hero-text .content-detail {
-    font-size: calc(16px * 1366 / 2560);
+    font-size: calc(18px * 1280 / 2560);
   }
 }
 
@@ -1703,12 +1739,24 @@ select option[value="jp"]::before {
 }
 
 .hero-slider .swiper-wrapper {
-  display: flex;  /* 수평으로 배치되도록 설정 */
+  display: flex;
 }
 
 .hero-slider .swiper-container {
-  display: flex;  /* 수평으로 배치되도록 설정 */
-  flex-direction: row;  /* 수평으로 배치되도록 설정 */
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.swiper-pagination-bullet {
+  background: white;
+}
+
+.swiper-pagination-bullet-active {
+  background: white;
+  transform: scaleX(2.5);
+  border-radius: 10px/30px;
+  margin : 0 var(--swiper-pagination-bullet-horizontal-gap,6px) !important;
 }
 
 
@@ -2905,6 +2953,19 @@ margin-bottom: 25px;
 .nav-item.col-12.col-md-3.mx-2 .nav-link {
   font-size: 18px;
   font-weight: bold;
+}
+
+@media screen and (max-width: 1920px) {
+  .nav-item.col-12.col-md-3.mx-2 .nav-link {
+    font-size: calc(18px * 1920 / 2560);
+  }
+}
+
+/* 1366x768 해상도에서의 padding 설정 (비율 계산) */
+@media screen and (max-width: 1366px) {
+  .nav-item.col-12.col-md-3.mx-2 .nav-link {
+    font-size: calc(18px * 1920 / 2560);
+  }
 }
 
 .nav-item col-12 col-md-3 mx-2 {

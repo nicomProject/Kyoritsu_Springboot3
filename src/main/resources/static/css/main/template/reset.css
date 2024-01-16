@@ -557,6 +557,7 @@ big {
 .mouse-dir:hover .dir-part{
     width: 260%;
     height: 562.5px;
+
 }
 .button .btn{
     display: inline-block;
