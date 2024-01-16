@@ -13,10 +13,9 @@
                         </div>
                         <div id="footer_left_content">
                             <a>KYORITSU MAINTENANCE CO.LTD</a><br>
-                            <a th:if="${language} == 'kr'">서울시 강남구 봉은사로 129<br></a>
-                            <a th:if="${language} == 'eng'">129 Bongeunsa-ro, Gangnam-gu, Seoul, Korea<br></a>
-                            <a th:if="${language} == 'jp'">ソウル市江南区奉恩寺路129</a><br>
-                            <a>TEL 02-548-5489</a>
+                            <a th:if="${language} == 'kr'">서울시 강남구 봉은사로 129 <br> TEL 02-548-5489</a>
+                            <a th:if="${language} == 'eng'">129 Bongeunsa-ro, Gangnam-gu, Seoul, Korea <br> TEL 02-548-5489</a>
+                            <a th:if="${language} == 'jp'">ソウル市江南区奉恩寺路129 <br> TEL 02-548-5489</a>
                         </div>
                     </div>
                     <!-- End Single Widget -->
@@ -28,8 +27,20 @@
                     <!-- End Single Widget -->
                 </div>
             </div>
+            <div class="copyright">Copyright © kyoritsugroup.co.jp All rights reserved.</div>
         </div>
     </div>
+    <div>
+        <div class="main-logo">
+            <img src="/static/images/favicon/logo.png" alt="Logo">
+        </div>
+    </div>
+
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="fa fa-chevron-up"></i><span>TOP</span>
+    </a>
+
     <script type="text/javascript" src="/static/js/main/components/footer.js"></script>
     <!--/ End Footer Middle -->
 </footer>

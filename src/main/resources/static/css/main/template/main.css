@@ -155,15 +155,14 @@ p {
 }
 
 .scroll-top {
-  width: 45px;
-  height: 45px;
-  background: #005bab;
+  width: 65px;
+  height: 65px;
+  background: #ffffff;
   display: flex !important;
   justify-content: center;
-  align-items: center;
   font-size: 14px;
-  color: #fff !important;
-  border-radius: 0;
+  color: #005bab !important;
+  border-radius: 40px;
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -172,11 +171,22 @@ p {
   transition: all 0.3s ease-out 0s;
   text-align: center;
   line-height: 45px;
+  border: 3px solid #005bab;
+  flex-direction: column;
 }
 
 .scroll-top:hover {
-  color: #fff;
-  background: #333;
+  opacity: 75%;
+}
+
+.scroll-top i{
+  font-size: 1.2rem;
+}
+
+.scroll-top span{
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
 }
 
 @keyframes animation1 {
@@ -2549,12 +2559,8 @@ span.circle {
   padding-bottom: 50px;
 }
 
-.footer .logo {
-  margin-bottom: 25px;
-}
-
 .footer .logo img {
-  width: 100px;
+  width: 100%;
 }
 
 .footer .f-about {
@@ -2642,10 +2648,13 @@ span.circle {
 }
 
 .footer .footer-middle {
-  padding-bottom: 15px;
+  padding-bottom: 55px;
   padding-top: 15px;
-  background-color: #000;
-  opacity: 0.6;
+  background-color: #005BAB;
+  background-image: url(/static/images/main/bg_footer.svg);
+  background-position: 50% 100.2%;
+  background-repeat: no-repeat;
+  background-size: 1130px;
 }
 
 .footer .footer_menu {
@@ -2656,12 +2665,12 @@ span.circle {
 .footer .footer_menu li:first-child {
   font-size: clamp(10px, 2vw, 1.8vh);
   min-width: 25%;
-  text-align: center;
 }
 
 .footer .footer_menu li:first-child a{
   font-size: clamp(16px, 2vw, 1.8vh);
-
+  margin-bottom: 10px;
+  font-weight: 500;
 }
 
 .footer .footer_menu li:not(:first-child) {
@@ -2671,9 +2680,7 @@ span.circle {
 
 .footer #footer_left {
   display: flex;
-  justify-content: right;
-  align-items: center;
-  border-right: 1px solid white;
+  align-items: flex-start;
   padding-right: 5%;
 }
 
@@ -2682,30 +2689,44 @@ span.circle {
   font-size: clamp(16px, 2vw, 1.6vh);
 }
 
-.footer #footer_left #footer_left_content a{
-  margin-bottom: 10px;
+.footer #footer_left #footer_left_content a:first-child{
+  font-weight: 600;
 }
 
+.footer #footer_left #footer_left_content a:not(:first-child){
+  font-size: 0.8rem;
+  line-height: 1.3rem;
+}
+
+
 .footer #footer_right {
-  padding-left: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer .copyright{
+  text-align: center;
+  color: #ffffff;
 }
 
 .footer .single-footer {
-margin-top: 30px;
+  margin: 30px 0;
+  color: #ffffff;
 }
 
 .footer .single-footer h3 {
-color: #333;
-font-size: 20px;
-font-weight: 600;
-position: relative;
-text-transform: capitalize;
-margin-bottom: 25px;
+  color: #333;
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+  text-transform: capitalize;
+  margin-bottom: 25px;
 }
 
 /* Footer Link */
 .footer .f-link ul li {
-  margin-bottom: 13px;
+  margin-bottom: 2px;
   position: relative;
 }
 
@@ -2732,7 +2753,9 @@ margin-bottom: 25px;
 }
 
 /* Footer Contact */
-.footer .f-contact {}
+.footer .f-contact {
+  display: flex;
+}
 
 .footer .f-contact p {
   color: #555;
@@ -2742,6 +2765,12 @@ margin-bottom: 25px;
 
 .footer .f-contact ul {
   display: flex;
+  align-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow: hidden;
+  padding-left: 2rem;
+  width: 7rem;
 }
 
 .footer .f-contact ul li {
@@ -2752,16 +2781,16 @@ margin-bottom: 25px;
 }
 
 .footer .f-contact ul li a {
-  margin-right: 10px;
   display: inline-block;
-  color: #555;
-  font-weight: 500;
-  font-weight: 400;
-  font-size: clamp(12px, 2vw, 1.6vh);
+  color: #ffffff;
+  font-weight: 300;
+  font-size: clamp(12px, 2vw, 1.4vh);
 }
 
 .footer .f-contact ul li a:hover {
   padding: 0;
+  color: #ffffff;
+  opacity: 70%;
 }
 
 .footer .f-contact ul li a i {}
@@ -2883,6 +2912,46 @@ margin-bottom: 25px;
 .footer .footer-bottom .right {
   text-align: right;
 }
+
+
+.footer .main-logo img{
+  width: 150px !important;
+}
+
+.footer .main-logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px !important;
+}
+
+@media (min-width: 1920px) {
+  .footer .footer-item {
+    font-size: 1rem;
+    padding: 0.3rem 0.4rem;
+    margin: 4px 2px;
+  }
+
+  .footer .footer-item:hover > .footer-item-desc {
+    right: 55px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .footer .footer-item {
+    font-size: 1rem;
+    padding: 0.3rem 0.4rem;
+    margin: 4px 2px;
+  }
+
+  .footer .footer-item:hover > .footer-item-desc {
+    right: 55px;
+    font-size: 0.8rem;
+  }
+}
+
+
 
 /*======================================
 	End Footer	CSS

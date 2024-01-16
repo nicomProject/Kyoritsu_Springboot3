@@ -369,6 +369,12 @@ section .sub-title{
 
 }
 
+.apply-inquire.apply-section .tabulator .tabulator-tableholder .tabulator-placeholder .tabulator-placeholder-contents{
+    font-weight: 500;
+    font-size: 1rem;
+    color: #333333;
+}
+
 .content-container .content-title{
     width: 100%;
     border: 1px solid #ccc;
@@ -2080,6 +2086,9 @@ section .sub-title{
 }
 
 /* notice/notice */
+.notice.section{
+    padding-top: 0 !important
+}
 .notice.section .tabulator{
     border: none !important;
     border-right: 0px;
@@ -2096,6 +2105,12 @@ section .sub-title{
 
 .notice-container .notice-title .list-btn{
     padding-left: 10px;
+}
+
+.notice.section .tabulator .tabulator-tableholder .tabulator-placeholder .tabulator-placeholder-contents{
+    font-weight: 500;
+    font-size: 1rem;
+    color: #333333;
 }
 
 /* notice/notice/detail */
@@ -2599,6 +2614,7 @@ section .sub-title{
 
 .breadcrumbs-content.title {
     text-align: center;
+    padding-top: 33px;
 }
 
 .breadcrumbs-content.title {
@@ -2607,6 +2623,10 @@ section .sub-title{
 
 .breadcrumbs .blank{
     margin-bottom: 110px;
+}
+
+.breadcrumbs .breadcrumbs-content .breadcrumb-nav{
+    padding-bottom: 0px !important;
 }
 
 
