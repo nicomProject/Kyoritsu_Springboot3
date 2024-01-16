@@ -1094,36 +1094,37 @@ p {
   padding: 13px 30px;
 }
 
-.header .language-button {
-  /*margin-left: 40px;*/
+/*.header .language-button {
+  !*margin-left: 40px;*!
   width: 10%;
-}
+}*/
 
-.header .language-button select {
+/*.header .language-button select {
   margin-left: auto;
   margin-right: auto;
-  width: 85%; /* 버튼의 가로 길이를 설정합니다. */
-  padding: 5px 10px; /* 상하좌우 패딩을 설정합니다. */
-  background-color: #ffffff; /* 파란색 배경을 설정합니다. */
-  color: #0065d1; /* 글씨 색을 흰색으로 설정합니다. */
+  width: 85%; !* 버튼의 가로 길이를 설정합니다. *!
+  padding: 5px 10px; !* 상하좌우 패딩을 설정합니다. *!
+  background-color: #ffffff; !* 파란색 배경을 설정합니다. *!
+  color: #0065d1; !* 글씨 색을 흰색으로 설정합니다. *!
   border: 1px solid #929292;
-  border-radius: 20px; /* 모서리를 둥글게 설정합니다. */
-  font-size: 13px; /* 글씨 크기를 설정합니다. */
+  border-radius: 20px; !* 모서리를 둥글게 설정합니다. *!
+  font-size: 13px; !* 글씨 크기를 설정합니다. *!
   font-weight: 600;
-  cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경합니다. */
+  cursor: pointer;
   text-align: center;
-}
+}*/
 
-.header .language-button select option {
-  font-size: 13px; /* 글씨 크기를 설정합니다. */
-  color: #000000; /* 글씨 색을 흰색으로 설정합니다. */
+/*.header .language-button select option {
+  font-size: 13px;
+  color: #000000;
   font-weight: 400;
-  cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경합니다. */
+  cursor: pointer;
 }
 
 .header .language-button select:hover {
-  background-color: #ffffff; /* 마우스를 올렸을 때 배경색을 어둡게 변경합니다. */
-}
+  background-color: #ffffff; !* 마우스를 올렸을 때 배경색을 어둡게 변경합니다. *!
+}*/
+
 
 .popup_msg {
   margin: 59px auto 0;
@@ -1206,7 +1207,7 @@ select option[value="jp"]::before {
 }
 
 .navbar-toggler {
-  margin-left: auto;
+  /*margin-left: auto;*/
   padding: 0px;
 }
 
@@ -1288,7 +1289,8 @@ select option[value="jp"]::before {
   color: #051441;
   transition: all 0.3s ease-out 0s;
   position: relative;
-  padding: 32px 15px;
+ /* padding: 32px 15px;*/
+  padding: 24px 25px;
   display: inline-flex;
   align-items: center;
   font-size: 14px;
@@ -1383,6 +1385,7 @@ select option[value="jp"]::before {
 
 .navbar-nav .nav-item .sub-menu {
   /*min-width: 220px;*/
+  width: 300% !important;
   background-color: #fff;
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
   position: absolute;
@@ -1392,7 +1395,6 @@ select option[value="jp"]::before {
   visibility: hidden;
   transition: all 0.3s ease-out 0s;
   padding: 10px;
-  width: 100%;
 }
 
 .navbar-nav .nav-item .sub-menu.left-menu {
@@ -2972,7 +2974,7 @@ span.circle {
 }
 
 .nav-item.col-12.col-md-3.mx-2 .nav-link {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -2980,4 +2982,29 @@ span.circle {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+}
+
+/*희진 수정 부분 */
+.nav-item-custom {
+  text-align: center;
+  color: #212121;
+}
+
+/* 네비게이션 바 내부 요소 간의 간격 설정 */
+.navbar-nav .nav-item {
+  margin: 0 10px; /* 좌우로 10px 마진 추가 */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+}
+
+
+/* 서브메뉴의 스타일 */
+.sub-menu-custom {
+  width: 500px; /* 원하는 넓이로 설정 */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* 원하는 다른 스타일 속성 추가 가능 */
 }
