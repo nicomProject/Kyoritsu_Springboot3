@@ -17,7 +17,7 @@ public enum AdminMenuType {
     JOBS("jobs", "채용 공고 관리"),
     APPLICANTS("applicants", "지원자 조회"),
     INQUIRES("inquires", "채용 문의"),
-    ACCOUNTS("accounts", "관리자 계정 조회"),
+    ACCOUNTS("accounts", "관리자 계정 관리"),
     ACCESS("access", "접속 기록");
 
     @JsonValue // code를 Json 직렬화 값으로 사용하도록 함

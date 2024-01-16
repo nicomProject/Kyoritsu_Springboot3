@@ -43,11 +43,12 @@ public class LoginFailureHandler implements AuthenticationFailureHandler {
 
         // 로그 출력
         log.info("[Login Failed] - user: {}, message: {}", userName, exception.getMessage());
+        log.info(exception.toString());
 
         // response 작성
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
-        response.getWriter().write(ResponseDataValue.builder(480).build().toString());
+        response.getWriter().write(ResponseDataValue.builder(480).desc(exception.getMessage()).build().toString());
     }
 
 }
