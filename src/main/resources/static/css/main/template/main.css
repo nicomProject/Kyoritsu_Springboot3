@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  font-family: "Sen", sans-serif;
+  font-family: "Noto Sans KR", serif !important;
   font-weight: normal;
   font-style: normal;
   color: #5E678C;
@@ -1090,7 +1090,8 @@ p {
 }
 
 .header .language-button select {
-  margin-left: 40px;
+  margin-left: auto;
+  margin-right: auto;
   width: 85%; /* 버튼의 가로 길이를 설정합니다. */
   padding: 5px 10px; /* 상하좌우 패딩을 설정합니다. */
   background-color: #ffffff; /* 파란색 배경을 설정합니다. */
@@ -1191,7 +1192,7 @@ select option[value="jp"]::before {
 }
 
 .navbar-brand img {
-  width: 160px;
+  width: 65%;
 }
 
 .navbar-toggler {
@@ -1495,8 +1496,21 @@ select option[value="jp"]::before {
   background-size: cover;
   background-position: center;
   position: relative;
-
   background: rgb(0 0 0 / 26%);
+}
+
+/* 1920x1080 해상도에서의 폰트 크기 설정 (비율 계산) */
+@media screen and (max-width: 1920px) {
+  .hero-slider .single-slider {
+    height: calc(600px * 1920 / 2560);
+  }
+}
+
+/* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
+@media screen and (max-width: 1366px) {
+  .hero-slider .single-slider {
+    height: calc(600px * 1366 / 2560);
+  }
 }
 
 .hero-slider .single-slider::before {
@@ -1520,13 +1534,18 @@ select option[value="jp"]::before {
   margin-top: 150px;
 }
 
-.hero-slider .hero-text .small-title {
-  color: #fff;
-  background: #005bab;
-  font-size: 15px;
-  padding: 5px 18px;
-  display: inline-block;
-  margin-bottom: 15px;
+/* 1920x1080 해상도에서의 폰트 크기 설정 (비율 계산) */
+@media screen and (max-width: 1920px) {
+  .hero-slider .hero-text {
+    margin-top: calc(150px * 1920 / 2560);
+  }
+}
+
+/* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
+@media screen and (max-width: 1366px) {
+  .hero-slider .hero-text {
+    margin-top: calc(150px * 1366 / 2560);
+  }
 }
 
 .hero-slider .hero-text h1 {
@@ -1541,13 +1560,72 @@ select option[value="jp"]::before {
   font-weight: 300;
 }
 
-.hero-slider .hero-text p {
+.hero-slider .hero-text .small-title {
+  color: #fff;
+  background: #005bab;
+  font-size: 15px;
+  padding: 5px 18px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.hero-slider .hero-text  .content-title {
+  font-size: 40px;
+  line-height: 1.2;
   color: #ffffff;
-  font-size: 14px;
+  font-weight: 300;
+}
+
+/* 1920x1080 해상도에서의 폰트 크기 설정 */
+@media screen and (max-width: 1920px) {
+  .hero-slider .hero-text .content-title {
+    font-size: calc(40px * 1920 / 2560);
+  }
+}
+
+/* 1366x768 해상도에서의 폰트 크기 설정 */
+@media screen and (max-width: 1366px) {
+  .hero-slider .hero-text .content-title {
+    font-size: calc(40px * 1366 / 2560);
+  }
+}
+
+.hero-slider .hero-text .content-detail {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+/* 1920x1080 해상도에서의 폰트 크기 설정 */
+@media screen and (max-width: 1920px) {
+  .hero-slider .hero-text .content-detail {
+    font-size: calc(16px * 1920 / 2560);
+  }
+}
+
+/* 1366x768 해상도에서의 폰트 크기 설정 */
+@media screen and (max-width: 1366px) {
+  .hero-slider .hero-text .content-detail {
+    font-size: calc(16px * 1366 / 2560);
+  }
 }
 
 .hero-slider .hero-text .button {
   margin-top: 35px;
+}
+
+/* 1920x1080 해상도에서의 폰트 크기 설정 */
+@media screen and (max-width: 1920px) {
+  .hero-slider .hero-text .button {
+    margin-top: calc(35px * 1920 / 2560);
+  }
+}
+
+/* 1366x768 해상도에서의 폰트 크기 설정 */
+@media screen and (max-width: 1366px) {
+  .hero-slider .hero-text .button {
+    margin-top: calc(35px * 1366 / 2560);
+  }
 }
 
 .hero-slider .hero-text .button .btn {

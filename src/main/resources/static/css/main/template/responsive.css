@@ -110,11 +110,6 @@
 		margin-top: 100px;
 	}
 
-	.hero-slider .hero-text h1 {
-		font-size: 30px;
-		line-height: 38px;
-	}
-
 	.hero-slider .hero-image {
 		margin-top: 110px;
 	}
@@ -557,9 +552,6 @@
 		margin-top: 25px;
 	}
 
-	.hero-slider .hero-text p {
-		line-height: 22px;
-	}
 
 	.hero-slider .home-slider {
 		position: relative;

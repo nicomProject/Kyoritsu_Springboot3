@@ -574,6 +574,23 @@ big {
     transition: 0.5s;
 	border-radius:0;
 }
+
+@media screen and (max-width: 1920px) {
+	.button .btn {
+		padding: calc(15px * 1920 / 2560) calc(30px * 1920 / 2560);
+		font-size: calc(14px * 1920 / 2560);
+	}
+}
+
+/* 1366x768 해상도에서의 padding 설정 (비율 계산) */
+@media screen and (max-width: 1366px) {
+	.button .btn {
+		padding: calc(15px * 1366 / 2560) calc(30px * 1366 / 2560);
+		font-size: calc(14px * 1920 / 2560);
+	}
+}
+
+
 .button .btn:hover,
 .button .btn:hover {
     color: #ffffff;

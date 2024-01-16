@@ -56,6 +56,11 @@ section .sub-title{
     padding: 24px;
 }
 
+.apply.apply-section .container .apply-content .content .content-all p{
+    line-height: 1.2;
+}
+
+
 .apply .container .content{
     box-shadow:
             1px 0 0 0 #888,
