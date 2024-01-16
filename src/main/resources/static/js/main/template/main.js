@@ -5,6 +5,7 @@
 		// Swiper가 모든 main.js가 실행되는 페이지에 사용될 필요가 없음. 연쇄 오류를 방지하기 위해 해당 라이브러리가 포함된 곳에서만 동작하도록 수정
 		if(typeof Swiper !== "undefined") {
 			var swiper = new Swiper(".swiper-container", {
+				spaceBetween: 30,
 				slidesPerView: 1, // Set to 1 to show one slide at a time
 				centeredSlides: true,
 				autoplay: {
@@ -13,7 +14,10 @@
 				},
 				loop: false,
 				loopAdditionalSlides: 1,
-				pagination: false,
+				pagination: {
+					el: ".swiper-pagination",
+					clickable: true,
+				},
 				navigation: {
 					nextEl: ".swiper-button-next",
 					prevEl: ".swiper-button-prev",

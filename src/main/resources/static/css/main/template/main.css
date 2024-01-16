@@ -4,7 +4,7 @@ Author: GrayGrids
 */
 
 /*===========================
-    01.COMMON css 
+    01.COMMON css
 ===========================*/
 @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Sen:wght@400;700;800&display=swap");
 
@@ -1117,13 +1117,27 @@ p {
 /*.header .language-button select option {
   font-size: 13px;
   color: #000000;
-  font-weight: 400;
-  cursor: pointer;
+@media screen and (max-width: 1920px) {
+  .header .language-button select {
+    padding: calc(5px * 1920 / 2560) calc(10px * 1920 / 2560);
+    font-size: calc(13px * 1920 / 2560);
+  }
 }
 
+
+
+/*.header .language-button select option {
+  font-size: 13px; !* 글씨 크기를 설정합니다. *!
+  color: #000000; !* 글씨 색을 흰색으로 설정합니다. *!
+  font-weight: 400;
+  cursor: pointer;
+}*/
+
+/*
 .header .language-button select:hover {
   background-color: #ffffff; !* 마우스를 올렸을 때 배경색을 어둡게 변경합니다. *!
-}*/
+}*!
+*/
 
 
 .popup_msg {
@@ -1137,21 +1151,21 @@ p {
 }
 
 select option[value="kr"]::before {
-    content: "\f024"; /* Unicode 코드 포인트로 깃발 아이콘 설정 (Font Awesome에서는 \f024이 한국 깃발 아이콘입니다.) */
-    font-family: 'Font Awesome 5 Free'; /* Font Awesome 사용할 때 필요한 폰트 패밀리 지정 */
-    margin-right: 5px; /* 아이콘과 텍스트 사이 여백 설정 */
+  content: "\f024"; /* Unicode 코드 포인트로 깃발 아이콘 설정 (Font Awesome에서는 \f024이 한국 깃발 아이콘입니다.) */
+  font-family: 'Font Awesome 5 Free'; /* Font Awesome 사용할 때 필요한 폰트 패밀리 지정 */
+  margin-right: 5px; /* 아이콘과 텍스트 사이 여백 설정 */
 }
 
 select option[value="eng"]::before {
-    content: "\f024"; /* 예시로 같은 깃발 아이콘을 사용했지만, 각 나라에 맞는 아이콘 코드로 변경하세요. */
-    font-family: 'Font Awesome 5 Free';
-    margin-right: 5px;
+  content: "\f024"; /* 예시로 같은 깃발 아이콘을 사용했지만, 각 나라에 맞는 아이콘 코드로 변경하세요. */
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 5px;
 }
 
 select option[value="jp"]::before {
-    content: "\f024";
-    font-family: 'Font Awesome 5 Free';
-    margin-right: 5px;
+  content: "\f024";
+  font-family: 'Font Awesome 5 Free';
+  margin-right: 5px;
 }
 
 /*===== NAVBAR =====*/
@@ -1715,12 +1729,24 @@ select option[value="jp"]::before {
 }
 
 .hero-slider .swiper-wrapper {
-  display: flex;  /* 수평으로 배치되도록 설정 */
+  display: flex;
 }
 
 .hero-slider .swiper-container {
-  display: flex;  /* 수평으로 배치되도록 설정 */
-  flex-direction: row;  /* 수평으로 배치되도록 설정 */
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.swiper-pagination-bullet {
+  background: white;
+}
+
+.swiper-pagination-bullet-active {
+  background: white;
+  transform: scaleX(2.5);
+  border-radius: 10px/30px;
+  margin : 0 var(--swiper-pagination-bullet-horizontal-gap,6px) !important;
 }
 
 
@@ -1912,7 +1938,36 @@ select option[value="jp"]::before {
   animation: play-btn-2 1.5s linear infinite;
 }
 
-.Features .container .row .building{
+/*=============================
+	End Features CSS
+===============================*/
+
+/*=============================
+	04. Start Image Buildings CSS
+===============================*/
+
+.Images .container .row .building{
+  display: flex;
+  width: 100%;
+  /*padding: 60px 60px 0 60px;*/
+  box-sizing: border-box;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+.Images .container .row .building li{
+  width: 14%;
+  text-align: center;
+}
+
+.Images .container .row .building li figure{
+  display: block;
+  width: 90%;
+  margin: 0 auto 10px;
+}
+
+.Image .container .row .building{
   width: 100%;
   padding: 60px 60px 0 60px;
   box-sizing: border-box;
@@ -1921,17 +1976,21 @@ select option[value="jp"]::before {
   flex-wrap: wrap;
 }
 
-.Features .container .row .building li{
-  width: 14%;
-  text-align: center;
+.building .category_title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5%;
 }
 
-.Features .container .row .building li figure{
-  display: block;
-  width: 90%;
-  margin: 0 auto 10px;
+.building .category {
+  font-size: 26px;
+  color : #005bab;
+  font-weight: bold;
 }
 
+.building .count {
+  font-size: 18px;
+}
 
 /*=============================
 	End Features CSS
@@ -1941,270 +2000,275 @@ select option[value="jp"]::before {
 /*=============================
 	04. Start Services CSS
 ===============================*/
-.services {
-  background: #F9FAFF;
-  padding-bottom: 85px;
+.About.section img {
+  max-width: 30%;
+  padding-right: 2%;
 }
 
-.services .section-title {
-  margin-bottom: 65px;
-}
+/*.services {*/
+/*  background: #F9FAFF;*/
+/*  padding-bottom: 85px;*/
+/*}*/
 
-.services .single-service {
-  text-align: left;
-  position: relative;
-  padding: 130px 40px 45px 40px;
-  box-shadow: 0px 5px 35px #0000000d;
-  border-radius: 0;
-  background: #fff;
-  z-index: 5;
-  overflow: hidden;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  margin: 15px 0;
-}
+/*.services .section-title {*/
+/*  margin-bottom: 65px;*/
+/*}*/
 
-.services .single-service .serial span {
-  font-size: 30px;
-  position: absolute;
-  left: 40px;
-  top: 40px;
-  height: 65px;
-  width: 65px;
-  line-height: 65px;
-  text-align: center;
- /* background: #74b9ff;*/
-  color: #005bab;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  background: #005bab0f;
-  border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+/*.services .single-service {*/
+/*  text-align: left;*/
+/*  position: relative;*/
+/*  padding: 130px 40px 45px 40px;*/
+/*  box-shadow: 0px 5px 35px #0000000d;*/
+/*  border-radius: 0;*/
+/*  background: #fff;*/
+/*  z-index: 5;*/
+/*  overflow: hidden;*/
+/*  -webkit-transition: all 0.4s ease;*/
+/*  -moz-transition: all 0.4s ease;*/
+/*  transition: all 0.4s ease;*/
+/*  margin: 15px 0;*/
+/*}*/
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/*.services .single-service .serial span {*/
+/*  font-size: 30px;*/
+/*  position: absolute;*/
+/*  left: 40px;*/
+/*  top: 40px;*/
+/*  height: 65px;*/
+/*  width: 65px;*/
+/*  line-height: 65px;*/
+/*  text-align: center;*/
+/* !* background: #74b9ff;*!*/
+/*  color: #005bab;*/
+/*  -webkit-transition: all 0.4s ease;*/
+/*  -moz-transition: all 0.4s ease;*/
+/*  transition: all 0.4s ease;*/
+/*  background: #005bab0f;*/
+/*  border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;*/
 
-.services .single-service:hover {
-  background: #005bab;
-}
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  justify-content: center;*/
+/*}*/
 
-.services .single-service:hover .serial span {
-  border-color: transparent;
-  background: #fff;
-  color: #005bab;
-  border-radius: 50%;
-}
+/*.services .single-service:hover {*/
+/*  background: #005bab;*/
+/*}*/
 
-.services .single-service h3 a {
-  color: #333;
-  font-weight: 600;
-  font-size: 22px;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
+/*.services .single-service:hover .serial span {*/
+/*  border-color: transparent;*/
+/*  background: #fff;*/
+/*  color: #005bab;*/
+/*  border-radius: 50%;*/
+/*}*/
 
-.services .single-service:hover h3 a {
-  color: #fff;
-}
+/*.services .single-service h3 a {*/
+/*  color: #333;*/
+/*  font-weight: 600;*/
+/*  font-size: 22px;*/
+/*  -webkit-transition: all 0.4s ease;*/
+/*  -moz-transition: all 0.4s ease;*/
+/*  transition: all 0.4s ease;*/
+/*}*/
 
-.services .single-service p {
-  margin-top: 20px;
-  line-height: 24px;
-  font-size: 14px;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
+/*.services .single-service:hover h3 a {*/
+/*  color: #fff;*/
+/*}*/
 
-.services .single-service:hover p {
-  color: #fff;
-}
+/*.services .single-service p {*/
+/*  margin-top: 20px;*/
+/*  line-height: 24px;*/
+/*  font-size: 14px;*/
+/*  -webkit-transition: all 0.4s ease;*/
+/*  -moz-transition: all 0.4s ease;*/
+/*  transition: all 0.4s ease;*/
+/*}*/
+
+/*.services .single-service:hover p {*/
+/*  color: #fff;*/
+/*}*/
 
 
-.services .single-service {
-  position: relative;
-  z-index: 2;
-  overflow: hidden;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
+/*.services .single-service {*/
+/*  position: relative;*/
+/*  z-index: 2;*/
+/*  overflow: hidden;*/
+/*  margin-top: 15px;*/
+/*  margin-bottom: 15px;*/
+/*}*/
 
-.services .single-service img {
-  height: 100%;
-  width: 100%;
-  z-index: 2;
-}
+/*.services .single-service img {*/
+/*  height: 100%;*/
+/*  width: 100%;*/
+/*  z-index: 2;*/
+/*}*/
 
-.services .single-service .content {
-  z-index: 2;
-  width: 100%;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  margin-top: 30px;
-}
+/*.services .single-service .content {*/
+/*  z-index: 2;*/
+/*  width: 100%;*/
+/*  -webkit-transition: all 0.4s ease;*/
+/*  -moz-transition: all 0.4s ease;*/
+/*  transition: all 0.4s ease;*/
+/*  margin-top: 30px;*/
+/*}*/
 
-.services .single-service .content h4 {
-  display: block;
-  margin-bottom: 25px;
-  padding-bottom: 15px;
-  color: #181E4E;
-  position: relative;
-}
+/*.services .single-service .content h4 {*/
+/*  display: block;*/
+/*  margin-bottom: 25px;*/
+/*  padding-bottom: 15px;*/
+/*  color: #181E4E;*/
+/*  position: relative;*/
+/*}*/
 
-.services .single-service .content h4:before {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 80px;
-  background: #005bab;
-  z-index: 1;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
+/*.services .single-service .content h4:before {*/
+/*  position: absolute;*/
+/*  content: "";*/
+/*  left: 0;*/
+/*  bottom: 0;*/
+/*  height: 3px;*/
+/*  width: 80px;*/
+/*  background: #005bab;*/
+/*  z-index: 1;*/
+/*  -webkit-transition: all 0.3s ease;*/
+/*  -moz-transition: all 0.3s ease;*/
+/*  transition: all 0.3s ease;*/
+/*}*/
 
-.services .single-service:hover .content h4:before {
-  width: 110px;
-}
+/*.services .single-service:hover .content h4:before {*/
+/*  width: 110px;*/
+/*}*/
 
-.services .single-service .content h4:after {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 100%;
-  background: #e6eefb;
-  z-index: -1;
-}
+/*.services .single-service .content h4:after {*/
+/*  position: absolute;*/
+/*  content: "";*/
+/*  left: 0;*/
+/*  bottom: 0;*/
+/*  height: 3px;*/
+/*  width: 100%;*/
+/*  background: #e6eefb;*/
+/*  z-index: -1;*/
+/*}*/
 
-.services .single-service .content h4 a {
-  color: #fff;
-  font-weight: 600;
-  font-size: 23px;
-  color: #181E4E;
-}
+/*.services .single-service .content h4 a {*/
+/*  color: #fff;*/
+/*  font-weight: 600;*/
+/*  font-size: 23px;*/
+/*  color: #181E4E;*/
+/*}*/
 
-.services .single-service .content p {
-  color: #666;
-  transition: all 0.4s ease;
-}
+/*.services .single-service .content p {*/
+/*  color: #666;*/
+/*  transition: all 0.4s ease;*/
+/*}*/
 
-.services .single-service .content .button {
-  margin-top: 30px;
-}
+/*.services .single-service .content .button {*/
+/*  margin-top: 30px;*/
+/*}*/
 
-.services .single-service .content .button .btn {
-  border: 2px solid #005bab;
-  color: #005bab;
-  background: transparent;
-}
+/*.services .single-service .content .button .btn {*/
+/*  border: 2px solid #005bab;*/
+/*  color: #005bab;*/
+/*  background: transparent;*/
+/*}*/
 
-.services .single-service .content .button .btn:hover {
-  border-color: transparent;
-  color: #fff;
-  background: #005bab;
-}
+/*.services .single-service .content .button .btn:hover {*/
+/*  border-color: transparent;*/
+/*  color: #fff;*/
+/*  background: #005bab;*/
+/*}*/
 
-.circles-wrap {
-  position: absolute;
-  bottom: -65%;
-  right: -50%;
-  z-index: -1;
-}
+/*.circles-wrap {*/
+/*  position: absolute;*/
+/*  bottom: -65%;*/
+/*  right: -50%;*/
+/*  z-index: -1;*/
+/*}*/
 
-span.circle {
-  border-radius: 50%;
-  position: absolute;
-  -webkit-transform: scale(0);
-  -ms-transform: scale(0);
-  transform: scale(0);
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
+/*span.circle {*/
+/*  border-radius: 50%;*/
+/*  position: absolute;*/
+/*  -webkit-transform: scale(0);*/
+/*  -ms-transform: scale(0);*/
+/*  transform: scale(0);*/
+/*  -webkit-transition: all 0.4s ease;*/
+/*  -moz-transition: all 0.4s ease;*/
+/*  transition: all 0.4s ease;*/
+/*}*/
 
-.services .single-service:hover span.circle {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-}
+/*.services .single-service:hover span.circle {*/
+/*  -webkit-transform: scale(1);*/
+/*  -ms-transform: scale(1);*/
+/*  transform: scale(1);*/
+/*}*/
 
-.services .circles {
-  height: 400px;
-  width: 400px;
-  background: 0 0;
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  z-index: 1
-}
+/*.services .circles {*/
+/*  height: 400px;*/
+/*  width: 400px;*/
+/*  background: 0 0;*/
+/*  display: flex;*/
+/*  position: relative;*/
+/*  align-items: center;*/
+/*  justify-content: center;*/
+/*  z-index: 1*/
+/*}*/
 
-.services span.circle.circle-1 {
-  height: 100px;
-  width: 100px;
-  background: #fff;
-  opacity: 0.2;
-  z-index: 5;
-  display: inline-block;
-  z-index: 5;
-}
+/*.services span.circle.circle-1 {*/
+/*  height: 100px;*/
+/*  width: 100px;*/
+/*  background: #fff;*/
+/*  opacity: 0.2;*/
+/*  z-index: 5;*/
+/*  display: inline-block;*/
+/*  z-index: 5;*/
+/*}*/
 
-.services span.circle.circle-2 {
-  height: 200px;
-  width: 200px;
-  background: #fff;
-  opacity: 0.2;
-  z-index: 4;
-}
+/*.services span.circle.circle-2 {*/
+/*  height: 200px;*/
+/*  width: 200px;*/
+/*  background: #fff;*/
+/*  opacity: 0.2;*/
+/*  z-index: 4;*/
+/*}*/
 
-.services span.circle.circle-3 {
-  height: 300px;
-  width: 300px;
-  background: #fff;
-  opacity: 0.2;
-  z-index: 3;
-}
+/*.services span.circle.circle-3 {*/
+/*  height: 300px;*/
+/*  width: 300px;*/
+/*  background: #fff;*/
+/*  opacity: 0.2;*/
+/*  z-index: 3;*/
+/*}*/
 
-.services span.circle.circle-4 {
-  height: 400px;
-  width: 400px;
-  background: #fff;
-  opacity: 0.2;
-  z-index: 2;
-}
+/*.services span.circle.circle-4 {*/
+/*  height: 400px;*/
+/*  width: 400px;*/
+/*  background: #fff;*/
+/*  opacity: 0.2;*/
+/*  z-index: 2;*/
+/*}*/
 
-.services .single-service:hover span.circle,
-.services .single-service.active span.circle {
-  transform: scale(1);
-  -webkit-transition: all .3s;
-  -o-transition: all .3s;
-  transition: all .3s
-}
+/*.services .single-service:hover span.circle,*/
+/*.services .single-service.active span.circle {*/
+/*  transform: scale(1);*/
+/*  -webkit-transition: all .3s;*/
+/*  -o-transition: all .3s;*/
+/*  transition: all .3s*/
+/*}*/
 
-.services .single-service:hover span.circle,
-.single-service.active span.circle {
-  transform: scale(1);
-  -webkit-transition: all .3s;
-  -o-transition: all .3s;
-  transition: all .3s;
-}
+/*.services .single-service:hover span.circle,*/
+/*.single-service.active span.circle {*/
+/*  transform: scale(1);*/
+/*  -webkit-transition: all .3s;*/
+/*  -o-transition: all .3s;*/
+/*  transition: all .3s;*/
+/*}*/
 
-.services .service-area .circles-wrap {
-  position: absolute;
-  bottom: -32%;
-  left: auto;
-  z-index: -1;
-  right: -50%
-}
+/*.services .service-area .circles-wrap {*/
+/*  position: absolute;*/
+/*  bottom: -32%;*/
+/*  left: auto;*/
+/*  z-index: -1;*/
+/*  right: -50%*/
+/*}*/
 
 /*=============================
   End Service CSS
@@ -2976,6 +3040,19 @@ span.circle {
 .nav-item.col-12.col-md-3.mx-2 .nav-link {
   font-size: 16px;
   font-weight: bold;
+}
+
+@media screen and (max-width: 1920px) {
+  .nav-item.col-12.col-md-3.mx-2 .nav-link {
+    font-size: calc(18px * 1920 / 2560);
+  }
+}
+
+/* 1366x768 해상도에서의 padding 설정 (비율 계산) */
+@media screen and (max-width: 1366px) {
+  .nav-item.col-12.col-md-3.mx-2 .nav-link {
+    font-size: calc(18px * 1920 / 2560);
+  }
 }
 
 .nav-item col-12 col-md-3 mx-2 {
