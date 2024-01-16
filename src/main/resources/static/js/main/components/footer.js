@@ -15,11 +15,11 @@ $(function () {
 
             Object.keys(this.menus).forEach(key => {
                 var menuItems;
-                if(languageValue == 'kr') {
+                if(languageValue === 'kr') {
                     menuItems = {recKey: this.menus[key].recKey, name: this.menus[key].name, url: this.menus[key].url}
-                } else if(languageValue == 'eng') {
+                } else if(languageValue === 'eng') {
                     menuItems = {recKey: this.menus[key].recKey, name: this.menus[key].nameEnglish, url: this.menus[key].url}
-                } else if(languageValue == 'jp') {
+                } else if(languageValue === 'jp') {
                     menuItems = {recKey: this.menus[key].recKey, name: this.menus[key].nameJapanese, url: this.menus[key].url}
                 }
                 menu_items.push(menuItems);
@@ -27,11 +27,12 @@ $(function () {
 
             Object.keys(this.subMenus).forEach(key => {
                 var submenuItems;
-                if(languageValue == 'kr') {
+
+                if(languageValue === 'kr') {
                     submenuItems = {recKey: this.subMenus[key].menu.recKey, name: this.subMenus[key].name, url: this.subMenus[key].url}
-                } else if(languageValue == 'eng') {
+                } else if(languageValue === 'eng') {
                     submenuItems = {recKey: this.subMenus[key].menu.recKey, name: this.subMenus[key].nameEnglish, url: this.subMenus[key].url}
-                } else if(languageValue == 'jp') {
+                } else if(languageValue === 'jp') {
                     submenuItems = {recKey: this.subMenus[key].menu.recKey, name: this.subMenus[key].nameJapanese, url: this.subMenus[key].url}
                 }
                 submenu_items.push(submenuItems);
@@ -58,10 +59,10 @@ $(function () {
             menuItems.forEach(menuItem => {
                 const menuList = $('<ul class="footer_menu"></ul>');
                 const menuLink = $(`
-                <li>
-                <a>${menuItem.name}</a>
-                </li>
-        `);
+                    <li>
+                    <a>${menuItem.name}</a>
+                    </li>
+                `);
 
                 menuList.append(menuLink);
                 submenuItems.forEach(submenuItem => {
@@ -77,6 +78,7 @@ $(function () {
 
                 menuGroup.append(menuList);
             });
+
 
             return menuGroup;
         },
