@@ -256,7 +256,7 @@ $(function () {
         },
         event: function () {
 
-            const contactButton = $('.button');
+            const contactButton = $('#contact-button');
             const languageButton = $('#language-button');
 
             contactButton.on('click', function (){

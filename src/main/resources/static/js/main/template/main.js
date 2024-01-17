@@ -5,22 +5,62 @@
 		// Swiper가 모든 main.js가 실행되는 페이지에 사용될 필요가 없음. 연쇄 오류를 방지하기 위해 해당 라이브러리가 포함된 곳에서만 동작하도록 수정
 		if(typeof Swiper !== "undefined") {
 			var swiper = new Swiper(".swiper-container", {
-				spaceBetween: 4000,
+				spaceBetween: 0,
 				slidesPerView: 1, // Set to 1 to show one slide at a time
 				centeredSlides: true,
-				autoplay: {
-					delay: 2500,
-					disableOnInteraction: false,
-				},
+				// autoplay: {
+				// 	delay: 2500,
+				// 	disableOnInteraction: false,
+				// },
 				loop: false,
 				loopAdditionalSlides: 1,
 				pagination: {
 					el: ".swiper-pagination",
 					clickable: true,
 				},
+			});
+		}
+	}
+
+	function about_Swiper() {
+		// Swiper가 모든 main.js가 실행되는 페이지에 사용될 필요가 없음. 연쇄 오류를 방지하기 위해 해당 라이브러리가 포함된 곳에서만 동작하도록 수정
+		if(typeof Swiper !== "undefined") {
+			var swiper = new Swiper(".swiper-container-about", {
+				spaceBetween: 4000,
+				slidesPerView: 1, // Set to 1 to show one slide at a time
+				centeredSlides: true,
+
+				loop: false,
+				loopAdditionalSlides: 1,
+				pagination: {
+					el: ".swiper-pagination-about",
+					clickable: true,
+				},
 				navigation: {
-					nextEl: ".swiper-button-next",
-					prevEl: ".swiper-button-prev",
+					nextEl: ".swiper-button-next-about",
+					prevEl: ".swiper-button-prev-about",
+				},
+			});
+		}
+	}
+
+	function gallery_Swiper() {
+		// Swiper가 모든 main.js가 실행되는 페이지에 사용될 필요가 없음. 연쇄 오류를 방지하기 위해 해당 라이브러리가 포함된 곳에서만 동작하도록 수정
+		if(typeof Swiper !== "undefined") {
+			var swiper = new Swiper(".swiper-container-gallery", {
+				spaceBetween: 4000,
+				slidesPerView: 1, // Set to 1 to show one slide at a time
+				centeredSlides: true,
+
+				loop: false,
+				loopAdditionalSlides: 1,
+				pagination: {
+					el: ".swiper-pagination-gallery",
+					clickable: true,
+				},
+				navigation: {
+					nextEl: ".swiper-button-next-gallery",
+					prevEl: ".swiper-button-prev-gallery",
 				},
 			});
 		}
@@ -28,9 +68,35 @@
 
 	document.addEventListener('DOMContentLoaded', function () {
 		initializeSwiper();
-
-		// ... 기타 초기화 코드 계속 ...
+		about_Swiper();
+		gallery_Swiper();
 	});
+
+	$(".custom-prev-button-about").on('click', function (){
+		$(this).toggleClass('clicked');
+		$(".custom-next-button-about").removeClass('clicked');
+		$(".swiper-button-prev-about").click()
+	})
+
+	$(".custom-next-button-about").on('click', function (){
+		$(this).toggleClass('clicked');
+		$(".custom-prev-button-about").removeClass('clicked');
+		$(".swiper-button-next-about").click()
+	})
+
+	$(".custom-prev-button-gallery").on('click', function (){
+		$(this).toggleClass('clicked');
+		$(".custom-next-button-gallery").removeClass('clicked');
+		$(".swiper-button-prev-gallery").click()
+   })
+
+	$(".custom-next-button-gallery").on('click', function (){
+		$(this).toggleClass('clicked');
+		$(".custom-prev-button-gallery").removeClass('clicked');
+		$(".swiper-button-next-gallery").click()
+	})
+
+
 	"use strict";
 
 	//===== Prealoder
