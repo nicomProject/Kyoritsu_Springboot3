@@ -163,6 +163,7 @@
 .footer .copyright{
     text-align: center;
     color: #ffffff;
+    font-size: 0.8rem;
 }
 
 .footer .single-footer {
@@ -377,10 +378,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px !important;
+    padding: 12px !important;
 }
 
-@media (min-width: 1920px) {
+@media (max-width: 1920px) {
     .footer .footer-item {
         font-size: 1rem;
         padding: 0.3rem 0.4rem;
@@ -393,7 +394,7 @@
     }
 }
 
-@media (min-width: 1280px) {
+@media (max-width: 1280px) {
     .footer .footer-item {
         font-size: 1rem;
         padding: 0.3rem 0.4rem;
@@ -404,6 +405,27 @@
         right: 55px;
         font-size: 0.8rem;
     }
+
+    .footer .f-contact ul{
+        width: 6.5rem;
+    }
+
+    .footer .footer_menu li:first-child a{
+        font-size: 0.9rem;
+    }
+
+    .footer .f-contact ul li a {
+        font-size: 0.7rem;
+    }
+
+    .footer #footer_left #footer_left_content{
+        font-size: 0.9rem;
+    }
+    .footer #footer_left #footer_left_content a:not(:first-child){
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+    }
+
 }
 
 
