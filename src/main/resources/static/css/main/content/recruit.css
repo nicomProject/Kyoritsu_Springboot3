@@ -204,6 +204,11 @@
     justify-content: center;
 }
 
+#recruit-info-section4 .container .contents-wrap .card-box:hover{
+    transition: 0.3s;
+    transform: scaleX(1.02) scaleY(1.02);
+}
+
 .recruit-info-section-A .table .contact-info{
     padding-top: 20px;
 }
