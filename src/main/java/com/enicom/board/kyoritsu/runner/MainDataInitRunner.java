@@ -93,11 +93,11 @@ public class MainDataInitRunner implements ApplicationRunner {
         if(!mainMenuStoredList.containsKey("도미인")) mainMenuList.add(MainMenu.builder().order(2).menu(product).url("/business/dormyinn").name("도미인").nameEnglish("Dormy Inn").nameJapanese("ドーミー").type(MainMenuType.INTRO).build());
 
         // '채용정보' 하위 메뉴
-        if(!mainMenuStoredList.containsKey("직원소개")) mainMenuList.add(MainMenu.builder().order(1).menu(recruit).url("/recruit/employee_info").name("직원소개").nameEnglish("Employee introduction").nameJapanese("社員紹介").type(MainMenuType.GENERAL).build());
-        if(!mainMenuStoredList.containsKey("채용안내")) mainMenuList.add(MainMenu.builder().order(2).menu(recruit).url("/recruit/info").name("채용안내").nameEnglish("Recruitment information").nameJapanese("採用案内").type(MainMenuType.GENERAL).build());
-        if(!mainMenuStoredList.containsKey("채용공고")) mainMenuList.add(MainMenu.builder().order(3).menu(recruit).url("/recruit/notice").name("채용공고").nameEnglish("Recruitment notice").nameJapanese("採用発表").type(MainMenuType.GENERAL).build());
-        if(!mainMenuStoredList.containsKey("채용지원")) mainMenuList.add(MainMenu.builder().order(4).menu(recruit).url("/recruit/apply").name("채용지원").nameEnglish("Recruitment support").nameJapanese("採用支援").type(MainMenuType.GENERAL).build());
-        if(!mainMenuStoredList.containsKey("채용문의")) mainMenuList.add(MainMenu.builder().order(5).menu(recruit).url("/recruit/inquire").name("채용문의").nameEnglish("Recruitment Inquiry").nameJapanese("採用お問い合わせ").type(MainMenuType.GENERAL).build());
+        if(!mainMenuStoredList.containsKey("직원소개")) mainMenuList.add(MainMenu.builder().order(1).menu(recruit).url("/recruit/employee_info").name("직원소개").nameEnglish("Employee<br>introduction").nameJapanese("社員紹介").type(MainMenuType.GENERAL).build());
+        if(!mainMenuStoredList.containsKey("채용안내")) mainMenuList.add(MainMenu.builder().order(2).menu(recruit).url("/recruit/info").name("채용안내").nameEnglish("Recruitment<br>information").nameJapanese("採用案内").type(MainMenuType.GENERAL).build());
+        if(!mainMenuStoredList.containsKey("채용공고")) mainMenuList.add(MainMenu.builder().order(3).menu(recruit).url("/recruit/notice").name("채용공고").nameEnglish("Recruitment<br>notice").nameJapanese("採用発表").type(MainMenuType.GENERAL).build());
+        if(!mainMenuStoredList.containsKey("채용지원")) mainMenuList.add(MainMenu.builder().order(4).menu(recruit).url("/recruit/apply").name("채용지원").nameEnglish("Recruitment<br>support").nameJapanese("採用支援").type(MainMenuType.GENERAL).build());
+        if(!mainMenuStoredList.containsKey("채용문의")) mainMenuList.add(MainMenu.builder().order(5).menu(recruit).url("/recruit/inquire").name("채용문의").nameEnglish("Recruitment<br>Inquiry").nameJapanese("採用お問い合わせ").type(MainMenuType.GENERAL).build());
 
         // '공지사항' 하위 메뉴
         if(!mainMenuStoredList.containsKey(("공지사항"))) mainMenuList.add(MainMenu.builder().order(1).menu(notice).url("/notice/notice").name(" 공지사항 ").nameEnglish("Announcement").nameJapanese("お知らせ").type(MainMenuType.GENERAL).build());

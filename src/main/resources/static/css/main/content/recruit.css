@@ -5,7 +5,7 @@
     line-height: 20px !important;
     font-size: 0.8rem;
     font-weight: 500;
-    border-left: 3px solid blue;
+    border-left: 3px solid #005bab;
     padding-left: 10px;
 }
 
@@ -25,10 +25,17 @@
 }
 
 .recruit-info-section-B .container .contents-wrap .card-box{
-    border: 1px solid #ccc;
-    width: 330px;
-    height: 250px;
-    margin: 10px;
+    border: 1px solid #f1f1f1;
+    width: 314px;
+    height: 236px;
+}
+
+.recruit-info-section-B .container .contents-wrap .card-box:nth-child(even) {
+    background : none;
+}
+
+.recruit-info-section-B .container .contents-wrap .card-box:nth-child(odd) {
+    background : #f1f1f1;
 }
 
 .recruit-info.section .single-table {
@@ -123,17 +130,12 @@
     margin-top: 30px;
 }
 
-.recruit-info-section-E{
-    padding:100px 0 0 0;
-}
-
 .recruit-info-section-E .row {
     margin: 55px 0;
 }
 
 .recruit-info-section-B{
     padding-bottom: 50px !important;
-    padding-top: 50px !important;
 }
 
 .recruit-info-section-B .container .card-box .title{
@@ -160,8 +162,11 @@
 }
 
 .recruit-info-section-A{
-    padding-bottom: 50px !important;
-    padding-top: 50px !important;
+    padding-bottom: 0px !important;
+}
+
+.recruit-info-section-A .card-body{
+    padding: 0px;
 }
 
 .recruit-info-section-A .table{
@@ -179,6 +184,29 @@
 
 .recruit-info-section-A .table td{
     border-bottom-width: 0;
+}
+
+.contact-info img{
+    width: 28px;
+}
+
+#recruit-info-section1 .contact-info span{
+    background-color: #f1f1f1;
+    padding: 3px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+#recruit-info-section4 .container .contents-wrap .card-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#recruit-info-section4 .container .contents-wrap .card-box:hover{
+    transition: 0.3s;
+    transform: scaleX(1.02) scaleY(1.02);
 }
 
 .recruit-info-section-A .table .contact-info{
@@ -254,10 +282,11 @@
 .recruit-info-section-D .container .btn{
     background: #005bab;
     color: white;
-    font-size: 2rem;
-    padding: 2rem 7rem;
+    font-size: 1.5rem;
+    padding: 1.5rem 5rem;
     border-radius: 100px;
     font-weight: 500;
+    margin-top: 30px;
 }
 
 #recruit-notice-section.section,
@@ -270,10 +299,31 @@
     min-height: 0px;
 }
 
+#recruit-info-section1 .table{
+    margin-bottom: 0px;
+}
+
+#recruit-info-section1 .table .contact-info{
+    padding-bottom: 14px;
+}
+
+#recruit-info-section2 .table .contact-info span{
+    font-size: 0.9rem;
+    margin-left: 1rem;
+}
+
+#recruit-info-section8{
+    min-height: 0px;
+}
+
+.table>:not(:last-child)>:last-child>*{
+    padding: 0px;
+}
+
 /* recruit-notice */
 .search-container{
     max-width: 70%;
-    margin: 3rem auto;
+    margin: 40px auto;
 
     display: flex;
     flex-direction: column;
@@ -302,11 +352,6 @@
     position: relative;
 }
 
-.search-container .search-input i{
-    position: absolute;
-    padding-right: 20px;
-}
-
 .search-category .job-category li{
     margin: 0 5px;
 }
@@ -332,13 +377,11 @@
     padding: 50px 0;
 }
 
-#recruit-notice-section .container{
-    max-width: 50%;
-}
-
 #recruit-notice-section .container .card-box .title{
     font-weight: 600;
     font-size: 1rem;
+    border-left: 3px solid #005bab;
+    padding-left: 10px;
 }
 
 #recruit-notice-section .container .notice-list{
@@ -355,6 +398,11 @@
 
 #recruit-notice-section .container .notice-list a{
     width: 100%;
+}
+
+#recruit-notice-section .container ul.notice-list:hover {
+    transition: 0.1s;
+    transform: scaleX(1.01) scaleY(1.01);
 }
 
 #recruit-notice-section .top-line{
@@ -427,7 +475,6 @@
     background: white;
     padding: 0;
     margin: 20px auto;
-    max-width: 50% !important;
 }
 
 .apply .container .title-container{
@@ -443,6 +490,7 @@
 
 .apply.apply-section .container .apply-content .content .content-all p{
     line-height: 1.2;
+    margin: 30px 0;
 }
 
 
@@ -533,10 +581,7 @@
 .content-default.content .radio-buttons label {
     display: inline-block;
     padding: 12px 24px;
-    margin-top: 5px;
-    margin-right: 5px;
-    margin-left: 5px;
-    margin-bottom: -9px;
+    margin-bottom: -4px;
     cursor: pointer;
     background-color: #ddd; /* 체크되지 않은 상태의 배경색 */
 }
@@ -597,12 +642,13 @@
 }
 
 .apply-content .apply-button .btn-notice {
-    width: 250px;
-    height: 60px;
-    background-color: #000;
-    opacity: 0.83;
+    background: #005bab;
     color: white;
-    font-size: 22px;
+    font-size: 1.5rem;
+    padding: 1.5rem 5rem;
+    border-radius: 100px;
+    font-weight: 500;
+    margin-top: 30px;
 }
 
 .apply .submit-container{
@@ -623,7 +669,7 @@
 }
 
 .apply .submit-container .submit-btn button[data-action="preview"]{
-    background: #0072D6;
+    background: #005BAB;
     margin-right: 10px;
 }
 
@@ -646,11 +692,13 @@
 /* inquire */
 
 .apply-inquire .submit-btn button[data-action="add"]{
-    background: #0072D6;
-    padding: 20px 70px;
-    font-size: 1rem;
-    border: none;
+    background: #005bab;
     color: white;
+    font-size: 1.5rem;
+    padding: 1.5rem 5rem;
+    border-radius: 100px;
+    font-weight: 500;
+    margin-top: 30px;
 }
 
 .apply-inquire .submit-btn{
@@ -664,7 +712,7 @@
     display: flex;
     justify-content: space-evenly;
     padding: 30px;
-    margin: 50px 0;
+    margin-bottom: 50px;
 }
 
 .info-container > div {
@@ -715,7 +763,6 @@
 .apply-inquire .container .submit-btn{
     display: flex;
     justify-content: center;
-    padding: 80px;
 }
 
 .apply-inquire .container .update-btn button{
@@ -755,7 +802,7 @@
 }
 
 .apply-inquire.apply-section .tabulator .tabulator-tableholder .tabulator-placeholder .tabulator-placeholder-contents{
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1rem;
     color: #333333;
 }
@@ -862,4 +909,29 @@ label[for="fileInput"] {
     color: #fff;
     background-color: rgb(128, 128, 128);
     border: 1px solid rgb(128, 128, 128);
+}
+
+@media (max-width: 1280px) {
+    .recruit-info-section-B .container .contents-wrap .card-box{
+        width: 260px;
+    }
+
+    .recruit-info-section-B .container .card-box .title{
+        margin: 14px 0;
+    }
+
+    .recruit-info-section-C .container .contents-wrap ul li .card-box{
+        width: 150px;
+        height: 150px;
+    }
+
+    .recruit-info-section-C .container .contents-wrap ul li .card-box div h3{
+        line-height: 1.2rem;
+    }
+    .recruit-info-section-C .container .contents-wrap ul li .card-box .title{
+        padding: 30px;
+        line-height: 1rem;
+    }
+
+
 }

@@ -1506,38 +1506,44 @@ select option[value="jp"]::before {
 .hero-slider .swiper-container .swiper-wrapper .swiper-slide#swiper-container-1st {
   position: relative;
   /*background: #005bab08;*/
-  background-image: url(/static/images/main/hero-bg.jpg);
+  background-image: url(/static/images/main/main_slide_1.jpg);
   background-size: cover;
+  background-position: center;
 }
 
 .hero-slider .swiper-container .swiper-wrapper .swiper-slide#swiper-container-2st {
   position: relative;
   /*background: #005bab08;*/
-  background-image: url(/static/images/main/hero-bg-2.PNG);
+  background-image: url(/static/images/main/main_slide_2.jpg);
   background-size: cover;
+  background-position: center;
+}
+
+.hero-slider .swiper-container .swiper-wrapper .swiper-slide#swiper-container-3st {
+  position: relative;
+  /*background: #005bab08;*/
+  background-image: url(/static/images/main/main_slide_3.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-slider .swiper-container .swiper-wrapper .swiper-slide#swiper-container-4st {
+  position: relative;
+  /*background: #005bab08;*/
+  background-image: url(/static/images/main/main_slide_4.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-slider .single-slider {
-  height: 600px;
+  height: 100%;
   background-size: cover;
   background-position: center;
   position: relative;
   background: rgb(0 0 0 / 26%);
 }
 
-/* 1920x1080 해상도에서의 폰트 크기 설정 (비율 계산) */
-@media screen and (max-width: 1920px) {
-  .hero-slider .single-slider {
-    height: calc(600px * 1920 / 2560);
-  }
-}
 
-/* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
-@media screen and (max-width: 1366px) {
-  .hero-slider .single-slider {
-    height: calc(600px * 1366 / 2560);
-  }
-}
 
 .hero-slider .single-slider::before {
   position: absolute;
@@ -1557,21 +1563,8 @@ select option[value="jp"]::before {
 
 .hero-slider .hero-text {
   float: none;
-  margin-top: 150px;
-}
-
-/* 1920x1080 해상도에서의 폰트 크기 설정 (비율 계산) */
-@media screen and (max-width: 1920px) {
-  .hero-slider .hero-text {
-    margin-top: calc(150px * 1920 / 2560);
-  }
-}
-
-/* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
-@media screen and (max-width: 1366px) {
-  .hero-slider .hero-text {
-    margin-top: calc(150px * 1366 / 2560);
-  }
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
 .hero-slider .hero-text h1 {
@@ -1596,24 +1589,10 @@ select option[value="jp"]::before {
 }
 
 .hero-slider .hero-text  .content-title {
-  font-size: 40px;
+  font-size: 34px;
   line-height: 1.2;
   color: #ffffff;
   font-weight: 300;
-}
-
-/* 1920x1080 해상도에서의 폰트 크기 설정 */
-@media screen and (max-width: 1920px) {
-  .hero-slider .hero-text .content-title {
-    font-size: calc(40px * 1920 / 2560);
-  }
-}
-
-/* 1366x768 해상도에서의 폰트 크기 설정 */
-@media screen and (max-width: 1366px) {
-  .hero-slider .hero-text .content-title {
-    font-size: calc(40px * 1366 / 2560);
-  }
 }
 
 .hero-slider .hero-text .content-detail {
@@ -1622,36 +1601,8 @@ select option[value="jp"]::before {
   color: #ffffff;
 }
 
-/* 1920x1080 해상도에서의 폰트 크기 설정 */
-@media screen and (max-width: 1920px) {
-  .hero-slider .hero-text .content-detail {
-    font-size: calc(16px * 1920 / 2560);
-  }
-}
-
-/* 1366x768 해상도에서의 폰트 크기 설정 */
-@media screen and (max-width: 1366px) {
-  .hero-slider .hero-text .content-detail {
-    font-size: calc(16px * 1366 / 2560);
-  }
-}
-
 .hero-slider .hero-text .button {
   margin-top: 35px;
-}
-
-/* 1920x1080 해상도에서의 폰트 크기 설정 */
-@media screen and (max-width: 1920px) {
-  .hero-slider .hero-text .button {
-    margin-top: calc(35px * 1920 / 2560);
-  }
-}
-
-/* 1366x768 해상도에서의 폰트 크기 설정 */
-@media screen and (max-width: 1366px) {
-  .hero-slider .hero-text .button {
-    margin-top: calc(35px * 1366 / 2560);
-  }
 }
 
 .hero-slider .hero-text .button .btn {
@@ -1763,17 +1714,18 @@ select option[value="jp"]::before {
 }
 
 .Features .feature-content {
-  padding-left: 50px;
-  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
 }
 
 .Features .feature-content .title {
-  margin-bottom: 30px;
 }
 
 .Features .feature-content .title span {
   text-transform: capitalize;
-  font-size: 14px;
+  font-size: 16px;
   display: inline-block;
   background: #005bab;
   color: #fff;
@@ -1782,15 +1734,12 @@ select option[value="jp"]::before {
 }
 
 .Features .feature-content .title h3 {
-  font-size: 40px;
+  font-size: 34px;
   line-height: 50px;
   font-weight: 700;
 }
 
 .Features .feature-content .button {
-  margin-top: 2%;
-  display: flex;
-  justify-content: right;
 }
 
 .Features .feature-item {
@@ -1828,10 +1777,9 @@ select option[value="jp"]::before {
 }
 
 .Features .feature-item .banner-content .title {
-  font-weight: 700;
   text-transform: capitalize;
   margin-bottom: 0px;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   line-height: 38px;
 }
@@ -1839,14 +1787,23 @@ select option[value="jp"]::before {
 .Features .feature-item .banner-content p {
   color: #777;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   display: block;
   margin-top: 6px;
 }
 
-.feature-right {
+.feature-right#one-st {
   position: relative;
   background-image: url('/static/images/bizfinity/dormyinn.PNG');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+.feature-right#two-st {
+  position: relative;
+  background-image: url('/static/images/bizfinity/dormyinn_2.PNG');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
@@ -2001,274 +1958,194 @@ select option[value="jp"]::before {
 	04. Start Services CSS
 ===============================*/
 .About.section img {
-  max-width: 30%;
+  max-width: 90%;
   padding-right: 2%;
 }
 
-/*.services {*/
-/*  background: #F9FAFF;*/
-/*  padding-bottom: 85px;*/
-/*}*/
+.About.section .single-slider {
+  display: flex;
+}
 
-/*.services .section-title {*/
-/*  margin-bottom: 65px;*/
-/*}*/
+.About.section .single-slider div > span {
+  display: block;
+}
 
-/*.services .single-service {*/
-/*  text-align: left;*/
-/*  position: relative;*/
-/*  padding: 130px 40px 45px 40px;*/
-/*  box-shadow: 0px 5px 35px #0000000d;*/
-/*  border-radius: 0;*/
-/*  background: #fff;*/
-/*  z-index: 5;*/
-/*  overflow: hidden;*/
-/*  -webkit-transition: all 0.4s ease;*/
-/*  -moz-transition: all 0.4s ease;*/
-/*  transition: all 0.4s ease;*/
-/*  margin: 15px 0;*/
-/*}*/
+.About.section .feature-content .title span {
+  text-transform: capitalize;
+  font-size: 16px;
+  display: inline-block;
+  background: #005bab;
+  color: #fff;
+  padding: 4px 18px;
+  margin-bottom: 5px;
+}
 
-/*.services .single-service .serial span {*/
-/*  font-size: 30px;*/
-/*  position: absolute;*/
-/*  left: 40px;*/
-/*  top: 40px;*/
-/*  height: 65px;*/
-/*  width: 65px;*/
-/*  line-height: 65px;*/
-/*  text-align: center;*/
-/* !* background: #74b9ff;*!*/
-/*  color: #005bab;*/
-/*  -webkit-transition: all 0.4s ease;*/
-/*  -moz-transition: all 0.4s ease;*/
-/*  transition: all 0.4s ease;*/
-/*  background: #005bab0f;*/
-/*  border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;*/
+.About.section .feature-content .title h3 {
+  font-size: 34px;
+  line-height: 50px;
+  font-weight: 700;
+}
 
-/*  display: flex;*/
-/*  align-items: center;*/
-/*  justify-content: center;*/
-/*}*/
+.About.section .feature-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
 
-/*.services .single-service:hover {*/
-/*  background: #005bab;*/
-/*}*/
+.About.section .feature-content .custom-swiper-buttons {
+  padding-bottom: 10%;
+}
 
-/*.services .single-service:hover .serial span {*/
-/*  border-color: transparent;*/
-/*  background: #fff;*/
-/*  color: #005bab;*/
-/*  border-radius: 50%;*/
-/*}*/
+.About.section .feature-content .custom-prev-button-about {
+  font-size: 24px;
+  border: none;
+  background-color: transparent;
+  color: #3498db; /* 버튼 텍스트 색상 */
+  cursor: pointer;
+}
 
-/*.services .single-service h3 a {*/
-/*  color: #333;*/
-/*  font-weight: 600;*/
-/*  font-size: 22px;*/
-/*  -webkit-transition: all 0.4s ease;*/
-/*  -moz-transition: all 0.4s ease;*/
-/*  transition: all 0.4s ease;*/
-/*}*/
+.About.section .feature-content .custom-next-button-about {
+  padding-left: 2%;
+  font-size: 24px;
+  border: none;
+  background-color: transparent;
+  color: #3498db; /* 버튼 텍스트 색상 */
+  cursor: pointer;
+}
 
-/*.services .single-service:hover h3 a {*/
-/*  color: #fff;*/
-/*}*/
+.About.section .feature-content .custom-prev-button-about::before {
+  content: "<";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  background-color: #005bab; /* 동그란 원형 배경색 */
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px; /* 수정: 높이와 동일하게 설정 */
+  color: white; /* 동그란 원형 안의 텍스트 색상 */
+}
 
-/*.services .single-service p {*/
-/*  margin-top: 20px;*/
-/*  line-height: 24px;*/
-/*  font-size: 14px;*/
-/*  -webkit-transition: all 0.4s ease;*/
-/*  -moz-transition: all 0.4s ease;*/
-/*  transition: all 0.4s ease;*/
-/*}*/
+.About.section .feature-content .custom-next-button-about::before {
+  content: ">";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  background-color: #005bab; /* 동그란 원형 배경색 */
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px; /* 수정: 높이와 동일하게 설정 */
+  color: white; /* 동그란 원형 안의 텍스트 색상 */
+}
 
-/*.services .single-service:hover p {*/
-/*  color: #fff;*/
-/*}*/
+.About.section .feature-content .custom-prev-button-about.clicked::before {
+  background-color: #3498db; /* 클릭 시 배경색 변경 */
+  color: white;
+}
 
+.About.section .feature-content .custom-next-button-about.clicked::before {
+  background-color: #3498db; /* 클릭 시 배경색 변경 */
+  color: white;
+}
 
-/*.services .single-service {*/
-/*  position: relative;*/
-/*  z-index: 2;*/
-/*  overflow: hidden;*/
-/*  margin-top: 15px;*/
-/*  margin-bottom: 15px;*/
-/*}*/
+/*=======================================
+	Start Team Area
+=========================================*/
 
-/*.services .single-service img {*/
-/*  height: 100%;*/
-/*  width: 100%;*/
-/*  z-index: 2;*/
-/*}*/
+.Gallery .feature-content .title span {
+  text-transform: capitalize;
+  font-size: 16px;
+  display: inline-block;
+  background: #005bab;
+  color: #fff;
+  padding: 4px 18px;
+  margin-bottom: 5px;
+}
 
-/*.services .single-service .content {*/
-/*  z-index: 2;*/
-/*  width: 100%;*/
-/*  -webkit-transition: all 0.4s ease;*/
-/*  -moz-transition: all 0.4s ease;*/
-/*  transition: all 0.4s ease;*/
-/*  margin-top: 30px;*/
-/*}*/
+.Gallery .feature-content .title h3 {
+  font-size: 34px;
+  line-height: 50px;
+  font-weight: 700;
+}
 
-/*.services .single-service .content h4 {*/
-/*  display: block;*/
-/*  margin-bottom: 25px;*/
-/*  padding-bottom: 15px;*/
-/*  color: #181E4E;*/
-/*  position: relative;*/
-/*}*/
+.Gallery .feature-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
 
-/*.services .single-service .content h4:before {*/
-/*  position: absolute;*/
-/*  content: "";*/
-/*  left: 0;*/
-/*  bottom: 0;*/
-/*  height: 3px;*/
-/*  width: 80px;*/
-/*  background: #005bab;*/
-/*  z-index: 1;*/
-/*  -webkit-transition: all 0.3s ease;*/
-/*  -moz-transition: all 0.3s ease;*/
-/*  transition: all 0.3s ease;*/
-/*}*/
+.Gallery .feature-content .custom-swiper-buttons {
+  padding-bottom: 10%;
+}
 
-/*.services .single-service:hover .content h4:before {*/
-/*  width: 110px;*/
-/*}*/
+.Gallery .feature-content .custom-prev-button-gallery {
+  font-size: 24px;
+  border: none;
+  background-color: transparent;
+  color: #3498db; /* 버튼 텍스트 색상 */
+  cursor: pointer;
+}
 
-/*.services .single-service .content h4:after {*/
-/*  position: absolute;*/
-/*  content: "";*/
-/*  left: 0;*/
-/*  bottom: 0;*/
-/*  height: 3px;*/
-/*  width: 100%;*/
-/*  background: #e6eefb;*/
-/*  z-index: -1;*/
-/*}*/
+.Gallery .feature-content .custom-next-button-gallery {
+  padding-left: 2%;
+  font-size: 24px;
+  border: none;
+  background-color: transparent;
+  color: #3498db; /* 버튼 텍스트 색상 */
+  cursor: pointer;
+}
 
-/*.services .single-service .content h4 a {*/
-/*  color: #fff;*/
-/*  font-weight: 600;*/
-/*  font-size: 23px;*/
-/*  color: #181E4E;*/
-/*}*/
+.Gallery .feature-content .custom-prev-button-gallery::before {
+  content: "<";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  background-color: #005bab; /* 동그란 원형 배경색 */
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px; /* 수정: 높이와 동일하게 설정 */
+  color: white; /* 동그란 원형 안의 텍스트 색상 */
+}
 
-/*.services .single-service .content p {*/
-/*  color: #666;*/
-/*  transition: all 0.4s ease;*/
-/*}*/
+.Gallery .feature-content .custom-next-button-gallery::before {
+  content: ">";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  background-color: #005bab; /* 동그란 원형 배경색 */
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px; /* 수정: 높이와 동일하게 설정 */
+  color: white; /* 동그란 원형 안의 텍스트 색상 */
+}
 
-/*.services .single-service .content .button {*/
-/*  margin-top: 30px;*/
-/*}*/
+.Gallery .feature-content .custom-prev-button-gallery.clicked::before {
+  background-color: #3498db; /* 클릭 시 배경색 변경 */
+  color: white;
+}
 
-/*.services .single-service .content .button .btn {*/
-/*  border: 2px solid #005bab;*/
-/*  color: #005bab;*/
-/*  background: transparent;*/
-/*}*/
+.Gallery .feature-content .custom-next-button-gallery.clicked::before {
+  background-color: #3498db; /* 클릭 시 배경색 변경 */
+  color: white;
+}
 
-/*.services .single-service .content .button .btn:hover {*/
-/*  border-color: transparent;*/
-/*  color: #fff;*/
-/*  background: #005bab;*/
-/*}*/
+.Gallery.section .container .row {
+  height: 350px;
+}
 
-/*.circles-wrap {*/
-/*  position: absolute;*/
-/*  bottom: -65%;*/
-/*  right: -50%;*/
-/*  z-index: -1;*/
-/*}*/
+.Gallery.section .single-slider {
+  padding: 2% 2% 2% 2%;
+  background: #005BAB
+}
 
-/*span.circle {*/
-/*  border-radius: 50%;*/
-/*  position: absolute;*/
-/*  -webkit-transform: scale(0);*/
-/*  -ms-transform: scale(0);*/
-/*  transform: scale(0);*/
-/*  -webkit-transition: all 0.4s ease;*/
-/*  -moz-transition: all 0.4s ease;*/
-/*  transition: all 0.4s ease;*/
-/*}*/
-
-/*.services .single-service:hover span.circle {*/
-/*  -webkit-transform: scale(1);*/
-/*  -ms-transform: scale(1);*/
-/*  transform: scale(1);*/
-/*}*/
-
-/*.services .circles {*/
-/*  height: 400px;*/
-/*  width: 400px;*/
-/*  background: 0 0;*/
-/*  display: flex;*/
-/*  position: relative;*/
-/*  align-items: center;*/
-/*  justify-content: center;*/
-/*  z-index: 1*/
-/*}*/
-
-/*.services span.circle.circle-1 {*/
-/*  height: 100px;*/
-/*  width: 100px;*/
-/*  background: #fff;*/
-/*  opacity: 0.2;*/
-/*  z-index: 5;*/
-/*  display: inline-block;*/
-/*  z-index: 5;*/
-/*}*/
-
-/*.services span.circle.circle-2 {*/
-/*  height: 200px;*/
-/*  width: 200px;*/
-/*  background: #fff;*/
-/*  opacity: 0.2;*/
-/*  z-index: 4;*/
-/*}*/
-
-/*.services span.circle.circle-3 {*/
-/*  height: 300px;*/
-/*  width: 300px;*/
-/*  background: #fff;*/
-/*  opacity: 0.2;*/
-/*  z-index: 3;*/
-/*}*/
-
-/*.services span.circle.circle-4 {*/
-/*  height: 400px;*/
-/*  width: 400px;*/
-/*  background: #fff;*/
-/*  opacity: 0.2;*/
-/*  z-index: 2;*/
-/*}*/
-
-/*.services .single-service:hover span.circle,*/
-/*.services .single-service.active span.circle {*/
-/*  transform: scale(1);*/
-/*  -webkit-transition: all .3s;*/
-/*  -o-transition: all .3s;*/
-/*  transition: all .3s*/
-/*}*/
-
-/*.services .single-service:hover span.circle,*/
-/*.single-service.active span.circle {*/
-/*  transform: scale(1);*/
-/*  -webkit-transition: all .3s;*/
-/*  -o-transition: all .3s;*/
-/*  transition: all .3s;*/
-/*}*/
-
-/*.services .service-area .circles-wrap {*/
-/*  position: absolute;*/
-/*  bottom: -32%;*/
-/*  left: auto;*/
-/*  z-index: -1;*/
-/*  right: -50%*/
-/*}*/
+.Gallery.section p {
+  color: white;
+}
 
 /*=============================
   End Service CSS
@@ -2629,19 +2506,6 @@ select option[value="jp"]::before {
   font-weight: bold;
 }
 
-@media screen and (max-width: 1920px) {
-  .nav-item.col-12.col-md-3.mx-2 .nav-link {
-    font-size: calc(18px * 1920 / 2560);
-  }
-}
-
-/* 1366x768 해상도에서의 padding 설정 (비율 계산) */
-@media screen and (max-width: 1366px) {
-  .nav-item.col-12.col-md-3.mx-2 .nav-link {
-    font-size: calc(18px * 1920 / 2560);
-  }
-}
-
 .nav-item col-12 col-md-3 mx-2 {
   position: relative;
   left: 50%;
@@ -2670,4 +2534,56 @@ select option[value="jp"]::before {
   left: 50%;
   transform: translateX(-50%);
   /* 원하는 다른 스타일 속성 추가 가능 */
+}
+
+
+/*================================ 반응형 ===========================*/
+/* 1920x1080 해상도에서의 폰트 크기 설정 (비율 계산) */
+@media screen and (max-width: 1920px) {
+  .hero-slider .single-slider {
+    height: calc(100% * 1920 / 2560);
+  }
+}
+
+/* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
+@media screen and (max-width: 1280px) {
+  .hero-slider .single-slider {
+    height: calc(100% * 1280 / 2560);
+  }
+}
+
+/* 1920x1080 해상도에서의 폰트 크기 설정 (비율 계산) */
+@media screen and (max-width: 1920px) {
+  .hero-slider .hero-text {
+    margin-top: calc(10% * 1920 / 2560);
+    margin-bottom: calc(10% * 1920 / 2560);
+  }
+}
+
+/* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
+@media screen and (max-width: 1280px) {
+  .hero-slider .hero-text {
+    margin-top: calc(10% * 1280 / 2560);
+    margin-bottom: calc(10% * 1280 / 2560);
+  }
+}
+
+/* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
+@media screen and (max-width: 1280px) {
+  .hero-slider .hero-text  .content-title {
+    font-size: calc(34px * 1280 / 2560);
+  }
+}
+
+/* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
+@media screen and (max-width: 1280px) {
+  .hero-slider .hero-text .content-detail {
+    font-size: calc(16px * 1280 / 2560);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .Features .feature-content .title h3 {
+    font-size: calc(34px * 1280 / 2560);
+  }
 }

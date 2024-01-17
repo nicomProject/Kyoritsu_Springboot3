@@ -1760,6 +1760,81 @@ section .sub-title{
     min-height: 0 !important;
 }
 
+/* tabulator footer*/
+.tabulator .tabulator-footer{
+    text-align: center;
+}
+
+.tabulator .tabulator-footer .tabulator-page-size{
+    border: solid 1px #dee2e6;
+    border-radius: 25px;
+}
+
+.tabulator-page:disabled{
+    cursor: initial !important;
+    color: #aaa !important;
+    border: 1px solid #ccc !important;
+    background-color: #fff;
+    pointer-events: none;
+}
+.table-content .tabulator-paginator{
+    font-size: 0.9rem !important;
+}
+
+.tabulator-paginator label {
+    display: none;
+}
+
+.tabulator-page{
+    padding: 5px 12px !important;
+    color: #333;
+    margin: 4px !important;
+    border-radius: 25px !important;
+    border: 1px solid #ccc !important;
+}
+
+.tabulator .tabulator-header .tabulator-header-filter input,
+.tabulator .tabulator-header .tabulator-header-filter select{
+    flex: 1;
+    border: solid 1px #dedede;
+    border-radius: 5px;
+    padding: 0.375rem 0.55rem !important;
+    outline: none;
+}
+
+.tabulator .tabulator-footer .tabulator-paginator {
+    text-align: center;
+}
+
+.tabulator .tabulator-footer .tabulator-page:hover {
+    background-color: transparent !important;
+    color: #009dfd !important;
+    border: 1px solid #009dfd !important;
+}
+
+.tabulator .tabulator-footer .tabulator-page.active {
+    background-color: #e9f2ff !important;
+    color: #000;
+    font-weight: 500;
+    border: 1px solid #4584ff !important;
+}
+
+.tabulator .tabulator-footer .tabulator-page-size {
+    background: none;
+    border: solid 1px #dee2e6;
+    border-radius: 25px;
+    padding: 5px;
+}
+
+.tabulator .tabulator-footer .tabulator-page-size:hover {
+    border: 1px solid #7f7fff;
+}
+
+.tabulator .tabulator-footer .tabulator-page[data-page=last],
+.tabulator-page[data-page=first] {
+    border-radius: 25px !important;
+}
+
 /* bootstrap.min.css */
 @media (min-width: 768px) .col-md-6{
     margin: 30px 0;
@@ -1789,7 +1864,7 @@ section .sub-title{
 }
 
 .breadcrumbs-content.center .activation {
-    background-color: #f5f5f5;
+    background-color: #ffffff;
     color: #000;
 }
 

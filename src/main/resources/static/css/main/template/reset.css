@@ -453,14 +453,23 @@ big {
 	min-height: 300px;
 }
 
-.Images.section,
-.Gallery.section
+.Images.section
 {
 	background-color: rgb(0 0 0 / 6%);
 	padding-top: 5%;
 	padding-bottom: 5%;
 	position: relative;
 	min-height: 300px;
+}
+
+.Gallery.section
+{
+	background-image: url(/static/images/main/gallery_bg.png);
+	padding-top: 5%;
+	padding-bottom: 7%;
+	position: relative;
+	min-height: 500px;
+	background-position: center;
 }
 
 /* Section Title */
@@ -505,7 +514,7 @@ big {
 	line-height: 24px;
 }
 .container{
-	max-width:70%;
+	/*max-width:70%;*/
 }
 
 .container#vision{
@@ -570,7 +579,7 @@ big {
 .button .btn{
 	display: inline-block;
 	text-transform: capitalize;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 600;
 	padding: 15px 30px;
 	background-color: #ffffff;
@@ -587,15 +596,15 @@ big {
 @media screen and (max-width: 1920px) {
 	.button .btn {
 		padding: calc(15px * 1920 / 2560) calc(30px * 1920 / 2560);
-		font-size: calc(14px * 1920 / 2560);
+		font-size: calc(16px * 1920 / 2560);
 	}
 }
 
 /* 1366x768 해상도에서의 padding 설정 (비율 계산) */
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1280px) {
 	.button .btn {
 		padding: calc(15px * 1366 / 2560) calc(30px * 1366 / 2560);
-		font-size: calc(14px * 1920 / 2560);
+		font-size: calc(16px * 1920 / 2560);
 	}
 }
 
