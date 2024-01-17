@@ -26,6 +26,18 @@ section .sub-title{
 
 /* business-overview (dormitory, dormyinn, resort, seniorlife) */
 
+.dormyinn.section .profile.profile-1{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 10px;
+}
+.dormyinn.section .box-2{
+    display: flex !important;
+    align-items: stretch !important;
+}
+
 .dormitory.section .editor-content .box-1,
 .dormyinn.section .editor-content .box-1,
 .resort.section .editor-content .box-1,
