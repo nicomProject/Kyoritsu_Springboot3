@@ -1536,26 +1536,14 @@ select option[value="jp"]::before {
 }
 
 .hero-slider .single-slider {
-  height: 600px;
+  height: 100%;
   background-size: cover;
   background-position: center;
   position: relative;
   background: rgb(0 0 0 / 26%);
 }
 
-/* 1920x1080 해상도에서의 폰트 크기 설정 (비율 계산) */
-@media screen and (max-width: 1920px) {
-  .hero-slider .single-slider {
-    height: calc(600px * 1920 / 2560);
-  }
-}
 
-/* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
-@media screen and (max-width: 1366px) {
-  .hero-slider .single-slider {
-    height: calc(600px * 1366 / 2560);
-  }
-}
 
 .hero-slider .single-slider::before {
   position: absolute;
@@ -1575,21 +1563,8 @@ select option[value="jp"]::before {
 
 .hero-slider .hero-text {
   float: none;
-  margin-top: 150px;
-}
-
-/* 1920x1080 해상도에서의 폰트 크기 설정 (비율 계산) */
-@media screen and (max-width: 1920px) {
-  .hero-slider .hero-text {
-    margin-top: calc(150px * 1920 / 2560);
-  }
-}
-
-/* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
-@media screen and (max-width: 1366px) {
-  .hero-slider .hero-text {
-    margin-top: calc(150px * 1366 / 2560);
-  }
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
 .hero-slider .hero-text h1 {
@@ -1614,24 +1589,10 @@ select option[value="jp"]::before {
 }
 
 .hero-slider .hero-text  .content-title {
-  font-size: 40px;
+  font-size: 34px;
   line-height: 1.2;
   color: #ffffff;
   font-weight: 300;
-}
-
-/* 1920x1080 해상도에서의 폰트 크기 설정 */
-@media screen and (max-width: 1920px) {
-  .hero-slider .hero-text .content-title {
-    font-size: calc(40px * 1920 / 2560);
-  }
-}
-
-/* 1366x768 해상도에서의 폰트 크기 설정 */
-@media screen and (max-width: 1366px) {
-  .hero-slider .hero-text .content-title {
-    font-size: calc(40px * 1366 / 2560);
-  }
 }
 
 .hero-slider .hero-text .content-detail {
@@ -1640,36 +1601,8 @@ select option[value="jp"]::before {
   color: #ffffff;
 }
 
-/* 1920x1080 해상도에서의 폰트 크기 설정 */
-@media screen and (max-width: 1920px) {
-  .hero-slider .hero-text .content-detail {
-    font-size: calc(16px * 1920 / 2560);
-  }
-}
-
-/* 1366x768 해상도에서의 폰트 크기 설정 */
-@media screen and (max-width: 1366px) {
-  .hero-slider .hero-text .content-detail {
-    font-size: calc(16px * 1366 / 2560);
-  }
-}
-
 .hero-slider .hero-text .button {
   margin-top: 35px;
-}
-
-/* 1920x1080 해상도에서의 폰트 크기 설정 */
-@media screen and (max-width: 1920px) {
-  .hero-slider .hero-text .button {
-    margin-top: calc(35px * 1920 / 2560);
-  }
-}
-
-/* 1366x768 해상도에서의 폰트 크기 설정 */
-@media screen and (max-width: 1366px) {
-  .hero-slider .hero-text .button {
-    margin-top: calc(35px * 1366 / 2560);
-  }
 }
 
 .hero-slider .hero-text .button .btn {
@@ -2573,19 +2506,6 @@ select option[value="jp"]::before {
   font-weight: bold;
 }
 
-@media screen and (max-width: 1920px) {
-  .nav-item.col-12.col-md-3.mx-2 .nav-link {
-    font-size: calc(18px * 1920 / 2560);
-  }
-}
-
-/* 1366x768 해상도에서의 padding 설정 (비율 계산) */
-@media screen and (max-width: 1366px) {
-  .nav-item.col-12.col-md-3.mx-2 .nav-link {
-    font-size: calc(18px * 1366 / 2560);
-  }
-}
-
 .nav-item col-12 col-md-3 mx-2 {
   position: relative;
   left: 50%;
@@ -2614,4 +2534,56 @@ select option[value="jp"]::before {
   left: 50%;
   transform: translateX(-50%);
   /* 원하는 다른 스타일 속성 추가 가능 */
+}
+
+
+/*================================ 반응형 ===========================*/
+/* 1920x1080 해상도에서의 폰트 크기 설정 (비율 계산) */
+@media screen and (max-width: 1920px) {
+  .hero-slider .single-slider {
+    height: calc(100% * 1920 / 2560);
+  }
+}
+
+/* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
+@media screen and (max-width: 1280px) {
+  .hero-slider .single-slider {
+    height: calc(100% * 1280 / 2560);
+  }
+}
+
+/* 1920x1080 해상도에서의 폰트 크기 설정 (비율 계산) */
+@media screen and (max-width: 1920px) {
+  .hero-slider .hero-text {
+    margin-top: calc(10% * 1920 / 2560);
+    margin-bottom: calc(10% * 1920 / 2560);
+  }
+}
+
+/* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
+@media screen and (max-width: 1280px) {
+  .hero-slider .hero-text {
+    margin-top: calc(10% * 1280 / 2560);
+    margin-bottom: calc(10% * 1280 / 2560);
+  }
+}
+
+/* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
+@media screen and (max-width: 1280px) {
+  .hero-slider .hero-text  .content-title {
+    font-size: calc(34px * 1280 / 2560);
+  }
+}
+
+/* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
+@media screen and (max-width: 1280px) {
+  .hero-slider .hero-text .content-detail {
+    font-size: calc(16px * 1280 / 2560);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .Features .feature-content .title h3 {
+    font-size: calc(34px * 1280 / 2560);
+  }
 }
