@@ -2020,9 +2020,18 @@ select option[value="jp"]::before {
 	05. Start Services CSS
 ===============================*/
 .About.section img {
-  max-width: 30%;
+  max-width: 90%;
   padding-right: 2%;
 }
+
+.About.section .single-slider {
+  display: flex;
+}
+
+.About.section .single-slider div > span {
+  display: block;
+}
+
 
 /*.services {*/
 /*  background: #F9FAFF;*/
