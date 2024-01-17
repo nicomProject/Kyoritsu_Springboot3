@@ -322,3 +322,9 @@ $(function () {
 
     Content.load();
 });
+
+function toggleSelect() {
+    var select = document.getElementById('language-button');
+    var event = new MouseEvent('mousedown');
+    select.dispatchEvent(event);
+}
