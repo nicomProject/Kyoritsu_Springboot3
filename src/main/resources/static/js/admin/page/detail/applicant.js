@@ -29,6 +29,7 @@ $(function () {
         },
 
         event: function () {
+            formData = {'pass_yn' : '합격여부', 'contents_answer' : '답변'};
             var fileListHash = [];
             const paramValue = this.params.key
             AjaxUtil.requestBody({
@@ -107,7 +108,7 @@ $(function () {
             buttons.forEach(function (button) {
                 button.addEventListener("click", function () {
                     const action = button.getAttribute("data-action");
-                    if (action === "add") {
+                    if (action === "add" && ValidateField.valid(formData)) {
                         var passYn = $("#pass_yn").val();
                         var formTag = $("#form_tag").val();
                         var contentsAnswer = $("#contents_answer").val();
