@@ -1,0 +1,937 @@
+@charset "UTF-8";
+
+/* recruit info */
+.recruit-info.section .container .title-wrap p{
+    line-height: 20px !important;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-left: 3px solid #005bab;
+    padding-left: 10px;
+}
+
+.recruit-info.section .container .title-wrap h3{
+    margin-bottom: 10px;
+}
+
+.recruit-info-section-E .container .contents-wrap{
+    display: flex;
+}
+
+.recruit-info-section-B .container .contents-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: center;*/
+    padding: 30px;
+}
+
+.recruit-info-section-B .container .contents-wrap .card-box{
+    border: 1px solid #f1f1f1;
+    width: 314px;
+    height: 236px;
+}
+
+.recruit-info-section-B .container .contents-wrap .card-box:nth-child(even) {
+    background : none;
+}
+
+.recruit-info-section-B .container .contents-wrap .card-box:nth-child(odd) {
+    background : #f1f1f1;
+}
+
+.recruit-info.section .single-table {
+    background: #fff;
+    text-align: center;
+    position: relative;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    padding: 60px 20px;
+    box-shadow: 0 10px 30px rgba(111, 111, 111, 0.1);
+    overflow: hidden;
+}
+
+.recruit-info.section .single-table .popular {
+    color: #fff;
+    background: #005bab;
+    display: inline-block;
+    padding: 5px 70px;
+    position: absolute;
+    right: -60px;
+    top: 14px;
+    font-size: 13px;
+    transform: rotate(45deg);
+}
+
+/* Table Head */
+.recruit-info.section .single-table .table-head {}
+
+.recruit-info.section .single-table .title {
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 26px;
+}
+
+.recruit-info.section .single-table .title span {
+    display: block;
+    margin-top: 0;
+    font-size: 13px;
+    font-weight: 400;
+    color: #888;
+    text-transform: capitalize;
+}
+
+.recruit-info.section .single-table .price {
+    height: 120px;
+    width: 120px;
+    display: inline-block;
+    border: 1px dashed #74b9ff;
+    border-radius: 50%;
+    margin: 20px 0;
+}
+
+.recruit-info.section .single-table .amount {
+    position: relative;
+    color: #333;
+    font-size: 35px;
+    display: inline-block;
+    margin: 45px 0;
+    font-weight: 600;
+}
+
+.recruit-info.section .single-table .curency {
+    color: #555;
+    font-size: 17px;
+    font-weight: 400;
+    position: absolute;
+    left: -14px;
+    top: -7px;
+}
+
+.recruit-info.section .single-table .duration {
+    color: #888;
+    font-size: 11px;
+    font-weight: 400;
+    position: absolute;
+    right: -25px;
+    bottom: -6px;
+}
+
+.recruit-info.section .table-list li {
+    color: #444;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.recruit-info.section .table-l0000ist li:last-child {
+    margin-bottom: 0;
+}
+
+.recruit-info.section .button {
+    margin-top: 30px;
+}
+
+.recruit-info-section-E .row {
+    margin: 55px 0;
+}
+
+.recruit-info-section-B{
+    padding-bottom: 50px !important;
+}
+
+.recruit-info-section-B .container .card-box .title{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.recruit-info-section-B .container .card-box .content{
+    font-size: 1rem;
+    line-height: 1.2rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.recruit-info-section-B .container .card-box i{
+    padding: 10px;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.recruit-info-section-A{
+    padding-bottom: 0px !important;
+}
+
+.recruit-info-section-A .card-body{
+    padding: 0px;
+}
+
+.recruit-info-section-A .table{
+    width: 100%;
+    height: auto;
+}
+
+.recruit-info-section-A .table th{
+    border-color: inherit;
+}
+
+.recruit-info-section-A .table th h3{
+    margin-bottom: 5px;
+}
+
+.recruit-info-section-A .table td{
+    border-bottom-width: 0;
+}
+
+.contact-info img{
+    width: 28px;
+}
+
+#recruit-info-section1 .contact-info span{
+    background-color: #f1f1f1;
+    padding: 3px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+#recruit-info-section4 .container .contents-wrap .card-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#recruit-info-section4 .container .contents-wrap .card-box:hover{
+    transition: 0.3s;
+    transform: scaleX(1.02) scaleY(1.02);
+}
+
+.recruit-info-section-A .table .contact-info{
+    padding-top: 20px;
+}
+
+.recruit-info-section-C{
+    padding-bottom: 50px !important;
+    padding-top: 50px !important;
+}
+
+.recruit-info-section-C{
+    background: #f7f7f7;
+}
+
+.recruit-info-section-C .container .contents-wrap{
+    display: flex;
+}
+
+.recruit-info-section-C .container .contents-wrap ul{
+    align-items: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.recruit-info-section-C .container .contents-wrap ul li .card-box{
+    width: 200px;
+    height: 200px;
+    padding: 8px;
+    border-radius: 160px;
+    background-color: rgba(195, 191, 190, .15);
+    margin-right: 30px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.recruit-info-section-C .container .contents-wrap ul .arrow-icon{
+    font-size: 2rem;
+    margin-right: 30px;
+}
+
+.recruit-info-section-C .container .contents-wrap ul li .card-box .title{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.recruit-info-section-C .container .contents-wrap ul li .card-box span{
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 900;
+    color: #007aeb;
+    opacity: .5;
+}
+
+.recruit-info-section-C .container .contents-wrap ul li .card-box div h3{
+    margin-bottom: 0;
+    padding-left: 0;
+    border-left: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    vertical-align: middle;
+}
+
+.recruit-info-section-D .container{
+    text-align: center;
+}
+
+.recruit-info-section-D .container .btn{
+    background: #005bab;
+    color: white;
+    font-size: 1.5rem;
+    padding: 1.5rem 5rem;
+    border-radius: 100px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+#recruit-notice-section.section,
+.recruit-info-section-D.section,
+.recruit-info-section-C.section,
+.recruit-info-section-A.section {
+    padding-top:70px;
+    padding-bottom:100px;
+    position: relative;
+    min-height: 0px;
+}
+
+#recruit-info-section1 .table{
+    margin-bottom: 0px;
+}
+
+#recruit-info-section1 .table .contact-info{
+    padding-bottom: 14px;
+}
+
+#recruit-info-section2 .table .contact-info span{
+    font-size: 0.9rem;
+    margin-left: 1rem;
+}
+
+#recruit-info-section8{
+    min-height: 0px;
+}
+
+.table>:not(:last-child)>:last-child>*{
+    padding: 0px;
+}
+
+/* recruit-notice */
+.search-container{
+    max-width: 70%;
+    margin: 40px auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-container .search-input{
+    width: 553px;
+    height: 37px;
+
+    margin-bottom: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+
+.search-container .search-input input{
+    width: 100%;
+    height: 100%;
+
+    border-radius: 0px;
+    padding: 12px;
+
+    position: relative;
+}
+
+.search-category .job-category li{
+    margin: 0 5px;
+}
+
+.search-container .search-title div{
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.search-container .search-category .job-category li{
+    float: left;
+    font-size: 0.9rem;
+    display: inline-block;
+    padding: 7px 13px;
+    line-height: 1;
+    border-radius: 8px;
+    background: #e9e9e9;
+}
+
+#recruit-notice-section{
+    background: #f7f7f7;
+    padding: 50px 0;
+}
+
+#recruit-notice-section .container .card-box .title{
+    font-weight: 600;
+    font-size: 1rem;
+    border-left: 3px solid #005bab;
+    padding-left: 10px;
+}
+
+#recruit-notice-section .container .notice-list{
+    background: white;
+    padding: 15px 30px;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+#recruit-notice-section .container .notice-list > div{
+    display: flex;
+    justify-content: space-between;
+}
+
+#recruit-notice-section .container .notice-list a{
+    width: 100%;
+}
+
+#recruit-notice-section .container ul.notice-list:hover {
+    transition: 0.1s;
+    transform: scaleX(1.01) scaleY(1.01);
+}
+
+#recruit-notice-section .top-line{
+    margin-bottom: 5px;
+}
+
+#recruit-notice-section .top-line .career-title{
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+#recruit-notice-section .top-line,
+#recruit-notice-section .bottom-line{
+    display: flex;
+    align-items: center;
+}
+
+#recruit-notice-section .bottom-line{
+    font-size: 0.8rem;
+}
+
+#recruit-notice-section .bottom-line div{
+    margin-right: 10px;
+}
+
+#recruit-notice-section .mid-career,
+#recruit-notice-section .part-time{
+    margin-top: 50px;
+}
+
+#recruit-notice-section .card-box .top-line .fulltime span{
+    font-size: 0.7rem;
+    border: 1px solid #bdbdbd;
+    display: inline-block;
+    padding: 3px;
+    margin: 0;
+    margin-left: 5px;
+    line-height: 1;
+}
+
+#recruit-notice-section .card-box .top-line .career-category span{
+    font-size: 0.7rem;
+    border: 1px solid #bdbdbd;
+    display: inline-block;
+    padding: 3px;
+    margin: 0;
+    line-height: 1;
+}
+
+
+
+/* apply.html */
+
+.apply-section .tabulator{
+    border: none !important;
+    border-right: 0;
+    font-size: 13px !important;
+}
+
+.apply-section .tabulator > div.tabulator-header > div{
+    border-top: 2px solid black;
+}
+
+.apply-section{
+    padding-top: 0 !important;
+    margin-bottom: 50px;
+}
+
+.apply.apply-section .container{
+    background: white;
+    padding: 0;
+    margin: 20px auto;
+}
+
+.apply .container .title-container{
+    display: flex;
+    box-shadow:
+            1px 0 0 0 #888,
+            0 1px 0 0 #888,
+            1px 1px 0 0 #888,
+            1px 0 0 0 #888 inset,
+            0 1px 0 0 #888 inset;
+    padding: 24px;
+}
+
+.apply.apply-section .container .apply-content .content .content-all p{
+    line-height: 1.2;
+    margin: 30px 0;
+}
+
+
+.apply .container .content{
+    box-shadow:
+            1px 0 0 0 #888,
+            0 1px 0 0 #888,
+            1px 1px 0 0 #888,
+            1px 0 0 0 #888 inset,
+            0 1px 0 0 #888 inset;
+    padding: 30px 54px;
+}
+
+.apply .container .title-container .apply-career{
+    font-size: 0.7rem;
+    border: 1px solid #b2b2b2;
+    border-radius: 3px;
+    padding: 0 5px;
+}
+
+.apply .container .title-container .apply-fulltime{
+    font-size: 0.7rem;
+    border: 1px solid #b2b2b2;
+    border-radius: 3px;
+    padding: 0 5px;
+    margin-left: 5px;
+}
+
+.apply .container .title-container .apply-title{
+    font-size: 1rem;
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.apply .container .title-container .apply-subtitle{
+    font-size: 0.9rem;
+    padding-left: 10px;
+}
+
+.content-default.content .flex-box{
+    display: flex;
+}
+
+.content-default.content .flex-box .flex-box-first{
+    flex: 3;
+}
+
+.content-default.content .flex-box .flex-box-second{
+    flex: 3;
+}
+
+.content-default.content .flex-box .flex-box-second .apply-label{
+    visibility: hidden;
+}
+
+.content-default.content .flex-box .flex-box-third{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 2;
+}
+
+.content-default.content .flex-box .flex-box-third img{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.content-default.content .flex-box input:not(.apply-label input){
+    width: 80%;
+    height: 40px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.content-default.content .apply-address input{
+    width: 95%;
+    height: 40px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.content-default.content .radio-buttons input[type="radio"] {
+    display: none; /* 숨겨진 라디오 버튼 */
+}
+
+.content-default.content .radio-buttons label {
+    display: inline-block;
+    padding: 12px 24px;
+    margin-bottom: -4px;
+    cursor: pointer;
+    background-color: #ddd; /* 체크되지 않은 상태의 배경색 */
+}
+
+.content-default.content .radio-buttons input[type="radio"]:checked + label {
+    background-color: #66cdaa; /* 체크된 상태의 배경색 */
+    color: #fff; /* 체크된 상태의 텍스트 색상 */
+}
+
+
+.form_radio_btn {
+    height : 45px;
+    border: 1px solid #EAE7E7;
+}
+.form_radio_btn input[type=radio] {
+    display: none;
+}
+.form_radio_btn label {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 45px;
+}
+
+.form_toggle{
+    margin-left: 10px;
+}
+
+/* Checked */
+.form_radio_btn input[type=radio]:checked + label {
+    background: #5CA3E1;
+    color: #fff;
+    padding: 0 20px;
+}
+
+/* Hover */
+.form_radio_btn label:hover {
+    color: #666;
+}
+
+/* Disabled */
+.form_radio_btn input[type=radio] + label {
+    background: #F9FAFC;
+    color: #666;
+    padding: 0 20px;
+}
+
+
+.apply-content .category-title {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.apply-content .apply-button {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.apply-content .apply-button .btn-notice {
+    background: #005bab;
+    color: white;
+    font-size: 1.5rem;
+    padding: 1.5rem 5rem;
+    border-radius: 100px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+.apply .submit-container{
+    display: flex;
+    background: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 30px;
+}
+
+.apply .submit-container .submit-btn button{
+    padding: 20px 70px;
+    border-radius: 0px;
+    font-size: 1rem;
+    border: none;
+    color: white;
+}
+
+.apply .submit-container .submit-btn button[data-action="preview"]{
+    background: #005BAB;
+    margin-right: 10px;
+}
+
+.apply .submit-container .submit-btn button[data-action="submit"]{
+    background: #000000;
+}
+
+.apply .submit-container .submit-btn{
+    margin: 20px 0;
+}
+
+.submit-container div span{
+    margin-right: 10px;
+}
+
+.apply-section .info-container label{
+    font-weight: bold;
+}
+
+/* inquire */
+
+.apply-inquire .submit-btn button[data-action="add"]{
+    background: #005bab;
+    color: white;
+    font-size: 1.5rem;
+    padding: 1.5rem 5rem;
+    border-radius: 100px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+.apply-inquire .submit-btn{
+    display: flex;
+    justify-content: center;
+}
+
+.apply-inquire .info-container{
+    background: white;
+    border: 1px solid #9e9e9e;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+.info-container > div {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.apply-inquire .content-container .title{
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.apply-inquire .content-container .secret{
+    display: inline-block;
+    float: right
+}
+
+.info-container input {
+    width: 70%;
+}
+
+
+.info-container div lable{
+    font-weight: 600;
+}
+
+.container .content-container{
+    background: white;
+    border: 1px solid #9e9e9e;
+    padding: 30px;
+}
+
+.container .content-container .title{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.apply-inquire .container .submit-btn button{
+    background: #000000;
+    padding: 20px 70px;
+    border-radius: 0px;
+    font-size: 1rem;
+    border: none;
+    color: white;
+}
+
+.apply-inquire .container .submit-btn{
+    display: flex;
+    justify-content: center;
+}
+
+.apply-inquire .container .update-btn button{
+    background: #0d6efd;
+    padding: 20px 70px;
+    border-radius: 0px;
+    font-size: 1rem;
+    border: none;
+    color: white;
+}
+
+.apply-inquire .container .update-btn{
+    padding-top: 20px;
+    padding-right: 10px;
+    justify-content: center;
+    display: inline-block;
+}
+
+.apply-inquire .container .delete-btn button{
+    background: #dc3545;
+    padding: 20px 70px;
+    border-radius: 0px;
+    font-size: 1rem;
+    border: none;
+    color: white;
+}
+
+.apply-inquire .container .delete-btn{
+    padding-top: 20px;
+    justify-content: center;
+    display: inline-block;
+}
+
+.apply-inquire .inquire-input{
+    resize: none;
+
+}
+
+.apply-inquire.apply-section .tabulator .tabulator-tableholder .tabulator-placeholder .tabulator-placeholder-contents{
+    font-weight: 400;
+    font-size: 1rem;
+    color: #333333;
+}
+
+.apply-inquire.apply-section .tabulator .tabulator-tableholder .tabulator-placeholder[tabulator-render-mode="virtual"]{
+    min-height: 300px !important;
+}
+
+.content-container .content-title{
+    width: 100%;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+
+
+/* 지원서 작성 프로필 부분 */
+.previewImg {
+    margin-left: 3px;
+}
+
+.fileboxProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fileboxProfile label {
+    display: inline-block;
+    padding: 4px 8px;
+    margin-left: 5px;
+    font-size: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    border-radius: .25em;
+    cursor: pointer;
+    color: #fff;
+    background-color: #000000;
+    border: 1px solid #000000;
+}
+
+.fileboxProfile input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.fileboxProfile .upload-name {
+    display: inline-block;
+    padding: 0.3em 0.4em;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    background-color: transparent;
+    border: none;
+    border-bottom-color:transparent;
+    border-radius: .25em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* 지원서 작성 부분의 첨부파일 부분 */
+.apply .container .content .file-list{
+    height: 200px;
+    overflow: auto;
+    border: 1px solid #989898;
+    padding: 10px;
+}
+.apply .container .content .file-list .filebox {
+    display: block;
+    width: 90%;
+    margin-bottom: 10px;
+}
+.apply .container .content .file-list .filebox p {
+    font-size: 14px;
+    margin-top: 10px;
+    display: inline-block;
+}
+.apply .container .content .file-list .filebox .delete i{
+    color: #ff5353;
+    margin-left: 5px;
+}
+/* 기본 파일 입력 필드 숨기기 */
+input[type="file"] {
+    display: none;
+}
+label[for="fileInput"] {
+    display: inline-block;
+    padding: 6px 10px;
+    font-size: inherit;
+    line-height: normal;
+    vertical-align: middle;
+    border-radius: .25em;
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(128, 128, 128);
+    border: 1px solid rgb(128, 128, 128);
+}
+
+@media (max-width: 1280px) {
+    .recruit-info-section-B .container .contents-wrap .card-box{
+        width: 260px;
+    }
+
+    .recruit-info-section-B .container .card-box .title{
+        margin: 14px 0;
+    }
+
+    .recruit-info-section-C .container .contents-wrap ul li .card-box{
+        width: 150px;
+        height: 150px;
+    }
+
+    .recruit-info-section-C .container .contents-wrap ul li .card-box div h3{
+        line-height: 1.2rem;
+    }
+    .recruit-info-section-C .container .contents-wrap ul li .card-box .title{
+        padding: 30px;
+        line-height: 1rem;
+    }
+
+
+}

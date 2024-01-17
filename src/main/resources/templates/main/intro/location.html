@@ -68,14 +68,24 @@
     <main>
         <section id="location-section" class="location section">
             <div class="editor-content container">
+                <section class="title-sec inview animated fadeInUp">
+                    <h2 class="sec-title" style="margin-bottom: 20px;">
+                        <p class="en" th:if="${language} == 'kr'">오시는길</p>
+                        <p class="en" th:if="${language} == 'kr'" style=" font-size: 24px; margin-top: -43px; margin-left: 4px; color: #0067bb85; margin-bottom: -40px;">Directions</p>
+                        <p class="en" th:if="${language} == 'eng'">Directions</p>
+                        <p class="en" th:if="${language} == 'eng'" style=" font-size: 24px; margin-top: -43px; margin-left: 4px; color: #0067bb85; margin-bottom: -40px;"></p>
+                        <p class="en" th:if="${language} == 'jp'">アクセス</p>
+                        <p class="en" th:if="${language} == 'jp'" style=" font-size: 24px; margin-top: -43px; margin-left: 4px; color: #0067bb85; margin-bottom: -40px;">Directions</p>
+                    </h2>
+                </section>
             <div class="flex-box">
-                <div class="box-1 inview animated fadeInUp">
+                <!--<div class="box-1 inview animated fadeInUp">
                     <h2 class="sec-title">
                         <p class="en" th:if="${language} == 'kr'">오시는길</p>
                         <p class="en" th:if="${language} == 'eng'">Directions</p>
                         <p class="en" th:if="${language} == 'jp'">アクセス</p>
                     </h2>
-                </div>
+                </div>-->
                 </div>
                 <div class="box-2 inview animated fadeInUp">
                 <div class="location-container">

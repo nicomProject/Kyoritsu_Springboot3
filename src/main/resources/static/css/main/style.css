@@ -23,370 +23,6 @@ section .sub-title{
     padding-top: 40px;
     padding-bottom: 40px;
 }
-/* apply.html */
-
-.apply-section .tabulator{
-    border: none !important;
-    border-right: 0;
-    font-size: 13px !important;
-}
-
-.apply-section .tabulator .tabulator-placeholder{
-    height: 500px;
-}
-
-.apply-section .tabulator > div.tabulator-header > div{
-    border-top: 2px solid black;
-}
-
-.apply-section{
-    padding-top: 0 !important;
-    margin-bottom: 50px;
-}
-
-.apply.apply-section .container{
-    background: white;
-    padding: 0;
-    margin: 20px auto;
-    max-width: 50% !important;
-}
-
-.apply .container .title-container{
-    display: flex;
-    box-shadow:
-            1px 0 0 0 #888,
-            0 1px 0 0 #888,
-            1px 1px 0 0 #888,
-            1px 0 0 0 #888 inset,
-            0 1px 0 0 #888 inset;
-    padding: 24px;
-}
-
-.apply.apply-section .container .apply-content .content .content-all p{
-    line-height: 1.2;
-}
-
-
-.apply .container .content{
-    box-shadow:
-            1px 0 0 0 #888,
-            0 1px 0 0 #888,
-            1px 1px 0 0 #888,
-            1px 0 0 0 #888 inset,
-            0 1px 0 0 #888 inset;
-    padding: 30px 54px;
-}
-
-.apply .container .title-container .apply-career{
-    font-size: 0.7rem;
-    border: 1px solid #b2b2b2;
-    border-radius: 3px;
-    padding: 0 5px;
-}
-
-.apply .container .title-container .apply-fulltime{
-    font-size: 0.7rem;
-    border: 1px solid #b2b2b2;
-    border-radius: 3px;
-    padding: 0 5px;
-    margin-left: 5px;
-}
-
-.apply .container .title-container .apply-title{
-    font-size: 1rem;
-    font-weight: 600;
-    padding-left: 10px;
-}
-
-.apply .container .title-container .apply-subtitle{
-    font-size: 0.9rem;
-    padding-left: 10px;
-}
-
-.content-default.content .flex-box{
-    display: flex;
-}
-
-.content-default.content .flex-box .flex-box-first{
-    flex: 3;
-}
-
-.content-default.content .flex-box .flex-box-second{
-    flex: 3;
-}
-
-.content-default.content .flex-box .flex-box-second .apply-label{
-    visibility: hidden;
-}
-
-.content-default.content .flex-box .flex-box-third{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex: 2;
-}
-
-.content-default.content .flex-box .flex-box-third img{
-    width: 100px;
-    height: 100px;
-    margin-bottom: 10px;
-}
-
-.content-default.content .flex-box input:not(.apply-label input){
-    width: 80%;
-    height: 40px;
-    margin-top: 2px;
-    margin-bottom: 2px;
-}
-
-.content-default.content .apply-address input{
-   width: 95%;
-   height: 40px;
-   margin-top: 2px;
-   margin-bottom: 2px;
-}
-
-.content-default.content .radio-buttons input[type="radio"] {
-    display: none; /* 숨겨진 라디오 버튼 */
-}
-
-.content-default.content .radio-buttons label {
-    display: inline-block;
-    padding: 12px 24px;
-    margin-top: 5px;
-    margin-right: 5px;
-    margin-left: 5px;
-    margin-bottom: -9px;
-    cursor: pointer;
-    background-color: #ddd; /* 체크되지 않은 상태의 배경색 */
-}
-
-.content-default.content .radio-buttons input[type="radio"]:checked + label {
-    background-color: #66cdaa; /* 체크된 상태의 배경색 */
-    color: #fff; /* 체크된 상태의 텍스트 색상 */
-}
-
-
-.form_radio_btn {
-    height : 45px;
-    border: 1px solid #EAE7E7;
-}
-.form_radio_btn input[type=radio] {
-    display: none;
-}
-.form_radio_btn label {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    line-height: 45px;
-}
-
-.form_toggle{
-    margin-left: 10px;
-}
-
-/* Checked */
-.form_radio_btn input[type=radio]:checked + label {
-    background: #5CA3E1;
-    color: #fff;
-    padding: 0 20px;
-}
-
-/* Hover */
-.form_radio_btn label:hover {
-    color: #666;
-}
-
-/* Disabled */
-.form_radio_btn input[type=radio] + label {
-    background: #F9FAFC;
-    color: #666;
-    padding: 0 20px;
-}
-
-
-.apply-content .category-title {
-    font-weight: 600;
-    font-size: 1rem;
-}
-
-.apply-content .apply-button {
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-}
-
-.apply-content .apply-button .btn-notice {
-    width: 250px;
-    height: 60px;
-    background-color: #000;
-    opacity: 0.83;
-    color: white;
-    font-size: 22px;
-}
-
-.apply .submit-container{
-    display: flex;
-    background: white;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 30px;
-}
-
-.apply .submit-container .submit-btn button{
-    padding: 20px 70px;
-    border-radius: 0px;
-    font-size: 1rem;
-    border: none;
-    color: white;
-}
-
-.apply .submit-container .submit-btn button[data-action="preview"]{
-    background: #0072D6;
-    margin-right: 10px;
-}
-
-.apply .submit-container .submit-btn button[data-action="submit"]{
-    background: #000000;
-}
-
-.apply .submit-container .submit-btn{
-    margin: 20px 0;
-}
-
-.submit-container div span{
-    margin-right: 10px;
-}
-
-.apply-section .info-container label{
-    font-weight: bold;
-}
-
-/* inquire */
-
-.apply-inquire .submit-btn button[data-action="add"]{
-    background: #0072D6;
-    padding: 20px 70px;
-    font-size: 1rem;
-    border: none;
-    color: white;
-}
-
-.apply-inquire .submit-btn{
-    display: flex;
-    justify-content: center;
-}
-
-.apply-inquire .info-container{
-    background: white;
-    border: 1px solid #9e9e9e;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 30px;
-    margin: 50px 0;
-}
-
-.info-container > div {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-}
-
-.apply-inquire .content-container .title{
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.apply-inquire .content-container .secret{
-    display: inline-block;
-    float: right
-}
-
-.info-container input {
-    width: 70%;
-}
-
-
-.info-container div lable{
-    font-weight: 600;
-}
-
-.container .content-container{
-    background: white;
-    border: 1px solid #9e9e9e;
-    padding: 30px;
-}
-
-.container .content-container .title{
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.apply-inquire .container .submit-btn button{
-    background: #000000;
-    padding: 20px 70px;
-    border-radius: 0px;
-    font-size: 1rem;
-    border: none;
-    color: white;
-}
-
-.apply-inquire .container .submit-btn{
-    display: flex;
-    justify-content: center;
-    padding: 80px;
-}
-
-.apply-inquire .container .update-btn button{
-    background: #0d6efd;
-    padding: 20px 70px;
-    border-radius: 0px;
-    font-size: 1rem;
-    border: none;
-    color: white;
-}
-
-.apply-inquire .container .update-btn{
-    padding-top: 20px;
-    padding-right: 10px;
-    justify-content: center;
-    display: inline-block;
-}
-
-.apply-inquire .container .delete-btn button{
-    background: #dc3545;
-    padding: 20px 70px;
-    border-radius: 0px;
-    font-size: 1rem;
-    border: none;
-    color: white;
-}
-
-.apply-inquire .container .delete-btn{
-    padding-top: 20px;
-    justify-content: center;
-    display: inline-block;
-}
-
-.apply-inquire .inquire-input{
-    resize: none;
-
-}
-
-.apply-inquire.apply-section .tabulator .tabulator-tableholder .tabulator-placeholder .tabulator-placeholder-contents{
-    font-weight: 500;
-    font-size: 1rem;
-    color: #333333;
-}
-
-.content-container .content-title{
-    width: 100%;
-    border: 1px solid #ccc;
-    margin-bottom: 5px;
-    margin-top: 5px;
-}
 
 /* business-overview (dormitory, dormyinn, resort, seniorlife) */
 
@@ -402,9 +38,11 @@ section .sub-title{
 .dormyinn.section .editor-content .box-2,
 .resort.section .editor-content .box-2,
 .seniorlife.section .editor-content .box-2{
+  /*align-items: center; !* 요소들을 수직 중앙 정렬합니다. *!*/
     display: flex;
-    justify-content: space-between; /* 요소들을 좌우로 분산 정렬합니다. */
-    align-items: center; /* 요소들을 수직 중앙 정렬합니다. */
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
 }
 
 .dormitory.section .editor-content .box-2 .profile.profile-1,
@@ -419,16 +57,19 @@ section .sub-title{
 .dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-1,
 .resort.section .editor-content .box-2 .profile.profile-1 .profile-link-1,
 .seniorlife.section .editor-content .box-2 .profile.profile-1 .profile-link-1{
-    margin-bottom: 20px; /* 각 링크 사이에 간격을 조절합니다. */
+ /*   margin-bottom: 20px; !* 각 링크 사이에 간격을 조절합니다. *!
     font-size: 32px;
-    color: blue;
+    color: blue;*/
+    font-size: 26px;
+    color: #0067bb;
+    font-weight: bolder;
 }
 
 .dormitory.section .editor-content .box-2 .profile.profile-1 .profile-link-2,
 .dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-2,
 .resort.section .editor-content .box-2 .profile.profile-1 .profile-link-2,
 .seniorlife.section .editor-content .box-2 .profile.profile-1 .profile-link-2{
-    margin-bottom: 20px; /* 각 링크 사이에 간격을 조절합니다. */
+   /* margin-bottom: 20px; !* 각 링크 사이에 간격을 조절합니다. *!*/
     font-size: 24px;
     font-weight: bold;
 }
@@ -444,7 +85,7 @@ section .sub-title{
 .dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-3,
 .resort.section .editor-content .box-2 .profile.profile-1 .profile-link-3,
 .seniorlife.section .editor-content .box-2 .profile.profile-1 .profile-link-3{
-    margin-bottom: 20px; /* 각 링크 사이에 간격을 조절합니다. */
+   /* margin-bottom: 20px; !* 각 링크 사이에 간격을 조절합니다. *!*/
     font-size: 24px;
 }
 
@@ -476,14 +117,14 @@ section .sub-title{
 .resort.section .editor-content .box-3,
 .seniorlife.section .editor-content .box-3{
     margin-top: 150px;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
 }
 
 .dormitory.section .editor-content .box-3 img,
 .dormyinn.section .editor-content .box-3 img,
 .resort.section .editor-content .box-3 img,
 .seniorlife.section .editor-content .box-3 img{
-    max-width: 25%;
+    max-width: 20%;
     height: auto; /* 이미지의 가로를 최대로 유지하면서 비율을 유지합니다. */
     display: block; /* 이미지를 블록 레벨로 설정하여 가운데 정렬합니다. */
     margin-left: auto; /* 왼쪽 여백을 자동으로 설정하여 가운데 정렬합니다. */
@@ -510,10 +151,10 @@ section .sub-title{
 .seniorlife.section .editor-content .box-4 .profile-content-1{
     flex: 1.5; /* 1.5:8.5 비율로 나누기 */
     color: #0067bb;
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 22px;
     margin-bottom: 5px;
     line-height: 1.5;
+    font-weight: bolder;
 }
 
 .dormitory.section .editor-content .box-4 .profile-content-2,
@@ -526,7 +167,7 @@ section .sub-title{
     margin-bottom: 10px; /* 각 링크 아래에 여백 추가 (선택 사항) */
     border-left: 2px solid #0067bb;
     color: #0067bb;
-    font-size: 1.7rem;
+    font-size: 18px;
     margin-left: 1em;
     line-height: 1.6;
     text-align: left;
@@ -540,12 +181,13 @@ section .sub-title{
     justify-content: space-between;
     align-items: center;
     max-width: 70%;
-    margin-left: auto; /* 왼쪽 여백을 자동으로 설정하여 가운데 정렬합니다. */
-    margin-right: auto; /* 오른쪽 여백을 자동으로 설정하여 가운데 정렬합니다. */
-    margin-top: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 98px;
     line-height: 1.5;
-    font-size: 1.5rem;
+    font-size: 22px;
     text-align: center;
+    flex-direction: column;
 }
 
 
@@ -570,7 +212,8 @@ section .sub-title{
 .overview.section .container .flex-box .box-2 .profile .profile-key{
     padding-right: 14px;
     border-right: solid 2px #0067bb;
-    font-size: 1.5rem;
+    /*font-size: 1.5rem;*/
+    font-size : 22px;
     font-weight: bold;
     text-align: right;
     flex: 1;
@@ -584,8 +227,9 @@ section .sub-title{
     padding-left: 26px;
     margin-right: 5px;
     line-height: 1.8125;
-    font-size: 1.5rem;
-    font-weight: bold;
+   /* font-size: 1.5rem;*/
+    font-size : 16px;
+    font-weight: normal;
     flex: 2;
     display: flex;
     flex-direction: column;
@@ -605,9 +249,10 @@ section .sub-title{
     margin-bottom: 12px;
 }
 .sec-title .en {
+    margin-bottom: 62px;
     color: #0067bb;
     font-weight: bold;
-    font-size: clamp(32px, 2vw, 4.2vh);
+    font-size: clamp(34px, 2vw, 4.2vh);
 }
 
 
@@ -632,20 +277,22 @@ section .sub-title{
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: flex-end;
-    width: 57%;
+    width: 18%;
     line-height: 1.2;
-    font-size: 1.3rem;
+    font-size: 16px;
+    font-weight: normal;
 }
 
 .overview.section .editor-content .box-2 .profile-7 .profile-value p .name{
     width: 32%;
     margin-right: 2%;
     line-height: 1.2;
-    font-size: 1.3rem;
+    font-size: 16px;
+    font-weight: normal;
 }
 
 .overview.section .container .flex-box .box-2 .profile .small{
-    font-size: 1.3rem;
+    font-size: 16px;
     font-weight: normal;
 }
 
@@ -794,10 +441,12 @@ section .sub-title{
 .history.section .container .pc_view .history-title p.left {
     color: rgba(0, 103, 187, 0.8);
     font-weight: bold;
+    font-size: 26px;
 }
 .history.section .container .pc_view .history-title p.right {
     color: rgba(0, 103, 187, 0.8);
     font-weight: bold;
+    font-size: 26px;
 }
 .history.section .container .pc_view .history-title .left,
 .history.section .container .pc_view .history-title .right {
@@ -810,6 +459,7 @@ section .sub-title{
     padding: 47px 0;
     border-radius: 50%;
     font-weight: bold;
+    font-size: 22px;
 }
 .history.section .container .pc_view .history-title .center::after {
     content: "";
@@ -965,15 +615,18 @@ section .sub-title{
 }
 .history.section .container .pc_view .history-list-container .history-item .left p,
 .history.section .container .pc_view .history-list-container .history-item .right p {
-    font-size: 0.8rem;
-    font-weight: bold;
+    /*font-size: 0.8rem;*/
+    /*font-weight: bold;*/
+    font-size: 16px;
+    font-weight: normal;
     line-height: 1.81;
 }
 .history.section .container .pc_view .history-list-container .history-item .left .small,
 .history.section .container .pc_view .history-list-container .history-item .right .small {
-    font-size: 1.2rem;
+    font-size: 16px;
     line-height: 1.78;
-    font-weight: bold;
+   /* font-weight: bold;*/
+    font-weight: normal;
 }
 .history.section .container .pc_view .history-list-container .history-item .left .line,
 .history.section .container .pc_view .history-list-container .history-item .right .line {
@@ -999,7 +652,7 @@ section .sub-title{
     height: 150px;
     width: 150px;
     margin: 0 100px;
-    border: 11px solid #0067bb;
+    border: 7px solid #0067bb;
     border-radius: 50%;
     background-color: #fff;
 }
@@ -1018,7 +671,8 @@ section .sub-title{
     }
 }
 .history.section .container .pc_view .history-list-container .history-item .center .year {
-    font-size: 2.9rem;
+    font-size: 26px;
+   /* font-size: 2.9rem;*/
     font-weight: bold;
     color: #0067bb;
 }
@@ -2039,8 +1693,11 @@ section .sub-title{
 }
 
 .organization .chart.inview.animated.fadeInUp {
-    margin-top : 50px;
+   /* margin-top : 50px;
+    width: 100%;*/
+    margin-top: 30px;
     width: 100%;
+    margin-bottom: 30px;
 }
 
 .organization.section .container .chart{
@@ -2080,494 +1737,18 @@ section .sub-title{
 .location.section .location-container .top{
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: clamp(16px, 2vw, 2.2vh);
-    line-height: 1.4; /* 원하는 비율로 설정 */
+    font-size: 16px;
+    /*font-size: clamp(16px, 2vw, 2.2vh);
+    line-height: 1.4; !* 원하는 비율로 설정 *!*/
 }
 
 .location.section .location-container .map-info .bottom{
     display: flex;
     justify-content: space-between;
-    font-size: clamp(14px, 2vw, 2.2vh);
-    line-height: 1.2; /* 원하는 비율로 설정 */
-}
-
-/* notice/notice */
-.notice.section{
-    padding-top: 0 !important
-}
-.notice.section .tabulator{
-    border: none !important;
-    border-right: 0px;
-    font-size: 13px !important;
-}
-
-.notice.section .tabulator .tabulator-placeholder {
-    height: 500px;
-}
-
-.notice.section .tabulator > div.tabulator-header > div{
-    border-top: 2px solid black;
-}
-
-.notice-container .notice-title .list-btn{
-    padding-left: 10px;
-}
-
-.notice.section .tabulator .tabulator-tableholder .tabulator-placeholder .tabulator-placeholder-contents{
-    font-weight: 500;
-    font-size: 1rem;
-    color: #333333;
-}
-
-/* notice/notice/detail */
-.notice.section .notice-container{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.notice.section .notice-container .notice-content{
-    text-align: left;
-}
-
-.notice.section .notice-title{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 15px;
-}
-
-.notice.section .notice-title .list-btn{
-    font-size: 22px;
-}
-
-.notice-section #content{
-    text-align: left !important;
-}
-
-.notice.section #title{
-    font-weight: 600;
-    font-size: 1.5rem;
-}
-
-.notice.section .v-line{
-    margin-left: 20px;
-    margin-right: 20px;
-    border-left : 1px solid rgb(169, 169, 169);
-    height : 20px;
-}
-
-.notice.section .notice-subtitle{
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    border-top: 1px solid #e3e3e3;
-    border-bottom: 1px solid #e3e3e3;
-    padding: 10px;
-}
-
-.notice.section .notice-content{
-    padding: 30px;
-    border-bottom: 1px solid #e3e3e3;
-}
-
-.notice.section .notice-title .list-btn a {
-    font-weight: 500;
-}
-
-
-/* recruit info */
-.recruit-info.section .container .title-wrap p{
-    line-height: 20px !important;
-    font-size: 0.8rem;
-    font-weight: 500;
-    border-left: 3px solid blue;
-    padding-left: 10px;
-}
-
-.recruit-info.section .container .title-wrap h3{
-    margin-bottom: 10px;
-}
-
-#recruit-info-section1 .container .contents-wrap{
-    display: flex;
-}
-
-#recruit-info-section2 .container .contents-wrap{
-    display: flex;
-    flex-wrap: wrap;
-    /*justify-content: center;*/
-    padding: 30px;
-}
-
-#recruit-info-section2 .container .contents-wrap .card-box{
-    border: 1px solid #ccc;
-    width: 330px;
-    height: 250px;
-    margin: 10px;
-}
-
-.recruit-info.section .single-table {
-    background: #fff;
-    text-align: center;
-    position: relative;
-    -webkit-transition: all 0.4s ease;
-    -moz-transition: all 0.4s ease;
-    transition: all 0.4s ease;
-    padding: 60px 20px;
-    box-shadow: 0 10px 30px rgba(111, 111, 111, 0.1);
-    overflow: hidden;
-}
-
-.recruit-info.section .single-table .popular {
-    color: #fff;
-    background: #005bab;
-    display: inline-block;
-    padding: 5px 70px;
-    position: absolute;
-    right: -60px;
-    top: 14px;
-    font-size: 13px;
-    transform: rotate(45deg);
-}
-
-/* Table Head */
-.recruit-info.section .single-table .table-head {}
-
-.recruit-info.section .single-table .title {
-    font-size: 23px;
-    font-weight: 600;
-    line-height: 26px;
-}
-
-.recruit-info.section .single-table .title span {
-    display: block;
-    margin-top: 0;
-    font-size: 13px;
-    font-weight: 400;
-    color: #888;
-    text-transform: capitalize;
-}
-
-.recruit-info.section .single-table .price {
-    height: 120px;
-    width: 120px;
-    display: inline-block;
-    border: 1px dashed #74b9ff;
-    border-radius: 50%;
-    margin: 20px 0;
-}
-
-.recruit-info.section .single-table .amount {
-    position: relative;
-    color: #333;
-    font-size: 35px;
-    display: inline-block;
-    margin: 45px 0;
-    font-weight: 600;
-}
-
-.recruit-info.section .single-table .curency {
-    color: #555;
-    font-size: 17px;
-    font-weight: 400;
-    position: absolute;
-    left: -14px;
-    top: -7px;
-}
-
-.recruit-info.section .single-table .duration {
-    color: #888;
-    font-size: 11px;
-    font-weight: 400;
-    position: absolute;
-    right: -25px;
-    bottom: -6px;
-}
-
-.recruit-info.section .table-list li {
-    color: #444;
-    margin-bottom: 5px;
-    font-size: 14px;
-}
-
-.recruit-info.section .table-l0000ist li:last-child {
-    margin-bottom: 0;
-}
-
-.recruit-info.section .button {
-    margin-top: 30px;
-}
-
-#recruit-info-section1{
-    padding:100px 0 0 0;
-}
-
-#recruit-info-section1 .row {
-    margin: 55px 0;
-}
-
-#recruit-info-section2{
-   padding-bottom: 50px !important;
-   padding-top: 50px !important;
-}
-
-#recruit-info-section2 .container .card-box .title{
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin: 20px 0;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-#recruit-info-section2 .container .card-box .content{
-    font-size: 1rem;
-    line-height: 1.2rem;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-#recruit-info-section2 .container .card-box i{
-    padding: 10px;
-    font-size: 25px;
-    margin-bottom: 25px;
-}
-
-#recruit-info-section3{
-    padding-bottom: 50px !important;
-    padding-top: 50px !important;
-}
-
-#recruit-info-section3 .table{
-    width: 100%;
-    height: 2rem;
-}
-
-#recruit-info-section3 .table th{
-    border-color: inherit;
-}
-
-#recruit-info-section3 .table th h3{
-    margin-bottom: 5px;
-}
-
-#recruit-info-section3 .table td{
-    border-bottom-width: 0;
-}
-
-#recruit-info-section3 .table .contact-info{
-    padding-top: 20px;
-}
-
-#recruit-info-section4{
-    padding-bottom: 50px !important;
-    padding-top: 50px !important;
-}
-
-#recruit-info-section4{
-    background: #f7f7f7;
-}
-
-#recruit-info-section4 .container .contents-wrap{
-    display: flex;
-}
-
-#recruit-info-section4 .container .contents-wrap ul{
-    align-items: center;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-#recruit-info-section4 .container .contents-wrap ul li .card-box{
-    width: 200px;
-    height: 200px;
-    padding: 8px;
-    border-radius: 160px;
-    background-color: rgba(195, 191, 190, .15);
-    margin-right: 30px;
-
-    display: flex;
-    justify-content: center;
-}
-
-#recruit-info-section4 .container .contents-wrap ul .arrow-icon{
-    font-size: 2rem;
-    margin-right: 30px;
-}
-
-#recruit-info-section4 .container .contents-wrap ul li .card-box .title{
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-#recruit-info-section4 .container .contents-wrap ul li .card-box span{
-    margin-bottom: 15px;
-    font-size: 24px;
-    font-weight: 900;
-    color: #007aeb;
-    opacity: .5;
-}
-
-#recruit-info-section4 .container .contents-wrap ul li .card-box div h3{
-    margin-bottom: 0;
-    padding-left: 0;
-    border-left: none;
-    display: inline-block;
-    font-size: 18px;
-    font-weight: 700;
-    color: #333;
-    vertical-align: middle;
-}
-
-#recruit-info-section6 .container{
-    text-align: center;
-}
-
-#recruit-info-section6 .container .btn{
-    background: #005bab;
-    color: white;
-    font-size: 2rem;
-    padding: 2rem 7rem;
-    border-radius: 100px;
-    font-weight: 500;
-}
-
-/* recruit-notice */
-.search-container{
-    max-width: 70%;
-    margin: 3rem auto;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.search-container .search-input{
-    width: 553px;
-    height: 37px;
-
-    margin-bottom: 10px;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-}
-
-.search-container .search-input input{
-    width: 100%;
-    height: 100%;
-
-    border-radius: 0px;
-    padding: 12px;
-
-    position: relative;
-}
-
-.search-container .search-input i{
-    position: absolute;
-    padding-right: 20px;
-}
-
-.search-category .job-category li{
-    margin: 0 5px;
-}
-
-.search-container .search-title div{
-    font-weight: 600;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.search-container .search-category .job-category li{
-    float: left;
-    font-size: 0.9rem;
-    display: inline-block;
-    padding: 7px 13px;
-    line-height: 1;
-    border-radius: 8px;
-    background: #e9e9e9;
-}
-
-#recruit-notice-section{
-    background: #f7f7f7;
-    padding: 50px 0;
-}
-
-#recruit-notice-section .container{
-    max-width: 50%;
-}
-
-#recruit-notice-section .container .card-box .title{
-    font-weight: 600;
-    font-size: 1rem;
-}
-
-#recruit-notice-section .container .notice-list{
-    background: white;
-    padding: 15px 30px;
-    border: 1px solid #ccc;
-    margin: 10px 0;
-}
-
-#recruit-notice-section .container .notice-list > div{
-    display: flex;
-    justify-content: space-between;
-}
-
-#recruit-notice-section .container .notice-list a{
-    width: 100%;
-}
-
-#recruit-notice-section .top-line{
-    margin-bottom: 5px;
-}
-
-#recruit-notice-section .top-line .career-title{
-    font-weight: 500;
-    margin-left: 10px;
-}
-
-#recruit-notice-section .top-line,
-#recruit-notice-section .bottom-line{
-    display: flex;
-    align-items: center;
-}
-
-#recruit-notice-section .bottom-line{
-    font-size: 0.8rem;
-}
-
-#recruit-notice-section .bottom-line div{
-    margin-right: 10px;
-}
-
-#recruit-notice-section .mid-career,
-#recruit-notice-section .part-time{
-    margin-top: 50px;
-}
-
-#recruit-notice-section .card-box .top-line .fulltime span{
-    font-size: 0.7rem;
-    border: 1px solid #bdbdbd;
-    display: inline-block;
-    padding: 3px;
-    margin: 0;
-    margin-left: 5px;
-    line-height: 1;
-}
-
-#recruit-notice-section .card-box .top-line .career-category span{
-    font-size: 0.7rem;
-    border: 1px solid #bdbdbd;
-    display: inline-block;
-    padding: 3px;
-    margin: 0;
-    line-height: 1;
+    font-size: 16px;
+    font-weight: normal;
+  /*  font-size: clamp(14px, 2vw, 2.2vh);*/
+  /*  line-height: 1.2; !* 원하는 비율로 설정 *!*/
 }
 
 /* tabulator */
@@ -2577,6 +1758,81 @@ section .sub-title{
 
 .tabulator .tabulator-tableholder .tabulator-placeholder[tabulator-render-mode="virtual"]{
     min-height: 0 !important;
+}
+
+/* tabulator footer*/
+.tabulator .tabulator-footer{
+    text-align: center;
+}
+
+.tabulator .tabulator-footer .tabulator-page-size{
+    border: solid 1px #dee2e6;
+    border-radius: 25px;
+}
+
+.tabulator-page:disabled{
+    cursor: initial !important;
+    color: #aaa !important;
+    border: 1px solid #ccc !important;
+    background-color: #fff;
+    pointer-events: none;
+}
+.table-content .tabulator-paginator{
+    font-size: 0.9rem !important;
+}
+
+.tabulator-paginator label {
+    display: none;
+}
+
+.tabulator-page{
+    padding: 5px 12px !important;
+    color: #333;
+    margin: 4px !important;
+    border-radius: 25px !important;
+    border: 1px solid #ccc !important;
+}
+
+.tabulator .tabulator-header .tabulator-header-filter input,
+.tabulator .tabulator-header .tabulator-header-filter select{
+    flex: 1;
+    border: solid 1px #dedede;
+    border-radius: 5px;
+    padding: 0.375rem 0.55rem !important;
+    outline: none;
+}
+
+.tabulator .tabulator-footer .tabulator-paginator {
+    text-align: center;
+}
+
+.tabulator .tabulator-footer .tabulator-page:hover {
+    background-color: transparent !important;
+    color: #009dfd !important;
+    border: 1px solid #009dfd !important;
+}
+
+.tabulator .tabulator-footer .tabulator-page.active {
+    background-color: #e9f2ff !important;
+    color: #000;
+    font-weight: 500;
+    border: 1px solid #4584ff !important;
+}
+
+.tabulator .tabulator-footer .tabulator-page-size {
+    background: none;
+    border: solid 1px #dee2e6;
+    border-radius: 25px;
+    padding: 5px;
+}
+
+.tabulator .tabulator-footer .tabulator-page-size:hover {
+    border: 1px solid #7f7fff;
+}
+
+.tabulator .tabulator-footer .tabulator-page[data-page=last],
+.tabulator-page[data-page=first] {
+    border-radius: 25px !important;
 }
 
 /* bootstrap.min.css */
@@ -2591,25 +1847,24 @@ section .sub-title{
     display: flex;
     justify-content: center; /* 수평 중앙 정렬 */
     align-items: flex-end; /* 수직 아래 정렬 */
-    padding-top: 110px;
+    padding-top: 53px;
 }
 
 .breadcrumbs-content.center button {
     /*padding: 45px 90px; !* 버튼 안의 내용과 버튼 주변 간격 조절 *!*/
-    padding: clamp(10px, 4vw, 40px) clamp(10px, 3vw, 80px);
+    padding: 1.8rem 2.8rem;
     background-color: rgba(0, 0, 0, 0.5); /* 90% 투명한 회색 배경 */
     color: #fff; /* 텍스트 색상 설정 */
     border: none; /* 테두리 제거 */
     cursor: pointer; /* 마우스 커서를 포인터로 변경하여 클릭 가능한 상태로 표시 */
     transition: background-color 0.3s ease; /* 부드러운 배경색 전환 효과 */
     border-radius: 0px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     white-space: nowrap;
 }
 
 .breadcrumbs-content.center .activation {
-    background-color: #f5f5f5;
-    font-size: clamp(18px, 2vw, 1.5vh);
+    background-color: #ffffff;
     color: #000;
 }
 
@@ -2633,100 +1888,6 @@ section .sub-title{
 
 .breadcrumbs .breadcrumbs-content .breadcrumb-nav{
     padding-bottom: 0px !important;
-}
-
-
-/* 지원서 작성 프로필 부분 */
-.previewImg {
-    margin-left: 3;
-}
-
-.fileboxProfile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.fileboxProfile label {
-    display: inline-block;
-    padding: 4px 8px;
-    margin-left: 5px;
-    color: #999;
-    font-size: inherit;
-    line-height: normal;
-    vertical-align: middle;
-    border-radius: .25em;
-    cursor: pointer;
-    color: #fff;
-    background-color: #000000;
-    border: 1px solid #000000;
-}
-
-.fileboxProfile input[type="file"] {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-}
-
-.fileboxProfile .upload-name {
-    display: inline-block;
-    padding: 0.3em 0.4em;
-    font-size: inherit;
-    font-family: inherit;
-    line-height: normal;
-    vertical-align: middle;
-    background-color: transparent;
-    border: none;
-    border-bottom-color:transparent;
-    border-radius: .25em;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-/* 지원서 작성 부분의 첨부파일 부분 */
-.apply .container .content .file-list{
-    height: 200px;
-    overflow: auto;
-    border: 1px solid #989898;
-    padding: 10px;
-}
-.apply .container .content .file-list .filebox {
-    display: block;
-    width: 90%;
-    margin-bottom: 10px;
-}
-.apply .container .content .file-list .filebox p {
-    font-size: 14px;
-    margin-top: 10px;
-    display: inline-block;
-}
-.apply .container .content .file-list .filebox .delete i{
-    color: #ff5353;
-    margin-left: 5px;
-}
-/* 기본 파일 입력 필드 숨기기 */
-input[type="file"] {
-  display: none;
-}
-label[for="fileInput"] {
-    display: inline-block;
-    padding: 6px 10px;
-    color: #999;
-    font-size: inherit;
-    line-height: normal;
-    vertical-align: middle;
-    border-radius: .25em;
-    cursor: pointer;
-    color: #fff;
-    background-color: gray;
-    border: 1px solid gray;
 }
 
 
@@ -2754,4 +1915,115 @@ label[for="fileInput"] {
         justify-content: center;
         margin-right: 0px;
     }
+    /*기업개요 page*/
+    .overview.section .editor-content .box-2 .profile-7 .profile-value p .position{
+        padding-top: 11px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        width: 32%;
+        line-height: 1.2;
+        font-size: 16px;
+        font-weight: normal;
+    }
+    .overview.section .editor-content .box-2 .profile-7 .profile-value p .name {
+        width: 37%;
+        margin-right: 2%;
+        line-height: 1.2;
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    /*사업영역 도미인 page*/
+
+    .dormitory.section .editor-content .box-5,
+    .dormyinn.section .editor-content .box-5,
+    .resort.section .editor-content .box-5,
+    .seniorlife.section .editor-content .box-5{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 70%;
+        margin-left: auto; /* 왼쪽 여백을 자동으로 설정하여 가운데 정렬합니다. */
+        margin-right: auto; /* 오른쪽 여백을 자동으로 설정하여 가운데 정렬합니다. */
+        margin-top: 45px;
+        line-height: 1.5;
+        font-size:16px;
+        text-align: center;
+    }
+    /* 큰제목 *!*/
+    .dormitory.section .editor-content .box-2 .profile.profile-1 .profile-link-1,
+    .dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-1,
+    .resort.section .editor-content .box-2 .profile.profile-1 .profile-link-1,
+    .seniorlife.section .editor-content .box-2 .profile.profile-1 .profile-link-1{
+        font-size: 22px;
+        color: #0067bb;
+        font-weight: bolder;
+    }
+    /* 중간제목 *!*/
+    .dormitory.section .editor-content .box-2 .profile.profile-1 .profile-link-2,
+    .dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-2,
+    .resort.section .editor-content .box-2 .profile.profile-1 .profile-link-2,
+    .seniorlife.section .editor-content .box-2 .profile.profile-1 .profile-link-2{
+        font-size: 22px;
+        font-weight: bold;
+    }
+    /* 본문내용 *!*/
+    .dormitory.section .editor-content .box-2 .profile.profile-1 .profile-link-3,
+    .dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-3,
+    .resort.section .editor-content .box-2 .profile.profile-1 .profile-link-3,
+    .seniorlife.section .editor-content .box-2 .profile.profile-1 .profile-link-3{
+        font-size: 16px;
+    }
+    /* 텍스트 대지사이즈 *!*/
+    .dormitory.section .editor-content .box-2 .profile.profile-1,
+    .dormyinn.section .editor-content .box-2 .profile.profile-1,
+    .resort.section .editor-content .box-2 .profile.profile-1,
+    .seniorlife.section .editor-content .box-2 .profile.profile-1{
+        padding: 0 0px; /* 텍스트와 이미지 간격을 조절합니다. */
+    }
+    /* 비즈니스 특징영역 *!*/
+    .dormitory.section .editor-content .box-4 .profile-content-2,
+    .dormyinn.section .editor-content .box-4 .profile-content-2,
+    .resort.section .editor-content .box-4 .profile-content-2,
+    .seniorlife.section .editor-content .box-4 .profile-content-2{
+        flex: 8.5;
+        padding-left: 20px;
+        display: block;
+        margin-bottom: 10px;
+        border-left: 2px solid #0067bb;
+        color: #005bab;
+        font-size: 16px;
+        margin-left: 1em;
+        line-height: 1.6;
+        text-align: left;
+        font-weight: normal;
+    }
+    .dormitory.section .editor-content .box-4 .profile-content-1,
+    .dormyinn.section .editor-content .box-4 .profile-content-1,
+    .resort.section .editor-content .box-4 .profile-content-1,
+    .seniorlife.section .editor-content .box-4 .profile-content-1{
+        flex: 1.5;
+        color: #0067bb;
+        font-size: 16px;
+        margin-bottom: 5px;
+        line-height: 1.5;
+        font-weight: normal;
+    }
+    .dormitory.section .editor-content .box-3,
+    .dormyinn.section .editor-content .box-3,
+    .resort.section .editor-content .box-3,
+    .seniorlife.section .editor-content .box-3{
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+}
+
+.location.section {
+    padding-top: 70px;
+    padding-bottom: 179px;
+    position: relative;
+    min-height: 789.41px;
 }

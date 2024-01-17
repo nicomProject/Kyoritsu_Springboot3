@@ -437,17 +437,6 @@ big {
 	font-size: 125%;
 }
 
-
-#recruit-notice-section.section,
-#recruit-info-section6.section,
-#recruit-info-section4.section,
-#recruit-info-section3.section {
-	padding-top:70px;
-	padding-bottom:100px;
-	position: relative;
-	min-height: 0px;
-}
-
 .section {
 	padding-top:70px;
 	padding-bottom:100px;
