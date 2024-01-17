@@ -1592,7 +1592,7 @@ select option[value="jp"]::before {
   font-size: 34px;
   line-height: 1.2;
   color: #ffffff;
-  font-weight: 300;
+  font-weight: 600;
 }
 
 .hero-slider .hero-text .content-detail {
@@ -1794,7 +1794,7 @@ select option[value="jp"]::before {
 
 .feature-right#one-st {
   position: relative;
-  background-image: url('/static/images/bizfinity/dormyinn.PNG');
+  /*background-image: url('/static/images/bizfinity/dormyinn.PNG');*/
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
@@ -1803,7 +1803,7 @@ select option[value="jp"]::before {
 
 .feature-right#two-st {
   position: relative;
-  background-image: url('/static/images/bizfinity/dormyinn_2.PNG');
+  /*background-image: url('/static/images/bizfinity/dormyinn_2.PNG');*/
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
@@ -1937,16 +1937,18 @@ select option[value="jp"]::before {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 5%;
+  color: #333;
 }
 
 .building .category {
-  font-size: 26px;
+  font-size: 38px;
   color : #005bab;
   font-weight: bold;
 }
 
 .building .count {
-  font-size: 16px;
+  font-size: 20px;
+  margin-top:5%;
 }
 
 /*=============================
@@ -1992,6 +1994,7 @@ select option[value="jp"]::before {
   font-weight: bold;
   margin-bottom: 1%;
   margin-top: 1%;
+  color: #333333;
 }
 
 .About.section .img_content {
@@ -2621,13 +2624,13 @@ select option[value="jp"]::before {
 
 @media screen and (max-width: 1280px) {
   .building .category {
-    font-size: calc(22px * 1280 / 1920);
+    font-size: calc(38px * 1280 / 1920);
   }
 }
 
 @media screen and (max-width: 1280px) {
   .building .count {
-    font-size: calc(16px * 1280 / 1920);
+    font-size: calc(20px * 1280 / 1920);
   }
 }
 

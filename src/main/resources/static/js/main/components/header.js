@@ -217,7 +217,7 @@ const Menu = {
     },
     createMenuGroupName: function (menu, languageValue) {
         const displayName = (languageValue === 'kr') ? menu.name : (languageValue === 'eng') ? menu.nameEnglish : menu.nameJapanese;
-        return $(`<h1 class="page-title">${displayName}</h1><p>Business plan draws on a wide range of knowledge from different business disciplines. Business draws on a wide range of different business .</p>`);
+        return $(`<h1 class="page-title">${displayName}</h1><p>[수정필요]Business plan draws on a wide range of knowledge from different business disciplines. Business draws on a wide range of different business .</p>`);
     },
     createBreadcrumbsMenu: function (menu, btnId, languageValue) {
         const displayName = (languageValue === 'kr') ? menu.name : (languageValue === 'eng') ? menu.nameEnglish : menu.nameJapanese;

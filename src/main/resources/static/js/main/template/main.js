@@ -1,5 +1,16 @@
 (function () {
 
+	$('.glightbox.video.first').on('click', function () {
+		var video_first = $('#video1')[0]; // jQuery 객체를 JavaScript DOM 요소로 변환
+		$('.glightbox.video.first').hide();
+		video_first.play();
+	});
+
+	$('.glightbox.video.second').on('click', function () {
+		var video_second = $('#video2')[0]; // jQuery 객체를 JavaScript DOM 요소로 변환
+		$('.glightbox.video.second').hide();
+		video_second.play();
+	});
 
 	function initializeSwiper() {
 		// Swiper가 모든 main.js가 실행되는 페이지에 사용될 필요가 없음. 연쇄 오류를 방지하기 위해 해당 라이브러리가 포함된 곳에서만 동작하도록 수정
@@ -8,10 +19,10 @@
 				spaceBetween: 0,
 				slidesPerView: 1, // Set to 1 to show one slide at a time
 				centeredSlides: true,
-				// autoplay: {
-				// 	delay: 2500,
-				// 	disableOnInteraction: false,
-				// },
+				autoplay: {
+					delay: 2500,
+					disableOnInteraction: false,
+				},
 				loop: false,
 				loopAdditionalSlides: 1,
 				pagination: {
@@ -29,7 +40,6 @@
 				spaceBetween: 4000,
 				slidesPerView: 1, // Set to 1 to show one slide at a time
 				centeredSlides: true,
-
 				loop: false,
 				loopAdditionalSlides: 1,
 				pagination: {
@@ -51,7 +61,6 @@
 				spaceBetween: 4000,
 				slidesPerView: 1, // Set to 1 to show one slide at a time
 				centeredSlides: true,
-
 				loop: false,
 				loopAdditionalSlides: 1,
 				pagination: {
