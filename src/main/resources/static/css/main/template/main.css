@@ -2031,29 +2031,29 @@ select option[value="jp"]::before {
 }
 
 .About.section .feature-content .custom-prev-button-about::before {
-  content: "<";
-  display: inline-block;
-  width: 30px;
-  height: 30px;
+  content: url('/static/images/main/arrow_prev.svg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px; /* 아이콘 크기에 맞게 조절 */
+  height: 30px; /* 아이콘 크기에 맞게 조절 */
   margin-right: 10px;
-  background-color: #005bab; /* 동그란 원형 배경색 */
+  background-color: #005bab;
   border-radius: 50%;
-  text-align: center;
-  line-height: 30px; /* 수정: 높이와 동일하게 설정 */
-  color: white; /* 동그란 원형 안의 텍스트 색상 */
+  color: white;
 }
 
 .About.section .feature-content .custom-next-button-about::before {
-  content: ">";
-  display: inline-block;
-  width: 30px;
-  height: 30px;
+  content: url('/static/images/main/arrow_next.svg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px; /* 아이콘 크기에 맞게 조절 */
+  height: 30px; /* 아이콘 크기에 맞게 조절 */
   margin-right: 10px;
-  background-color: #005bab; /* 동그란 원형 배경색 */
+  background-color: #005bab;
   border-radius: 50%;
-  text-align: center;
-  line-height: 30px; /* 수정: 높이와 동일하게 설정 */
-  color: white; /* 동그란 원형 안의 텍스트 색상 */
+  color: white;
 }
 
 .About.section .feature-content .custom-prev-button-about.clicked::before {
@@ -2115,29 +2115,29 @@ select option[value="jp"]::before {
 }
 
 .Gallery .feature-content .custom-prev-button-gallery::before {
-  content: "<";
-  display: inline-block;
-  width: 30px;
-  height: 30px;
+  content: url('/static/images/main/arrow_prev.svg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px; /* 아이콘 크기에 맞게 조절 */
+  height: 30px; /* 아이콘 크기에 맞게 조절 */
   margin-right: 10px;
-  background-color: #005bab; /* 동그란 원형 배경색 */
+  background-color: #005bab;
   border-radius: 50%;
-  text-align: center;
-  line-height: 30px; /* 수정: 높이와 동일하게 설정 */
-  color: white; /* 동그란 원형 안의 텍스트 색상 */
+  color: white;
 }
 
 .Gallery .feature-content .custom-next-button-gallery::before {
-  content: ">";
-  display: inline-block;
-  width: 30px;
-  height: 30px;
+  content: url('/static/images/main/arrow_next.svg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px; /* 아이콘 크기에 맞게 조절 */
+  height: 30px; /* 아이콘 크기에 맞게 조절 */
   margin-right: 10px;
-  background-color: #005bab; /* 동그란 원형 배경색 */
+  background-color: #005bab;
   border-radius: 50%;
-  text-align: center;
-  line-height: 30px; /* 수정: 높이와 동일하게 설정 */
-  color: white; /* 동그란 원형 안의 텍스트 색상 */
+  color: white;
 }
 
 .Gallery .feature-content .custom-prev-button-gallery.clicked::before {

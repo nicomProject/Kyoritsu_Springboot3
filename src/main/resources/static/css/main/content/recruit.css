@@ -26,7 +26,7 @@
 
 .recruit-info-section-B .container .contents-wrap .card-box{
     border: 1px solid #f1f1f1;
-    width: 314px;
+    width: 300px;
     height: 236px;
 }
 
@@ -258,10 +258,12 @@
 
 .recruit-info-section-C .container .contents-wrap ul li .card-box span{
     margin-bottom: 15px;
-    font-size: 24px;
     font-weight: 900;
     color: #007aeb;
     opacity: .5;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
 }
 
 .recruit-info-section-C .container .contents-wrap ul li .card-box div h3{
@@ -913,7 +915,7 @@ label[for="fileInput"] {
 
 @media (max-width: 1280px) {
     .recruit-info-section-B .container .contents-wrap .card-box{
-        width: 260px;
+        width: 248px;
     }
 
     .recruit-info-section-B .container .card-box .title{
