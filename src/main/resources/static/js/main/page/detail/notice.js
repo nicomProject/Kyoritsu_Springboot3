@@ -8,6 +8,12 @@ $(function () {
         },
         event: function () {
             const paramValue = this.params.key
+            const writer = { kr: "작성자", eng: "Writer", jp: "作成者" };
+            const creationDate = { kr: "작성일", eng: "Creation date", jp: "作成日" };
+            const language = document.getElementById('language').value;
+
+            $(".notice-subtitle .writer").text(writer[language]);
+            $(".notice-subtitle .creation_date").text(creationDate[language]);
 
             if(paramValue !== ""){
                 AjaxUtil.requestBody({
