@@ -5,7 +5,7 @@
     line-height: 20px !important;
     font-size: 0.8rem;
     font-weight: 500;
-    border-left: 3px solid blue;
+    border-left: 3px solid #005bab;
     padding-left: 10px;
 }
 
@@ -123,17 +123,12 @@
     margin-top: 30px;
 }
 
-.recruit-info-section-E{
-    padding:100px 0 0 0;
-}
-
 .recruit-info-section-E .row {
     margin: 55px 0;
 }
 
 .recruit-info-section-B{
     padding-bottom: 50px !important;
-    padding-top: 50px !important;
 }
 
 .recruit-info-section-B .container .card-box .title{
@@ -160,8 +155,11 @@
 }
 
 .recruit-info-section-A{
-    padding-bottom: 50px !important;
-    padding-top: 50px !important;
+    padding-bottom: 0px !important;
+}
+
+.recruit-info-section-A .card-body{
+    padding: 0px;
 }
 
 .recruit-info-section-A .table{
@@ -179,6 +177,17 @@
 
 .recruit-info-section-A .table td{
     border-bottom-width: 0;
+}
+
+.contact-info img{
+    width: 28px;
+}
+
+#recruit-info-section1 .contact-info span{
+    background-color: #f1f1f1;
+    padding: 3px 15px;
+    border-radius: 20px;
+    font-weight: 500;
 }
 
 .recruit-info-section-A .table .contact-info{
@@ -254,10 +263,11 @@
 .recruit-info-section-D .container .btn{
     background: #005bab;
     color: white;
-    font-size: 2rem;
-    padding: 2rem 7rem;
+    font-size: 1.5rem;
+    padding: 1.5rem 5rem;
     border-radius: 100px;
     font-weight: 500;
+    margin-top: 30px;
 }
 
 #recruit-notice-section.section,
@@ -268,6 +278,27 @@
     padding-bottom:100px;
     position: relative;
     min-height: 0px;
+}
+
+#recruit-info-section1 .table{
+    margin-bottom: 0px;
+}
+
+#recruit-info-section1 .table .contact-info{
+    padding-bottom: 14px;
+}
+
+#recruit-info-section2 .table .contact-info span{
+    font-size: 0.9rem;
+    margin-left: 1rem;
+}
+
+#recruit-info-section8{
+    min-height: 0px;
+}
+
+.table>:not(:last-child)>:last-child>*{
+    padding: 0px;
 }
 
 /* recruit-notice */
@@ -443,6 +474,7 @@
 
 .apply.apply-section .container .apply-content .content .content-all p{
     line-height: 1.2;
+    margin: 30px 0;
 }
 
 
@@ -646,11 +678,13 @@
 /* inquire */
 
 .apply-inquire .submit-btn button[data-action="add"]{
-    background: #0072D6;
-    padding: 20px 70px;
-    font-size: 1rem;
-    border: none;
+    background: #005bab;
     color: white;
+    font-size: 1.5rem;
+    padding: 1.5rem 5rem;
+    border-radius: 100px;
+    font-weight: 500;
+    margin-top: 30px;
 }
 
 .apply-inquire .submit-btn{
@@ -755,7 +789,7 @@
 }
 
 .apply-inquire.apply-section .tabulator .tabulator-tableholder .tabulator-placeholder .tabulator-placeholder-contents{
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1rem;
     color: #333333;
 }

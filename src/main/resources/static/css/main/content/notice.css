@@ -26,6 +26,10 @@
 }
 
 /* notice/notice/detail */
+.notice.section.notice-detail-section{
+    padding-top: 80px !important;
+}
+
 .notice.section .notice-container{
     display: flex;
     flex-direction: column;
