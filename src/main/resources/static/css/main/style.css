@@ -419,7 +419,6 @@ section .sub-title{
     }
 }
 .history.section .container {
-    width: 1080px;
     margin: 0 auto;
 }
 @media screen and (max-width: 768px) {
@@ -1705,7 +1704,7 @@ section .sub-title{
 }
 
 .organization.section .container .chart img{
-    width: 70%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
