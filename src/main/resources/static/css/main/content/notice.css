@@ -2,16 +2,13 @@
 
 /* notice/notice */
 .notice.section{
-    padding-top: 0 !important
+    padding-top: 0 !important;
+    min-height: 0;
 }
 .notice.section .tabulator{
     border: none !important;
     border-right: 0px;
     font-size: 13px !important;
-}
-
-.notice.section .tabulator .tabulator-placeholder {
-    height: 500px;
 }
 
 .notice.section .tabulator > div.tabulator-header > div{
@@ -82,4 +79,19 @@
 
 .notice.section .notice-title .list-btn a {
     font-weight: 500;
+}
+
+
+.notice.section .tabulator .tabulator-tableholder .tabulator-placeholder[tabulator-render-mode="virtual"]{
+    min-height: 300px !important;
+}
+
+
+@media (max-width: 1920px) {
+
+}
+
+@media (max-width: 1280px) {
+
+
 }
