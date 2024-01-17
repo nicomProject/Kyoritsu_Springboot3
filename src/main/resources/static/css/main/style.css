@@ -1952,3 +1952,44 @@ section .sub-title{
     position: relative;
     min-height: 789.41px;
 }
+
+/* vision page css 수정 */
+
+.vision.section .section-div {
+    padding-top: 10px;
+    padding-bottom: 69px;
+}
+.vision_span{
+    display: flex;
+    position: unset;
+    color: #0067bb;
+    font-size: 36px;
+    vertical-align: middle;
+    font-weight: bold;
+    margin-bottom: -4px;
+}
+
+.vision_strong{
+    display: flex;
+    position: unset;
+    color: #0067bb;
+    font-size: 26px;
+    vertical-align: middle;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.vision_ul{
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+.vision_li .p{
+    color: #000000;
+}
+.vision_p {
+    color: #000000;
+    font-size: 16px;
+
+}
