@@ -570,7 +570,8 @@ section .sub-title{
 .overview.section .container .flex-box .box-2 .profile .profile-key{
     padding-right: 14px;
     border-right: solid 2px #0067bb;
-    font-size: 1.5rem;
+    /*font-size: 1.5rem;*/
+    font-size : 22px;
     font-weight: bold;
     text-align: right;
     flex: 1;
@@ -584,8 +585,9 @@ section .sub-title{
     padding-left: 26px;
     margin-right: 5px;
     line-height: 1.8125;
-    font-size: 1.5rem;
-    font-weight: bold;
+   /* font-size: 1.5rem;*/
+    font-size : 16px;
+    font-weight: normal;
     flex: 2;
     display: flex;
     flex-direction: column;
@@ -605,9 +607,10 @@ section .sub-title{
     margin-bottom: 12px;
 }
 .sec-title .en {
+    margin-bottom: 62px;
     color: #0067bb;
     font-weight: bold;
-    font-size: clamp(32px, 2vw, 4.2vh);
+    font-size: clamp(34px, 2vw, 4.2vh);
 }
 
 
@@ -632,20 +635,22 @@ section .sub-title{
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: flex-end;
-    width: 57%;
+    width: 18%;
     line-height: 1.2;
-    font-size: 1.3rem;
+    font-size: 16px;
+    font-weight: normal;
 }
 
 .overview.section .editor-content .box-2 .profile-7 .profile-value p .name{
     width: 32%;
     margin-right: 2%;
     line-height: 1.2;
-    font-size: 1.3rem;
+    font-size: 16px;
+    font-weight: normal;
 }
 
 .overview.section .container .flex-box .box-2 .profile .small{
-    font-size: 1.3rem;
+    font-size: 16px;
     font-weight: normal;
 }
 
@@ -2754,4 +2759,24 @@ label[for="fileInput"] {
         justify-content: center;
         margin-right: 0px;
     }
+    /*기업개요 page*/
+    .overview.section .editor-content .box-2 .profile-7 .profile-value p .position{
+        padding-top: 11px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        width: 32%;
+        line-height: 1.2;
+        font-size: 16px;
+        font-weight: normal;
+    }
+    .overview.section .editor-content .box-2 .profile-7 .profile-value p .name {
+        width: 37%;
+        margin-right: 2%;
+        line-height: 1.2;
+        font-size: 16px;
+        font-weight: normal;
+    }
+
 }
