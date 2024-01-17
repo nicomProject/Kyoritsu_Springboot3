@@ -435,10 +435,12 @@ section .sub-title{
 .history.section .container .pc_view .history-title p.left {
     color: rgba(0, 103, 187, 0.8);
     font-weight: bold;
+    font-size: 26px;
 }
 .history.section .container .pc_view .history-title p.right {
     color: rgba(0, 103, 187, 0.8);
     font-weight: bold;
+    font-size: 26px;
 }
 .history.section .container .pc_view .history-title .left,
 .history.section .container .pc_view .history-title .right {
@@ -451,6 +453,7 @@ section .sub-title{
     padding: 47px 0;
     border-radius: 50%;
     font-weight: bold;
+    font-size: 22px;
 }
 .history.section .container .pc_view .history-title .center::after {
     content: "";
@@ -606,15 +609,18 @@ section .sub-title{
 }
 .history.section .container .pc_view .history-list-container .history-item .left p,
 .history.section .container .pc_view .history-list-container .history-item .right p {
-    font-size: 0.8rem;
-    font-weight: bold;
+    /*font-size: 0.8rem;*/
+    /*font-weight: bold;*/
+    font-size: 16px;
+    font-weight: normal;
     line-height: 1.81;
 }
 .history.section .container .pc_view .history-list-container .history-item .left .small,
 .history.section .container .pc_view .history-list-container .history-item .right .small {
-    font-size: 1.2rem;
+    font-size: 16px;
     line-height: 1.78;
-    font-weight: bold;
+   /* font-weight: bold;*/
+    font-weight: normal;
 }
 .history.section .container .pc_view .history-list-container .history-item .left .line,
 .history.section .container .pc_view .history-list-container .history-item .right .line {
@@ -640,7 +646,7 @@ section .sub-title{
     height: 150px;
     width: 150px;
     margin: 0 100px;
-    border: 11px solid #0067bb;
+    border: 7px solid #0067bb;
     border-radius: 50%;
     background-color: #fff;
 }
@@ -659,7 +665,8 @@ section .sub-title{
     }
 }
 .history.section .container .pc_view .history-list-container .history-item .center .year {
-    font-size: 2.9rem;
+    font-size: 26px;
+   /* font-size: 2.9rem;*/
     font-weight: bold;
     color: #0067bb;
 }
@@ -1680,8 +1687,11 @@ section .sub-title{
 }
 
 .organization .chart.inview.animated.fadeInUp {
-    margin-top : 50px;
+   /* margin-top : 50px;
+    width: 100%;*/
+    margin-top: 30px;
     width: 100%;
+    margin-bottom: 30px;
 }
 
 .organization.section .container .chart{
@@ -1841,4 +1851,11 @@ section .sub-title{
         font-weight: normal;
     }
 
+}
+
+.location.section {
+    padding-top: 70px;
+    padding-bottom: 179px;
+    position: relative;
+    min-height: 789.41px;
 }
