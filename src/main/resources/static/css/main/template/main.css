@@ -1934,7 +1934,7 @@ select option[value="jp"]::before {
 }
 
 .building .category_title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   margin-bottom: 5%;
 }
@@ -1946,7 +1946,7 @@ select option[value="jp"]::before {
 }
 
 .building .count {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 /*=============================
@@ -1984,6 +1984,19 @@ select option[value="jp"]::before {
   font-size: 34px;
   line-height: 50px;
   font-weight: 700;
+}
+
+.About.section .img_title {
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: bold;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+.About.section .img_content {
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 .About.section .feature-content {
@@ -2578,12 +2591,106 @@ select option[value="jp"]::before {
 /* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
 @media screen and (max-width: 1280px) {
   .hero-slider .hero-text .content-detail {
-    font-size: calc(16px * 1280 / 2560);
+    font-size: calc(16px * 1280 / 1920);
   }
 }
 
 @media screen and (max-width: 1280px) {
   .Features .feature-content .title h3 {
-    font-size: calc(34px * 1280 / 2560);
+    font-size: calc(34px * 1280 / 1920);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .Features .feature-item .banner-content .title {
+    font-size: calc(22px * 1280 / 1920);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .Features .feature-item .banner-content p {
+    font-size: calc(16px * 1280 / 1920);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .building .category_title {
+    font-size: calc(16px * 1280 / 1920);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .building .category {
+    font-size: calc(22px * 1280 / 1920);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .building .count {
+    font-size: calc(16px * 1280 / 1920);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .About.section .feature-content .title h3 {
+    font-size: calc(34px * 1280 / 1920);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .Gallery .feature-content .title h3 {
+    font-size: calc(34px * 1280 / 1920);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .Features .feature-content .title span {
+    font-size: calc(16px * 1280 / 1920);
+    padding: calc(4px * 1280 / 1920) calc(18px * 1280 / 1920);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .About.section .feature-content .title span {
+    font-size: calc(16px * 1280 / 1920);
+    padding: calc(4px * 1280 / 1920) calc(18px * 1280 / 1920);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .Gallery .feature-content .title span {
+    font-size: calc(16px * 1280 / 1920);
+    padding: calc(4px * 1280 / 1920) calc(18px * 1280 / 1920);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .Gallery.section .single-slider {
+    padding: 2% 2% 5% 2%;
+    background: #005BAB
+  }
+
+  .Gallery .single-slider {
+    height: calc(400px * 1280/ 1920);
+    width: calc(640px * 1280/ 1920);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .hero-slider .hero-text .small-title {
+    font-size: calc(16px * 1280 / 1920);
+    padding: calc(4px * 1280 / 1920) calc(18px * 1280 / 1920);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .hero-slider .hero-text .small-title {
+    font-size: calc(22px * 1280 / 1920);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .About.section .img_content {
+    font-size: calc(18px * 1280 / 1920);
   }
 }
