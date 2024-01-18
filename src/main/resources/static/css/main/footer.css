@@ -381,6 +381,12 @@
     padding: 12px !important;
 }
 
+@media (max-width: 2560px) {
+    .footer .f-contact ul{
+        width: 13rem;
+    }
+}
+
 @media (max-width: 1920px) {
     .footer .footer-item {
         font-size: 1rem;
@@ -392,6 +398,11 @@
         right: 55px;
         font-size: 0.8rem;
     }
+
+    .footer .f-contact ul{
+        width: 11rem;
+    }
+
 }
 
 @media (max-width: 1280px) {
@@ -407,7 +418,7 @@
     }
 
     .footer .f-contact ul{
-        width: 6.5rem;
+        width: 9rem;
     }
 
     .footer .footer_menu li:first-child a{
