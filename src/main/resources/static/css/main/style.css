@@ -1183,6 +1183,10 @@ section .sub-title{
     font-size: 1.2rem;
 }
 
+.history.section .container .pc_view .history-list-container .right p:nth-child(1) {
+    font-size: 1.2rem;
+}
+
 .history.section .container .pc_view .history-list-container .right {
     display: flex;
     flex-wrap: wrap;
@@ -1882,7 +1886,7 @@ section .sub-title{
     border-radius: 0px;
     font-size: 1rem;
     white-space: nowrap;
-    width: 230px;
+    width: 25%;
 }
 
 .breadcrumbs-content.center .activation {

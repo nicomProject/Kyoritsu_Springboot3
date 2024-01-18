@@ -1912,6 +1912,13 @@ select option[value="jp"]::before {
   flex-wrap: wrap;
 }
 
+.Images .container .row .Images-relative{
+  position: relative;
+  top: 45px;
+  text-align: right;
+  font-size: 16px;
+}
+
 
 .Images .container .row .building li{
   width: 14%;
@@ -2631,6 +2638,13 @@ select option[value="jp"]::before {
 @media screen and (max-width: 1280px) {
   .building .count {
     font-size: calc(20px * 1280 / 1920);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .Images .Images-relative {
+    font-size: calc(16px * 1280 / 1920) !important;
+    top: calc(45px * 1280 / 1920) !important;;
   }
 }
 
