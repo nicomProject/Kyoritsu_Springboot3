@@ -1399,7 +1399,7 @@ select option[value="jp"]::before {
 
 .navbar-nav .nav-item .sub-menu {
   /*min-width: 220px;*/
-  width: 300% !important;
+  width: 200px !important;
   background-color: #fff;
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
   position: absolute;
