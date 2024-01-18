@@ -2697,3 +2697,29 @@ select option[value="jp"]::before {
     font-size: calc(18px * 1280 / 1920);
   }
 }
+
+
+/*모바일 버전 */
+@media (max-width: 1000px) {
+  .nav-item {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 1 !important; /* 메인 메뉴보다 낮은 값 */
+  }
+
+  .sub-menu {
+    position: static !important; /* 모바일에서 서브 메뉴 위치 */
+    width: auto !important; /* 모바일에서 서브 메뉴 너비 */
+    transform: none !important; /* 중앙 정렬 제거 */
+  }
+  .navbar-nav .nav-item {
+    margin: 0 10px;
+    display: inline-flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    flex-direction: column;
+  }
+}
+
