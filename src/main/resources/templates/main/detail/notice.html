@@ -22,6 +22,7 @@
     <input type="hidden" id="page_group_id" value="news"/>
     <input type="hidden" id="page_id" value="notice"/>
     <input type="hidden" id="detail_page_name" value="notice"/>
+    <input type="hidden" id="language" th:value="${language}"/>
 
     <!-- Start Breadcrumbs -->
     <div class="breadcrumbs" id="announcement" data-stellar-background-ratio="0.5">
@@ -68,12 +69,12 @@
                     </div>
                     <div class="notice-subtitle">
                         <div style="display: flex; align-items: center;">
-                            <span class="font-weight-500">작성자</span>
+                            <span class="font-weight-500 writer">작성자</span>
                             <div class="v-line"></div>
                             <span id="create-user"></span>
                         </div>
                         <div style="display: flex; align-items: center;">
-                            <span class="font-weight-500">등록일</span>
+                            <span class="font-weight-500 creation_date">작성일</span>
                             <div class="v-line"></div>
                             <span id="create-date"> </span>
                         </div>

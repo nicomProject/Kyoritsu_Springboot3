@@ -90,7 +90,7 @@ public class MainDataInitRunner implements ApplicationRunner {
         if(!mainMenuStoredList.containsKey("오시는길")) mainMenuList.add(MainMenu.builder().order(5).menu(company).url("/intro/location").name("오시는길").nameEnglish("Direction").nameJapanese("アクセス").type(MainMenuType.INTRO).build());
         
         // '사업영역' 하위 메뉴
-        if(!mainMenuStoredList.containsKey("도미인")) mainMenuList.add(MainMenu.builder().order(2).menu(product).url("/business/dormyinn").name("도미인").nameEnglish("Dormy Inn").nameJapanese("ドーミー").type(MainMenuType.INTRO).build());
+        if(!mainMenuStoredList.containsKey("도미인")) mainMenuList.add(MainMenu.builder().order(2).menu(product).url("/business/dormyinn").name("도미인").nameEnglish("Dormy Inn").nameJapanese("ドーミーイン").type(MainMenuType.INTRO).build());
 
         // '채용정보' 하위 메뉴
         if(!mainMenuStoredList.containsKey("직원소개")) mainMenuList.add(MainMenu.builder().order(1).menu(recruit).url("/recruit/employee_info").name("직원소개").nameEnglish("Employee<br>introduction").nameJapanese("社員紹介").type(MainMenuType.GENERAL).build());
@@ -100,7 +100,7 @@ public class MainDataInitRunner implements ApplicationRunner {
         if(!mainMenuStoredList.containsKey("채용문의")) mainMenuList.add(MainMenu.builder().order(5).menu(recruit).url("/recruit/inquire").name("채용문의").nameEnglish("Recruitment<br>Inquiry").nameJapanese("採用お問い合わせ").type(MainMenuType.GENERAL).build());
 
         // '공지사항' 하위 메뉴
-        if(!mainMenuStoredList.containsKey(("공지사항"))) mainMenuList.add(MainMenu.builder().order(1).menu(notice).url("/notice/notice").name(" 공지사항 ").nameEnglish("Announcement").nameJapanese("お知らせ").type(MainMenuType.GENERAL).build());
+        if(!mainMenuStoredList.containsKey(("공지사항"))) mainMenuList.add(MainMenu.builder().order(1).menu(notice).url("/notice/notice").name("공지사항 ").nameEnglish("Announcement").nameJapanese("お知らせ").type(MainMenuType.GENERAL).build());
 
         // mainMenu 업데이트
         log.info("누락된 하위 메뉴 {}건 추가됨", mainMenuList.size());

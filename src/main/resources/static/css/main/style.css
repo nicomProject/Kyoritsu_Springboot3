@@ -277,6 +277,13 @@ section .sub-title{
     flex-direction: column;
 }
 
+.overview.section .editor-content .box-2#overview_img{
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    margin-right: 10%;
+}
+
 .overview.section .editor-content .box-2 .profile{
     display: flex;
     padding-bottom: 10px;
@@ -1172,7 +1179,7 @@ section .sub-title{
 }
 
 .history.section .container .pc_view .history-list-container .left p:nth-child(2) {
-    margin-left: 10%;
+    margin-left: 5%;
     font-size: 1.2rem;
 }
 
