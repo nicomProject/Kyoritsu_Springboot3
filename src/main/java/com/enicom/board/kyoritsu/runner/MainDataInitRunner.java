@@ -100,7 +100,7 @@ public class MainDataInitRunner implements ApplicationRunner {
         if(!mainMenuStoredList.containsKey("채용문의")) mainMenuList.add(MainMenu.builder().order(5).menu(recruit).url("/recruit/inquire").name("채용문의").nameEnglish("Recruitment<br>Inquiry").nameJapanese("採用お問い合わせ").type(MainMenuType.GENERAL).build());
 
         // '공지사항' 하위 메뉴
-        if(!mainMenuStoredList.containsKey(("공지사항"))) mainMenuList.add(MainMenu.builder().order(1).menu(notice).url("/notice/notice").name(" 공지사항 ").nameEnglish("Announcement").nameJapanese("お知らせ").type(MainMenuType.GENERAL).build());
+        if(!mainMenuStoredList.containsKey(("공지사항"))) mainMenuList.add(MainMenu.builder().order(1).menu(notice).url("/notice/notice").name("공지사항 ").nameEnglish("Announcement").nameJapanese("お知らせ").type(MainMenuType.GENERAL).build());
 
         // mainMenu 업데이트
         log.info("누락된 하위 메뉴 {}건 추가됨", mainMenuList.size());
