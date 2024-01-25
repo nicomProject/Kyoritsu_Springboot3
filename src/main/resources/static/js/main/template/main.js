@@ -1,5 +1,17 @@
 (function () {
 
+	document.querySelector('.scroll-top').addEventListener('click', function () {
+		// 메뉴바의 클래스나 아이디를 사용하여 해당 요소를 찾아냅니다.
+		var menuBar = document.querySelector('.header.navbar-area.div-0');
+
+		// 메뉴바로 스크롤합니다.
+		menuBar.scrollIntoView({
+			behavior: 'smooth',
+			block: 'start'
+		});
+	});
+
+
 	$('.glightbox.video.first').on('click', function () {
 		var video_first = $('#video1')[0]; // jQuery 객체를 JavaScript DOM 요소로 변환
 		$('.glightbox.video.first').hide();
@@ -339,32 +351,5 @@
 
 })();
 
-// ====== scroll top js
-window.onscroll = function () {
-        var header_navbar = document.querySelector(".navbar-area");
-        var sticky = header_navbar.offsetTop;
-        if (window.pageYOffset > sticky) {
-            header_navbar.classList.add("sticky");
-        } else {
-            header_navbar.classList.remove("sticky");
-        }
-        var backToTo = document.querySelector(".scroll-top");
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-            backToTo.style.display = "block";
-        } else {
-            backToTo.style.display = "none";
-        }
-    };
 
-Math.easeInOutQuad = function (t, b, c, d) {
-
-	t /= d/2;
-	if (t < 1) return c/2*t*t + b;
-	t--;
-	return -c/2 * (t*(t-2) - 1) + b;
-};
-
-document.querySelector('.scroll-top').onclick = function () {
-	scrollTo(document.documentElement); 
-}
 

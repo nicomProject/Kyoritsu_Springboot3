@@ -8,7 +8,6 @@ $(function () {
             document.getElementById("btnEmployeeInfo").addEventListener("click", function() { window.location.href = '/recruit/employee_info'; });
             document.getElementById("btnInfo").addEventListener("click", function() { window.location.href = '/recruit/info'; });
             document.getElementById("btnNotice").addEventListener("click", function() { window.location.href = '/recruit/notice'; });
-            document.getElementById("btnApply").addEventListener("click", function() { window.location.href = '/recruit/apply'; });
             document.getElementById("btnInquire").addEventListener("click", function() { window.location.href = '/recruit/inquire'; });
 
             // formData = {'name' : '이름', 'phone' : '연락처', 'title' : '제목', 'textarea' : '문의내용', 'password' : '비밀번호'};

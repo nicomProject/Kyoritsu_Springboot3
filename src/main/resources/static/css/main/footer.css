@@ -118,19 +118,21 @@
 }
 
 .footer .footer_menu li:first-child {
-    font-size: clamp(10px, 2vw, 1.8vh);
     min-width: 25%;
+    text-align: center;
 }
 
 .footer .footer_menu li:first-child a{
-    font-size: clamp(16px, 2vw, 1.8vh);
+    font-size: 18px;
     margin-bottom: 10px;
     font-weight: 500;
+    text-align: center;
 }
 
 .footer .footer_menu li:not(:first-child) {
     /*margin-left: -5%;*/
-    font-size: clamp(10px, 2vw, 1.8vh);
+    font-size: 18px;
+    text-align: center;
 }
 
 .footer #footer_left {
@@ -141,7 +143,7 @@
 
 .footer #footer_left #footer_left_content {
     margin-left: 20px;
-    font-size: clamp(16px, 2vw, 1.6vh);
+    font-size: 18px;
 }
 
 .footer #footer_left #footer_left_content a:first-child{
@@ -149,7 +151,7 @@
 }
 
 .footer #footer_left #footer_left_content a:not(:first-child){
-    font-size: 0.8rem;
+    font-size: 14px;
     line-height: 1.3rem;
 }
 
@@ -240,7 +242,7 @@
     display: inline-block;
     color: #ffffff;
     font-weight: 300;
-    font-size: clamp(12px, 2vw, 1.4vh);
+    font-size: 14px;
 }
 
 .footer .f-contact ul li a:hover {
@@ -383,7 +385,7 @@
 
 @media (max-width: 2560px) {
     .footer .f-contact ul{
-        width: 13rem;
+        width: 11.5rem;
     }
 }
 
@@ -406,7 +408,7 @@
     }
 
     .footer .f-contact ul{
-        width: 11rem;
+        width: 9rem;
     }
 
 }

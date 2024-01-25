@@ -82,7 +82,7 @@ section .sub-title{
 .resort.section .editor-content .box-2 .profile.profile-1 .profile-link-2,
 .seniorlife.section .editor-content .box-2 .profile.profile-1 .profile-link-2{
    /* margin-bottom: 20px; !* 각 링크 사이에 간격을 조절합니다. *!*/
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -98,7 +98,7 @@ section .sub-title{
 .resort.section .editor-content .box-2 .profile.profile-1 .profile-link-3,
 .seniorlife.section .editor-content .box-2 .profile.profile-1 .profile-link-3{
    /* margin-bottom: 20px; !* 각 링크 사이에 간격을 조절합니다. *!*/
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .dormitory.section .editor-content .box-2 .profile.profile-1 .profile-link-3 a,
@@ -167,6 +167,7 @@ section .sub-title{
     margin-bottom: 5px;
     line-height: 1.5;
     font-weight: bolder;
+    text-align: center;
 }
 
 .dormitory.section .editor-content .box-4 .profile-content-2,
@@ -183,6 +184,7 @@ section .sub-title{
     margin-left: 1em;
     line-height: 1.6;
     text-align: left;
+    font-weight: 500;
 }
 
 .dormitory.section .editor-content .box-5,
@@ -197,7 +199,7 @@ section .sub-title{
     margin-right: auto;
     margin-top: 98px;
     line-height: 1.5;
-    font-size: 22px;
+    font-size: 20px;
     text-align: center;
     flex-direction: column;
 }
@@ -264,7 +266,17 @@ section .sub-title{
     margin-bottom: 62px;
     color: #0067bb;
     font-weight: bold;
-    font-size: clamp(34px, 2vw, 4.2vh);
+    font-size: 38px;
+}
+
+.sec-title .en-content {
+    text-align: left;
+    font-size: 22px;
+    margin-top: -43px;
+    margin-left: 4px;
+    color: #0067bb85;
+    font-weight: bold;
+    margin-bottom: 52px;
 }
 
 
@@ -391,6 +403,29 @@ section .sub-title{
     /*font-size: 1.5rem;*/
 }
 
+.vision.section .midashi.inview.animated.fadeInUp.h3 {
+    font-size: 22px;
+    color: #0067bb;
+    border-bottom: 2px solid #0067bb;
+    padding-bottom: 9px;
+    margin-bottom: 12px;
+}
+
+.vision.section .midashi.inview.animated.fadeInUp.h5{
+    color: #0067bb;
+    padding-bottom: 15px;
+    margin-bottom: 60px;
+    font-size: 20px;
+}
+.vision.section .vision-bottom {
+    color: #0067bb;
+    padding-bottom: 15px;
+    margin-bottom: 60px;
+    margin-top: 38px;
+    font-size: 22px;
+    line-height: 1.5
+}
+
 /* history */
 @media screen and (min-width: 769px) {
     .sp_view {
@@ -408,7 +443,7 @@ section .sub-title{
         display: block;
     }
     .pc_view {
-        display: none;
+        /*display: none;*/
     }
     body {
         font-size: 1.2rem;
@@ -459,12 +494,12 @@ section .sub-title{
 .history.section .container .pc_view .history-title p.left {
     color: rgba(0, 103, 187, 0.8);
     font-weight: bold;
-    font-size: 26px;
+    font-size: 22px;
 }
 .history.section .container .pc_view .history-title p.right {
     color: rgba(0, 103, 187, 0.8);
     font-weight: bold;
-    font-size: 26px;
+    font-size: 22px;
 }
 .history.section .container .pc_view .history-title .left,
 .history.section .container .pc_view .history-title .right {
@@ -1175,16 +1210,16 @@ section .sub-title{
 }
 
 .history.section .container .pc_view .history-list-container .left p:nth-child(1) {
-    font-size: 1.2rem;
+    font-size: 18px;
 }
 
 .history.section .container .pc_view .history-list-container .left p:nth-child(2) {
     margin-left: 5%;
-    font-size: 1.2rem;
+    font-size: 18px;
 }
 
 .history.section .container .pc_view .history-list-container .right p:nth-child(1) {
-    font-size: 1.2rem;
+    font-size: 18px;
 }
 
 .history.section .container .pc_view .history-list-container .right {
@@ -1759,7 +1794,7 @@ section .sub-title{
 .location.section .location-container .top{
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: 16px;
+    font-size: 18px;
     /*font-size: clamp(16px, 2vw, 2.2vh);
     line-height: 1.4; !* 원하는 비율로 설정 *!*/
 }
@@ -1767,10 +1802,8 @@ section .sub-title{
 .location.section .location-container .map-info .bottom{
     display: flex;
     justify-content: space-between;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: normal;
-  /*  font-size: clamp(14px, 2vw, 2.2vh);*/
-  /*  line-height: 1.2; !* 원하는 비율로 설정 *!*/
 }
 
 /* tabulator */
@@ -1884,7 +1917,7 @@ section .sub-title{
     cursor: pointer;
     transition: background-color 0.3s ease;
     border-radius: 0px;
-    font-size: 1rem;
+    font-size: 1.3rem;
     white-space: nowrap;
     width: 25%;
 }
@@ -1914,6 +1947,65 @@ section .sub-title{
 
 .breadcrumbs .breadcrumbs-content .breadcrumb-nav{
     padding-bottom: 0px !important;
+}
+
+.location.section {
+    padding-top: 70px;
+    padding-bottom: 179px;
+    position: relative;
+    min-height: 789.41px;
+}
+
+/* vision page css 수정 */
+
+.vision.section .section-div {
+    padding-top: 10px;
+    padding-bottom: 69px;
+}
+.vision_span{
+    display: flex;
+    position: unset;
+    color: #0067bb;
+    font-size: 36px;
+    vertical-align: middle;
+    font-weight: bold;
+    margin-bottom: -4px;
+}
+
+.vision_strong{
+    display: flex;
+    position: unset;
+    color: #0067bb;
+    font-size: 22px;
+    vertical-align: middle;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.vision_ul{
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+.vision_li .p{
+    color: #000000;
+}
+.vision_p {
+    color: #000000;
+    font-size: 18px;
+
+}
+
+.btn.white-bg.mouse-dir {
+    border-radius: 20px;
+    display: flex;
+    width: 94px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
 }
 
 
@@ -1978,72 +2070,6 @@ section .sub-title{
         font-size:16px;
         text-align: center;
     }
-    /* 큰제목 *!*/
-    .dormitory.section .editor-content .box-2 .profile.profile-1 .profile-link-1,
-    .dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-1,
-    .resort.section .editor-content .box-2 .profile.profile-1 .profile-link-1,
-    .seniorlife.section .editor-content .box-2 .profile.profile-1 .profile-link-1{
-        font-size: 22px;
-        color: #0067bb;
-        font-weight: bolder;
-    }
-    /* 중간제목 *!*/
-    .dormitory.section .editor-content .box-2 .profile.profile-1 .profile-link-2,
-    .dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-2,
-    .resort.section .editor-content .box-2 .profile.profile-1 .profile-link-2,
-    .seniorlife.section .editor-content .box-2 .profile.profile-1 .profile-link-2{
-        font-size: 22px;
-        font-weight: bold;
-    }
-    /* 본문내용 *!*/
-    .dormitory.section .editor-content .box-2 .profile.profile-1 .profile-link-3,
-    .dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-3,
-    .resort.section .editor-content .box-2 .profile.profile-1 .profile-link-3,
-    .seniorlife.section .editor-content .box-2 .profile.profile-1 .profile-link-3{
-        font-size: 16px;
-    }
-    /* 텍스트 대지사이즈 *!*/
-    .dormitory.section .editor-content .box-2 .profile.profile-1,
-    .dormyinn.section .editor-content .box-2 .profile.profile-1,
-    .resort.section .editor-content .box-2 .profile.profile-1,
-    .seniorlife.section .editor-content .box-2 .profile.profile-1{
-        padding: 0 0px; /* 텍스트와 이미지 간격을 조절합니다. */
-    }
-    /* 비즈니스 특징영역 *!*/
-    .dormitory.section .editor-content .box-4 .profile-content-2,
-    .dormyinn.section .editor-content .box-4 .profile-content-2,
-    .resort.section .editor-content .box-4 .profile-content-2,
-    .seniorlife.section .editor-content .box-4 .profile-content-2{
-        flex: 8.5;
-        padding-left: 20px;
-        display: block;
-        margin-bottom: 10px;
-        border-left: 2px solid #0067bb;
-        color: #005bab;
-        font-size: 16px;
-        margin-left: 1em;
-        line-height: 1.6;
-        text-align: left;
-        font-weight: normal;
-    }
-    .dormitory.section .editor-content .box-4 .profile-content-1,
-    .dormyinn.section .editor-content .box-4 .profile-content-1,
-    .resort.section .editor-content .box-4 .profile-content-1,
-    .seniorlife.section .editor-content .box-4 .profile-content-1{
-        flex: 1.5;
-        color: #0067bb;
-        font-size: 16px;
-        margin-bottom: 5px;
-        line-height: 1.5;
-        font-weight: normal;
-    }
-    .dormitory.section .editor-content .box-3,
-    .dormyinn.section .editor-content .box-3,
-    .resort.section .editor-content .box-3,
-    .seniorlife.section .editor-content .box-3{
-        margin-top: 100px;
-        margin-bottom: 100px;
-    }
 
     .breadcrumbs-content.center button {
         padding: 1.8rem 2.8rem;
@@ -2060,50 +2086,366 @@ section .sub-title{
 
 }
 
-.location.section {
-    padding-top: 70px;
-    padding-bottom: 179px;
-    position: relative;
-    min-height: 789.41px;
+@media (max-width: 1919px)  {
+
+    .breadcrumbs .breadcrumbs-content .page-title {
+        font-size: 34px;
+        padding-bottom: 16px;
+    }
+
+    .breadcrumbs .breadcrumbs-content p{
+        font-size: 14px;
+    }
+
+    /* ===================== 메인페이지 ===================== */
+    .hero-slider .hero-text .small-title {
+        color: #fff;
+        background: #005bab;
+        font-size: 13px;
+        padding: 5px 18px;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+
+    .hero-slider .hero-text .button {
+        margin-top: 25px;
+    }
+
+    .hero-slider .hero-text {
+        margin-top: 7%;
+        margin-bottom: 7%;
+    }
+
+    .hero-slider .hero-text .content-title{
+        font-size: 26px;
+    }
+    .hero-slider .hero-text .content-detail {
+        font-size: 14px;
+    }
+    .button .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .Features .feature-content .title span {
+        font-size: 16px;
+    }
+    .Features .feature-item .banner-content .title {
+        font-size: 20px;
+    }
+    .Features .feature-item .banner-content p {
+        font-size: 16px;
+    }
+    .Features .feature-content .title h3 {
+        font-size: 28px;
+    }
+
+    .building .category_title {
+        font-size: 16px;
+    }
+    .building .category {
+        font-size: 32px;
+    }
+    .building .count {
+        font-size: 20px;
+        margin-top: -3%;
+    }
+
+    .Images .container .row .Images-relative{
+        top: 35px;
+        font-size: 14px;
+    }
+    .About.section .feature-content .title span {
+        font-size: 16px;
+    }
+    .About.section .feature-content .title h3 {
+        font-size: 28px;
+    }
+    .About.section .img_title {
+        font-size: 20px;
+    }
+    .About.section .img_content {
+        font-size: 16px;
+    }
+    .Gallery .feature-content .title span {
+        font-size: 16px;
+    }
+    .Gallery .feature-content .title h3 {
+        font-size: 28px;
+    }
+
+    /*   ===================== 회사소개 =====================   */
+
+    .sec-title .en {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    .sec-title .en-content {
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+
+    .vision.section .midashi.inview.animated.fadeInUp.h3 {
+        font-size: 20px;
+        padding-bottom: 6px;
+        margin-bottom: 8px;
+    }
+
+    .vision.section .midashi.inview.animated.fadeInUp.h5 {
+        padding-bottom: 10px;
+        margin-bottom: 40px;
+        font-size: 18px;
+    }
+
+    .vision_strong {
+        font-size: 20px;
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
+
+    .vision_p {
+        font-size: 16px;
+    }
+
+    .vision.section .section-div {
+        padding-top: 5px;
+        padding-bottom: 40px;
+    }
+
+    .vision.section .vision-bottom {
+        padding-bottom: 10px;
+        margin-bottom: 40px;
+        margin-top: 20px;
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    .history.section .container .pc_view .history-title p.left {
+        font-size: 20px;
+        width: 224px;
+    }
+
+    .history.section .container .pc_view .history-title .center {
+        width: 86px;
+        font-size: 20px;
+    }
+
+    .history.section .container .pc_view .history-title p.right {
+        font-size: 20px;
+        width: 224px;
+    }
+
+    .history.section .container .pc_view .history-list-container .left p:nth-child(1) {
+        font-size: 16px;
+    }
+
+    .history.section .container .pc_view .history-list-container .left p:nth-child(2) {
+        margin-left: 5%;
+        font-size: 16px;
+    }
+
+    .history.section .container .pc_view .history-list-container .right p:nth-child(1) {
+        font-size: 16px;
+    }
+
+    .history.section .container .pc_view .history-list-container .history-item .center {
+        height: 125px;
+        width: 125px;
+        margin: 0 75px;
+    }
+
+    .history.section .container .pc_view .history-title {
+        margin: 0px 98px 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .history.section .container .pc_view .history-list-container .history-item .center .year {
+        font-size: 22px;
+    }
+
+    .location.section .location-container .top {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+
+    .location.section .location-container .map-info .bottom {
+        font-size: 16px;
+    }
+
+
+
+    /*   ===================== 사업영역 =====================   */
+
+
+
+    .dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-1 {
+        font-size: 22px;
+    }
+    .dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-2 {
+        font-size: 20px;
+    }
+    .editor-content .box-2 .profile.profile-1 .profile-link-3 a{
+        font-size: 16px;
+    }
+    .dormyinn.section .editor-content .box-3 {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    .dormyinn.section .editor-content .box-4 {
+        /*비즈니스 특징 패딩 padding: 30px 40px; */
+    }
+    .dormyinn.section .editor-content .box-4 .profile-content-1 {
+        font-size: 20px;
+    }
+    .dormyinn.section .editor-content .box-4 .profile-content-2 {
+        font-size: 16px;
+    }
+    .dormyinn.section .editor-content .box-5 {
+        font-size: 18px;
+    }
+
+    /*   ===================== 공지사항 =====================   */
+    .section .sub-title {
+       font-size: 20px;
+    }
+    .tabulator .tabulator-header .tabulator-header-contents {
+        font-size: 14px;
+    }
+    .tabulator .tabulator-tableholder .mt-5.mb-5 {
+        font-size: 14px;
+    }
+
+    /*   ===================== 채용정보 =====================   */
+    .recruit-info.section .container .title-wrap h3 {
+        font-size: 22px;
+    }
+    .recruit-info.section .container .title-wrap p {
+        font-size: 14px !important;
+    }
+    .recruit-info.section .single-table .title {
+        font-size: 20px !important;
+    }
+    .recruit-info.section .single-table .content {
+        font-size: 14px !important;
+    }
+    #recruit-info-section1 .contact-info span {
+        font-size: 14px;
+    }
+    .recruit-info-section-A .table .contact-info {
+        font-size: 14px;
+    }
+    #recruit-info-section2 .table .contact-info span {
+        font-size: 14px;
+    }
+    .recruit-info-section-B .container .card-box i {
+        font-size: 22px !important;
+    }
+    .recruit-info-section-B .container .card-box .title {
+        font-size: 20px !important;
+    }
+    .recruit-info-section-B .container .card-box .content {
+        font-size: 16px; !important;
+    }
+    .recruit-info-section-C .container .contents-wrap ul li .card-box span {
+        font-size: 22px !important;
+    }
+    .recruit-info-section-C .container .contents-wrap ul li .card-box div h3 {
+        font-size: 20px !important;
+    }
+    .recruit-info-section-A .table .contact-info {
+        font-size: 14px;
+    }
+    .recruit-info-section-A .table td {
+        font-size: 14px;
+    }
+    .recruit-info-section-D .container .btn {
+        font-size: 22px !important;
+        padding: 1.2rem 4rem !important;
+    }
+    .search-container .search-title div {
+        font-size: 22px !important;
+    }
+    .search-container .search-category .job-category li {
+        font-size: 14px !important;
+    }
+    #recruit-notice-section .container .card-box .title {
+        font-size: 16px !important;
+    }
+    #recruit-notice-section .container .notice-list {
+        font-size: 14px !important;
+    }
+
+    .apply-inquire.apply-section .sub-title {
+        font-size: 22px;
+    }
+
+    .tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title {
+        font-size: 14px;
+    }
+
+    .apply-inquire .submit-btn button[data-action="add"] {
+        font-size: 22px !important;
+        padding: 1.2rem 4rem !important;
+    }
+
+    /*   ===================== header =====================   */
+    .navbar-nav .nav-item a {
+        font-size: 14px;
+    }
+    .navbar-nav .nav-item .sub-menu>li>a {
+        font-size: 12px;
+    }
+    .btn.white-bg.mouse-dir {
+        width: 84px;
+        height: 35px;;
+    }
+
+    /*   ===================== footer =====================   */
+    .footer #footer_left #footer_left_content {
+        /* KYORITSU MAINTENANCE KOREA CO.,LTD. font-size: clamp(16px, 2vw, 1.6vh);*/
+    }
+    .footer #footer_left #footer_left_content a:not(:first-child){
+        /* 서울시 강남구 봉은사로 129 0.8rem 12.8px*/
+    }
+    .footer .footer_menu li:first-child a {
+        /* footer 대제목 font-size: clamp(16px, 2vw, 1.8vh);*/
+    }
+    .footer .f-contact ul li a {
+        /* footer 소제목 font-size: clamp(12px, 2vw, 1.4vh);*/
+    }
+    .footer .copyright {
+        /*Copyright @ KYORITSU MAINTENANCE KOREA CO.,LTD. 16px*/
+    }
 }
 
-/* vision page css 수정 */
 
-.vision.section .section-div {
-    padding-top: 10px;
-    padding-bottom: 69px;
-}
-.vision_span{
-    display: flex;
-    position: unset;
-    color: #0067bb;
-    font-size: 36px;
-    vertical-align: middle;
-    font-weight: bold;
-    margin-bottom: -4px;
-}
 
-.vision_strong{
-    display: flex;
-    position: unset;
-    color: #0067bb;
-    font-size: 26px;
-    vertical-align: middle;
-    font-weight: bold;
-    margin-bottom: 20px;
-    margin-top: 10px;
+@media (max-width: 767.9px)  {
+
+    .Gallery.section
+    {
+        padding-bottom : 15%;
+    }
+
+    .overview.section .editor-content .box-2#overview_img {
+        width: 80%;
+    }
+    .breadcrumbs-content.center button {
+        padding: 1.2rem 2.0rem;
+    }
+
+
 }
 
-.vision_ul{
-    margin-bottom: 2px;
-    margin-top: 2px;
-}
-
-.vision_li .p{
-    color: #000000;
-}
-.vision_p {
-    color: #000000;
-    font-size: 16px;
+@media (min-width: 576px) and (max-width: 992px) {
+    .footer-middle .container {
+        max-width: 540px !important;
+    }
+    .footer-middle .container .row .col-md-6{
+        width: 100% !important;
+    }
 
 }

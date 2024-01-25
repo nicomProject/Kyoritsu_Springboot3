@@ -16,13 +16,11 @@ $(function () {
             document.getElementById("btnNotice").addEventListener("click", function() {
                 window.location.href = '/recruit/notice';
             });
-            document.getElementById("btnApply").addEventListener("click", function() {
-                window.location.href = '/recruit/apply';
-            });
             document.getElementById("btnInquire").addEventListener("click", function() {
                 window.location.href = '/recruit/inquire';
             });
             document.querySelectorAll('button').forEach(function(button) {
+                console.log(button)
                 button.classList.remove('activation');
                 if(button.id == "btnEmployeeInfo") button.classList.add('activation');
             });

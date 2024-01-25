@@ -42,9 +42,6 @@ $(function () {
             document.getElementById("btnNotice").addEventListener("click", function() {
                 window.location.href = '/recruit/notice';
             });
-            document.getElementById("btnApply").addEventListener("click", function() {
-                window.location.href = '/recruit/apply';
-            });
             document.getElementById("btnInquire").addEventListener("click", function() {
                 window.location.href = '/recruit/inquire';
             });

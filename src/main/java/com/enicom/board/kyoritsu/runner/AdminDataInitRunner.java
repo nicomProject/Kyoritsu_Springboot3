@@ -65,8 +65,8 @@ public class AdminDataInitRunner implements ApplicationRunner {
 
     // adminUser entity 추가 (초기 관리자 유저 설정) 
     private void configureAdminUser() {
-        AdminUser adminUser = adminUserRepository.findByUserId("nicom")
-                .orElse(AdminUser.builder().userId("nicom").name("나이콤 관리자").password(securityUtil.getEncodedInitPwd()).createDate(LocalDateTime.now()).build());
+        AdminUser adminUser = adminUserRepository.findByUserId("dormy")
+                .orElse(AdminUser.builder().userId("dormy").name("나이콤 관리자").password(securityUtil.getEncodedInitPwd()).createDate(LocalDateTime.now()).build());
         adminUser.setRole(RoleType.SYSTEM);
         adminUserRepository.save(adminUser);
     }

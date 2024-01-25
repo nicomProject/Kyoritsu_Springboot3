@@ -109,7 +109,7 @@ h2 {
 }
 
 h3 {
-  font-size: 25px;
+  font-size: 24px;
 }
 
 h4 {
@@ -1272,8 +1272,7 @@ select option[value="jp"]::before {
 
 @media (max-width: 767px) {
   .navbar-collapse {
-    position: absolute;
-    top: 165% !important;
+    position: relative;
     left: 0;
     width: 100%;
     background-color: #fff;
@@ -1307,7 +1306,6 @@ select option[value="jp"]::before {
   padding: 24px 25px;
   display: inline-flex;
   align-items: center;
-  font-size: 14px;
   font-weight: 500;
   color: #333;
   transition: all 0.3s ease-out 0s;
@@ -1589,7 +1587,7 @@ select option[value="jp"]::before {
 }
 
 .hero-slider .hero-text  .content-title {
-  font-size: 34px;
+  font-size: 30px;
   line-height: 1.2;
   color: #ffffff;
   font-weight: 600;
@@ -1725,7 +1723,7 @@ select option[value="jp"]::before {
 
 .Features .feature-content .title span {
   text-transform: capitalize;
-  font-size: 16px;
+  font-size: 18px;
   display: inline-block;
   background: #005bab;
   color: #fff;
@@ -1787,7 +1785,7 @@ select option[value="jp"]::before {
 .Features .feature-item .banner-content p {
   color: #777;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
   display: block;
   margin-top: 6px;
 }
@@ -1917,6 +1915,7 @@ select option[value="jp"]::before {
   top: 45px;
   text-align: right;
   font-size: 16px;
+  color: #7b7b7b;
 }
 
 
@@ -1941,7 +1940,7 @@ select option[value="jp"]::before {
 }
 
 .building .category_title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   margin-bottom: 5%;
   color: #333;
@@ -1954,7 +1953,7 @@ select option[value="jp"]::before {
 }
 
 .building .count {
-  font-size: 20px;
+  font-size: 22px;
   margin-top:5%;
 }
 
@@ -1981,7 +1980,7 @@ select option[value="jp"]::before {
 
 .About.section .feature-content .title span {
   text-transform: capitalize;
-  font-size: 16px;
+  font-size: 18px;
   display: inline-block;
   background: #005bab;
   color: #fff;
@@ -2079,7 +2078,7 @@ select option[value="jp"]::before {
 
 .Gallery .feature-content .title span {
   text-transform: capitalize;
-  font-size: 16px;
+  font-size: 18px;
   display: inline-block;
   background: #005bab;
   color: #fff;
@@ -2155,10 +2154,6 @@ select option[value="jp"]::before {
 .Gallery .feature-content .custom-next-button-gallery.clicked::before {
   background-color: #3498db; /* 클릭 시 배경색 변경 */
   color: white;
-}
-
-.Gallery.section .container .row {
-  height: 350px;
 }
 
 .Gallery.section .single-slider {
@@ -2560,159 +2555,6 @@ select option[value="jp"]::before {
 }
 
 
-/*================================ 반응형 ===========================*/
-/* 1920x1080 해상도에서의 폰트 크기 설정 (비율 계산) */
-@media screen and (max-width: 1920px) {
-  .hero-slider .single-slider {
-    height: calc(100% * 1920 / 2560);
-  }
-}
-
-/* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
-@media screen and (max-width: 1280px) {
-  .hero-slider .single-slider {
-    height: calc(100% * 1280 / 2560);
-  }
-}
-
-/* 1920x1080 해상도에서의 폰트 크기 설정 (비율 계산) */
-@media screen and (max-width: 1920px) {
-  .hero-slider .hero-text {
-    margin-top: calc(10% * 1920 / 2560);
-    margin-bottom: calc(10% * 1920 / 2560);
-  }
-}
-
-/* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
-@media screen and (max-width: 1280px) {
-  .hero-slider .hero-text {
-    margin-top: calc(10% * 1280 / 2560);
-    margin-bottom: calc(10% * 1280 / 2560);
-  }
-}
-
-/* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
-@media screen and (max-width: 1280px) {
-  .hero-slider .hero-text  .content-title {
-    font-size: calc(34px * 1280 / 2560);
-  }
-}
-
-/* 1366x768 해상도에서의 폰트 크기 설정 (비율 계산) */
-@media screen and (max-width: 1280px) {
-  .hero-slider .hero-text .content-detail {
-    font-size: calc(16px * 1280 / 1920);
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .Features .feature-content .title h3 {
-    font-size: calc(34px * 1280 / 1920);
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .Features .feature-item .banner-content .title {
-    font-size: calc(22px * 1280 / 1920);
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .Features .feature-item .banner-content p {
-    font-size: calc(16px * 1280 / 1920);
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .building .category_title {
-    font-size: calc(16px * 1280 / 1920);
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .building .category {
-    font-size: calc(38px * 1280 / 1920);
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .building .count {
-    font-size: calc(20px * 1280 / 1920);
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .Images .Images-relative {
-    font-size: calc(16px * 1280 / 1920) !important;
-    top: calc(45px * 1280 / 1920) !important;;
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .About.section .feature-content .title h3 {
-    font-size: calc(34px * 1280 / 1920);
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .Gallery .feature-content .title h3 {
-    font-size: calc(34px * 1280 / 1920);
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .Features .feature-content .title span {
-    font-size: calc(16px * 1280 / 1920);
-    padding: calc(4px * 1280 / 1920) calc(18px * 1280 / 1920);
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .About.section .feature-content .title span {
-    font-size: calc(16px * 1280 / 1920);
-    padding: calc(4px * 1280 / 1920) calc(18px * 1280 / 1920);
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .Gallery .feature-content .title span {
-    font-size: calc(16px * 1280 / 1920);
-    padding: calc(4px * 1280 / 1920) calc(18px * 1280 / 1920);
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .Gallery.section .single-slider {
-    padding: 2% 2% 5% 2%;
-    background: #005BAB
-  }
-
-  .Gallery .single-slider {
-    height: calc(400px * 1280/ 1920);
-    width: calc(640px * 1280/ 1920);
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .hero-slider .hero-text .small-title {
-    font-size: calc(16px * 1280 / 1920);
-    padding: calc(4px * 1280 / 1920) calc(18px * 1280 / 1920);
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .hero-slider .hero-text .small-title {
-    font-size: calc(22px * 1280 / 1920);
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .About.section .img_content {
-    font-size: calc(18px * 1280 / 1920);
-  }
-}
-
-
 /*모바일 버전 */
 @media (max-width: 1000px) {
   .nav-item {
@@ -2732,7 +2574,7 @@ select option[value="jp"]::before {
     display: inline-flex !important;
     justify-content: center;
     align-items: center;
-    gap: 48px;
+    gap: 2px !important;
     flex-direction: column;
   }
 }

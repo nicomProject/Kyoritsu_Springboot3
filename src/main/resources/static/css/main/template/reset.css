@@ -252,7 +252,7 @@ th {
 }
 .breadcrumbs .breadcrumbs-content p{
 	color:#fff;
-	font-size:14px;
+	font-size:16px;
 	margin-top:20px;
 }
 .breadcrumbs .breadcrumbs-content .page-title {
@@ -390,9 +390,9 @@ h6{
 	line-height:20px;
 }
 p {
-	color:#7b7b7b;
+	color:#333;
 	margin: 0;
-	line-height:24px;
+	line-height:1.5;
 	font-weight:400;
 	font-size:14px;
 }
@@ -520,10 +520,6 @@ big {
 	line-height: 24px;
 }
 
-.container#vision{
-	max-width:70%;
-}
-
 .modal-body .container{
 	max-width:100%;
 }
@@ -595,22 +591,6 @@ big {
 	transition: 0.5s;
 	border-radius:0;
 }
-
-@media screen and (max-width: 1920px) {
-	.button .btn {
-		padding: calc(15px * 1920 / 2560) calc(30px * 1920 / 2560);
-		font-size: calc(16px * 1920 / 2560);
-	}
-}
-
-/* 1366x768 해상도에서의 padding 설정 (비율 계산) */
-@media screen and (max-width: 1280px) {
-	.button .btn {
-		padding: calc(15px * 1366 / 2560) calc(30px * 1366 / 2560);
-		font-size: calc(16px * 1920 / 2560);
-	}
-}
-
 
 .button .btn:hover,
 .button .btn:hover {
@@ -1023,6 +1003,14 @@ a:hover, a:active {
 # Infinite scroll
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
+
+/*@media (min-width:1920px) {*/
+/*	.container#vision{*/
+/*		max-width:70%;*/
+/*	}*/
+/*}*/
+
+
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
 	/* Theme Footer (when set to scrolling) */

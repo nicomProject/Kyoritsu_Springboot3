@@ -2,15 +2,23 @@
 
 /* recruit info */
 .recruit-info.section .container .title-wrap p{
-    line-height: 20px !important;
-    font-size: 0.8rem;
-    font-weight: 500;
+    line-height: 1.5;
+    font-size: 16px;
     border-left: 3px solid #005bab;
     padding-left: 10px;
 }
 
 .recruit-info.section .container .title-wrap h3{
     margin-bottom: 10px;
+}
+
+.recruit-info.section .container .contact-info.fadeInUp {
+    width: 33.33%;
+    text-align: center;
+}
+
+.recruit-info.section .container .content{
+    text-align: center;
 }
 
 .recruit-info-section-E .container .contents-wrap{
@@ -50,6 +58,11 @@
     overflow: hidden;
 }
 
+.recruit-info.section .single-table .content{
+    font-size: 16px;
+}
+
+
 .recruit-info.section .single-table .popular {
     color: #fff;
     background: #005bab;
@@ -66,7 +79,7 @@
 .recruit-info.section .single-table .table-head {}
 
 .recruit-info.section .single-table .title {
-    font-size: 23px;
+    font-size: 22px;
     font-weight: 600;
     line-height: 26px;
 }
@@ -139,7 +152,7 @@
 }
 
 .recruit-info-section-B .container .card-box .title{
-    font-size: 1.5rem;
+    font-size: 22px;
     font-weight: 500;
     margin: 20px 0;
     display: flex;
@@ -148,7 +161,7 @@
 }
 
 .recruit-info-section-B .container .card-box .content{
-    font-size: 1rem;
+    font-size: 18px;
     line-height: 1.2rem;
     display: flex;
     justify-content: center;
@@ -263,7 +276,7 @@
     opacity: .5;
     display: flex;
     justify-content: center;
-    font-size: 30px;
+    font-size: 26px;
 }
 
 .recruit-info-section-C .container .contents-wrap ul li .card-box div h3{
@@ -271,7 +284,7 @@
     padding-left: 0;
     border-left: none;
     display: inline-block;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
     color: #333;
     vertical-align: middle;
@@ -310,8 +323,9 @@
 }
 
 #recruit-info-section2 .table .contact-info span{
-    font-size: 0.9rem;
+    font-size: 16px;
     margin-left: 1rem;
+    color: #7b7b7b;;
 }
 
 #recruit-info-section8{
@@ -366,7 +380,7 @@
 
 .search-container .search-category .job-category li{
     float: left;
-    font-size: 0.9rem;
+    font-size: 16px;
     display: inline-block;
     padding: 7px 13px;
     line-height: 1;
@@ -381,7 +395,7 @@
 
 #recruit-notice-section .container .card-box .title{
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 18px;
     border-left: 3px solid #005bab;
     padding-left: 10px;
 }
@@ -391,6 +405,7 @@
     padding: 15px 30px;
     border: 1px solid #ccc;
     margin: 10px 0;
+    font-size: 15px;
 }
 
 #recruit-notice-section .container .notice-list > div{

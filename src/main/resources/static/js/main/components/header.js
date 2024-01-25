@@ -76,7 +76,7 @@ const Menu = {
 
         // 중단 메뉴 버튼 ID 설정
         const btnIdAboutUs = ['btnOverview','btnVision','btnHistory','btnOrganization','btnLocation']; // 회사소개 버튼
-        const btnIdRecruit = ['btnEmployeeInfo','btnInfo','btnNotice','btnApply','btnInquire']; // 채용정보 버튼
+        const btnIdRecruit = ['btnEmployeeInfo','btnInfo','btnNotice','btnInquire']; // 채용정보 버튼
 
         // 메뉴 그룹 리스트 가지고 값 제작
         this.menus.forEach(menu => {
@@ -171,6 +171,8 @@ const Menu = {
                 }
                 // 4. 채용정보
                 if(menu.recKey == 4 && pageGroupIdVal == 'recruit') {
+
+                    console.log(subMenu)
                     // breadcrumbs-content 메뉴 추가
                     const breadcrumbsMenu = that.createBreadcrumbsMenu(subMenu, btnIdRecruit[index], languageValue);
                     container_breadcrumbs_content.append(breadcrumbsMenu);
@@ -256,10 +258,11 @@ $(function () {
         },
         event: function () {
 
-            const contactButton = $('#contact-button');
+            const contactButton = $('#contact-button#contact-button');
             const languageButton = $('#language-button');
 
             contactButton.on('click', function (){
+                console.log("???????????")
                 popup();
             })
 
