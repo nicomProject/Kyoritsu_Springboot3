@@ -456,6 +456,8 @@ big {
 	padding-bottom: 5%;
 	position: relative;
 	min-height: 300px;
+	width: 100%;
+	overflow-x: hidden;
 }
 
 .Images.section
@@ -466,6 +468,7 @@ big {
 	position: relative;
 	min-height: 300px;
 	background-position: center;
+
 }
 
 .Gallery.section
@@ -476,6 +479,8 @@ big {
 	position: relative;
 	min-height: 500px;
 	background-position: center;
+	width: 100%;
+	overflow-x: hidden;
 }
 
 /* Section Title */

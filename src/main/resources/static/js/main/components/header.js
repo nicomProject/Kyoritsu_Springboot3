@@ -262,7 +262,6 @@ $(function () {
             const languageButton = $('#language-button');
 
             contactButton.on('click', function (){
-                console.log("???????????")
                 popup();
             })
 

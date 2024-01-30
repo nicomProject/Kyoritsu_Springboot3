@@ -396,9 +396,9 @@
 		padding: 20px 0;
 	}
 
-	.section {
-		padding: 50px 0px;
-	}
+	/*.section {*/
+	/*	padding: 50px 0px;*/
+	/*}*/
 
 	.section-title {
 		margin-bottom: 40px;
@@ -432,10 +432,6 @@
 	.pagination {
 		margin: 40px 0 30px 0;
 		display: block;
-	}
-
-	.breadcrumbs {
-		padding: 50px 0 0;
 	}
 
 	.button .btn {
@@ -567,11 +563,6 @@
 		/* padding: 0px 19px; */
 		padding: 13px 20px; /* fix : 모바일 화면일 때, tns-nav box의 button 치우침 해결 */
 		z-index: 5;
-	}
-
-	.feature-right {
-		height: 400px;
-		margin-bottom: 30px;
 	}
 
 	.Features .feature-content {

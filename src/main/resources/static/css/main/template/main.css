@@ -1501,6 +1501,11 @@ select option[value="jp"]::before {
 /*======================================
    02. Hero Area CSS
 ========================================*/
+.hero-slider {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .hero-slider .swiper-container .swiper-wrapper .swiper-slide#swiper-container-1st {
   position: relative;
   /*background: #005bab08;*/
@@ -1972,6 +1977,14 @@ select option[value="jp"]::before {
 
 .About.section .single-slider {
   display: flex;
+}
+
+.About.section .swiper-slide.swiper-slide-next .single-slider {
+  height: 0;
+}
+
+.About.section .swiper-slide.swiper-slide-active {
+
 }
 
 .About.section .single-slider div > span {

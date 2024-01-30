@@ -160,14 +160,6 @@
     text-align: center;
 }
 
-.recruit-info-section-B .container .card-box .content{
-    font-size: 18px;
-    line-height: 1.2rem;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
 .recruit-info-section-B .container .card-box i{
     padding: 10px;
     font-size: 25px;
@@ -316,6 +308,18 @@
 
 #recruit-info-section1 .table{
     margin-bottom: 0px;
+}
+
+#recruit-info-section1 .table.desktop {
+    display: block;
+}
+
+#recruit-info-section1 .table.mobile {
+    display: none;
+}
+
+#recruit-info-section1 .table.mobile .row .contact-info.col-md-4.fadeInUp.mobile{
+    width: 100%;
 }
 
 #recruit-info-section1 .table .contact-info{

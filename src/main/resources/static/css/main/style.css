@@ -272,7 +272,7 @@ section .sub-title{
 .sec-title .en-content {
     text-align: left;
     font-size: 22px;
-    margin-top: -43px;
+    margin-top: -39px;
     margin-left: 4px;
     color: #0067bb85;
     font-weight: bold;
@@ -1806,6 +1806,14 @@ section .sub-title{
     font-weight: normal;
 }
 
+.recruit-info-section-B .container .card-box .content{
+    font-size: 18px;
+    line-height: 1.2rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
 /* tabulator */
 .tabulator .tabulator-tableholder{
     height: auto !important;
@@ -2384,6 +2392,10 @@ section .sub-title{
 
     .tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title {
         font-size: 14px;
+
+
+
+
     }
 
     .apply-inquire .submit-btn button[data-action="add"] {
@@ -2421,21 +2433,592 @@ section .sub-title{
     }
 }
 
+@media (max-width: 767px){
+
+    .tabulator .tabulator-header {
+        white-space: normal; /* 강제 줄바꿈 활성화 */
+    }
+
+    .breadcrumbs .blank {
+        margin-bottom: 40px;
+    }
+
+    .scroll-top {
+        width: 45px;
+        height: 45px;
+    }
+
+    .scroll-top span {
+        font-weight: 600;
+        font-size: 0.8rem;
+        line-height: 1.0rem;
+    }
+
+    /*모바일*/
+
+    .breadcrumbs {
+        padding: 30px 0 0;
+    }
+
+    .breadcrumbs .breadcrumbs-content .page-title {
+        font-size: 26px;
+        padding-bottom: 6px;
+    }
+
+    breadcrumbs .breadcrumbs-content .breadcrumb-nav li a {
+        font-size: 12px;
+    }
+
+    .breadcrumbs-content.title {
+        padding-top: 15px
+    }
+
+    .breadcrumbs-content.center {
+        padding-top: 35px;
+    }
+
+    .breadcrumbs .breadcrumbs-content p{
+        font-size: 12px;
+    }
+
+    .breadcrumbs .breadcrumbs-content p {
+        margin-top: 10px
+    }
+
+    .section {
+        min-height: 350px;
+        padding: 30px 0px !important;
+    }
+
+
+    .location.section {
+        min-height: 550px;
+        padding: 30px 0px;
+    }
+
+    /* ===================== 메인페이지 ===================== */
+    .hero-slider .hero-text .small-title {
+        color: #fff;
+        background: #005bab;
+        font-size: 12px;
+        padding: 5px 18px;
+        display: inline-block;
+        margin-bottom: 12px;
+    }
+
+    .hero-slider .hero-text .button {
+        margin-top: 20px;
+    }
+
+    .hero-slider .hero-text {
+        margin-top: 5%;
+        margin-bottom: 0%;
+    }
+
+    .hero-slider .hero-text .content-title{
+        font-size: 20px;
+    }
+    .hero-slider .hero-text .content-detail {
+        font-size: 12px;
+    }
+    .button .btn {
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+    .Features .feature-content .button {
+        margin-bottom: 10px;
+    }
+
+    .Features .feature-content .title span {
+        font-size: 12px;
+    }
+    .Features .feature-item .banner-content .title {
+        font-size: 16px;
+    }
+    .Features .feature-item .banner-content p {
+        font-size: 12px;
+    }
+    .Features .feature-content .title h3 {
+        font-size: 20px;
+    }
+
+    .building .category_title {
+        font-size: 12px;
+    }
+    .building .category {
+        font-size: 24px;
+    }
+    .building .count {
+        font-size: 12px;
+        margin-top: -3%;
+    }
+
+    .Images .container .row .Images-relative{
+        top: 20px;
+        font-size: 12px;
+    }
+    .Images.section {
+        min-height: 200px;
+    }
+
+    .About.section .feature-content .title span {
+        font-size: 12px;
+    }
+    .About.section .feature-content .title h3 {
+        font-size: 22px;
+    }
+    .About.section .img_title {
+        font-size: 16px;
+    }
+    .About.section .img_content {
+        font-size: 12px;
+    }
+    .Gallery .feature-content .title span {
+        font-size: 12px;
+    }
+    .Gallery .feature-content .title h3 {
+        font-size: 22px;
+    }
+    .Gallery .swiper-wrapper {
+        height: 200px;
+    }
+    .Gallery.section {
+        min-height: 500px;
+    }
+
+    .Gallery.section .feature-right {
+        margin-bottom : 0px
+    }
+    .Gallery.section .single-slider p {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+    .Gallery.section .feature-right#one-st {
+        background-color: black;
+    }
+
+    /*   ===================== 회사소개 =====================   */
+
+    .overview.section .editor-content .box-2#overview_img {
+        width: 100%;
+    }
+
+    .breadcrumbs-content.center button {
+        padding: 1.0rem 1.0rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        font-size: 12px;
+        width: 25%;
+    }
+
+    .overview.section .editor-content .box-2#overview_img {
+        margin-right: 0%;
+    }
+
+    .sec-title .en {
+        font-size: 24px;
+        margin-bottom: 32px;
+    }
+    .sec-title .en-content {
+        font-size: 16px;
+        margin-bottom: 32px;
+    }
+
+    .vision.section .midashi.inview.animated.fadeInUp.h3 {
+        font-size: 16px;
+        padding-bottom: 6px;
+        margin-bottom: 8px;
+    }
+
+    .vision.section .midashi.inview.animated.fadeInUp.h5 {
+        padding-bottom: 8px;
+        margin-bottom: 30px;
+        font-size: 12px;
+    }
+
+    .vision_strong {
+        font-size: 14px;
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
+
+    .vision_p {
+        font-size: 12px;
+    }
+
+    .vision.section .section-div {
+        padding-top: 5px;
+        padding-bottom: 32px;
+    }
+
+    .vision.section .vision-bottom {
+        padding-bottom: 8px;
+        margin-bottom: 32px;
+        margin-top: 16px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .history.section .container .pc_view .history-title p.left {
+        font-size: 16px;
+        width: 134px;
+    }
+
+    .history.section .container .pc_view .history-title .center {
+        width: 100px;
+        font-size: 16px;
+    }
+
+    .history.section .container .pc_view .history-list-container .history-item .left,
+    .history.section .container .pc_view .history-list-container .history-item .right{
+        width: 100px;
+    }
+
+    .history.section .container .pc_view .history-title p.right {
+        font-size: 16px;
+        width: 134px;
+    }
+
+    .history.section .container .pc_view .history-list-container .left p:nth-child(1) {
+        font-size: 12px;
+    }
+
+    .history.section .container .pc_view .history-list-container .left p:nth-child(2) {
+        margin-left: 5%;
+        font-size: 12px;
+    }
+
+    .history.section .container .pc_view .history-list-container .right p:nth-child(1) {
+        font-size: 12px;
+    }
+
+    .history.section .container .pc_view .history-list-container .history-item .center {
+        height: 95px;
+        width: 95px;
+        margin: 0 25px;
+    }
+
+    .history.section .container .pc_view .history-title {
+        margin: 0px 88px 66px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .history.section .container .pc_view .history-list-container .history-item .center .year {
+        font-size: 18px;
+    }
+
+    .history.section .box-2.inview.animated.fadeInUp {
+        margin-top: -20px
+    }
+
+    .organization.section .container .flex-box {
+        margin-top: -20px
+    }
+
+    .location.section .box-2.inview.animated.fadeInUp {
+        margin-top: -20px
+    }
+
+    .location.section .location-container .top {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        font-size: 12px;
+    }
+
+    .location.section .location-container .map-info .bottom {
+        font-size: 12px;
+    }
+
+
+
+    /*   ===================== 사업영역 =====================   */
+
+    .dormyinn.section .editor-content .box-1 {
+        height: 4rem;
+    }
+
+    .dormyinn.section .editor-content .box-2 .profile.profile-2 img {
+        object-fit: cover;
+    }
+
+    .dormyinn.section .profile.profile-1 {
+        display: none;
+    }
+
+    .dormyinn.section .profile.profile-2 .profile.profile-1 {
+        display: block !important;
+    }
+
+    .dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-1 {
+        font-size: 16px;
+        margin-top: 5px
+    }
+    .dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-2 {
+        font-size: 14px;
+    }
+    .dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-2 a {
+        margin-bottom: 5px;
+    }
+
+    .editor-content .box-2 .profile.profile-1 .profile-link-3 a{
+        font-size: 12px;
+    }
+    .dormyinn.section .editor-content .box-3 {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .dormyinn.section .editor-content .box-4 {
+        max-width: 100%;
+    }
+    .dormyinn.section .editor-content .box-4 .profile-content-1 {
+        font-size: 14px;
+    }
+    .dormyinn.section .editor-content .box-4 .profile-content-2 {
+        font-size: 12px;
+    }
+    .dormyinn.section .editor-content .box-5 {
+        font-size: 12px;
+        max-width: 90%;
+    }
+
+    /*   ===================== 공지사항 =====================   */
+    .section .sub-title {
+        font-size: 16px;
+        padding-top: 30px;
+        padding-bottom: 15px;
+    }
+    .tabulator .tabulator-header .tabulator-header-contents {
+        font-size: 12px;
+    }
+    .tabulator .tabulator-tableholder .mt-5.mb-5 {
+        font-size: 12px;
+    }
+
+    /*   ===================== 채용정보 =====================   */
+    .recruit-info-section-A.section {
+        padding-top: 40px !important
+    }
+
+    .recruit-info-section-E .row {
+        margin: 15px 0 !important;
+    }
+
+    .recruit-info.section .row>* {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    #recruit-info-section1 .table.desktop {
+        display: none !important;
+    }
+
+    #recruit-info-section1 .table.mobile {
+        display: block !important;
+    }
+    .recruit-info.section .container .title-wrap h3 {
+        font-size: 18px;
+    }
+    .recruit-info.section .container .title-wrap p {
+        font-size: 11px !important;
+    }
+    .recruit-info.section .single-table .title {
+        font-size: 14px !important;
+    }
+    .recruit-info.section .single-table .content {
+        font-size: 12px !important;
+    }
+    #recruit-info-section1 .contact-info span {
+        font-size: 12px;
+    }
+    .recruit-info-section-A .table .contact-info {
+        font-size: 12px;
+    }
+    #recruit-info-section2 .table .contact-info span {
+        font-size: 12px;
+    }
+    .recruit-info-section-B .container .card-box i {
+        font-size: 18px !important;
+        margin-bottom: 0px !important;
+    }
+    .recruit-info-section-B .container .card-box .title {
+        font-size: 11px !important;
+        margin: 2px 0 !important;
+    }
+    .recruit-info-section-B .container .card-box .content {
+        font-size: 10px; !important;
+    }
+    .recruit-info-section-C .container .contents-wrap ul li .card-box span {
+        font-size: 14px !important;
+        margin-bottom: 3px !important;
+
+    }
+    .recruit-info-section-C .container .contents-wrap ul li .card-box div h3 {
+        font-size: 12px !important;
+    }
+    .recruit-info-section-C .container .contents-wrap ul li .card-box .title {
+        padding: 3px !important;
+    }
+    .recruit-info-section-C .container .contents-wrap ul li .card-box {
+        width: 75px !important;
+        height: 75px !important;
+    }
+    .recruit-info-section-C .container .contents-wrap ul li .card-box {
+        margin-right: 5px !important;
+    }
+    .recruit-info-section-C .container .contents-wrap ul .arrow-icon {
+        font-size: 1rem !important;
+        margin-right: 5px !important;
+    }
+    .recruit-info-section-A .table .contact-info {
+        font-size: 12px;
+    }
+    .recruit-info-section-A .table td {
+        font-size: 12px;
+    }
+    .recruit-info-section-D .container .btn {
+        font-size: 18px !important;
+        padding: 1.0rem 3rem !important;
+        margin-top: 0px !important;
+    }
+    #recruit-info-section4 .container .contents-wrap .card-box {
+        justify-content: flex-start !important;
+    }
+    #recruit-info-section2 .table .contact-info span {
+        font-size: 11px !important;
+    }
+    #recruit-info-section2 .table .contact-info span {
+        margin-left: 0.5rem !important;
+    }
+    .search-container {
+        max-width: 90% !important;
+    }
+    .search-container .search-input {
+        width: 100% !important;
+    }
+    .search-container .search-title div {
+        font-size: 18px !important;
+    }
+    .search-container .search-category .job-category li {
+        font-size: 12px !important;
+    }
+    #recruit-notice-section .container .card-box .title {
+        font-size: 12px !important;
+    }
+    #recruit-notice-section .container .notice-list {
+        font-size: 12px !important;
+        padding: 10px 20px !important;
+    }
+    #recruit-info-section1 .table .contact-info img{
+        width: 24px;
+    }
+
+    .recruit-info-section-B .container .contents-wrap .card-box {
+        width: 108px !important;
+        height: 108px !important;
+    }
+    .recruit-info-section-B .container .contents-wrap {
+        padding: 3px !important;
+    }
+
+    .info-container > div {
+        width: 100% !important;
+    }
+    .info-container input {
+        width: 95% !important;
+        margin-right: 5% !important;
+    }
+    .apply-inquire .info-container {
+        padding: 20px 10px 20px 10px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .apply-inquire.apply-section .sub-title {
+        font-size: 18px;
+    }
+    .apply-section .info-container label {
+        font-size: 14px;
+    }
+    .apply-section .container .content-container .title {
+        font-size: 12px;
+    }
+    .apply-section .info-container input::placeholder {
+        font-size: 9px; /* 플레이스홀더의 글꼴 크기를 작게 설정 */
+    }
+    /* 입력된 값에 대한 스타일 */
+    .apply-section .info-container input {
+        font-size: 11px; /* 입력된 값의 글꼴 크기를 크게 설정 */
+    }
+
+    .apply-section .title.explanation {
+        font-size: 12px;
+    }
+    .apply-section .content-container .content-title {
+        font-size: 11px;
+    }
+    .apply-section .container .inquire .content-container {
+        padding: 10px;
+    }
+
+    .tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title {
+        font-size: 8.4px;
+    }
+
+    .apply-inquire .submit-btn button[data-action="add"] {
+        font-size: 18px !important;
+        padding: 1.0rem 3rem !important;
+    }
+
+    /*   ===================== header =====================   */
+    .navbar-nav .nav-item a {
+        font-size: 12px;
+    }
+    .navbar-nav .nav-item .sub-menu>li>a {
+        font-size: 11px;
+    }
+    .btn.white-bg.mouse-dir {
+        width: 70px;
+        height: 30px;;
+    }
+
+    /*   ===================== footer =====================   */
+    .footer #footer_left #footer_left_content {
+        /* KYORITSU MAINTENANCE KOREA CO.,LTD. font-size: clamp(16px, 2vw, 1.6vh);*/
+    }
+    .footer #footer_left #footer_left_content a:not(:first-child){
+        /* 서울시 강남구 봉은사로 129 0.8rem 12.8px*/
+    }
+    .footer .footer_menu li:first-child a {
+        /* footer 대제목 font-size: clamp(16px, 2vw, 1.8vh);*/
+    }
+    .footer .f-contact ul li a {
+        /* footer 소제목 font-size: clamp(12px, 2vw, 1.4vh);*/
+    }
+    .footer .copyright {
+        /*Copyright @ KYORITSU MAINTENANCE KOREA CO.,LTD. 16px*/
+    }
+    }
+
+@media (min-width: 768px) and (max-width: 991px) {
+    /*테블릿 세로*/
+    }
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    /*테블릿 가로*/
+    }
+
 
 
 @media (max-width: 767.9px)  {
 
     .Gallery.section
     {
-        padding-bottom : 15%;
+        /*padding-bottom : 15%;*/
     }
 
-    .overview.section .editor-content .box-2#overview_img {
-        width: 80%;
-    }
-    .breadcrumbs-content.center button {
-        padding: 1.2rem 2.0rem;
-    }
+
+    /*.breadcrumbs-content.center button {*/
+    /*    padding: 1.2rem 2.0rem;*/
+    /*}*/
 
 
 }
