@@ -627,7 +627,7 @@ body.g-sidenav-hidden:not(.g-sidenav-pinned) .sidenav:not(:hover) .nav-link-text
     font-size: 0.9rem;
 }
 .card [class*=card-header-]:not(.card-header-icon):not(.card-header-text):not(.card-header-image):not(.card-header-action) {
-    margin-top: -20px;
+    margin-top: 0px;
     border-radius: 0.75rem;
     padding: 15px;
     margin-left: 15px;
@@ -1627,4 +1627,13 @@ input[type=checkbox]:checked {
 .btn-download:hover {
     color: white; /* 텍스트 색상 */
     background-color: #1b7cd8; /* 버튼 호버시 배경색 */
+}
+
+
+.card-body {
+    overflow: auto;
+}
+
+#page-container-detail {
+    height: 100%;
 }
