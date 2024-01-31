@@ -258,6 +258,39 @@ $(function () {
         },
         event: function () {
 
+            // if (window.innerWidth <= 768){
+            // var navItems = document.querySelectorAll(".nav-item");
+            //
+            // navItems.forEach(function(item) {
+            //     item.addEventListener("click", function() {
+            //         var isActive = item.classList.contains("active");
+            //
+            //             // 모든 nav-item에서 'active' 클래스를 제거
+            //         navItems.forEach(function(navItem) {
+            //             console.log(navItem)
+            //             navItem.classList.remove("active");
+            //             var childUl = navItem.querySelector("ul");
+            //             if (childUl) {
+            //                 childUl.classList.remove("show");
+            //             }
+            //         });
+            //
+            //         var childUl = item.querySelector("ul");
+            //         // 클릭한 nav-item이 이미 'active' 클래스를 가지고 있다면 제거, 아니면 추가
+            //         if (!isActive) {
+            //             item.classList.add("active");
+            //             if (childUl) {
+            //                 childUl.classList.add("show");
+            //             }
+            //         }else {
+            //             item.classList.remove("active");
+            //             if (childUl) {
+            //                 childUl.classList.remove("show");
+            //             }
+            //         }
+            //     });
+            // })};
+
             const contactButton = $('#contact-button#contact-button');
             const languageButton = $('#language-button');
 

@@ -616,6 +616,7 @@ big {
 }
 .button .btn.white-bg:hover{
 	border-color:#005bab;
+	color: #005bab;
 }
 /*--------------------------------------------------------------
 # Elements
