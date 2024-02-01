@@ -84,13 +84,13 @@ public class MainDataInitRunner implements ApplicationRunner {
         
         // '회사소개' 하위 메뉴
         if(!mainMenuStoredList.containsKey("기업개요")) mainMenuList.add(MainMenu.builder().order(1).menu(company).url("/intro/overview").name("기업개요").nameEnglish("Overview").nameJapanese("企業概要").type(MainMenuType.INTRO).build());
-        if(!mainMenuStoredList.containsKey("경영이념/비전")) mainMenuList.add(MainMenu.builder().order(2).menu(company).url("/intro/vision").name("경영이념/비전").nameEnglish("Philosophy/Vision").nameJapanese("経営理念/ビジョン").type(MainMenuType.INTRO).build());
+        if(!mainMenuStoredList.containsKey("경영이념")) mainMenuList.add(MainMenu.builder().order(2).menu(company).url("/intro/vision").name("경영이념").nameEnglish("Philosophy").nameJapanese("経営理念").type(MainMenuType.INTRO).build());
         if(!mainMenuStoredList.containsKey("연혁")) mainMenuList.add(MainMenu.builder().order(3).menu(company).url("/intro/history").name("연혁").nameEnglish("History").nameJapanese("歴史").type(MainMenuType.INTRO).build());
         if(!mainMenuStoredList.containsKey("조직도")) mainMenuList.add(MainMenu.builder().order(4).menu(company).url("/intro/organization").name("조직도").nameEnglish("Organization").nameJapanese("組織図").type(MainMenuType.INTRO).build());
-        if(!mainMenuStoredList.containsKey("오시는길")) mainMenuList.add(MainMenu.builder().order(5).menu(company).url("/intro/location").name("오시는길").nameEnglish("Direction").nameJapanese("アクセス").type(MainMenuType.INTRO).build());
+//        if(!mainMenuStoredList.containsKey("오시는길")) mainMenuList.add(MainMenu.builder().order(5).menu(company).url("/intro/location").name("오시는길").nameEnglish("Direction").nameJapanese("アクセス").type(MainMenuType.INTRO).build());
         
         // '사업영역' 하위 메뉴
-        if(!mainMenuStoredList.containsKey("도미인")) mainMenuList.add(MainMenu.builder().order(2).menu(product).url("/business/dormyinn").name("도미인").nameEnglish("Dormy Inn").nameJapanese("ドーミーイン").type(MainMenuType.INTRO).build());
+        if(!mainMenuStoredList.containsKey("호텔사업")) mainMenuList.add(MainMenu.builder().order(2).menu(product).url("/business/dormyinn").name("호텔사업").nameEnglish("Dormy Inn").nameJapanese("ドーミーイン").type(MainMenuType.INTRO).build());
 
         // '채용정보' 하위 메뉴
         if(!mainMenuStoredList.containsKey("직원소개")) mainMenuList.add(MainMenu.builder().order(1).menu(recruit).url("/recruit/employee_info").name("직원소개").nameEnglish("Employee<br>Introduction").nameJapanese("社員紹介").type(MainMenuType.GENERAL).build());

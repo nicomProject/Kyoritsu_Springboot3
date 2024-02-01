@@ -449,6 +449,16 @@ big {
 	min-height: 789.41px;
 }
 
+.inquiry .contact-sec.section
+{
+	padding-top: 70px;
+	padding-bottom: 20px;
+	position: relative;
+	min-height: 300px;
+	width: 100%;
+	overflow-x: hidden;
+}
+
 .Features.section,
 .About.section
 {

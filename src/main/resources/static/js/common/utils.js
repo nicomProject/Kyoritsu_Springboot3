@@ -286,6 +286,8 @@ const TableUtil = {
     },
     download: function (table, target, file_name, callback) {
         let data = table.getData();
+        console.log(data)
+        console.log(data.length)
         if (data.length < 1) {
             Alert.warning({text: '출력할 데이터가 없습니다!'});
             return;

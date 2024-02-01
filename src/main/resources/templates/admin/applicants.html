@@ -26,6 +26,16 @@
                 <button class="btn btn-round btn-primary bg-gradient-primary btn-pulse me-1" role="action" data-action="search">
                     <i class="fas fa-plus"></i><span class="icon-title">검색</span>
                 </button>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-round btn-success bg-gradient-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-file-alt"></i>
+                        <span class="icon-title">엑셀</span>
+                    </button>
+                    <ul class="dropdown-menu bg-gradient-success">
+                        <li><a class="dropdown-item text-white" href="#" role="action" data-action="file-list" data-range="download"><i class="fas fa-file-download"></i>채용공고 다운로드</a></li>
+                        <li><a class="dropdown-item text-white" href="#" role="action" data-action="file-user" data-range="download"><i class="fas fa-file-download"></i>지원자 현황 다운로드</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="card-body">
                 <div id="table"></div>

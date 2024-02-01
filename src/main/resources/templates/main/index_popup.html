@@ -1,105 +1,105 @@
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<th:block th:replace="~{components/_include::include_manager}"></th:block>
-<input type="hidden" id="language" th:value="${language}" />
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<th:block th:replace="~{components/_include::include_manager}"></th:block>-->
+<!--<input type="hidden" id="language" th:value="${language}" />-->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--        }-->
 
-        .popup-container {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.5);
-            position: fixed;
-            top: 0;
-            left: 0;
-        }
+<!--        .popup-container {-->
+<!--            width: 100%;-->
+<!--            height: 100vh;-->
+<!--            display: flex;-->
+<!--            justify-content: center;-->
+<!--            align-items: center;-->
+<!--            background-color: rgba(0, 0, 0, 0.5);-->
+<!--            position: fixed;-->
+<!--            top: 0;-->
+<!--            left: 0;-->
+<!--        }-->
 
-        .popup-content {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-        }
+<!--        .popup-content {-->
+<!--            background-color: #fff;-->
+<!--            padding: 20px;-->
+<!--            border-radius: 8px;-->
+<!--            text-align: center;-->
+<!--        }-->
 
-        .popup-msg {
-            font-size: 16px;
-            line-height: 1.9;
-        }
+<!--        .popup-msg {-->
+<!--            font-size: 16px;-->
+<!--            line-height: 1.9;-->
+<!--        }-->
 
-        .content-link {
-            color: #0067bb;
-            text-decoration: none;
-        }
+<!--        .content-link {-->
+<!--            color: #0067bb;-->
+<!--            text-decoration: none;-->
+<!--        }-->
 
-        .content-link:hover {
-            text-decoration: underline;
-        }
+<!--        .content-link:hover {-->
+<!--            text-decoration: underline;-->
+<!--        }-->
 
-        .close-btn {
-            background-color: #0067bb;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 14px;
-            cursor: pointer;
-            border-radius: 4px;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-<div class="popup-container">
-    <div class="popup-content" th:if="${language} == 'kr'">
-        <p class="popup-msg">
-            귀하가 보내주신 메시지와 고객의 개인정보는 최대한 주의를 기울여 처리됩니다.<br>
-            문의 내용에 따라 이메일 대신 전화나 서신으로 답변을 드리거나<br>  연락을 드리는 데시간이 걸릴 수 있습니다.<br>
-            <br>
-            이용시간 : 오전 9시 ~ 오후 5시 (주말, 공휴일, 연말연시 제외)<br>
-            개인정보 처리에 관한 사항은 회사의 “개인정보보호정책”을 참조하시기 바랍니다.
-            <br>
-            ・당사 호텔 예약 확인에 관한 문의사항은 해당 호텔로 직접 문의하시기 바랍니다. <br>
-              <a class="content-link" target="_blank"> TEL 02-548-9390</a><br>
-            <button class="close-btn">확인</button>
-        </p>
-    </div>
-    <div class="popup-content" th:if="${language} == 'eng'">
-        <p class="popup-msg">
-            Your message and the customer's personal information you provided will be handled with the utmost care.<br>
-            Depending on the nature of the inquiry, we may respond via phone or mail, and it may take some time to contact you.<br>
-            <br>
-            Service Hours: 9:00 AM to 5:00 PM (excluding weekends, holidays, and year-end holidays)<br>
-            For information regarding the processing of personal information, please refer to the company's "Privacy Policy."<br>
-            <br>
-            ・For inquiries regarding hotel reservations, please contact the respective hotel directly. <br>
-            <a class="content-link" target="_blank"> TEL 02-548-9390</a><br>
-            <button class="close-btn">OK</button>
-        </p>
-    </div>
-    <div class="popup-content" th:if="${language} == 'jp'">
-        <p class="popup-msg">
-            ご提供いただいたメッセージとお客様の個人情報は最大限の注意を払って取り扱われます。<br>
-            お問い合わせ内容により、電話や郵便での回答となる場合があり、ご連絡にはお時間がかかることがあります。<br>
-            <br>
-            営業時間: 午前9時から午後5時まで（週末、祝日、年末年始を除く）<br>
-            個人情報の処理に関する事項については、弊社の「個人情報保護方針」をご参照ください。<br>
-            <br>
-            ・ホテルの予約に関するお問い合わせは、該当するホテルに直接お問い合わせください。 <br>
-            <a class="content-link" target="_blank">TEL 02-548-9390</a><br>
-            <button class="close-btn">確認</button>
-        </p>
-    </div>
-</div>
-</body>
-<script src="/static/js/main/index_popup.js"></script>
+<!--        .close-btn {-->
+<!--            background-color: #0067bb;-->
+<!--            color: #fff;-->
+<!--            border: none;-->
+<!--            padding: 10px 20px;-->
+<!--            font-size: 14px;-->
+<!--            cursor: pointer;-->
+<!--            border-radius: 4px;-->
+<!--            margin-top: 20px;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="popup-container">-->
+<!--    <div class="popup-content" th:if="${language} == 'kr'">-->
+<!--        <p class="popup-msg">-->
+<!--            귀하가 보내주신 메시지와 고객의 개인정보는 최대한 주의를 기울여 처리됩니다.<br>-->
+<!--            문의 내용에 따라 이메일 대신 전화나 서신으로 답변을 드리거나<br>  연락을 드리는 데시간이 걸릴 수 있습니다.<br>-->
+<!--            <br>-->
+<!--            이용시간 : 오전 9시 ~ 오후 5시 (주말, 공휴일, 연말연시 제외)<br>-->
+<!--            개인정보 처리에 관한 사항은 회사의 “개인정보보호정책”을 참조하시기 바랍니다.-->
+<!--            <br>-->
+<!--            ・당사 호텔 예약 확인에 관한 문의사항은 해당 호텔로 직접 문의하시기 바랍니다. <br>-->
+<!--              <a class="content-link" target="_blank"> TEL 02-548-9390</a><br>-->
+<!--            <button class="close-btn">확인</button>-->
+<!--        </p>-->
+<!--    </div>-->
+<!--    <div class="popup-content" th:if="${language} == 'eng'">-->
+<!--        <p class="popup-msg">-->
+<!--            Your message and the customer's personal information you provided will be handled with the utmost care.<br>-->
+<!--            Depending on the nature of the inquiry, we may respond via phone or mail, and it may take some time to contact you.<br>-->
+<!--            <br>-->
+<!--            Service Hours: 9:00 AM to 5:00 PM (excluding weekends, holidays, and year-end holidays)<br>-->
+<!--            For information regarding the processing of personal information, please refer to the company's "Privacy Policy."<br>-->
+<!--            <br>-->
+<!--            ・For inquiries regarding hotel reservations, please contact the respective hotel directly. <br>-->
+<!--            <a class="content-link" target="_blank"> TEL 02-548-9390</a><br>-->
+<!--            <button class="close-btn">OK</button>-->
+<!--        </p>-->
+<!--    </div>-->
+<!--    <div class="popup-content" th:if="${language} == 'jp'">-->
+<!--        <p class="popup-msg">-->
+<!--            ご提供いただいたメッセージとお客様の個人情報は最大限の注意を払って取り扱われます。<br>-->
+<!--            お問い合わせ内容により、電話や郵便での回答となる場合があり、ご連絡にはお時間がかかることがあります。<br>-->
+<!--            <br>-->
+<!--            営業時間: 午前9時から午後5時まで（週末、祝日、年末年始を除く）<br>-->
+<!--            個人情報の処理に関する事項については、弊社の「個人情報保護方針」をご参照ください。<br>-->
+<!--            <br>-->
+<!--            ・ホテルの予約に関するお問い合わせは、該当するホテルに直接お問い合わせください。 <br>-->
+<!--            <a class="content-link" target="_blank">TEL 02-548-9390</a><br>-->
+<!--            <button class="close-btn">確認</button>-->
+<!--        </p>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</body>-->
+<!--<script src="/static/js/main/index_popup.js"></script>-->
 
-</html>
+<!--</html>-->

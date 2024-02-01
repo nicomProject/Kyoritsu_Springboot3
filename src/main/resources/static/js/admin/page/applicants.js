@@ -1,14 +1,18 @@
 $(function () {
     const Content = {
         params: {},
+        table: null,
+        tableDetail: null,
         load: function (params) {
-            this.params = params;
+            const that = this;
+
+            that.params = params;
             Data.load({role: true});
             let items = [];
 
             const category = $("#category");
-            const table = Table.load('#table');
-            const tableDetail = TableDetail.load('#tableDetail');
+            that.table = Table.load('#table');
+            that.tableDetail = TableDetail.load('#tableDetail');
 
 
             // AjaxUtil.request({
@@ -37,7 +41,7 @@ $(function () {
                     },
                     success: function (data) {
                         if (data.code == 200) {
-                            table.setData(data.result.items);
+                            that.table.setData(data.result.items);
                         } else {
                             Swal.fire({
                                 icon: 'error',
@@ -50,6 +54,7 @@ $(function () {
             this.event();
         },
         event: function () {
+            const that = this;
 
             const card = $('.card');
 
@@ -57,14 +62,24 @@ $(function () {
                 if (event.key === 'Enter') {
                     performSearch();
                     Content.params = {}
-                    TableDetail.load('#tableDetail');
+                    that.tableDetail.load('#tableDetail');
                 }
             });
 
             $('.btn[role="action"][data-action="search"]').on('click', function() {
                 performSearch();
                 Content.params = {}
-                TableDetail.load('#tableDetail');
+                that.tableDetail.load('#tableDetail');
+            });
+
+            $('.dropdown-item[role="action"][data-action="file-list"]').on('click', function() {
+                console.log(that.table.getData())
+                TableUtil.download(that.table, 'excel', '채용공고 목록');
+            });
+
+            $('.dropdown-item[role="action"][data-action="file-user"]').on('click', function() {
+                console.log(that.tableDetail.getData())
+                TableUtil.download(that.tableDetail, 'excel', '지원자 목록');
             });
 
             function performSearch() {
@@ -174,7 +189,7 @@ $(function () {
                     // window.location.href = '/admin/applicants/' + row.getData().recKey;
                         let urlDetail = '/api/applicant/findWithJob/' + row.getData().recKey
                         Content.params.urlDetail = urlDetail;
-                    const tableDetail = TableDetail.load('#tableDetail');
+                    that.tableDetail = TableDetail.load('#tableDetail');
                 },
 
                 downloadComplete: function () {
@@ -301,6 +316,7 @@ $(function () {
             });
 
             this.table = tableDetail;
+
             return tableDetail;
         },
     };

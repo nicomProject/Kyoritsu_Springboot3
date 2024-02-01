@@ -29,8 +29,10 @@ section .sub-title{
 .dormyinn.section .profile.profile-1{
     flex: 1;
     display: flex;
+    /*flex-direction: column;*/
+    /*justify-content: space-around;*/
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     margin-left: 10px;
 }
 .dormyinn.section .box-2{
@@ -75,6 +77,7 @@ section .sub-title{
     font-size: 26px;
     color: #0067bb;
     font-weight: bolder;
+    margin-bottom: 2%;
 }
 
 .dormitory.section .editor-content .box-2 .profile.profile-1 .profile-link-2,
@@ -84,6 +87,7 @@ section .sub-title{
    /* margin-bottom: 20px; !* 각 링크 사이에 간격을 조절합니다. *!*/
     font-size: 22px;
     font-weight: bold;
+    margin-bottom: 7%;
 }
 
 .dormitory.section .editor-content .box-2 .profile.profile-1 .profile-link-2 a,
@@ -202,6 +206,587 @@ section .sub-title{
     font-size: 20px;
     text-align: center;
     flex-direction: column;
+}
+
+/* contact */
+.inquiry .contact-sec {
+    margin: 31px 0 48px;
+}
+.inquiry .contact-sec .inner {
+    width: 1080px;
+    margin: 0 auto;
+}
+.inquiry .contact-sec .inner h3 {
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+    color: #0067bb;
+}
+.inquiry .contact-sec .inner .desc {
+    margin-top: 58px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.9;
+}
+.inquiry .contact-sec .inner .msg {
+    margin: 59px auto 0;
+    padding: 28px 83.5px 21px;
+    font-size: 16px;
+    text-align: left;
+    border: 2px solid #0067bb;
+    line-height: 1.9;
+    width: 804px;
+}
+.inquiry .contact-sec .inner .msg a {
+    color: #0067bb;
+    border-bottom: 1px solid #0067bb;
+}
+.inquiry .inquiry-sec {
+    margin-bottom: 67px;
+}
+.inquiry .inquiry-sec .inner {
+    width: 1080px;
+    margin: 0 auto;
+}
+.inquiry .inquiry-sec .inner .question-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #0067bb;
+}
+.inquiry .inquiry-sec .inner .question-box .question {
+    width: 280px;
+    color: #0067bb;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.5;
+    flex-shrink: 0;
+}
+.inquiry .inquiry-sec .inner .question-box .question .require {
+    color: #d11e18;
+}
+.inquiry .inquiry-sec .inner .question-box .error {
+    position: absolute;
+    display: none;
+    bottom: 10px;
+    left: 332px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #d11e18;
+}
+.inquiry .inquiry-sec .inner .question-box .answer {
+    width: 748px;
+    font-size: 14px;
+    font-weight: bold;
+    font-feature-settings: "palt";
+}
+.inquiry .inquiry-sec .inner .question-box .answer .text, .inquiry .inquiry-sec .inner .question-box .answer .number {
+    flex-grow: 1;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .text input[type=text], .inquiry .inquiry-sec .inner .question-box .answer .number input[type=text] {
+    width: 100%;
+    padding: 15px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #0067bb;
+    box-sizing: border-box;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .text input[type=text]::placeholder, .inquiry .inquiry-sec .inner .question-box .answer .number input[type=text]::placeholder {
+    color: #ccc;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .text input[type=text]::-ms-input-placeholder, .inquiry .inquiry-sec .inner .question-box .answer .number input[type=text]::-ms-input-placeholder {
+    color: #ccc;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .text input[type=text]:-ms-input-placeholder, .inquiry .inquiry-sec .inner .question-box .answer .number input[type=text]:-ms-input-placeholder {
+    color: #ccc;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .notes {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .number input[type=number] {
+    width: 100%;
+    padding: 19px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #0067bb;
+    box-sizing: border-box;
+    border-radius: 0;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+    background-image: -webkit-linear-gradient(left, #ffffff, #ffffff);
+    -moz-appearance: textfield;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .number input[type=number]::placeholder {
+    color: #ccc;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .number input[type=number]::-ms-input-placeholder {
+    color: #ccc;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .number input[type=number]:-ms-input-placeholder {
+    color: #ccc;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .number input[type=number]::-webkit-outer-spin-button, .inquiry .inquiry-sec .inner .question-box .answer .number input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .textarea {
+    flex-grow: 1;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .textarea textarea {
+    height: 137px;
+    width: 100%;
+    padding: 19px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid #0067bb;
+    border-radius: 0;
+    box-sizing: border-box;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+    background-image: -webkit-linear-gradient(left, #ffffff, #ffffff);
+}
+.inquiry .inquiry-sec .inner .question-box .answer .textarea textarea::placeholder {
+    color: #ccc;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .textarea textarea::-ms-input-placeholder {
+    color: #ccc;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .textarea textarea:-ms-input-placeholder {
+    color: #ccc;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .radio {
+    height: 33px;
+    position: relative;
+    padding-left: 34px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 55px;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .radio label {
+    cursor: pointer;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .radio label::before {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border: 1px solid #0067bb;
+    border-radius: 50%;
+    content: "";
+    z-index: 3;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .radio label::after {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 6px;
+    transform: translateY(-50%);
+    border-radius: 100%;
+    background-color: #0067bb;
+    content: "";
+    z-index: 1;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .radio input[type=radio] {
+    position: absolute;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: -20px;
+    transform: translateY(-50%);
+    margin: 0px;
+    box-shadow: 20px -1px #fff;
+    opacity: 1;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .radio input[type=radio]:checked {
+    box-shadow: none;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .radio input[type=radio]:focus {
+    opacity: 0.2;
+    box-shadow: 20px -1px #fff;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .select {
+    position: relative;
+    display: inline-block;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .select::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 7.8px 4.5px 0 4.5px;
+    border-color: #fff transparent transparent transparent;
+    pointer-events: none;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .select select {
+    font-size: 1.4rem;
+    border: 0;
+    border-radius: 0;
+    background-color: #0067bb;
+    color: #fff;
+    padding: 9px 41px 9px 19px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .select select::-ms-expand {
+    display: none;
+}
+.inquiry .inquiry-sec .inner .question-box .answer .address-search {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    appearance: none;
+    font-size: 1.4rem;
+    border: 0;
+    border-radius: 0;
+    background-color: #0067bb;
+    color: #fff;
+    padding: 7px 19px 6px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.inquiry .inquiry-sec .inner .submit-box {
+    margin-top: 78px;
+}
+.inquiry .inquiry-sec .inner .submit-box .msg {
+    text-align: center;
+    font-size: 16px;
+}
+.inquiry .inquiry-sec .inner .submit-box .btnNotice.inquiry {
+    display: flex;
+    justify-content: center;
+}
+.inquiry .inquiry-sec .inner .submit-box .submit {
+    position: relative;
+    max-width: 390px;
+    margin-top: 68px;
+    margin-right: auto;
+    margin-left: auto;
+    cursor: pointer;
+}
+.inquiry .inquiry-sec .inner .submit-box .submit::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 4.5px 0 4.5px 8px;
+    border-color: transparent transparent transparent #0067bb;
+    pointer-events: none;
+}
+.inquiry .inquiry-sec .inner .submit-box .submit input[type=submit] {
+    width: 100%;
+    padding: 20px 20px;
+    border: 2px solid #0067bb;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0067bb;
+    background-color: #fff;
+    cursor: pointer;
+}
+.inquiry .inquiry-sec .inner .question-1 {
+    padding-bottom: 44px;
+}
+.inquiry .inquiry-sec .inner .question-1 .answer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.inquiry .inquiry-sec .inner .question-2 {
+    margin-top: 44px;
+    padding-bottom: 53px;
+}
+.inquiry .inquiry-sec .inner .question-2 .answer {
+    display: flex;
+    align-items: center;
+}
+.inquiry .inquiry-sec .inner .question-3 {
+    margin-top: 47px;
+    padding-bottom: 52px;
+}
+.inquiry .inquiry-sec .inner .question-4 {
+    margin-top: 52px;
+    padding-bottom: 53px;
+}
+.inquiry .inquiry-sec .inner .question-5 {
+    margin-top: 43px;
+    padding-bottom: 50px;
+}
+.inquiry .inquiry-sec .inner .question-6 {
+    margin-top: 49px;
+    padding-bottom: 52px;
+}
+.inquiry .inquiry-sec .inner .question-7 {
+    margin-top: 53px;
+    padding-bottom: 52px;
+}
+.inquiry .inquiry-sec .inner .question-8 {
+    margin-top: 66px;
+    padding-bottom: 71px;
+}
+.inquiry .inquiry-sec .inner .question-8 .answer {
+    display: flex;
+}
+.inquiry .inquiry-sec .inner .question-8 .answer .radio + .radio {
+    margin-left: 45px;
+}
+.inquiry .inquiry-sec .inner .question-9 {
+    margin-top: 53px;
+    padding-bottom: 60px;
+}
+.inquiry .inquiry-sec .inner .question-9 .answer .zip {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.inquiry .inquiry-sec .inner .question-9 .answer .zip .number {
+    max-width: 208px;
+}
+.inquiry .inquiry-sec .inner .question-9 .answer .zip .number:first-child {
+    position: relative;
+}
+/*.inquiry .inquiry-sec .inner .question-9 .answer .zip .number:first-child::after {*/
+/*    content: "";*/
+/*    width: 27px;*/
+/*    position: absolute;*/
+/*    top: calc(50% + 5px);*/
+/*    left: calc(100% + 17px);*/
+/*    transform: translateY(-50%);*/
+/*    border-top: 2px solid #0067bb;*/
+/*}*/
+.inquiry .inquiry-sec .inner .question-9 .answer .select {
+    margin-top: 26px;
+    margin-bottom: 26px;
+}
+.inquiry .inquiry-sec .inner .question-9 .answer .address .msg {
+    margin-top: 15px;
+}
+.inquiry .inquiry-sec .inner .question-10 {
+    margin-top: 53px;
+    padding-bottom: 61px;
+}
+.inquiry .inquiry-sec .inner .question-10 .answer {
+    display: flex;
+    align-items: center;
+}
+.inquiry .inquiry-sec .inner .question-11 {
+    margin-top: 56px;
+    padding-bottom: 53px;
+}
+.inquiry .inquiry-sec .inner .question-11 .answer {
+    display: flex;
+}
+.inquiry .inquiry-sec .inner .question-11 .answer .radio {
+    width: 76px;
+}
+.inquiry .inquiry-sec .inner .question-11 .answer .radio:nth-last-of-type(1) {
+    width: 90px;
+}
+.inquiry .inquiry-sec .inner .question-12 {
+    margin-top: 56px;
+    padding-bottom: 53px;
+}
+.inquiry .inquiry-sec .inner .question-12 .answer {
+    display: flex;
+}
+.inquiry .inquiry-sec .inner .question-12 .answer .radio {
+    width: 76px;
+}
+.inquiry .inquiry-sec .inner .question-13 {
+    margin-top: 47px;
+    padding-bottom: 52px;
+}
+.inquiry .inquiry-sec .inner .question-14 {
+    margin-top: 49px;
+    padding-bottom: 52px;
+}
+.inquiry .inquiry-sec .inner .question-15 {
+    margin-top: 49px;
+    padding-bottom: 52px;
+}
+.inquiry_confirm .inquiry-sec {
+    margin-top: 73px;
+    margin-bottom: 67px;
+}
+.inquiry_confirm .inquiry-sec .inner {
+    width: 1080px;
+    margin: 0 auto;
+}
+.inquiry_confirm .inquiry-sec .inner .question-box {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 59px;
+    border-bottom: 1px solid #0067bb;
+}
+.inquiry_confirm .inquiry-sec .inner .question-box .question {
+    width: 280px;
+    color: #0067bb;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.5;
+    flex-shrink: 0;
+}
+.inquiry_confirm .inquiry-sec .inner .question-box .question .require {
+    color: #D11E18;
+}
+.inquiry_confirm .inquiry-sec .inner .question-box .answer {
+    width: 748px;
+    margin-top: 7px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-feature-settings: "palt";
+    box-sizing: border-box;
+}
+.inquiry_confirm .inquiry-sec .inner .question-box .answer .confirm-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.7;
+}
+.inquiry_confirm .inquiry-sec .inner .question-box + .question-box {
+    margin-top: 45px;
+}
+.inquiry_confirm .inquiry-sec .inner .submit-box {
+    margin-top: 78px;
+}
+.inquiry_confirm .inquiry-sec .inner .submit-box .msg {
+    text-align: center;
+}
+.inquiry_confirm .inquiry-sec .inner .submit-box .submit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 68px;
+    margin-right: 124px;
+    margin-left: 124px;
+}
+.inquiry_confirm .inquiry-sec .inner .submit-box .submit .input-submit,
+.inquiry_confirm .inquiry-sec .inner .submit-box .submit .input-fix {
+    position: relative;
+    width: 100%;
+    max-width: 390px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.inquiry_confirm .inquiry-sec .inner .submit-box .submit .input-submit::after,
+.inquiry_confirm .inquiry-sec .inner .submit-box .submit .input-fix::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 4.5px 0 4.5px 8px;
+    border-color: transparent transparent transparent #fff;
+    pointer-events: none;
+}
+.inquiry_confirm .inquiry-sec .inner .submit-box .submit .input-fix {
+    text-align: center;
+    color: #0067bb;
+    background-color: #fff;
+}
+.inquiry_confirm .inquiry-sec .inner .submit-box .submit .input-fix::after {
+    left: 24px;
+    border-width: 4.5px 8px 4.5px 0;
+    border-color: transparent #0067bb transparent transparent;
+}
+.inquiry_confirm .inquiry-sec .inner .submit-box .submit input[type=submit] {
+    display: block;
+    width: 100%;
+    padding: 20px 20px;
+    border: 2px solid #0067bb;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #0067bb;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.inquiry_confirm .inquiry-sec .inner .submit-box .submit input[type=button] {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    appearance: none;
+    display: block;
+    width: 100%;
+    padding: 20px 20px;
+    border: 2px solid #0067bb;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0067bb;
+    background-color: #fff;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.inquiry_confirm_thanks .contact-sec {
+    margin: 31px 0 77px;
+}
+.inquiry_confirm_thanks .contact-sec .inner {
+    width: 1080px;
+    margin: 0 auto;
+}
+.inquiry_confirm_thanks .contact-sec .inner .title {
+    text-align: center;
+}
+.inquiry_confirm_thanks .contact-sec .inner .title h3 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #0067bb;
+}
+.inquiry_confirm_thanks .contact-sec .inner .title .desc {
+    padding: 0 100px;
+    margin-top: 58px;
+    font-size: 1.4rem;
+    text-align: left;
+    line-height: 1.9;
+}
+.inquiry_confirm_thanks .contact-sec .inner .title .desc .bold {
+    font-weight: 700;
+}
+.inquiry_confirm_thanks .contact-sec .inner .title .desc a {
+    color: #0067bb;
+    border-bottom: 1px solid #0067bb;
+}
+.inquiry_confirm_thanks .contact-sec .inner .title .more {
+    margin-top: 83px;
+}
+
+.inquiry .inquiry-sec .inner .submit-box .btn {
+    background: #005bab;
+    color: white;
+    font-size: 1.5rem;
+    padding: 1.5rem 5rem;
+    border-radius: 100px;
+    font-weight: 500;
+    margin-top: 30px;
 }
 
 
@@ -423,7 +1008,8 @@ section .sub-title{
     margin-bottom: 60px;
     margin-top: 38px;
     font-size: 22px;
-    line-height: 1.5
+    line-height: 1.5;
+    text-align: center;
 }
 
 /* history */
@@ -2769,10 +3355,12 @@ section .sub-title{
 
     .dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-1 {
         font-size: 16px;
-        margin-top: 5px
+        margin-top: 5px;
+        margin-bottom: 0px;
     }
     .dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-2 {
         font-size: 14px;
+        margin-bottom: 0px;
     }
     .dormyinn.section .editor-content .box-2 .profile.profile-1 .profile-link-2 a {
         margin-bottom: 5px;

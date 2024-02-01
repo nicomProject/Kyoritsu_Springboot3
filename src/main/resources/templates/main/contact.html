@@ -1,0 +1,403 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="~{components/_include::include_main}"></th:block>
+
+<body>
+<!-- Preloader -->
+<div class="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-icon">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+<!-- /End Preloader -->
+
+<!-- ========================= header start ========================= -->
+<th:block th:replace="~{components/_header::header_main}"></th:block>
+<!-- ========================= header end ========================= -->
+
+<input type="hidden" id="dormyinn_contentId" class="param contentId" name="key"/>
+<input type="hidden" id="page_group_id" value="business_area"/>
+<input type="hidden" id="page_id" value="dormyinn"/>
+<input type="hidden" id="language" th:value="${language}"/>
+
+<!-- Start Breadcrumbs -->
+<div class="breadcrumbs" id="business" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12" id="breadcrumbs-nav">
+                <div class="breadcrumbs-content">
+                    <ul class="breadcrumb-nav">
+                        <li><a href="../">Home</a></li>
+                        <li><a href="">채용정보</a></li>
+                        <li>채용 지원</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12" id="breadcrumbs-title">
+                <div class="breadcrumbs-content title">
+                    <h1 class="page-title">문의</h1>
+                    <p>[수정필요]Business plan draws on a wide range of knowledge from different business disciplines. Business draws on a wide range of different business .</p>
+                </div>
+                <div class="blank">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<main class="inquiry contact win chrome">
+    <section class="contact-sec section">
+        <div class="editor-content container">
+        <div class="inner">
+            <div class="title">
+                <h3><span style="vertical-align: inherit;">인터넷으로 문의하기</span></h3>
+                <p class="desc">
+                    <span style="vertical-align: inherit;">저희는 고객님의 개인 정보를 소중히 다루고 있으며, 안심하고 이용하실 수 있도록 최선을 다하고 있습니다.</span><br>
+                    <span style="vertical-align: inherit;">문의 내용에 따라 회신에는 시간이 소요될 수 있으며, 경우에 따라 전화나 편지로 연락 드릴 수도 있습니다.</span>
+                    <br><br>
+                    <span style="vertical-align: inherit;">시간은 평일 9:00부터 17:00까지이며, 주말, 공휴일, 연말연시를 제외하고 운영되고 있습니다.</span>
+                    <br>
+                    <span style="vertical-align: inherit;">고객님의 개인 정보는 저희의 "개인정보 보호방침"에 따라 안전하게 관리되고 있습니다.</span>
+                    <br>
+                    <span style="vertical-align: inherit;">보다 자세한 내용은 저희 웹사이트에서 확인하실 수 있습니다.</span>
+                    <br>
+                    <span style="vertical-align: inherit;">더 궁금한 사항이 있으시거나 추가적인 도움이 필요하시면 언제든지 문의해 주세요</span>
+                    <br>
+                    <span style="vertical-align: inherit;"><strong>문의 전화번호 02-548-9390</strong></span>
+                </p>
+
+<!--                안녕하세요,-->
+
+<!--                고객님의 소중한 문의에 감사드립니다. 저희는 고객님의 개인 정보를 최대한 소중히 다루고 있으며, 안심하고 이용하실 수 있도록 최선을 다하고 있습니다.-->
+
+<!--                문의 내용에 따라 회신에는 시간이 소요될 수 있으며, 일부 경우에는 전화나 편지로 연락 드릴 수도 있습니다. 빠른 시일 내에 최상의 서비스를 제공하기 위해 노력하고 있습니다.-->
+
+<!--                우리의 대응 시간은 평일 9:00부터 17:00까지이며, 주말, 공휴일, 연말연시를 제외하고 운영되고 있습니다.-->
+
+<!--                고객님의 개인 정보는 저희의 "개인정보 보호방침"에 따라 안전하게 관리되고 있습니다. 보다 자세한 내용은 저희 웹사이트에서 확인하실 수 있습니다.-->
+
+<!--                더 궁금한 사항이 있으시거나 추가적인 도움이 필요하시면 언제든지 문의해 주세요. 고객 여러분의 만족을 위해 최선을 다하고 있습니다.-->
+
+
+<!--                <p class="msg"><span style="vertical-align: inherit;">・당사 호텔에의 숙박 예약 확인등의 문의는</span>-->
+<!--                    <span class="sp_view"><br></span>-->
+<!--                    <span style="vertical-align: inherit;">직접 해당 시설에 보내 주세요.</span><br>-->
+<!--                    　<a class="content_link" target="_blank" href="https://www.hotespa.net/resort/inquiry/"><span style="vertical-align: inherit;">&gt; 공립 리조트 시설 일람 페이지 </span></a><br>-->
+<!--                    　<a class="content_link" target="_blank" href="https://www.hotespa.net/dormyinn/list/"><span style="vertical-align: inherit;">&gt; 도미 인 시설 일람 페이지</span></a><br>-->
+<!--                    　<a class="content_link" target="_blank" href="https://www.hotespa.net/dormyinn/guide/faq.html"><span style="vertical-align: inherit;">※ 도미 인 자주 있는 질문</span></a>-->
+<!--                    <br>-->
+<!--                    <span style="vertical-align: inherit;">·학생 기숙사에 관한 문의는</span>-->
+<!--                    <a target="_blank" href="https://dormy-ac.com/contact/inquiry/">-->
+<!--                        <span style="vertical-align: inherit;">이쪽</span></a><span style="vertical-align: inherit;">.</span>-->
+<!--                    <br>-->
+<!--                    <span style="vertical-align: inherit;">・채용 정보에 대해서는</span>-->
+<!--                    <a href="/recruit/"><span style="vertical-align: inherit;">이쪽을</span></a>-->
+<!--                    <span style="vertical-align: inherit;">참조해 주세요.</span><br>-->
+<!--                    <span style="vertical-align: inherit;">・PKP 사업(지자체 업무 수탁)에 대해서는</span>-->
+<!--                    <a target="_blank" href="https://kyoritsu-pkp.com/contact/"><span style="vertical-align: inherit;">이쪽</span></a>-->
+<!--                    <br><small><span style="vertical-align: inherit;">※2023년 4월부터(주)공립 솔루션즈에 이행했습니다</span></small>-->
+<!--                </p>-->
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="inquiry-sec section" id="inquiry-sec">
+        <div class="editor-content container">
+        <div class="inner">
+                <span class="p-country-name" style="display:none;"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">일본</span></span></span>
+                <div class="question-box question-1">
+                    <div class="question">
+                        <span style="vertical-align: inherit;">카테고리를 선택하세요.</span>
+                        <br class="sp_view">
+                        <span class="require" style="vertical-align: inherit;">※필수</span>
+                    </div>
+                    <div class="answer">
+                        <div class="radio"><label><input type="radio" name="category" value="호텔(도미인) 정보"><span style="vertical-align: inherit;">호텔(도미인) 정보</span></label></div>
+                        <div class="radio"><label><input type="radio" name="category" value="채용 문의"><span style="vertical-align: inherit;">채용 문의</span></label></div>
+                        <div class="radio"><label><input type="radio" name="category" value="취재・촬영 문의"><span style="vertical-align: inherit;">취재・촬영 문의</span></label></div>
+                        <div class="radio"><label><input type="radio" name="category" value="기타"><span style="vertical-align: inherit;">기타</span></label></div>
+                    </div>
+                    <div class="error"><span style="vertical-align: inherit;">두 항목 중 하나를 선택합니다.</span></div>
+                </div>
+                <div class="question-box question-2">
+                    <div class="question">
+                        <span style="vertical-align: inherit;">시설명</span>
+                        <span class="require" style="vertical-align: inherit;">※필수</span>
+                    </div>
+                    <div class="answer">
+                        <div class="text">
+                            <input type="text" placeholder="시설명 입력"></div>
+                        <div class="radio" style="pointer-events: auto;">
+                            <label>
+                                <input type="radio" value="시설 지정 없음">
+                                <span style="vertical-align: inherit;">시설 지정 없음</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error">
+                        <span style="vertical-align: inherit;">올바르게 입력하십시오.</span>
+                    </div>
+                </div>
+                <div class="question-box question-3">
+                    <div class="question">
+                        <span style="vertical-align: inherit;">문의 내용</span>
+                        <span class="require" style="vertical-align: inherit;">※필수</span>
+                    </div>
+                    <div class="answer">
+                        <div class="textarea">
+                            <textarea placeholder="문의 내용 입력"></textarea>
+                        </div>
+                    </div>
+                    <div class="error">
+                        <span style="vertical-align: inherit;">올바르게 입력하십시오.</span>
+                    </div>
+                </div>
+<!--                <div class="question-box question-13" style="display: none;">-->
+<!--                    <div class="question">-->
+<!--                        <span style="vertical-align: inherit;">게재 미디어(대상 사이트)・</span>-->
+<!--                        <br>-->
+<!--                        <span style="vertical-align: inherit;">계정의 URL</span>-->
+<!--                        <span class="require" style="vertical-align: inherit;">※필수</span>-->
+<!--                    </div>-->
+<!--                    <div class="answer">-->
+<!--                        <div class="text">-->
+<!--                            <input type="text" name="" placeholder="게재 미디어(대상 사이트)・계정의 URL">-->
+<!--                        </div>-->
+<!--                        <p class="notes">-->
+<!--                            <span style="vertical-align: inherit;">※취재·촬영한 것을 게재하는 미디어의 대상 URL을 입력해 주세요</span>-->
+<!--                            <br>-->
+<!--                            <span style="vertical-align: inherit;">※게재하는 미디어가 복수 있는 경우는, 모두 입력해 주세요</span>-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                    <div class="error">-->
+<!--                        <span style="vertical-align: inherit;">올바르게 입력하십시오.</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="question-box question-14" style="display: none;">-->
+<!--                    <div class="question">-->
+<!--                        <span style="vertical-align: inherit;">취재・촬영 희망일</span>-->
+<!--                        <span class="require" style="vertical-align: inherit;">※필수</span>-->
+<!--                    </div>-->
+<!--                    <div class="answer">-->
+<!--                        <div class="text">-->
+<!--                            <input type="text" name="" placeholder="취재·촬영 희망일을 입력">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="error">-->
+<!--                        <span style="vertical-align: inherit;">올바르게 입력하십시오.</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="question-box question-15" style="display: none;">-->
+<!--                    <div class="question">-->
+<!--                        <span style="vertical-align: inherit;">촬영 희망 개소</span>-->
+<!--                        <span class="require" style="vertical-align: inherit;">※필수</span>-->
+<!--                    </div>-->
+<!--                    <div class="answer">-->
+<!--                        <div class="text">-->
+<!--                            <input type="text" name="" placeholder="촬영 희망 부분을 입력">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="error">-->
+<!--                        <span style="vertical-align: inherit;">올바르게 입력하십시오.</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <div class="question-box question-4">
+                    <div class="question">
+                        <span style="vertical-align: inherit;">이메일 주소</span>
+                        <span class="require" style="vertical-align: inherit;">※필수</span>
+                    </div>
+                    <div class="answer">
+                        <div class="text">
+                            <input type="text" placeholder="이메일 주소 입력"></div>
+                        <p class="notes">
+                            <span style="vertical-align: inherit;">※메일 주소에 오류가 있는 경우, 폐사로부터 회신 메일이 도착하지 않습니다.</span>
+                            <br>
+                            <span style="vertical-align: inherit;">※메일 주소는 오류가 없는지 확인하여 입력해 주십시오.</span>
+                            <br>
+                            <span style="vertical-align: inherit;">※도메인 지정을 하고 있는 분은 「@dormy.co.jp」로부터의 메일 수신을 허가해 주세요.</span>
+                        </p>
+                    </div>
+                    <div class="error">
+                        <span style="vertical-align: inherit;">올바르게 입력하십시오.</span>
+                    </div>
+                </div>
+                <div class="question-box question-5">
+                    <div class="question">
+                        <span style="vertical-align: inherit;">메일 주소</span>
+                        <span class="require" style="vertical-align: inherit;">※필수</span>
+                        <br>
+                        <span style="vertical-align: inherit;">(재확인)</span>
+                    </div>
+                    <div class="answer">
+                        <div class="text">
+                            <input type="text" placeholder="이메일 주소 다시 입력"></div>
+                    </div>
+                    <div class="error">
+                        <span style="vertical-align: inherit;">올바르게 입력하십시오.</span>
+                    </div>
+                </div>
+<!--                <div class="question-box question-6">-->
+<!--                    <div class="question">-->
+<!--                        <span style="vertical-align: inherit;">이름</span>-->
+<!--                        <span class="require" style="vertical-align: inherit;">※필수</span>-->
+<!--                    </div>-->
+<!--                    <div class="answer">-->
+<!--                        <div class="text">-->
+<!--                            <input type="text" name="お名前" placeholder="예: 공립 타로">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="error">-->
+<!--                        <span style="vertical-align: inherit;">올바르게 입력하십시오.</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="question-box question-7">-->
+<!--                    <div class="question">-->
+<!--                        <span style="vertical-align: inherit;">이름(후리가나)</span>-->
+<!--                    </div>-->
+<!--                    <div class="answer">-->
+<!--                        <div class="text">-->
+<!--                            <input type="text" name="お名前（フリガナ）" placeholder="예: 쿄우리츠 타로">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="question-box question-8">-->
+<!--                    <div class="question">-->
+<!--                        <span style="vertical-align: inherit;">성별</span>-->
+<!--                    </div>-->
+<!--                    <div class="answer">-->
+<!--                        <div class="radio"><label><input type="radio"><span style="vertical-align: inherit;">남성</span></label></div>-->
+<!--                        <div class="radio"><label><input type="radio"><span style="vertical-align: inherit;">여성</span></label></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="question-box question-9">-->
+<!--                    <div class="question">-->
+<!--                        <span style="vertical-align: inherit;">주소</span>-->
+<!--                    </div>-->
+<!--                    <div class="answer">-->
+<!--                        <div class="zip">-->
+<!--                            <div class="number"><input class="p-postal-code" size="3" maxlength="3" type="number"></div>-->
+<!--                            <div class="number"><input class="p-postal-code" size="4" maxlength="4" type="number"></div>-->
+<!--                            <button type="button" class="address-search" href="#" id="address_button">-->
+<!--                                <span style="vertical-align: inherit;">우편번호 찾기</span>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                        <div class="address">-->
+<!--                            <div class="text">-->
+<!--                                <input class="p-locality p-street-address p-extended-address" type="text">-->
+<!--                            </div>-->
+<!--                            <div class="text">-->
+<!--                                <input class="p-locality p-street-address p-extended-address" type="text">-->
+<!--                            </div>-->
+<!--                            <p class="msg">-->
+<!--                                <span style="vertical-align: inherit;">시구정촌군, 마을명, 쵸메, 번지, 호, 아파트/맨션/</span>-->
+<!--                                <br class="sp_view">-->
+<!--                                <span style="vertical-align: inherit;">명, 호실, 빌딩명 등을 입력해 주세요.</span>-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="question-box question-10">-->
+<!--                    <div class="question">-->
+<!--                        <span style="vertical-align: inherit;">연락처(전화번호)</span>-->
+<!--                    </div>-->
+<!--                    <div class="answer">-->
+<!--                        <div class="number">-->
+<!--                            <input type="text" placeholder="000-000-000">-->
+<!--                        </div>-->
+<!--                        <div class="radio"><label><input type="radio"><span style="vertical-align: inherit;">집</span></label></div>-->
+<!--                        <div class="radio"><label><input type="radio"><span style="vertical-align: inherit;">회사</span></label></div>-->
+<!--                        <div class="radio"><label><input type="radio"><span style="vertical-align: inherit;">모바일></span></label></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="question-box question-11">-->
+<!--                    <div class="question">-->
+<!--                        <span style="vertical-align: inherit;">나이</span>-->
+<!--                    </div>-->
+<!--                    <div class="answer">-->
+<!--                        <input type="hidden" name="年齢">-->
+<!--                        <div class="radio"><label><input type="radio"><span style="vertical-align: inherit;">10대</span></span></label></div>-->
+<!--                        <div class="radio"><label><input type="radio"><span style="vertical-align: inherit;">20대</span></span></label></div>-->
+<!--                        <div class="radio"><label><input type="radio"><span style="vertical-align: inherit;">30대</span></span></label></div>-->
+<!--                        <div class="radio"><label><input type="radio"><span style="vertical-align: inherit;">40대</span></span></label></div>-->
+<!--                        <div class="radio"><label><input type="radio"><span style="vertical-align: inherit;">50대</span></span></label></div>-->
+<!--                        <div class="radio"><label><input type="radio"><span style="vertical-align: inherit;">60대 이상</span></span></label></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="question-box question-12">-->
+<!--                    <div class="question"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">-->
+<!--                        직업-->
+<!--                    </span></span></div>-->
+<!--                    <div class="answer">-->
+<!--                        <input type="hidden" name="ご職業">-->
+<!--                        <div class="radio"><label><input type="radio"><span style="vertical-align: inherit;">직장인</span></label></div>-->
+<!--                        <div class="radio"><label><input type="radio"><span style="vertical-align: inherit;">학생</span></label></div>-->
+<!--                        <div class="radio"><label><input type="radio"><span style="vertical-align: inherit;">공무원</span></label></div>-->
+<!--                        <div class="radio"><label><input type="radio"><span style="vertical-align: inherit;">자영업</span></label></div>-->
+<!--                        <div class="radio"><label><input type="radio"><span style="vertical-align: inherit;">주부</span></label></div>-->
+<!--                        <div class="radio"><label><input type="radio"><span style="vertical-align: inherit;">기타</span></label></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <div class="submit-box">
+                    <p class="msg">
+                        <span style="vertical-align: inherit;">반각 문자나 특수 문자는 문자 깨짐의 원인이되므로 </span>
+                        <br class="sp_view">
+                        <span style="vertical-align: inherit;">사용하지 마십시오.</span>
+                    </p>
+                    <div class="btnNotice inquiry">
+                    <button class="btn" id="btnNotice2">
+                        <span>확인</span>
+                    </button>
+                    </div>
+                </div>
+        </div>
+        </div>
+    </section>
+<!--    <section id="recruit-info-section7" class="recruit-info section recruit-info-section-D">-->
+<!--        <div class="submit-box">-->
+<!--            <p class="msg">-->
+<!--                <span style="vertical-align: inherit;">반각 가나, 특수 문자는 문자 깨짐의 원인이되므로 </span>-->
+<!--                <br class="sp_view">-->
+<!--                <span style="vertical-align: inherit;">사용하지 마십시오.</span>-->
+<!--            </p>-->
+<!--            <div class="submit">-->
+<!--                <span style="vertical-align: inherit;"><input type="submit" value="확인"></span>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="container">-->
+<!--            <button class="btn" id="btnNotice2">-->
+<!--                <span>채용 공고 확인하기</span>-->
+<!--            </button>-->
+<!--        </div>-->
+<!--    </section>-->
+</main>
+<!-- End Breadcrumbs -->
+
+<!-- Start Features Area -->
+
+<!-- /End Newsletter Area -->
+
+<!-- Start Footer Area -->
+<th:block th:replace="~{components/_footer::footer_main}"></th:block>
+<!--/ End Footer Area -->
+
+
+<!-- ========================= JS here ========================= -->
+<script src="/static/js/main/template/bootstrap.min.js"></script>
+<script src="/static/js/main/template/count-up.min.js"></script>
+<script src="/static/js/main/template/wow.min.js"></script>
+<script src="/static/js/main/template/tiny-slider.js"></script>
+<script src="/static/js/main/template/glightbox.min.js"></script>
+<script src="/static/js/main/template/imagesloaded.min.js"></script>
+<script src="/static/js/main/template/isotope.min.js"></script>
+<script src="/static/js/main/template/main.js"></script>
+<script src="/static/js/lib/postcode.v2/postcode.v2.js"></script>
+
+<script type="text/javascript" src="/static/js/main/contact.js"></script>
+</body>
+</html>

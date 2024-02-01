@@ -44,13 +44,13 @@ public class HomeController {
         return "main/index";
     }
 
-    @GetMapping("/index_popup")
+    @GetMapping("/contact")
     public String showPopup(Model model, HttpServletRequest request) {
         HttpSession session = request.getSession();
         String language = (String) session.getAttribute("languageValue");
         if(language == null) language = "kr";
         model.addAttribute("language", language);
-        return "main/index_popup";
+        return "main/contact";
     }
 
     // [url] : /{category}/{page}

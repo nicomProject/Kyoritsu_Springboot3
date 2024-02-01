@@ -1,5 +1,7 @@
 package com.enicom.board.kyoritsu.config;
 
+import com.enicom.board.kyoritsu.api.param.ContactParam;
+
 import javax.mail.Message;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
@@ -75,6 +77,73 @@ public class EmailConfiguration {
             message.setRecipients(
                     Message.RecipientType.TO,
                     InternetAddress.parse(toEmail)
+            );
+            message.setSubject(subject);
+            message.setContent(contents.toString(), "text/html;charset=UTF-8"); // 내용 설정 (HTML 형식)
+            message.setSentDate(new java.util.Date());
+
+            Transport t = mailSession.getTransport("smtp");
+            t.connect(_email, _password);
+            t.sendMessage(message, message.getAllRecipients());
+            t.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void sendEmailContact(ContactParam param) {
+        StringBuffer contents = new StringBuffer();
+        var FacilityTotal = "";
+         if(param.getTextFacility() == null) {
+             FacilityTotal = param.getSelectedFacility();
+         } else if(param.getSelectedFacility() == null){
+             FacilityTotal = param.getTextFacility();
+         } else if(param.getSelectedFacility() != null && param.getTextFacility() != null){
+             FacilityTotal = param.getSelectedFacility() + " " + param.getTextFacility();
+         }
+
+            contents.append("<p>교리츠 홈페이지 문의사항</p>");
+            contents.append("<p>접수된 문의사항 내용을 알려드립니다.</p>");
+            contents.append("<p>문의 이메일 : ").append(param.getTextEmail()).append("</p>");
+            contents.append("<p>카테고리 : ").append(param.getSelectedCategory()).append("</p>");
+            contents.append("<p>시설명 : ").append(FacilityTotal).append("</p>");
+            contents.append("<p>문의 내용 : ").append(param.getTextQuestion()).append("</p>");
+            executorService.submit(() -> {
+                sendMailContact(contents);
+            });
+    }
+
+    private static void sendMailContact(StringBuffer contents) {
+        String _email = "nicom7708@gmail.com";
+        String _password = "lnqvzqvqgckroyqo";
+
+        String subject = "교리츠 문의사항입니다.";
+        String fromMail = "jjg@enicom.co.kr";
+        String fromName = "교리츠";
+
+        // mail properties
+        Properties props = new Properties();
+        props.put("mail.smtp.host", "smtp.gmail.com"); // use Gmail
+        props.put("mail.smtp.port", "587"); // set port
+
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true"); // use TLS
+
+        Session mailSession = Session.getInstance(props,
+                new javax.mail.Authenticator() { // set authenticator
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(_email, _password);
+                    }
+                });
+
+        try {
+            MimeMessage message = new MimeMessage(mailSession);
+            // mail contents
+            message.setFrom(new InternetAddress(fromMail, MimeUtility.encodeText(fromName, "UTF-8", "B"))); // 한글의 경우 encoding 필요
+            message.setRecipients(
+                    Message.RecipientType.TO,
+                    InternetAddress.parse("leaft7708@naver.com")
             );
             message.setSubject(subject);
             message.setContent(contents.toString(), "text/html;charset=UTF-8"); // 내용 설정 (HTML 형식)
