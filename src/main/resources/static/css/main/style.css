@@ -209,13 +209,6 @@ section .sub-title{
 }
 
 /* contact */
-.inquiry .contact-sec {
-    margin: 31px 0 48px;
-}
-.inquiry .contact-sec .inner {
-    width: 1080px;
-    margin: 0 auto;
-}
 .inquiry .contact-sec .inner h3 {
     font-size: 38px;
     font-weight: bold;
@@ -241,13 +234,6 @@ section .sub-title{
     color: #0067bb;
     border-bottom: 1px solid #0067bb;
 }
-.inquiry .inquiry-sec {
-    margin-bottom: 67px;
-}
-.inquiry .inquiry-sec .inner {
-    width: 1080px;
-    margin: 0 auto;
-}
 .inquiry .inquiry-sec .inner .question-box {
     position: relative;
     display: flex;
@@ -261,6 +247,9 @@ section .sub-title{
     font-weight: bold;
     line-height: 1.5;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .inquiry .inquiry-sec .inner .question-box .question .require {
     color: #d11e18;
@@ -630,10 +619,6 @@ section .sub-title{
     margin-top: 73px;
     margin-bottom: 67px;
 }
-.inquiry_confirm .inquiry-sec .inner {
-    width: 1080px;
-    margin: 0 auto;
-}
 .inquiry_confirm .inquiry-sec .inner .question-box {
     display: flex;
     justify-content: space-between;
@@ -747,10 +732,6 @@ section .sub-title{
 }
 .inquiry_confirm_thanks .contact-sec {
     margin: 31px 0 77px;
-}
-.inquiry_confirm_thanks .contact-sec .inner {
-    width: 1080px;
-    margin: 0 auto;
 }
 .inquiry_confirm_thanks .contact-sec .inner .title {
     text-align: center;
@@ -2694,6 +2675,110 @@ section .sub-title{
         font-size: 14px;
     }
 
+    /* ===================== Contact ===================== */
+
+    .inquiry .contact-sec.section {
+        padding-top: 70px;
+        padding-bottom: 20px;
+        width: 100%;
+    }
+
+    .inquiry .contact-sec .inner h3 {
+        font-size: 32px;
+    }
+
+    .inquiry .contact-sec .inner .desc {
+        margin-top: 40px;
+        font-size: 16px;
+    }
+
+    .inquiry .inquiry-sec .inner .question-1 {
+        padding-bottom: 30px;
+    }
+
+    .inquiry .inquiry-sec .inner .question-box .question {
+        width: 280px;
+        font-size: 18px;
+    }
+
+    .inquiry .inquiry-sec .inner .question-box .answer .radio {
+        height: 28px;
+        padding-left: 28px;
+        margin-left: 22px;
+    }
+
+    .inquiry .inquiry-sec .inner .question-box .answer .radio label::before {
+        height: 18px;
+        width: 18px;
+    }
+
+    .inquiry .inquiry-sec .inner .question-box .error {
+        bottom: 8px;
+        left: 332px;
+        font-size: 12px;
+    }
+
+    .inquiry .inquiry-sec .inner .question-1 .answer {
+        display: flex;
+        justify-content: flex-start;
+        align-content: stretch;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    .inquiry .inquiry-sec .inner .question-2 {
+        margin-top: 34px;
+        padding-bottom: 43px;
+    }
+
+    .inquiry .inquiry-sec .inner .question-box .answer {
+        width: 748px;
+        font-size: 14px;
+    }
+
+    .inquiry .inquiry-sec .inner .question-box .answer .text input[type=text], .inquiry .inquiry-sec .inner .question-box .answer .number input[type=text] {
+        padding: 15px 10px;
+        font-size: 16px;
+        border: 1px solid #0067bb;
+    }
+
+    .inquiry .inquiry-sec .inner .question-3 {
+        margin-top: 40px;
+        padding-bottom: 45px;
+    }
+
+    .inquiry .inquiry-sec .inner .question-box .answer .textarea textarea {
+        height: 137px;
+        width: 100%;
+        padding: 15px 10px;
+        font-size: 18px;
+        border: 1px solid #0067bb;
+    }
+
+    .inquiry .inquiry-sec .inner .question-4 {
+        margin-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .inquiry .inquiry-sec .inner .question-5 {
+        margin-top: 35px;
+        padding-bottom: 40px;
+    }
+
+    .inquiry .inquiry-sec .inner .submit-box {
+        margin-top: 55px;
+    }
+
+    .inquiry .inquiry-sec .inner .submit-box .msg {
+        font-size: 14px;
+    }
+
+    .inquiry .inquiry-sec .inner .submit-box .btn {
+        font-size: 1.5rem;
+        padding: 1.5rem 5rem;
+        margin-top: 30px;
+    }
+
     /* ===================== 메인페이지 ===================== */
     .hero-slider .hero-text .small-title {
         color: #fff;
@@ -3021,7 +3106,7 @@ section .sub-title{
     }
 }
 
-@media (max-width: 767px){
+@media (max-width: 992px){
     /*모바일*/
     .tabulator .tabulator-header {
         white-space: normal; /* 강제 줄바꿈 활성화 */
@@ -3089,6 +3174,99 @@ section .sub-title{
     .location.section {
         min-height: 550px;
         padding: 30px 0px;
+    }
+
+    /* ===================== Contact ===================== */
+
+
+    .inquiry .contact-sec .inner h3 {
+        font-size: 24px;
+    }
+
+    .inquiry .contact-sec .inner .desc {
+        margin-top: 40px;
+        font-size: 12px;
+    }
+
+    .inquiry .inquiry-sec .inner .question-1 {
+        padding-bottom: 30px;
+    }
+
+    .inquiry .inquiry-sec .inner .question-box .question {
+        width: 35%;
+        font-size: 14px;
+
+    }
+
+    .inquiry .inquiry-sec .inner .question-box .answer .radio {
+        height: 28px;
+        padding-left: 28px;
+        margin-left: 22px;
+    }
+
+    .inquiry .inquiry-sec .inner .question-box .answer .radio label::before {
+        height: 18px;
+        width: 18px;
+    }
+
+    .inquiry .inquiry-sec .inner .question-box .error {
+        bottom: 8px;
+        left: 0px;
+        font-size: 11px;
+        padding-left: 50%;
+    }
+
+    .inquiry .inquiry-sec .inner .question-2 {
+        margin-top: 34px;
+        padding-bottom: 43px;
+    }
+
+    .inquiry .inquiry-sec .inner .question-box .answer {
+        width: 748px;
+        font-size: 11px;
+    }
+
+    .inquiry .inquiry-sec .inner .question-box .answer .text input[type=text], .inquiry .inquiry-sec .inner .question-box .answer .number input[type=text] {
+        padding: 5px 10px;
+        font-size: 14px;
+        border: 1px solid #0067bb;
+    }
+
+    .inquiry .inquiry-sec .inner .question-3 {
+        margin-top: 40px;
+        padding-bottom: 45px;
+    }
+
+    .inquiry .inquiry-sec .inner .question-box .answer .textarea textarea {
+        height: 90px;
+        width: 100%;
+        padding: 5px 10px;
+        font-size: 14px;
+        border: 1px solid #0067bb;
+    }
+
+    .inquiry .inquiry-sec .inner .question-4 {
+        margin-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .inquiry .inquiry-sec .inner .question-5 {
+        margin-top: 35px;
+        padding-bottom: 40px;
+    }
+
+    .inquiry .inquiry-sec .inner .submit-box {
+        margin-top: 55px;
+    }
+
+    .inquiry .inquiry-sec .inner .submit-box .msg {
+        font-size: 12px;
+    }
+
+    .inquiry .inquiry-sec .inner .submit-box .btn {
+        font-size: 1.5rem;
+        padding: 0.6rem 3rem;
+        margin-top: 30px;
     }
 
     /* ===================== 메인페이지 ===================== */

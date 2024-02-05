@@ -105,6 +105,8 @@ $(function () {
                 }
                 else if (action === 'file') {
                     const range = this.dataset.range;
+                    console.log(selected)
+                    console.log(selected.length)
                     if (selected.length === 0) {
                         Alert.warning({text: '소개글을 먼저 선택해주세요!'});
                         return;

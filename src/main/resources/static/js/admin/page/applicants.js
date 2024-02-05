@@ -73,13 +73,26 @@ $(function () {
             });
 
             $('.dropdown-item[role="action"][data-action="file-list"]').on('click', function() {
-                console.log(that.table.getData())
-                TableUtil.download(that.table, 'excel', '채용공고 목록');
+                const tableSelected = that.table.getSelectedData().map(e => e.recKey);
+                if (tableSelected.length === 0) {
+                    Alert.warning({text: '채용공고 목록을 먼저 선택해주세요!'});
+                    return;
+                }
+                else {
+                    TableUtil.download(that.table, 'excel', '채용공고 목록');
+                }
             });
 
             $('.dropdown-item[role="action"][data-action="file-user"]').on('click', function() {
-                console.log(that.tableDetail.getData())
-                TableUtil.download(that.tableDetail, 'excel', '지원자 목록');
+                const tableDetailSelected = that.tableDetail.getSelectedData().map(e => e.recKey);
+                console.log(tableDetailSelected.length)
+                if (tableDetailSelected.length === 0) {
+                    Alert.warning({text: '지원자 목록을 먼저 선택해주세요!'});
+                    return;
+                }
+                else {
+                    TableUtil.download(that.tableDetail, 'excel', '지원자 목록');
+                }
             });
 
             function performSearch() {
@@ -189,7 +202,8 @@ $(function () {
                     // window.location.href = '/admin/applicants/' + row.getData().recKey;
                         let urlDetail = '/api/applicant/findWithJob/' + row.getData().recKey
                         Content.params.urlDetail = urlDetail;
-                    that.tableDetail = TableDetail.load('#tableDetail');
+                    // that.tableDetail = TableDetail.load('#tableDetail');
+                    Content.tableDetail.setData(urlDetail);
                 },
 
                 downloadComplete: function () {
@@ -241,6 +255,7 @@ $(function () {
                         return [];
                     }
                     response = response.result;
+                    console.log(response.items);
                     return response.items;
                 },
                 ajaxError: TableUtil.ajaxError,
@@ -316,6 +331,8 @@ $(function () {
             });
 
             this.table = tableDetail;
+
+            console.log(tableDetail.getData());
 
             return tableDetail;
         },
